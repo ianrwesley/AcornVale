@@ -62,7 +62,7 @@ $pageTitle = "Prescriptions";
 					</div>
 					<div class="column lg-6 app-right">
 						<div class="flow-section">
-							<h2 class="section-title">New Patient Confirmation</h2>
+							<h2 class="section-title">New Patient Confirmation test</h2>
 							<div class="fieldgroup">
 								<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-6 optional" placeholder="email" name="email">
 								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-6 optional" placeholder="phone" name="phone">
