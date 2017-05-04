@@ -18,7 +18,7 @@ $adminView = $_GET[ "admin" ];
 <body>
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<div id="pick-patient-content">
+		<div id="pick-patient-content" class="page-content">
 			<div class="flow-section">
 				<div class="container-xs centered">
 					<div class="title">
@@ -26,8 +26,7 @@ $adminView = $_GET[ "admin" ];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<select id="pick-patient" class="contacts" placeholder="patient's name or birthday"></select>
-							<!--input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="patient's name or birthday" name="pick-patient" id="pick-patient"-->
+							<select id="pick-patient" placeholder="patient's name or birthday"></select>
 						</div>
 					</div>
 				</div>

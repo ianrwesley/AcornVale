@@ -35,4 +35,40 @@ $(document).ready(function () {
 		}
 	});
 	
+	$('#add-allergies').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
+	$('#add-homemeds').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
+	$('#add-diagnoses').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
 });

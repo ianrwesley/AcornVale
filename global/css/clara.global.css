@@ -57,13 +57,13 @@ img { border: 0; }
 .row .column.center-row:last-child {margin-left:0;}
 
 /*-- TYPOGRAPHY --*/
-body, input, textarea, select, button {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#201042; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;}
+body, input, textarea, select, button {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#140A29; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;}
 body {font-size:16px; line-height:1.52;}
 
 a {color:#007FFF;}
 a:link, a:visited, a:active {text-decoration:none;}
 a:hover, a:focus {color:#007FFF; text-decoration:underline;}
-a:focus {outline:3px solid rgba(131, 192, 253, 0.5); outline-offset:1px;}
+a:focus {outline:3px solid rgba(206, 0, 255, 0.4); outline-offset:1px;}
 a.block { display: block; cursor: pointer; }
 a.block:hover { text-decoration: none; }
 strong, b {font-weight:500;}
@@ -128,7 +128,7 @@ icon.xl {font-size:80px;}
 .popover {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 /*-- FORMS --*/
-input[type="text"], input[type="password"], input[type="email"], select {-webkit-appearance:none;}
+input[type="text"], input[type="password"], input[type="email"], select, checkbox {-webkit-appearance:none;}
 .fieldset {padding-bottom:18px;}
 .form-control, .form-textbox {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:15px; width:100%; text-align:left; border:1px solid #D6D6D6; background:white; vertical-align:middle; box-sizing:border-box; background-clip:padding-box; border-radius:5px;}
 .form-control {line-height:1.25; display:table-cell; height:32px; padding:4px 12px 3px; -webkit-box-shadow:none; box-shadow:none;}
@@ -140,21 +140,25 @@ input[type="text"], input[type="password"], input[type="email"], select {-webkit
 .form-text {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:16px; text-align:left; border:1px solid #D0CFD4; background:white; vertical-align:middle; box-sizing:border-box; background-clip:padding-box; border-radius:4px; line-height:1.25; display:inline-block; height:40px; padding:2px 12px; margin-bottom:16px; font-weight:400; letter-spacing:0em;}
 .form-text:focus {border-color:#AE00D8; box-shadow:0 0 0 3px rgba(206, 0, 255, 0.4); outline:0;}
 
-.fieldgroup .form-text {position:relative; display:table-cell; float:left; border-radius: 0; z-index:1; border-right:none;}
-.fieldgroup .form-text:first-child {border-top-left-radius:4px; border-bottom-left-radius:4px;}
-.fieldgroup .form-text:last-child {border-top-right-radius:4px; border-bottom-right-radius:4px; border-right:1px solid #D0CFD4;}
+.fieldgroup .form-text {position:relative; display:table-cell; float:left; border-radius: 0; border-right:none;}
+.fieldgroup .form-text:first-child, .fieldgroup .select-wrapper:first-child .form-text {border-top-left-radius:4px; border-bottom-left-radius:4px;}
+.fieldgroup .form-text:last-child, .fieldgroup .select-wrapper:first-child .form-text {border-top-right-radius:4px; border-bottom-right-radius:4px; border-right:1px solid #D0CFD4;}
 .fieldgroup .form-text:focus {z-index:2; border:1px solid #AE00D8;}
 
+.fieldgroup .select-wrapper .form-text {border-radius: 0; border-right:none;}
+.fieldgroup .select-wrapper:last-child .form-text {border-right:1px solid #D0CFD4;}
+
 input::-webkit-input-placeholder, input::placeholder, select, .select-wrapper:after, .flex-select-wrapper:after, input.override::-webkit-input-placeholder, input.override::placeholder {color:#9C96B1;}
-input.optional::-webkit-input-placeholder, input.optional::placeholder, select.optional {font-style: italic; color:rgba(156,150,177,0.4)}
+input.optional::-webkit-input-placeholder, input.optional::placeholder, select.optional, .select-wrapper.optional select {font-style: italic; color:rgba(156,150,177,0.4)}
 
-select.selected {color:#140A29;}
+.select-wrapper {position:relative; float:left;}
+.select-wrapper select {width:100%;}
+.select-wrapper:before {font-family:"keystone-icons"; content: "\64"; width:22px; height:16px; border-left:none; position:absolute; pointer-events: none; text-align:right; line-height:17px; font-size:13px; font-weight:bold; right:12px; top:11px; z-index:3; color:#9C96B1;}
+.select-wrapper.selected select {color:#140A29; font-style:normal;}
 
-.select-wrapper.full-width .form-control {margin-bottom:14px;}
-.select-wrapper.full-width:last-child .form-control {margin-bottom:0;}
-.select-wrapper:after, .flex-select-wrapper:after {font-family:"keystone-icons"; content: "\64"; width:22px; height:16px; border-left:none; position:absolute; pointer-events: none; text-align:right; line-height:17px; font-size:13px; font-weight:bold;}
-.select-wrapper:after {right:12px; top:9px;}
-.flex-select-wrapper:after {right:12px; top:9px;}
+.fieldcontrols .checkbox-wrapper {display:inline-block; height:40px; margin-bottom:16px; vertical-align:middle; padding-left:12px; padding-top:6px; color:#9C96B1; float:right;}
+.fieldcontrols .checkbox-wrapper .checkbox {position:relative; top:-1px;}
+.checkbox + label {padding-left:8px; line-height:1;}
 
 .search-field-wrapper {position:relative;}
 .search-field-wrapper:before {font-family:"keystone-icons"; content: "\6d"; font-size:18px; color:#817A92; position:absolute; top:5px; right:12px;}
@@ -184,18 +188,23 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 .button.field-info:hover {text-decoration:none;}
 .button.button-icon:hover {text-decoration:none; color:#201042;}
 .button:focus {outline: none;}
-.button-link {outline:none; background:none; border:none; color:#007FFF; text-decoration:none; text-shadow:none; padding:0; font-size:18px; text-align:left;}
+
+.button-link {outline:none; background:none; border:none; color:#007FFF; text-decoration:none; text-shadow:none; padding:0; font-size:16px; text-align:left;}
+.button-link.secondary-action, .button-link.secondary-action a {color:#9C96B1;}
 .button-link:hover .icon {text-decoration:none; pointer-events: none;}
-.button-flat {font-size:13px; background:rgba(217, 27, 92, 0.15); border-color:transparent; color:#D91B5C; padding:5px 15px;}
+
+.button-flat {background:#00D6BA; border-color:transparent; color:#FFFFFF; font-weight:500; padding:8px 16px;}
 .button-flat a {color:#007FFF; text-decoration:none;}
 .button-flat a:focus {outline:none;}
 .button-flat:hover {text-decoration:none;}
+
 .button-done, .button-edit {text-align:right; float:right; padding:5px 15px;}
 .button-done a {text-decoration:none;}
+
 .button-compact {font-size:13px;}
+
 .button-group {position:relative; display:inline-block; vertical-align:middle;}
 .button-group .button-link {padding:0 20px; border-radius:0;}
-.button-group .button-flat {padding:5px 15px;}
 
 .button:disabled, .button-link:disabled, .form-control:disabled, .form-textbox:disabled, a.disabled {cursor:default; opacity:0.3; pointer-events:none;}
 .button-link:disabled {color:#2A272F;}
