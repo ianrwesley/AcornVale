@@ -1,0 +1,157 @@
+/*-- LAYOUT --*/
+a[role="link"] {cursor: pointer;}
+#globalnav-spaceholder {height:53px;}
+
+.success {color:#00C0B1;}
+
+/*-- TABLES --*/
+table {margin-top:0;}
+thead tr {border-top:none;}
+thead td {padding-top:12px;}
+td {box-sizing:content-box;}
+.table-section-wrap {padding-bottom:32px;}
+
+.col-large .col-value {font-size:15px;}
+.col-value {font-size:14px; overflow:hidden; max-width:100%;}
+.col-tool button:before {top:15px;}
+tbody .col-tool input[type="checkbox"] {position:relative; bottom:2px;}
+.col-value .action-link {font-style: italic; font-size:12px; color:#0088E0; color:#9933cc;}
+
+td {overflow: visible;}
+.hover-wrapper {position:relative; overflow:visible; margin-left:10px;}
+.moreinfo {color:#D2D2DA; font-weight:500; display:inline-block; width:16px; text-align:center;}
+.moreinfo:before {font-family:"keystone-icons"; content:"\71"; font-size:21px; line-height:14px; vertical-align: middle; position:relative; top:-2px;}
+.moreinfo-hover {display:none; position:absolute; font-size:12px; bottom:100%; margin-bottom:8px; padding:6px 10px; border-radius:4px; width:200px; margin-left:-90px; white-space:normal !important; text-align:center; float:none; z-index:9999;}
+.moreinfo-hover.show {display:block;}
+
+.col-value, .col-value + .hover-wrapper {float:left;}
+
+.nav-tools {margin:0; height:40px; display:flex; align-content: center; align-items: center; padding:10px 0 20px; position:inherit; opacity:1; visibility:visible;}
+.nav-tools button {height:40px; transition:all 0.33333s ease-in-out; transition-delay:0s; position:relative; cursor: pointer;}
+.nav-tools .button-add, .nav-tools .button-delete {left:70.97px;}
+.nav-tools.show .button-add, .nav-tools.show .button-delete {left:0;}
+.nav-tools .button-delete {opacity:0;}
+.nav-tools.show .button-delete {opacity:1;}
+
+/*-- LICENSES SUBNAV --*/
+.licensenav-link.disabled {cursor:default; pointer-events: none; text-decoration:none; color:#817A92;}
+.licensenav-link.disabled .licensenav-label {color:#BDBFC1;}
+
+.licensenav {background: rgba(223,226,226,0.7); box-sizing:content-box; /*overflow: hidden;*/ padding: 0; padding-top: 11px; padding-bottom: 12px; position: relative; text-align: left; width: 100%; height: 86px; z-index: 9987;}
+.licensenav .container {display:flex; align-items:center;}
+.licensenav-items {list-style: none; margin: 0; overflow-x: auto; overflow-y: hidden; padding-bottom: 20px; white-space: nowrap; text-align:center;}
+
+.licensenav-items.module-title {display:flex; align-content:center; align-items:center; margin:0 auto; padding-top:11px; flex-flow:column nowrap;}
+.licensenav-items.module-title h2 {font-size:2.125em; font-weight:200; color:#201042;}
+.licensenav-items.module-title.no-notifications h2 {position:relative; top:9px;}
+
+.licensenav-item {display: inline-block; vertical-align: top; padding:0 20px;}
+.licensenav-item:first-child {padding-left:0;}
+.licensenav-item:last-child {padding-right:0;}
+.licensenav-link {display:block; margin-top:3px; padding:0; position:relative; z-index: 1;}
+.licensenav-link.active .licensenav-icon, .licensenav-link.active .licensenav-label {opacity:0.3;}
+.licensenav-link:hover, .licensenav-link:hover .licensenav-label {color:#D91B5C; text-decoration:none !important;}
+.licensenav-icon {background: center bottom no-repeat; display: block; margin: 0 auto 6px; height: 54px;}
+.licensenav-label {font-size:11px; line-height: 1.09091; font-weight: 400; letter-spacing: .005em; display: block; margin: 0; color:#201042;}
+.licensenav-disabled {font-size:9px; line-height:1.22226; font-weight:400; letter-spacing: .017em; /*color:#5512F8;*/ display:block; position:absolute; top:100%; left:0; width:100%;}
+
+.licensenav-item-corporations .licensenav-icon {background-image:url(../../global/images/licensenav/corporations-disabled.svg); width:50px; height:54px;}
+.licensenav-item-facilities .licensenav-icon {background-image:url(../../global/images/licensenav/facilities.svg); width:50px; height:54px;}
+.licensenav-item-users .licensenav-icon {background-image:url(../../global/images/licensenav/users.svg); width:50px; height:54px;}
+
+.header-notifications-wrap {min-height:23px;}
+.header-notifications {display:none;}
+.header-notifications.show {display:block;}
+.header-notifications .button-link {font-size:13px; color:#817A92;}
+.header-notifications .notifications {font-size:11px; padding:1px 6px 0; height:20px;}
+
+/*-- LICENSES DROPDOWN --*/
+.button-add {overflow:visible;}
+.dropdown-items {display:none; background:#fff; padding:18px 20px; font-size:13px; z-index:2; border:1px solid #ced8d8; border-radius: 4px; text-align:right; min-width:148px; position:absolute; top:39px; right:0; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2); box-shadow:0 1px 40px rgba(0, 0, 0, 0.09)}
+.dropdown-items.open {display:block;}
+.dropdown-item {display:block; padding-bottom:10px;}
+.dropdown-item:last-child {padding-bottom:0;}
+
+/*-- POPOVER --*/
+.pop-wrapper.fit {width:100%;}
+.pop-wrapper.fit .popover-wrapper-direction-bottom.popover-wrapper-align-center {transform:none; left:-6px;}
+
+.pop-wrapper .single-line-wrapper .large-6 {width:49%; margin-right:7px;}
+.pop-wrapper .single-line-wrapper .large-6:last-child {margin-right:0;}
+.pop-wrapper .single-line-wrapper .single-line {float:left;}
+.select-wrapper:after {top:8px; right:12px;}
+
+.toolbar-footer {padding-top:14px;}
+
+/*-- FACILITIES TABLE --*/
+.col-facility-name {width:auto;}
+.col-facility-id {width:12.5%;}
+.col-facility-status {width:12.5%;}
+.col-facility-super-user {width:15%;}
+.col-facility-owner {width:15%;}
+
+.col-facility-name a {color:#201042;}
+.col-facility-super-user .facility-super-user-link {color:#00C0B1;}
+.col-facility-id {color:#817A92;}
+
+/*-- USERS TABLE --*/
+.col-user-name {width:auto;}
+.col-user-id {width:33.33333%;}
+.col-user-clara-id {width:31%;}
+.col-user-links {width:12%;}
+.col-user-role {width:10%;}
+.col-user-prescriber {width:12.5%;}
+.col-user-super {width:7.5%;}
+.col-user-last-login {width:14.25%;}
+
+.col-user-name a, .col-user-id a, .col-facility-name a, .col-value a {color:#201042;}
+.col-user-last-login {color:#817A92;}
+
+.col-user-role .moreinfo:hover, .col-user-prescriber .moreinfo:hover {color:#D91B5C;}
+.col-user-role .moreinfo-hover, .col-user-prescriber .moreinfo-hover {background:#FFD9EC;}
+
+.col-user-super .moreinfo:hover {color:#00CABA;}
+.col-user-super .moreinfo-hover {background:#D0FFFC;}
+
+.clara-pending-users {text-align:left;}
+
+.col-has-popover .col-value {overflow:visible;}
+.col-user-super.col-has-popover {width:19.25%;}
+.col-user-facilities.col-has-popover {width:17.5%;}
+
+/*-- FACILITY PROFILE --
+.profile-value-list li {float:left;}*/
+.profile-value-list li:before, .profile-value-list li:after {content:""; clear:both;}
+.profile-value-list .col-value {clear:both;}
+
+.moduleselect-item:only-of-type {padding:0;}
+.modules-details .moduleselect-items {padding-bottom:0; text-align:left;}
+.modules-details .moduleselect-item {padding:0 10px;}
+.modules-details .moduleselect-item:first-child {padding-left:0;}
+.modules-details .moduleselect-item:last-child {padding-right:0;}
+.modules-details .moduleselect-link {min-width:85px; cursor:auto; opacity:1;}
+.modules-details .moduleselect-link:hover .moduleselect-label {color:#201042;}
+
+.edit-row .moduleselect-item {padding:0; margin-top:8px; vertical-align:middle;}
+.edit-row .moduleselect-item.moduleswitch {margin-left:32px;}
+
+.edit-row .large-5 .col-user-name {width:100%;}
+.edit-row .large-10 .col-user-name {width:30%;}
+.edit-row .col-user-id {width:40%;}
+.edit-row .col-user-last-login {width:22.5%;}
+.edit-row .col-facility-id {width:20%;}
+
+.button-group .pop-wrapper {width:auto;}
+.button-group .pop-wrapper .col-value .button-link {padding:0 15px; border-right:1px solid #e3e3e3;}
+.button-group .pop-wrapper:first-child .col-value .button-link {padding-left:0;}
+.button-group .pop-wrapper:last-child .col-value .button-link {padding-right:0; border-right:none;}
+.field-pop-wrapper.full-width .form-textbox {display:block;}
+
+.button-group .button-link.clean {border:none;}
+
+.add-user-step-0.hidden {display:none;}
+
+.add-user-step-1 {display:none;}
+.add-user-step-1.visible {display:block;}
+
+.designated-super-user:after {font-family:"keystone-icons"; content:"\70"; font-size:24px; line-height:18px; color:#00C0B1; vertical-align: text-bottom; padding-left:6px;}

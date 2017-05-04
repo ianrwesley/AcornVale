@@ -1,0 +1,91 @@
+/*-- LAYOUT --*/
+.si-body #wrapper {background:#201042 url(../../signin/images/clara_signin_desktop_@2x.jpg) no-repeat; background-position:center 50%; background-size:cover;}
+.logo {text-align:center; margin-bottom:0; line-height:.5;}
+.clara-si-logo {width:214px;}
+.auth-container {width:640px; height:480px; padding-top:140px; position: relative; z-index: inherit; box-sizing: border-box; text-align:center;}
+.auth-container .si-container {position:relative; text-align: center; width:350px; padding: 0;}
+
+.hero {height:auto; background:#201042 url(../../signin/images/clara_signin_desktop_@2x.jpg) no-repeat; padding-top:48px; background-size:cover; background-position:0 0;}
+.si-content .page-content {margin-bottom:54px;}
+.page-content .container {max-width:980px; margin:auto;}
+.page-content .intro {padding-top:30px;}
+
+/*-- NOTIFICATIONS --*/
+.si-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(0,0,0,.3); padding:10px 0;}
+.si-notification-msg-wrapper {margin:0 auto; width:640px;}
+.si-notification-msg {color:white; text-align:center; font-size:14px; margin-bottom:0;}
+
+/*-- TYPOGRAPHY --*/
+.si-body, .si-content {color:#140A29;}
+.si-body .si-container-title {font-size:24px; font-weight:200; margin:22px auto 16px;}
+.description {font-size:18px; font-weight:400;}
+
+.hero h1 {text-align:center; line-height:180px; padding:0; margin:0; font-size:40px;}
+.pg-label {font-size:24px; line-height:1.20849; font-weight:500; letter-spacing:0.015em;} 
+
+.faq-item .question {margin-top: 30px; margin-bottom:7px;}
+.faq-info {text-align:inherit; padding:32px 0;}
+
+.icon-checkmark.success {color:#8bf008;}
+
+/*-- FORMS --*/
+.si-body .form-control:focus, .si-body .form-textbox:focus {box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);}
+
+.auth-container .si-input-field {width:100%; border:0px; padding:10px 12px; border-radius:5px; outline:none; box-sizing:border-box; vertical-align:middle; line-height:inherit; -webkit-font-smoothing: antialiased; color:#201042; font-size:16px; font-weight:400; background: transparent; box-shadow:inherit;}
+.auth-container .si-password {padding-right:38px;}
+.auth-container .ux-border {border:1px solid rgba(42, 42, 42, 0.3); background-color:#fff;}
+.auth-container .ux-border.clara-id {border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px;}
+.auth-container .ux-border.pwd {border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-width: 0px;}
+.field-separator {width:calc(100% - 2px); position:absolute; left:1px; background-color:rgba(42, 42, 42, 0.3); height:1px; z-index:1;}
+
+.auth-container .ux-border.focus {border-color:#AE00D8 !important;}
+.field-separator.focus {background-color:#AE00D8 !important;}
+
+/*-- SIGN IN HELPERS --*/
+.si-remember-password {display: inline-block; position: relative; font-size: 15px; margin: 18px 0 16px 0px; font-weight: 400;}
+.si-remember-password label[for=remember-me] {padding-left:3px; font-size:14px;}
+.forgot {display:flex; text-align: center; padding-top:85px; justify-content: center; width: 100%;}
+.forgot a {color:#140A29; font-size: 13px; width: 100%; text-align: center;}
+.forgot-button {display:block; font-size:21px; margin-top:20px;}
+
+.password-strength {margin-top:18px;}
+
+/*-- POPOVERS --*/
+.si-container .pop-container.error {margin:auto; max-width: 305px;}
+.si-container .signin-error {width:100%; font-weight:500; font-size:15px; color:#382b00;}
+.si-container .signin-error a {color:#382b00; display:block; font-weight:400; text-decoration: underline;}
+.si-container .pop-container {z-index:1000000; position:relative;}
+.si-container .pop-bottom {background-color:#FAEEB6; position:absolute; width: 100%; margin-left:-50%; border-radius:4px; left:50%; border: 1px solid rgba(183, 148, 0, 0.55); box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); margin-top:6px; padding:11px 18px; animation:fade-in 200ms ease-in-out;}
+.si-container .pop-bottom:before {background-color:#FAEEB6; width: 15px; height: 15px;  content: ""; position: absolute; left: 47.2%; transform: rotate(135deg) skewX(5deg) skewY(5deg); top: -9px; border-left: 1px solid rgba(183, 148, 0, 0.55); border-bottom: 1px solid rgba(183, 148, 0, 0.55); box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);}
+
+.error.pop-bottom {display:none;}
+.error.pop-bottom.show {display:block;}
+#error-msg {max-height:75px; overflow-y:auto;}
+#error-msg error {display:block;}
+
+/*-- BUTTONS --*/
+input[type="submit"] {width:1px; height:1px; background-color:transparent; visibility:hidden; border:none; margin:0; padding:0;}
+.auth-container .si-button {border:0; position: absolute; top:95px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
+.auth-container .si-button:disabled {opacity:.3; pointer-events:none;}
+.auth-container .si-button.single-field {top:3px; padding-top:0;}
+
+/*-- RESPONSIVE --*/
+@media only screen and (min-width: 768px) {
+	.si-body, .si-content {min-height:600px;}
+}
+
+@media only screen and (max-width: 767px) {
+	.auth-container {max-width:320px; padding:50px 18px 0; text-align: left;}
+	.auth-container .widen {max-width:100%; margin:0 auto;}
+	.logo-wrap .keystone-signin-logo {height:40px;}
+	
+	.description {font-size:14px;}
+	.forgot-button {font-size:18px;}
+	
+	icon.xl {font-size:65px;}
+}
+
+@media only screen and (max-width: 370px) {
+	.auth-container {max-width:300px; padding-left:10px; padding-right:10px;}
+	icon.xl {font-size:50px;}
+}
