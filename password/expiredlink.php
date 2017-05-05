@@ -29,45 +29,24 @@ $pageTitle = "Recover Your Clara ID";
 		<?php include "../global/claraidnav.php"; ?>	
 		<header class="hero">
 			<div class="container">
-				<h1>Reset your password</h1>
+				<h1>Link expired</h1>
 			</div>
 		</header>
 		<div class="page-content">
 			<div class="content-main">
 				<div class="content-heading">
-					<p class="description narrow">
-						Enter a new password below to regain access to your Clara account.
-					</p>
-				</div>
-				<div class="content-body">
-					<div class="password-input">
-								<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="new password" name="new-pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
-								<div class='sub-heading'>Your password must have:</div>
-								<div class='error error-one'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>8 or more characters</span>
-										<error></error>
-								</div>
-								<div class='error error-two'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>Upper &amp; lowercase letters</span>
-										<error></error>
-								</div>
-								<div class='error error-three success'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>At least one number</span>
-										<error></error>
-								</div>
-								<span class='hint'>Avoid using a password that you use with other websites or that might be easy for someone else to guess.</span>
-								</div>">
-							</div>
-							<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="confirm password" name="confirm-pwd">
+					<div class="header-icon-wrap">
+						<div class="image image-header caution"></div>
+					</div>
+					<h2 class="subtitle">
+						This link can no longer be used to complete your request.
+					</h2>
 				</div>
 			</div>
 			<div class="controls-footer">
 				<div class="button-group flow-controls">
 					<button type="button" role="link" class="button button-link primary-action pull-right">
-						<a href="../?passwordreset=true" class="button-link disabled">Continue</a>
+						<a href="verifyemail.php" class="button-link ">Done</a>
 					</button>
 				</div>
 			</div>

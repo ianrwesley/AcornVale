@@ -2,6 +2,7 @@
 $pageTitle = "Sign In";
 $signOut = $_GET[ "signout" ];
 $sessionExpired = $_GET[ "expired" ];
+$passwordReset = $_GET[ "passwordreset" ];
 ?>
 
 <!doctype html>
@@ -27,10 +28,10 @@ $sessionExpired = $_GET[ "expired" ];
 <body class="si-body">
 	<div id="wrapper">
 		<?php include "global/claraidnav.php"; ?>
-		<div class="si-notification-banner <?php if ($signOut !== "true" and $sessionExpired !== "true"){ echo "hidden"; } ?>">
+		<div class="si-notification-banner <?php if ($signOut !== "true" and $sessionExpired !== "true" and $passwordReset !== "true"){ echo "hidden"; } ?>">
 			<div class="si-notification-msg-wrapper">
 				<p class="si-notification-msg">
-				<?php if ($signOut == "true"){ echo "You have been signed out."; } ?><?php if ($sessionExpired == "true"){ echo "This session has been timed out for your security."; } ?>
+				<?php if ($signOut == "true"){ echo "You have been signed out."; } ?><?php if ($sessionExpired == "true"){ echo "This session has been timed out for your security."; } ?><?php if ($passwordReset == "true"){ echo "Password successfully reset. Try signing in again."; } ?>
 				</p>
 			</div>
 		</div>		

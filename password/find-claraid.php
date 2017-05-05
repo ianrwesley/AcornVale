@@ -29,45 +29,26 @@ $pageTitle = "Recover Your Clara ID";
 		<?php include "../global/claraidnav.php"; ?>	
 		<header class="hero">
 			<div class="container">
-				<h1>Reset your password</h1>
+				<h1>Recover Clara&nbsp;ID</h1>
 			</div>
 		</header>
 		<div class="page-content">
 			<div class="content-main">
 				<div class="content-heading">
-					<p class="description narrow">
-						Enter a new password below to regain access to your Clara account.
-					</p>
+					<h2 class="subtitle narrow">
+						Find your Clara&nbsp;ID by entering the information below.
+					</h2>
 				</div>
 				<div class="content-body">
-					<div class="password-input">
-								<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="new password" name="new-pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
-								<div class='sub-heading'>Your password must have:</div>
-								<div class='error error-one'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>8 or more characters</span>
-										<error></error>
-								</div>
-								<div class='error error-two'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>Upper &amp; lowercase letters</span>
-										<error></error>
-								</div>
-								<div class='error error-three success'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>At least one number</span>
-										<error></error>
-								</div>
-								<span class='hint'>Avoid using a password that you use with other websites or that might be easy for someone else to guess.</span>
-								</div>">
-							</div>
-							<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="confirm password" name="confirm-pwd">
+					<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="first name" name="firstName">
+					<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="last name" name="lastName">
+					<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="email address" name="claraID">
 				</div>
 			</div>
 			<div class="controls-footer">
 				<div class="button-group flow-controls">
 					<button type="button" role="link" class="button button-link primary-action pull-right">
-						<a href="../?passwordreset=true" class="button-link disabled">Continue</a>
+						<a href="find-claraid-success.php" class="button-link disabled">Continue</a>
 					</button>
 				</div>
 			</div>

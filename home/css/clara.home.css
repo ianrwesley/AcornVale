@@ -1,6 +1,7 @@
 /*-- LAYOUT --*/
 .page-content {
-  padding-top: 48px; }
+  padding-top: 48px;
+  padding-bottom: 54px; }
 
 .flow-section {
   max-width: 1200px;
@@ -37,15 +38,9 @@
   font-weight: 500;
   letter-spacing: 0.015em; }
 
-.app-section .section-title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 16px;
-  line-height: 1; }
-
 /*-- SELECTIZE OVERRIDES --*/
 .selectize-input {
-  height: 40px;
+  min-height: 40px;
   padding: 10px 12px;
   border: 1px solid #D0CFD4; }
 
@@ -81,7 +76,7 @@
   font-weight: 400; }
 
 .selectize-control.multi .selectize-input.has-items {
-  padding: 7px 12px; }
+  padding: 9px 12px 5px; }
 
 .selectize-control.multi .selectize-input [data-value], .selectize-control.multi .selectize-input .active[data-value] {
   border-radius: 12px;
@@ -103,6 +98,39 @@
   background: none;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75); }
 
+/*-- FORM VALIDATION --*/
+.error-msg-wrapper {
+  position: relative;
+  float: left; }
+
+.error-msg {
+  display: none;
+  color: #ff0058;
+  font-size: 13px;
+  padding: 0 12px;
+  margin-bottom: 10px; }
+
+.error-msg-wrapper.has-error .form-text {
+  margin-bottom: 4px; }
+.error-msg-wrapper.has-error .form-text::-webkit-input-placeholder, .error-msg-wrapper.has-error .form-text::placeholder, .error-msg-wrapper.has-error select, .error-msg-wrapper.has-error .select-wrapper:before {
+  color: #ff0058; }
+.error-msg-wrapper.has-error .error-msg.show {
+  display: block; }
+
+.error-msg-wrapper.has-error:before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  background-color: #ff0058;
+  z-index: 99; }
+
+.error-msg-wrapper.has-error.select:before {
+  background-color: transparent; }
+
 /*-- PICK A PATIENT --*/
 #pick-patient-content .selectize-input {
   height: 44px;
@@ -121,16 +149,20 @@
 .app-section-header {
   padding: 22px 0 26px; }
 
-.app-section {
+.app-section-body {
   max-width: 1200px;
   margin: auto;
   padding-left: 20px;
   padding-right: 20px;
-  box-sizing: content-box; }
-  .app-section .flow-section:first-child {
+  box-sizing: content-box;
+  margin-bottom: 54px; }
+  .app-section-body .flow-section:first-child {
     padding-top: 0; }
-  .app-section .fieldgroup:last-child .form-text {
-    margin-bottom: 0; }
+  .app-section-body .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    line-height: 1; }
 
 .lg-6.app-left {
   padding-right: 86px;
@@ -139,18 +171,29 @@
 .lg-6.app-right {
   padding-left: 86px; }
 
-.verify-info {
+.confirm-info {
   border-radius: 4px;
   background-color: #F8F8F8;
   padding: 24px 24px; }
-  .verify-info .header {
+  .confirm-info .header {
     font-size: 24px;
     font-weight: 500; }
-  .verify-info .controls-footer {
+  .confirm-info .controls-footer {
     margin-top: 16px;
     font-size: 16px; }
+  .confirm-info .confirm-info-flow {
+    font-size: 18px;
+    line-height: 1.2; }
+    .confirm-info .confirm-info-flow .row {
+      padding: 6px 0; }
+    .confirm-info .confirm-info-flow .confirm-info-item {
+      padding: 0 18px;
+      border-left: 1px solid #b8b8bc; }
+    .confirm-info .confirm-info-flow .confirm-info-item.first {
+      padding-left: 0;
+      border-left: none; }
 
-.verify-info.empty .header {
+.confirm-info.empty .header {
   font-weight: 200; }
 
 #add-patient-content .fieldcontrols .selectize-control {

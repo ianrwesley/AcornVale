@@ -1,4 +1,7 @@
-<?php include "../variables/patient-variables/variable-empty.php"; ?>
+<?php
+$fail = "true";
+include "../variables/patient-variables/variable-empty.php";
+?>
 
 <?php include "add-new-patient-body.php"; ?>
 					<div class="column lg-6 app-right">
@@ -12,7 +15,7 @@
 											<a href="../home/home-view.php">Cancel</a>
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action disabled">
-											<a href="add-new-patient-filled.php"><?php echo $primaryButtonLabel ?></a>
+											<a href=""><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>

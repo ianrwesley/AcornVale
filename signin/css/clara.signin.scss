@@ -1,9 +1,12 @@
 $signin-background: #201042 url(../../signin/images/clara_signin_desktop_@2x.jpg);
 $signin-input-border: rgba(42, 42, 42, 0.3);
-
 $container-width: 980px;
-$primary-font-color: #140A29;
-$primary-border-color: #D0CFD4;
+
+$color-base-text: #140A29;
+$color-border-light: #D0CFD4;
+$color-panel-light: #F8F8F8;
+$color-form-error-bg: #FAEEB6;
+$color-form-error-border: rgba(183, 148, 0, 0.55);
 
 /*-- LAYOUT --*/
 .si-body #wrapper {background:$signin-background no-repeat; background-position:center 50%; background-size:cover;}
@@ -13,11 +16,11 @@ $primary-border-color: #D0CFD4;
 .auth-container .si-container {position:relative; text-align:center; width:350px; padding:0;}
 
 .hero {height:auto; background:$signin-background no-repeat; padding-top:48px; background-size:cover; background-position:0 0;}
-.si-content .page-content {padding-bottom:54px;}
+.page-content {padding-bottom:54px;}
 .page-content .container {max-width:$container-width; margin:auto; padding:0;}
 .page-content .intro {padding-top:30px;}
 
-.flow-section {max-width:1200px; margin:auto; width:80%; padding:30px 0; border-bottom:1px solid $primary-border-color;}
+.flow-section {max-width:1200px; margin:auto; width:80%; padding:30px 0; border-bottom:1px solid $color-border-light;}
 
 .privacy-details {font-size:14px; padding:30px 0;}
 .controls-footer {max-width:100%; margin:auto; text-align:center;}
@@ -29,7 +32,7 @@ $primary-border-color: #D0CFD4;
 .si-notification-msg {color:white; text-align:center; font-size:14px; margin-bottom:0;}
 
 /*-- TYPOGRAPHY --*/
-.si-body, .si-content {color:$primary-font-color;}
+.si-body, .si-content {color:$color-base-text;}
 .si-body .si-container-title {font-size:24px; font-weight:200; margin:22px auto 16px;}
 .description {font-size:18px; font-weight:400;}
 
@@ -59,15 +62,42 @@ $primary-border-color: #D0CFD4;
 .si-remember-password {display: inline-block; position: relative; font-size: 15px; margin: 18px 0 16px 0px; font-weight: 400;}
 .si-remember-password label[for=remember-me] {padding-left:3px; font-size:14px;}
 .forgot {display:flex; text-align: center; padding-top:85px; justify-content: center; width: 100%;}
-.forgot a {color:$primary-font-color; font-size:13px; text-align:center;}
+.forgot a {color:$color-base-text; font-size:13px; text-align:center;}
 .forgot-button {display:block; font-size:21px; margin-top:20px;}
-
-.password-strength {margin-top:18px;}
 
 /*-- CREATE YOUR CLARA ID HELPERS --*/
 .claraid-field-info + .popover {width:246px;}
 .bd-field-info + .popover {width:300px;}
 .form-field-birthday:focus::-webkit-input-placeholder, .form-field-birthday:focus::placeholder {color:#140A29;}
+.si-content .flow-controls .button-link {font-size:18px;}
+
+/*-- RECOVER CLARA ID -*/
+.content-main {display:inline-block; position: relative; padding-bottom:26px;}
+.content-heading {margin-top:36px;
+	.subtitle {margin-bottom:8px; font-size:24px; font-weight:500; line-height:1.25;}
+	.description {margin-top:16px;}
+	.subtitle.narrow, .description.narrow {padding:0 20px;}
+}
+.content-body {margin-top:16px; padding:0 20px;}
+.content-item {margin-bottom:12px; position:relative;}
+input + .content-item, .error-msg-wrapper + .content-item {margin-top:8px;}
+.recover-id {
+	.page-content {text-align:center;}
+	.flow-controls .button-link {font-size:21px; font-weight:400;}
+}
+
+.password-input {
+	.popover {background:$color-panel-light; max-width:250px;}
+	.popover>.arrow:after {border-bottom-color:$color-panel-light;}
+	.popover-content {padding:18px 20px;}
+	.password-strength .error {line-height:1.85;}
+	.password-strength .error .message {display:inline-block; vertical-align: middle;}
+	.password-strength .hint {border-top:1px solid #D0CFD4; padding-top:6px; margin-top:14px; display:inline-block;}
+}
+
+.header-icon-wrap {margin-bottom:30px;}
+.image.image-header {width:72px; height:72px;}
+.icon-checkmark.success {color:#00cc56;}
 
 /*-- POPOVERS --*/
 .si-container .pop-container.error {margin:auto; max-width: 305px;}
@@ -82,6 +112,14 @@ $primary-border-color: #D0CFD4;
 #error-msg {max-height:75px; overflow-y:auto;}
 #error-msg error {display:block;}
 
+.error-msg-wrapper {
+	.popover {background-color:$color-form-error-bg; border-radius:4px; border:1px solid $color-form-error-border; box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); padding:11px 18px; font-size:16px; text-align:center; max-width:300px;}
+	.popover.top>.arrow {border-top-color:$color-form-error-border;}
+	.popover.top>.arrow:after {border-top-color:$color-form-error-bg;}
+	.popover.bottom>.arrow {border-bottom-color:$color-form-error-border;}
+	.popover.bottom>.arrow:after {border-bottom-color:$color-form-error-bg;}
+}
+
 /*-- BUTTONS --*/
 input[type="submit"] {width:1px; height:1px; background-color:transparent; visibility:hidden; border:none; margin:0; padding:0;}
 .auth-container .si-button {border:0; position: absolute; top:91.5px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
@@ -91,6 +129,7 @@ input[type="submit"] {width:1px; height:1px; background-color:transparent; visib
 /*-- RESPONSIVE --*/
 @media only screen and (min-width: 768px) {
 	.si-body, .si-content {min-height:600px;}
+	.content-main {width:484px;}
 }
 
 @media only screen and (max-width: 767px) {

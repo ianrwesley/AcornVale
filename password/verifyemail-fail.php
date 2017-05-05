@@ -29,45 +29,32 @@ $pageTitle = "Recover Your Clara ID";
 		<?php include "../global/claraidnav.php"; ?>	
 		<header class="hero">
 			<div class="container">
-				<h1>Reset your password</h1>
+				<h1>Having trouble signing in?</h1>
 			</div>
 		</header>
 		<div class="page-content">
 			<div class="content-main">
 				<div class="content-heading">
-					<p class="description narrow">
-						Enter a new password below to regain access to your Clara account.
+					<h2 class="subtitle">
+						Enter your Clara&nbsp;ID to get started.
+					</h2>
+					<p class="description">
+						You’ve come to the right place to reset a forgotten password, unlock your account, or recover a Clara&nbsp;ID.
 					</p>
 				</div>
 				<div class="content-body">
-					<div class="password-input">
-								<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="new password" name="new-pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
-								<div class='sub-heading'>Your password must have:</div>
-								<div class='error error-one'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>8 or more characters</span>
-										<error></error>
-								</div>
-								<div class='error error-two'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>Upper &amp; lowercase letters</span>
-										<error></error>
-								</div>
-								<div class='error error-three success'>
-										<icon class='icon-checkmark'></icon>
-										<span class='message'>At least one number</span>
-										<error></error>
-								</div>
-								<span class='hint'>Avoid using a password that you use with other websites or that might be easy for someone else to guess.</span>
-								</div>">
-							</div>
-							<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="confirm password" name="confirm-pwd">
+					<div class="error-msg-wrapper">
+						<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12 has-error" placeholder="name@example.com" name="claraID" data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-content="drlivingstone@iassume.com is not a Clara&nbsp;ID.">
+					</div>
+					<div class="content-item">
+						<a href="find-claraid.php" class="button-compact">Forgot Clara ID?</a>
+					</div>
 				</div>
 			</div>
 			<div class="controls-footer">
 				<div class="button-group flow-controls">
 					<button type="button" role="link" class="button button-link primary-action pull-right">
-						<a href="../?passwordreset=true" class="button-link disabled">Continue</a>
+						<a href="verifyemail-success.php" class="button-link disabled">Continue</a>
 					</button>
 				</div>
 			</div>

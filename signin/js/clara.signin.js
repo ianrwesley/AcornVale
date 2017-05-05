@@ -90,12 +90,20 @@ $(document).ready(function () {
 		});
 	});
 	
-	$(".field-info").popover();
-	
 	$(".form-field-birthday").focus(function() {
 		$(this).attr('placeholder', 'mm/dd/yyyy');
 	}).blur(function() {
 		$(this).attr('placeholder', 'birthday');
 	});
+	
+	$("#pwd").popover({ 
+		content: function() {
+		  return $("#pwd-strength-content").html();
+		}
+	});
+	
+	$(".field-info").popover();
+	$(".form-pwd").popover();
+	$(".has-error").popover("show");
 	
 });

@@ -57,8 +57,28 @@ $pageTitle = "Create Your Clara ID";
 					</div>
 					<div class="row fieldset">
 						<div class="column lg-12">
-							<input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="password" name="pwd">
-							<input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="confirm password" name="confirm-pwd">
+							<div class="password-input">
+								<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="password" name="pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
+								<div class='sub-heading'>Your password must have:</div>
+								<div class='error error-one'>
+										<icon class='icon-checkmark'></icon>
+										<span class='message'>8 or more characters</span>
+										<error></error>
+								</div>
+								<div class='error error-two'>
+										<icon class='icon-checkmark'></icon>
+										<span class='message'>Upper &amp; lowercase letters</span>
+										<error></error>
+								</div>
+								<div class='error error-three success'>
+										<icon class='icon-checkmark'></icon>
+										<span class='message'>At least one number</span>
+										<error></error>
+								</div>
+								<span class='hint'>Avoid using a password that you use with other websites or that might be easy for someone else to guess.</span>
+								</div>">
+							</div>
+							<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="confirm password" name="confirm-pwd">
 						</div>
 					</div>
 					<div class="row">
@@ -86,9 +106,28 @@ $pageTitle = "Create Your Clara ID";
 			</div>
 			<div class="controls-footer">
 				<div class="button-group flow-controls">
-					<button type="button" role="link" class="button button-link primary-action pull-right">
+					<button type="button" role="link" class="button button-link primary-action pull-right" data-toggle="modal" data-target="#myModal">
 						Continue
 					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						  </div>
+						  <div class="modal-body">
+							...
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						  </div>
+						</div>
+					  </div>
+					</div>
 				</div>
 			</div>
 		</div>
