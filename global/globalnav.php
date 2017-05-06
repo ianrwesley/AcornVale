@@ -54,7 +54,7 @@ $rootDir = "/acorn-vale-03457798624180578193";
 		</aside>
 	</div>
 </nav>
-<div class="alert-curtain hidden">
+<!--div class="alert-curtain hidden">
 	<div class="popover-container alert">
 		<div class="popover">
 			<div class="popover-inner-content">
@@ -78,4 +78,4 @@ $rootDir = "/acorn-vale-03457798624180578193";
 			</div>
 		</div>
 	</div>
-</div>
+</div-->

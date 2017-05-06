@@ -37,7 +37,7 @@ $passwordReset = $_GET[ "passwordreset" ];
 		</div>		
 		<div class="container auth-container">
 				<div class="logo">
-					<img class="clara-si-logo" src="global/images/clara_logo_@2x.png" alt="Clara">
+					<img class="clara-si-logo" src="global/images/logo/clara_logo_@2x.png" alt="Clara">
 				</div>
 				<div class="container si-container">
 					<h1 class="si-container-title">Sign in to your Clara account</h1>

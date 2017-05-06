@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Prescriptions";
 $menuName = $pageTitle;
-$adminView = $_GET[ "admin" ];
+$patientDiscarded = $_GET[ "patientdiscarded" ];
 ?>
 
 <!doctype html>
@@ -18,6 +18,13 @@ $adminView = $_GET[ "admin" ];
 <body>
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
+		<div class="home-notification-banner <?php if ($patientDiscarded !== "true"){ echo "hidden"; } ?>">
+			<div class="home-notification-msg-wrapper">
+				<p class="home-notification-msg">
+				<?php if ($patientDiscarded == "true"){ echo "New patient successfully discarded."; } ?>
+				</p>
+			</div>
+		</div>
 		<div id="pick-patient-content" class="page-content">
 			<div class="flow-section">
 				<div class="container-xs centered">

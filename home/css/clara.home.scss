@@ -10,9 +10,16 @@ $darker-border-style: 1px solid #b8b8bc;
 .flow-section:last-child {border-bottom:none;}
 .container-xs {width:484px;}
 
+.controls-footer {margin-top:16px; font-size:16px; text-align:center;}
+
+/*-- NOTIFICATIONS --*/
+.home-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(0,204,86, 0.125);; padding:10px 0;}
+.home-notification-msg-wrapper {margin:0 auto; width:640px;}
+.home-notification-msg {color:#00cc56; text-align:center; font-size:14px; font-weight:500; margin:auto;}
+
 /*-- TYPOGRAPHY --*/
 .title h1 {text-align:center; line-height:140px; padding:0; margin:0; font-size:40px; font-weight:400;}
-.app-header h1 {text-align:center; line-height:1.2; padding:0; margin:0; font-size:36px; font-weight:200;}
+.app-header h1, .modal-header h1 {text-align:center; line-height:1.2; padding:0; margin:0; font-size:36px; font-weight:200;}
 .pg-label {font-size:24px; line-height:1.2; font-weight:500; letter-spacing:0.015em;}
 
 /*-- SELECTIZE OVERRIDES --*/
@@ -57,15 +64,14 @@ $darker-border-style: 1px solid #b8b8bc;
 .app-section-header {padding:22px 0 26px;}
 .app-section-body {max-width:1200px; margin:auto; padding-left:20px; padding-right:20px; box-sizing:content-box; margin-bottom:54px;
 	.flow-section:first-child {padding-top:0;}
-	.section-title {font-size:18px; font-weight: 500; margin-bottom:16px; line-height:1;}
+	.section-title {font-size:18px; font-weight: 500; margin-top:0; margin-bottom:16px; line-height:1;}
 }
 
 .lg-6.app-left {padding-right:86px; border-right:$primary-border-style;}
 .lg-6.app-right {padding-left:86px;}
 
 .confirm-info {border-radius:4px; background-color: #F8F8F8; padding:24px 24px;
-	.header {font-size:24px; font-weight:500;}
-	.controls-footer {margin-top:16px; font-size:16px;}
+	.header {font-size:24px; font-weight:500; margin:0;}
 	.confirm-info-flow {font-size:18px; line-height:1.2;
 		.row {padding:6px 0;}
 		.confirm-info-item {padding:0 18px; border-left:$darker-border-style;}

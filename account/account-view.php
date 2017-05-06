@@ -11,8 +11,8 @@ $adminView = $_GET[ "admin" ];
 	<meta charset="UTF-8">
 	<title>Manage your Keystone ID</title>
 	<?php include "../global/globalui.php"; ?>
-	<script type="text/javascript" src="js/keystone.account.js"></script>
-	<link rel="stylesheet" href="css/keystone.account.css" type="text/css">
+	<script type="text/javascript" src="js/clara.account.js"></script>
+	<link rel="stylesheet" href="css/clara.account.css" type="text/css">
 </head>
 
 <body>

@@ -134,6 +134,13 @@ icon.xl {font-size:100px;}
 .modal {z-index:9999;}
 .modal-backdrop {z-index:9988;}
 .modal-dialog {margin-top:100px;}
+.modal-dialog.caution {margin-top:160px;}
+.modal-dialog.caution .modal-content {text-align:center;}
+.modal-content {padding:36px;}
+.modal-header, .modal-body {padding:0; border:none;}
+.modal-header {margin-bottom:16px;}
+.modal-body {padding-bottom:8px;}
+.modal-dialog.caution .modal-header h1 {display:inline-block; padding-left:64px; background:url(../images/caution.png) no-repeat left; background-size: contain;}
 
 /*-- FORMS --*/
 input[type="text"], input[type="password"], input[type="email"], select, checkbox {-webkit-appearance:none;}
@@ -150,8 +157,8 @@ input[type="text"], input[type="password"], input[type="email"], select, checkbo
 .fieldgroup .input-wrapper:last-child .control, .input-wrapper:only-child .control {border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
 
 .fieldgroup .form-text {position:relative; display:table-cell; float:left; border-radius: 0; border-right:none;}
-.fieldgroup .form-text.optional:first-child, .fieldgroup .select-wrapper.optional:first-child .form-text, .fieldgroup .input-wrapper:first-child .form-text, .input-wrapper:first-child .form-text {border-top-left-radius:4px; border-bottom-left-radius:4px;}
-.fieldgroup .form-text:last-child, .fieldgroup .select-wrapper:last-child .form-text, .fieldgroup .input-wrapper:last-child .form-text, .input-wrapper:last-child .form-text {border-top-right-radius:4px; border-bottom-right-radius:4px; border-right:1px solid #D0CFD4;}
+.fieldgroup .form-text.optional:first-child, .fieldgroup .select-wrapper.optional:first-child .form-text, .fieldgroup .input-wrapper:first-child .form-text, .input-wrapper:first-child .form-text, .fieldgroup .error-msg-wrapper:first-child .form-text {border-radius:4px 0px 0px 4px;}
+.fieldgroup .form-text:last-child, .fieldgroup .select-wrapper:last-child .form-text, .fieldgroup .input-wrapper:last-child .form-text, .input-wrapper:last-child .form-text, .fieldgroup .error-msg-wrapper:last-child .form-text {border-radius:0px 4px 4px 0px; border-right:1px solid #D0CFD4;}
 .fieldgroup .select-wrapper .form-text, .fieldgroup .input-wrapper .form-text, .input-wrapper .form-text {border-radius: 0; border-right:none;}
 .fieldgroup .select-wrapper:last-child .form-text, .fieldgroup .input-wrapper:last-child .form-text, .input-wrapper:last-child .form-text {border-right:1px solid #D0CFD4;}
 .fieldgroup .form-text:focus {z-index:2; border:1px solid #AE00D8 !important;}
@@ -160,9 +167,9 @@ input::-webkit-input-placeholder, input::placeholder, select, .select-wrapper:af
 input.optional::-webkit-input-placeholder, input.optional::placeholder, select.optional, .select-wrapper.optional select {font-style: italic; color:rgba(156,150,177,0.4)}
 .select-wrapper.selected select {color:#140A29; font-style:normal;}
 
-.fieldcontrols .checkbox-wrapper {display:inline-block; height:40px; margin-bottom:16px; vertical-align:middle; padding-left:12px; padding-top:6px; color:#9C96B1; float:right;}
-.fieldcontrols .checkbox-wrapper .checkbox {position:relative; top:-1px;}
-.checkbox + label {padding-left:8px; line-height:1;}
+.fieldcontrols .checkbox-wrapper {display:inline-block; height:40px; margin-bottom:16px; vertical-align:middle; padding-left:16px; padding-top:6px; color:#9C96B1; float:right;}
+.fieldcontrols .checkbox-wrapper .checkbox {position:relative; top:-1px; margin:0; display:inline-block;}
+.checkbox + label {padding-left:8px; line-height:1; font-weight:normal;}
 
 .search-field-wrapper {position:relative;}
 .search-field-wrapper:before {font-family:"keystone-icons"; content: "\6d"; font-size:18px; color:#817A92; position:absolute; top:5px; right:12px;}
@@ -174,16 +181,6 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
 .field-info-wrapper .popover-content {padding:0;}
 .field-info-wrapper .popover.top>.arrow:after {border-top-color:#F8F8F8;}
 .field-info-wrapper .popover.top>.arrow {border-top-color:transparent;}
-
-/*-- FLEX FORMS --*/
-.form-flex-control, .form-flex-textbox {font-family:"Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:15px; text-align:left; border:1px solid #D6D6D6; background:white; vertical-align:middle; box-sizing:border-box; background-clip:padding-box; float:left; z-index:1;}
-.form-flex-control.short, .form-flex-textbox.short {margin-bottom:6px;}
-.flex-field-wrapper .flex-select-wrapper .form-flex-control, .flex-field-wrapper .form-flex-textbox {border-radius:0; border-left:0;}
-.flex-field-wrapper .select-wrapper:first-child .form-flex-control, .flex-field-wrapper .form-flex-textbox:first-child, .flex-field-wrapper .flex-select-wrapper:first-child .form-flex-control {border-left:1px solid #D6D6D6; border-top-left-radius:5px; border-bottom-left-radius:5px; border-top-right-radius:0; border-bottom-right-radius:0; /*border-right:none;*/ z-index:-1;}
-.flex-field-wrapper .flex-select-wrapper:last-child .form-flex-control, .flex-field-wrapper .select-wrapper:last-child .form-flex-control {border-top-right-radius:5px; border-bottom-right-radius:5px; border-top-left-radius:0; border-bottom-left-radius:0; border-left:none; z-index:-1;}
-.form-flex-control:focus, .form-flex-textbox:focus {/*border:1px solid #BF1752 !important; box-shadow:inset 0 0 0 2px rgba(191, 23, 82, 0.3);*/ border:1px solid #4400c6 !important; box-shadow:inset 0 0 0 2px rgba(68, 0, 198, 0.2); outline:0;}
-
-.form-control.nomargin, .form-textbox.nomargin, .form-flex-control.nomargin, .form-flex-textbox.nomargin {margin:0;}
 
 /*-- BUTTONS --*/
 button a {text-decoration:none; display:block; width:100%; height:100%;}
@@ -197,10 +194,13 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 .button-link.secondary-action, .button-link.secondary-action a {color:#9C96B1;}
 .button-link:hover .icon {text-decoration:none; pointer-events: none;}
 
-.button-flat {background:#00D6BA; border-color:transparent; color:#FFFFFF; font-weight:500; padding:8px 16px;}
+.button-flat {border-color:transparent; color:#FFFFFF; font-weight:500; padding:8px 16px;}
 .button-flat a {color:#FFFFFF; text-decoration:none;}
 .button-flat a:focus {outline:none;}
 .button-flat:hover {text-decoration:none;}
+
+.button-flat.primary-action {background:#00D6BA;}
+.button-flat.primary-action.caution, .button-flat.primary-action.warning {background:#ff0058;}
 
 .button-done, .button-edit {text-align:right; float:right; padding:5px 15px;}
 .button-done a {text-decoration:none;}
@@ -262,9 +262,9 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 #globalnav .gn-item {display:inline-block; position:relative; height:48px; z-index:1; vertical-align:top;}
 #globalnav .gn-link {font-size:14px; line-height:3.33333; opacity:1; color:#fff; position:relative; z-index:1; display:inline-block; padding:2px 15px 0; height:46px; background:no-repeat; text-decoration:none; white-space:nowrap; transition:opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); outline:none; outline-offset:-7px; font-weight:400; cursor:pointer;}
 #globalnav .gn-link.active, #globalnav .gn-link:hover {opacity: .55;}
-#globalnav .gn-link-clara {background-repeat:no-repeat; background-size:60px 20px; background-image: url(../../global/images/clara_logo-inverted.svg); background-position: center; width:60px; height:48px; padding-top:0; padding-bottom:0; left:-4px;}
-#globalnav .gn-link-search {background-repeat:no-repeat; background-size:20px 48px; background-image: url(../images/search.svg); background-position: center; width: 20px;}
-#globalnav .gn-link-account {background-repeat:no-repeat; background-size:20px 48px; background-image: url(../images/account.svg); background-position: center; width: 20px;}
+#globalnav .gn-link-clara {background-repeat:no-repeat; background-size:60px 20px; background-image: url(../../global/images/logo/clara_logo-inverted.svg); background-position: center; width:60px; height:48px; padding-top:0; padding-bottom:0; left:-4px;}
+#globalnav .gn-link-search {background-repeat:no-repeat; background-size:20px 48px; background-image: url(../../global/images/search.svg); background-position: center; width: 20px;}
+#globalnav .gn-link-account {background-repeat:no-repeat; background-size:20px 48px; background-image: url(../../global/images/account.svg); background-position: center; width: 20px;}
 #globalnav .gn-list .gn-link-account {background-position: 160px center; padding-right:45px; width:auto;}
 #globalnav input, #globalnav button {border:none; background-color:transparent;}
 #globalnav .gn-content {margin:0 auto; max-width:1200px; padding:0 20px; position:relative; z-index:2;}
