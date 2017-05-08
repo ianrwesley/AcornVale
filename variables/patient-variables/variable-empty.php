@@ -15,6 +15,9 @@ $weightString = "$weight $weightUnit";
 $email = "";
 $phone = "";
 $allergies = "";
+$allergiesArray = explode(', ', $allergies);
 $homemeds = "";
+$homemedsArray = explode(', ', $homemeds);
 $diagnoses = "";
+$diagnosesArray = explode(', ', $diagnoses);
 ?>

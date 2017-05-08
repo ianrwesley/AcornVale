@@ -1,9 +1,7 @@
 <?php
 $pageTitle = "Prescriptions";
-$subnavTitle = "Add new patient";
-$subnavProgress = 0;
 $primaryButtonLabel = "Add medical history…";
-$confirmInfoTitle = "New Patient";
+$confirmInfoTitle = "New Patient Confirmation";
 ?>
 
 <!doctype html>
@@ -17,23 +15,20 @@ $confirmInfoTitle = "New Patient";
 	<link rel="stylesheet" href="../home/css/clara.home.css" type="text/css">
 </head>
 
-<body class="rx-app">
+<body>
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<?php include "rx-subnav.php"; ?>
 		<div id="add-patient-content" class="page-content">
-			<!--div class="app-section-header">
+			<div class="app-section-header">
 				<div class="container-lg centered">
 					<div class="app-header">
 						<h1>Add new patient</h1>	
 					</div>
 				</div>
-			</div-->
-		<div class="app-section-body-wrapper">
-			<div class="app-background-left">&nbsp;</div><div class="app-background-right">&nbsp;</div>
+			</div>
 			<div class="app-section-body clearfix">
 				<div class="row">
-					<div class="column lg-6 app-left-col">
+					<div class="column lg-6 app-left">
 						<div class="flow-section">
 							<h2 class="section-title">Demographics</h2>
 							<div class="fieldgroup">
@@ -45,10 +40,7 @@ $confirmInfoTitle = "New Patient";
 									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="last name" name="last-name" value="<?php echo $lastName ?>">
 									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Last name is required.</div>
 								</div>
-								<div class="error-msg-wrapper lg-4 <?php if ($fail == "true"){ echo "has-error"; } ?>">
-									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="middle name" name="middle-name" value="<?php echo $middleName ?>">
-									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Middle name is required.</div>
-								</div>
+								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-4 optional" placeholder="middle name" name="middle-name" value="<?php echo $middleName ?>">
 							</div>
 							<div class="error-msg-wrapper lg-12 <?php if ($fail == "true"){ echo "has-error"; } ?>">
 								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="address" name="address" value="<?php echo $address ?>">
@@ -128,15 +120,12 @@ $confirmInfoTitle = "New Patient";
 									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="birthday" name="birthday"  value="<?php echo $birthday ?>">
 									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Birthday is required.</div>
 								</div>
-								<div class="error-msg-wrapper select lg-4 <?php if ($fail == "true"){ echo "has-error"; } ?>">
-									<div class="select-wrapper lg-12 <?php if ($gender !== ""){ echo "selected"; } ?>">
-										<select class="form-text">
-											<option value="" <?php if ($gender == ""){ echo "selected"; } ?> disabled>gender</option>
-											<option value="Male" <?php if ($gender == "Male"){ echo "selected"; } ?>>Male</option>
-											<option value="Female" <?php if ($gender == "Female"){ echo "selected"; } ?>>Female</option>
-										</select>
-									</div>
-									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Gender is required.</div>
+								<div class="select-wrapper lg-4 optional <?php if ($gender !== ""){ echo "selected"; } ?>">
+									<select class="form-text">
+										<option value="" <?php if ($gender == ""){ echo "selected"; } ?> disabled>gender</option>
+										<option value="Male" <?php if ($gender == "Male"){ echo "selected"; } ?>>Male</option>
+										<option value="Female" <?php if ($gender == "Female"){ echo "selected"; } ?>>Female</option>
+									</select>
 								</div>
 								<div class="input-wrapper has-controls lg-4">
 									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text optional has-controls" placeholder="weight" name="weight" value="<?php echo $weight ?>">
@@ -153,7 +142,7 @@ $confirmInfoTitle = "New Patient";
 								<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-8 optional" placeholder="email" name="email" value="<?php echo $email ?>">
 							</div>
 						</div>
-						<!--div class="flow-section">
+						<div class="flow-section">
 							<h2 class="section-title">Medical History</h2>
 							<div class="fieldcontrols">
 								<input type="text" id="add-allergies" placeholder="<?php if ($allergies == "None"){ echo "No "; } ?>allergies" value="<?php echo $allergies ?>">
@@ -173,5 +162,5 @@ $confirmInfoTitle = "New Patient";
 									<input type="checkbox" id="no-diagnoses-check" class="checkbox" <?php if ($diagnoses == "None"){ echo "checked"; } ?>><label for="no-diagnoses-check">None</label>
 								</div>
 							</div>
-						</div-->
+						</div>
 					</div>

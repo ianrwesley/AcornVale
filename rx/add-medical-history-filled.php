@@ -1,12 +1,13 @@
 <?php include "../variables/patient-variables/variable-william-woolworth-wallace-demographics.php"; ?>
+<?php include "../variables/patient-variables/variable-william-woolworth-wallace-medhistory.php"; ?>
 
-<?php include "add-new-patient-body.php"; ?>
+<?php include "add-medical-history-body.php"; ?>
 					<div class="column lg-6 app-right-col">
 						<div class="flow-section">
 							<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
 							<div class="confirm-info">
 								<div class="header filled"><?php echo $fullName ?></div>
-								<div class="confirm-info-flow first last">
+								<div class="confirm-info-flow first">
 									<div class="row clearfix">
 										<div class="column lg-12">
 											<span class="confirm-info-item first"><?php echo $birthday ?></span><span class="confirm-info-item"><?php echo $gender ?></span><span class="confirm-info-item"><?php echo $weightString ?></span>
@@ -25,13 +26,31 @@
 										</div>
 									</div>
 								</div>
+								<div class="confirm-info-flow last">
+									<div class="row clearfix">
+										<div class="column lg-6">
+											<h3 class="row-header">Allergies</h3>
+											<span><?php echo $allergies ?></span><br>
+										</div>
+										<div class="column lg-6">
+											<h3 class="row-header">Home Medications</h3>
+											<span><?php echo $homemeds ?></span><br>
+										</div>
+									</div>
+									<div class="row clearfix">
+										<div class="column lg-12">
+											<h3 class="row-header">Diagnoses or Pre-existing Conditions</h3>
+											<span><?php echo $diagnoses ?></span><br>
+										</div>
+									</div>
+								</div>
 								<div class="controls-footer clearfix">
 									<div class="button-group flow-controls pull-left">
 										<button type="button" role="link" class="button button-link secondary-action" data-toggle="modal" data-target="#cancelConfirm">
 											Cancel
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action">
-											<a href="add-medical-history.php"><?php echo $primaryButtonLabel ?></a>
+											<a href=""><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>

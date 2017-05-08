@@ -1,4 +1,150 @@
 /*-- LAYOUT --*/
+.subnav {
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 48px; }
+
+#rx-subnav * {
+  box-sizing: content-box;
+  pointer-events: auto;
+  margin: 0;
+  padding: 0; }
+
+#rx-subnav {
+  border-bottom: 1px solid #D0CFD4;
+  z-index: 6000; }
+  #rx-subnav .gn-content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2; }
+  #rx-subnav .gn-list {
+    cursor: default;
+    margin: 0 -10px;
+    padding: 0;
+    width: auto;
+    height: 60px;
+    text-align: center;
+    list-style: none; }
+  #rx-subnav .gn-item {
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    z-index: 1;
+    vertical-align: top; }
+  #rx-subnav .gn-link {
+    font-size: 12px;
+    line-height: 3.33333;
+    color: #140A29;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 9px 20px 0;
+    height: 51px;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    outline: none;
+    outline-offset: -7px;
+    font-weight: 400;
+    cursor: pointer; }
+  #rx-subnav .gn-text {
+    opacity: .5; }
+  #rx-subnav .gn-link.active .gn-text {
+    opacity: 1; }
+  #rx-subnav .gn-link .icon-progress, #rx-subnav .gn-link .gn-text {
+    vertical-align: middle; }
+  #rx-subnav .gn-link .icon-progress {
+    font-size: 14px;
+    padding-right: 6px; }
+  #rx-subnav .gn-link .icon-progress.incomplete:before {
+    content: "\77";
+    color: #9C96B1; }
+  #rx-subnav .gn-link .icon-progress.complete:before {
+    content: "\6f";
+    color: #00CC56; }
+
+.rx-app .page-content {
+  padding-top: 108px; }
+.rx-app .fieldcontrols .selectize-control {
+  width: 83.33333%;
+  display: inline-block;
+  height: 40px;
+  margin-bottom: 16px; }
+.rx-app .fieldcontrols .checkbox-wrapper {
+  display: inline-block;
+  height: 40px;
+  margin-bottom: 16px;
+  vertical-align: middle;
+  padding-left: 16px;
+  padding-top: 6px;
+  color: #9C96B1;
+  float: right; }
+.rx-app .fieldcontrols .checkbox-wrapper .checkbox {
+  position: relative;
+  top: -1px;
+  margin: 0;
+  display: inline-block; }
+.rx-app .checkbox + label {
+  padding-left: 8px;
+  line-height: 1;
+  font-weight: normal; }
+.rx-app .list-values {
+  width: 100%; }
+.rx-app .ordered-list {
+  margin-bottom: 0;
+  list-style-position: inside;
+  list-style-type: none;
+  margin-left: 0; }
+.rx-app .ordered-list li {
+  padding: 10px 0;
+  height: 40px;
+  line-height: 1.2;
+  border-bottom: 1px solid #D0CFD4; }
+.rx-app .ordered-list li:last-of-type {
+  border-bottom: 0; }
+.rx-app .fieldcontrols .list-populate .selectize-control, .rx-app .fieldcontrols .list-populate .checkbox-wrapper {
+  margin-bottom: 10px; }
+
+.patient-medical-history .fieldcontrols {
+  padding: 24px 20px 18px;
+  margin-left: -20px;
+  margin-right: -20px; }
+  .patient-medical-history .fieldcontrols .list-item-controls {
+    width: 80px;
+    height: 20px; }
+.patient-medical-history .fieldcontrols.first {
+  padding-top: 0; }
+.patient-medical-history .list-item-controls.pull-right .item-control-button {
+  float: right;
+  vertical-align: middle;
+  margin-left: 6px; }
+.patient-medical-history .item-control-button {
+  width: 20px;
+  height: 20px;
+  font-family: "clara-icons";
+  background: none;
+  border: none;
+  font-size: 18px;
+  opacity: 0.5;
+  transition: opacity .25s ease; }
+.patient-medical-history .item-control-button:hover {
+  opacity: 1; }
+.patient-medical-history .item-edit:before {
+  content: "\72"; }
+.patient-medical-history .item-delete:before {
+  content: "\71"; }
+
+.allergies-section, .diagnoses-section {
+  background: #fff; }
+
+.homemeds-section {
+  background: #F8F8F8; }
+
 .page-content {
   padding-top: 48px;
   padding-bottom: 54px; }
@@ -16,7 +162,7 @@
   width: 484px; }
 
 .controls-footer {
-  margin-top: 16px;
+  margin-top: 20px;
   font-size: 16px;
   text-align: center; }
 
@@ -181,7 +327,7 @@
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: content-box;
-  margin-bottom: 54px; }
+  /*margin-bottom:54px;*/ }
   .app-section-body .flow-section:first-child {
     padding-top: 0; }
   .app-section-body .section-title {
@@ -191,38 +337,69 @@
     margin-bottom: 16px;
     line-height: 1; }
 
-.lg-6.app-left {
-  padding-right: 86px;
-  border-right: 1px solid #D0CFD4; }
+.app-background-left, .app-background-right {
+  width: 50%;
+  position: absolute;
+  top: 108px;
+  bottom: 0; }
 
-.lg-6.app-right {
-  padding-left: 86px; }
+.app-background-left {
+  left: 0; }
+
+.app-background-right {
+  right: 0;
+  border-left: 1px solid #D0CFD4;
+  background-color: #F8F8F8; }
+
+.app-left-col, .app-right-col {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.lg-6.app-left-col {
+  padding-right: 80px;
+  /*border-right:$border-primary;*/ }
+
+.lg-6.app-right-col {
+  padding-left: 80px; }
 
 .confirm-info {
   border-radius: 4px;
   background-color: #F8F8F8;
-  padding: 24px 24px; }
+  padding: 0px; }
   .confirm-info .header {
     font-size: 24px;
     font-weight: 500;
-    margin: 0; }
+    margin: 0;
+    line-height: 1; }
+  .confirm-info .header.filled {
+    color: #007FFF; }
   .confirm-info .confirm-info-flow {
-    font-size: 18px;
-    line-height: 1.2; }
+    font-size: 16px;
+    line-height: 1.33333;
+    padding: 10px 0;
+    border-top: 1px solid #D0CFD4; }
     .confirm-info .confirm-info-flow .row {
       padding: 6px 0; }
+    .confirm-info .confirm-info-flow .row-header {
+      margin: 0;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 1.33333;
+      color: #9C96B1; }
     .confirm-info .confirm-info-flow .confirm-info-item {
       padding: 0 18px;
       border-left: 1px solid #b8b8bc; }
     .confirm-info .confirm-info-flow .confirm-info-item.first {
       padding-left: 0;
       border-left: none; }
+  .confirm-info .confirm-info-flow.first {
+    border-top: none;
+    padding-top: 0; }
+  .confirm-info .confirm-info-flow.last {
+    padding-bottom: 0; }
+  .confirm-info .button-group.pull-left .button-link:first-child {
+    padding-left: 0; }
 
 .confirm-info.empty .header {
   font-weight: 200; }
-
-#add-patient-content .fieldcontrols .selectize-control {
-  width: 83.33333%;
-  display: inline-block;
-  height: 40px;
-  margin-bottom: 16px; }

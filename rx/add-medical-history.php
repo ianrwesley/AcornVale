@@ -1,6 +1,7 @@
+<?php include "../variables/patient-variables/variable-empty.php"; ?>
 <?php include "../variables/patient-variables/variable-william-woolworth-wallace-demographics.php"; ?>
 
-<?php include "add-new-patient-body.php"; ?>
+<?php include "add-medical-history-body.php"; ?>
 					<div class="column lg-6 app-right-col">
 						<div class="flow-section">
 							<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
@@ -30,8 +31,8 @@
 										<button type="button" role="link" class="button button-link secondary-action" data-toggle="modal" data-target="#cancelConfirm">
 											Cancel
 										</button>
-										<button type="button" role="link" class="button button-flat primary-action">
-											<a href="add-medical-history.php"><?php echo $primaryButtonLabel ?></a>
+										<button type="button" role="link" class="button button-flat primary-action disabled">
+											<a href="add-medical-history-filled.php"><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>
