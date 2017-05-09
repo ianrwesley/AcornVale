@@ -7,7 +7,7 @@
 							<div class="confirm-info empty">
 								<h3 class="header">Patient details are displayed here</h3>
 								<div class="controls-footer clearfix">
-									<div class="button-group flow-controls pull-left">
+									<div class="button-group flow-controls pull-right">
 										<button type="button" role="link" class="button button-link secondary-action">
 											<a href="../home/home-view.php">Cancel</a>
 										</button>

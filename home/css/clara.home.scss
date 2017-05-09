@@ -6,9 +6,10 @@ $xs-container-width: 484px;
 $column-spacing: 15px;
 
 $globalnav-height: 48px;
+$subnav-height: 60px;
+$globalfooter-height: 54px;
 $input-height: 40px;
 $input-spacing: 16px;
-$subnav-height: 60px;
 
 $border-radius: 4px;
 $button-radius: 5px;
@@ -30,6 +31,8 @@ $color-font-primary: #140A29;
 $color-font-placeholder: #9C96B1;
 $color-link-primary: #007FFF;
 $color-link-focus-outline: rgba(206, 0, 255, 0.4);
+$color-form-error-bg: #FAEEB6;
+$color-form-error-border: rgba(183, 148, 0, 0.55);
 $color-border-primary: #D0CFD4;
 
 $color-button-primary: #00D6BA;
@@ -39,7 +42,7 @@ $color-success: #00CC56;
 $color-panel: #F8F8F8;
 
 $border-primary: 1px solid #D0CFD4;
-$border-darker: 1px solid #b8b8bc;
+$border-darker: 1px solid #9C9B9F;
 
 /*-- LAYOUT --*/
 .subnav {background:rgba(255,255,255,.9); width:100%; height:$subnav-height; position:absolute; top:48px;}
@@ -48,41 +51,71 @@ $border-darker: 1px solid #b8b8bc;
 	.gn-content {margin: 0 auto; max-width: 1200px; padding: 0 20px; position: relative; z-index: 2;}
 	.gn-list {cursor: default; margin: 0 -10px; padding: 0; width: auto; height:$subnav-height; text-align: center; list-style: none;}
 	.gn-item {display: inline-block; position: relative; height: $subnav-height; z-index: 1; vertical-align: top;}
-	.gn-link {font-size:12px; line-height:3.33333; color:$color-font-primary; position:relative; z-index:1; display:inline-block; padding:9px 20px 0; height:51px; background:no-repeat; text-decoration:none; white-space:nowrap; transition:opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); outline:none; outline-offset:-7px; font-weight:$font-weight-book; cursor:pointer;}
+	.gn-link {font-size:12px; line-height:3.33333; color:$color-font-primary; position:relative; z-index:1; display:inline-block; padding:9px 20px 0; height:51px; background:no-repeat; text-decoration:none; white-space:nowrap; transition:opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); outline:none; outline-offset:-7px; font-weight:$font-weight-book; cursor:default; pointer-events: none;}
 	.gn-text {opacity:.5;}
-	.gn-link.active .gn-text {opacity:1;}
+	.gn-link.active .gn-text {opacity:1; padding-bottom:2px; border-bottom:2px solid $color-font-primary;}
 	.gn-link .icon-progress, .gn-link .gn-text {vertical-align:middle;}
 	.gn-link .icon-progress {font-size:14px; padding-right:6px;}
-	.gn-link .icon-progress.incomplete:before {content: "\77"; color:$color-font-placeholder;}
-	.gn-link .icon-progress.complete:before {content: "\6f"; color:$color-success;}
+	.gn-link .icon-progress.incomplete:before {content: "\69"; color:$color-font-placeholder;}
+	.gn-link .icon-progress.complete:before {content: "\64"; color:$color-success;}
 }
 
 .rx-app {
 	.page-content {padding-top:108px;}
+	.row-header {margin:0; font-weight:normal; text-transform: uppercase; font-size:14px; line-height:1.33333; color:$color-font-placeholder;}
+	.section-title {font-size:18px; font-weight: 500; margin-top:0; margin-bottom:16px; line-height:1;}
+	
+	.fieldcontrols .list-populate .selectize-control, .fieldcontrols .list-populate .checkbox-wrapper {margin-bottom:10px;}
 	.fieldcontrols .selectize-control {width:83.33333%; display:inline-block; height:40px; margin-bottom:$input-spacing;}
+	.fieldcontrols .error-msg-wrapper .selectize-control {width:100%;}
 	.fieldcontrols .checkbox-wrapper {display:inline-block; height:$input-height; margin-bottom:$input-spacing; vertical-align:middle; padding-left:16px; padding-top:6px; color:$color-font-placeholder; float:right;}
 	.fieldcontrols .checkbox-wrapper .checkbox {position:relative; top:-1px; margin:0; display:inline-block;}
 	.checkbox + label {padding-left:8px; line-height:1; font-weight:normal;}
+	
 	.list-values {width:100%;}
 	.ordered-list {margin-bottom:0; list-style-position: inside; list-style-type: none; margin-left:0;}
 	.ordered-list li {padding:10px 0; height:40px; line-height:1.2; border-bottom:$border-primary;}
 	.ordered-list li:last-of-type {border-bottom:0;}
-	.fieldcontrols .list-populate .selectize-control, .fieldcontrols .list-populate .checkbox-wrapper {margin-bottom:10px;}
-}
-
-.patient-medical-history {
-	.fieldcontrols {padding:24px 20px 18px; margin-left:-20px; margin-right:-20px;
-		.list-item-controls {width:80px; height:20px;}
+	
+	.patient-medical-history {
+		.fieldcontrols {padding:24px 20px 18px; margin-left:-20px; margin-right:-20px;
+			.list-item-controls {height:20px; display:flex; align-items: flex-end;}
+		}
+		.fieldcontrols.first {padding-top:0;}
+		.list-item-controls.pull-right .item-control-button {margin-left:6px;}
+		.item-control-button {width:20px; height:20px; font-family:$clara-icons-font-stack; background:none; border:none; font-size:16px; opacity:0.4; transition:opacity .25s ease;}
+		.item-control-button:hover {opacity:1;}
+		.item-edit:before {content:"\6c";}
+		.item-delete:before {content:"\6b";}
+		.allergies-section, .diagnoses-section {background:#fff;}
+		.homemeds-section {background:$color-panel;}
+		.allergies-section {
+			.allergy, .rxn, .rxn-label {display:inline-block; vertical-align: middle;}
+			.allergy, .rxn {white-space: nowrap; overflow:hidden; text-overflow: ellipsis;}
+			.allergy {width:25%; margin-right:16px;}
+			.rxn {width:50%;}
+			.rxn-label {@extend .row-header; line-height:1.2; margin-right:4px;}
+		}
 	}
-	.fieldcontrols.first {padding-top:0;}
-	.list-item-controls.pull-right .item-control-button {float:right; vertical-align:middle; margin-left:6px;}
-	.item-control-button {width:20px; height:20px; font-family:$clara-icons-font-stack; background:none; border:none; font-size:18px; opacity:0.5; transition:opacity .25s ease;}
-	.item-control-button:hover {opacity:1;}
-	.item-edit:before {content:"\72";}
-	.item-delete:before {content:"\71";}
+	
+	.edit-patient-button {text-align: right;}
+	.edit-patient-content { padding-top:28px;
+		.flow-section:first-child {padding-top:8px;}
+		.flow-section {padding:16px 0;}
+		.modal-header h1 {color:$color-link-primary;}
+		.modal-body {padding:0;}
+		.controls-footer {margin-top:0;}
+		.patient-medical-history {padding-bottom:0;
+			.fieldcontrols {padding-top:18px; padding-bottom:12px;}
+			.fieldcontrols.first {padding-top:0;}
+		}
+		.allergies-section {
+			.ordered-list li {height:61px;}
+			.list-item-controls {height:41px; padding-bottom:4px;}
+			.rxn-label {margin-right:8px;}
+		}
+	}
 }
-.allergies-section, .diagnoses-section {background:#fff;}
-.homemeds-section {background:$color-panel;}
 
 .page-content {padding-top:48px; padding-bottom:54px;}
 .flow-section {max-width:$xl-screen-width; margin:auto; padding:30px 0; border-bottom:$border-primary;}
@@ -91,9 +124,11 @@ $border-darker: 1px solid #b8b8bc;
 .controls-footer {margin-top:20px; font-size:16px; text-align:center;}
 
 /*-- NOTIFICATIONS --*/
-.home-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(0,204,86, 0.125);; padding:10px 0;}
-.home-notification-msg-wrapper {margin:0 auto; width:640px;}
-.home-notification-msg {color:#00cc56; text-align:center; font-size:14px; font-weight:500; margin:auto;}
+.home-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(174,0,216, 0.10);; padding:10px 0;
+	.home-notification-msg-wrapper {margin:0 auto; width:640px;}
+	.home-notification-msg {color:$color-font-primary; text-align:center; font-size:14px; margin:auto;}
+	.home-notification-icon {margin-right:8px; position:relative; top:2px;}
+}
 
 /*-- TYPOGRAPHY --*/
 .title h1 {text-align:center; line-height:140px; padding:0; margin:0; font-size:40px; font-weight:400;}
@@ -118,12 +153,16 @@ $border-darker: 1px solid #b8b8bc;
 .selectize-control.plugin-remove_button [data-value] .remove {border:none; padding-right:4px;}
 .selectize-control.plugin-remove_button [data-value] .remove:hover {background: none; text-shadow: 0px 1px 2px rgba(0, 0, 0, .75);}
 
+.selectize-dropdown div[data-value="Add new patient"]:before {font-family: $clara-icons-font-stack; content:"\61"; font-size:16px; margin-right:8px; display:inline-block; vertical-align: text-bottom;}
+.selectize-dropdown div[data-value="Add new patient"]:after {content:"\2026"; margin-left:1px;}
+.selectize-dropdown div[data-value="Add new patient"] .label {display: inline-block; vertical-align: text-bottom;}
+
 /*-- FORM VALIDATION --*/
 .error-msg-wrapper {position:relative; float:left;}
 .error-msg {display:none; color:#ff0058; font-size:13px; padding:0 12px; margin-bottom:10px;}
 .error-msg-wrapper.has-error {
 	.form-text {margin-bottom:4px;}
-	.form-text::-webkit-input-placeholder, .form-text::placeholder, select, .select-wrapper:before {color:#ff0058;}
+	input::-webkit-input-placeholder, input::placeholder, select, .select-wrapper:before {color:#ff0058;}
 	.error-msg.show {display:block;}
 }
 .error-msg-wrapper.has-error:before {content:""; position:absolute; top:16px; right:12px; height:8px; width:8px; border-radius:4px; background-color:#ff0058; z-index:99;}
@@ -142,7 +181,6 @@ $border-darker: 1px solid #b8b8bc;
 .app-section-header {padding:22px 0 26px;}
 .app-section-body {max-width:$xl-screen-width; margin:auto; padding-left:20px; padding-right:20px; box-sizing:content-box; /*margin-bottom:54px;*/
 	.flow-section:first-child {padding-top:0;}
-	.section-title {font-size:18px; font-weight: 500; margin-top:0; margin-bottom:16px; line-height:1;}
 }
 
 .app-background-left, .app-background-right {width:50%; position:absolute; top:108px; bottom:0;}
@@ -155,16 +193,16 @@ $border-darker: 1px solid #b8b8bc;
 
 .confirm-info {border-radius:4px; background-color: $color-panel; padding:0px;
 	.header {font-size:24px; font-weight:500; margin:0; line-height:1;}
-	.header.filled {color:$color-link-primary;}
+	/*.header.filled {color:$color-link-primary;}*/
 	.confirm-info-flow {font-size:16px; line-height:1.33333; padding:10px 0; border-top:$border-primary;
 		.row {padding:6px 0;}
-		.row-header {margin:0; font-weight:normal; text-transform: uppercase; font-size:14px; line-height:1.33333; color:$color-font-placeholder;}
 		.confirm-info-item {padding:0 18px; border-left:$border-darker;}
 		.confirm-info-item.first {padding-left:0; border-left:none;}
 	}
 	.confirm-info-flow.first {border-top:none; padding-top:0;}
 	.confirm-info-flow.last {padding-bottom:0;}
 	.button-group.pull-left .button-link:first-child {padding-left:0;}
+	.email-address {display:block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 }
 
 .confirm-info.empty {

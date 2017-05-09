@@ -25,7 +25,7 @@ $passwordReset = $_GET[ "passwordreset" ];
 	<title>Sign In to Clara</title>
 </head>
 
-<body class="si-body">
+<body class="si-body auth">
 	<div id="wrapper">
 		<?php include "global/claraidnav.php"; ?>
 		<div class="si-notification-banner <?php if ($signOut !== "true" and $sessionExpired !== "true" and $passwordReset !== "true"){ echo "hidden"; } ?>">
@@ -65,7 +65,7 @@ $passwordReset = $_GET[ "passwordreset" ];
 						</button>
 					</form>
 					<div id="forgot-link" class="forgot">
-						<a role="link" target="_blank" href="password/verifyemail.php">Forgot Clara ID or password?</a>
+						<a role="link" href="password/verifyemail.php">Forgot Clara ID or password?</a>
 					</div>
 			</div>
 		</div>

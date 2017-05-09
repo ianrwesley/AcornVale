@@ -1,149 +1,206 @@
 $signin-background: #201042 url(../../global/images/signin/clara_signin_desktop_@2x.jpg);
 $signin-input-border: rgba(42, 42, 42, 0.3);
-$container-width: 980px;
 
-$color-base-text: #140A29;
-$color-border-light: #D0CFD4;
-$color-panel-light: #F8F8F8;
+$xl-screen-width: 1200px;
+$lg-screen-width: 992px;
+$md-screen-width: 768px;
+$sm-screen-width: 576px;
+$xs-container-width: 484px;
+$column-spacing: 15px;
+
+$globalnav-height: 48px;
+$subnav-height: 60px;
+$globalfooter-height: 54px;
+$input-height: 40px;
+$input-spacing: 16px;
+
+$border-radius: 4px;
+$button-radius: 5px;
+
+$gotham-narrow-font-stack: "Gotham Narrow A", "Gotham Narrow B", "Gotham Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$clara-icons-font-stack: "clara-icons";
+$sm-font-size: 14px;
+$base-font-size: 16px;
+$sm-header-font-size: 18px;
+$md-header-font-size: 24px;
+$lg-header-font-size: 36px;
+$base-text-spacing: 18px;
+$font-weight-light: 300;
+$font-weight-book: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$color-font-primary: #140A29;
+$color-font-placeholder: #9C96B1;
+$color-link-primary: #007FFF;
+$color-link-focus-outline: rgba(206, 0, 255, 0.4);
 $color-form-error-bg: #FAEEB6;
 $color-form-error-border: rgba(183, 148, 0, 0.55);
+$color-border-primary: #D0CFD4;
+
+$color-button-primary: #00D6BA;
+$color-focus: #AE00D8;
+$color-error: #FF0058;
+$color-success: #00CC56;
+$color-panel: #F8F8F8;
+
+$border-primary: 1px solid #D0CFD4;
+$border-darker: 1px solid #9C9B9F;
 
 /*-- LAYOUT --*/
-.si-body #wrapper {background:$signin-background no-repeat; background-position:center 50%; background-size:cover;}
-.logo {text-align:center; margin-bottom:0; line-height:.5;}
-.clara-si-logo {width:214px;}
-.auth-container {width:640px; height:480px; padding-top:140px; position:relative; z-index:inherit; box-sizing:border-box; text-align:center;}
-.auth-container .si-container {position:relative; text-align:center; width:350px; padding:0;}
+.si-body {
+	/*-- notifications --*/
+	.si-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(0,0,0,.3); padding:10px 0;
+		.si-notification-msg-wrapper {margin:0 auto; width:640px;}
+		.si-notification-msg {color:white; text-align:center; font-size:14px; margin-bottom:0;}
+	}
+	
+	/*-- password helper --*/
+	.password-input {
+		.popover {background:$color-panel; max-width:250px;}
+		.popover>.arrow:after {border-bottom-color:$color-panel;}
+		.popover-content {padding:18px 20px;}
+		.password-strength .error {line-height:1.85;}
+		.password-strength .error .message {display:inline-block; vertical-align: middle;}
+		.password-strength .hint {border-top:$border-primary; padding-top:6px; margin-top:14px; display:inline-block;}
+	}
+	
+	/*-- popover errors --*/
+	.si-container {
+		.pop-container.error {margin:auto; max-width: 305px;}
+		.signin-error {width:100%; font-weight:500; font-size:15px; color:#382b00;}
+		.signin-error a {color:#382b00; display:block; font-weight:400; text-decoration: underline;}
+		.pop-container {z-index:1000000; position:relative;}
+		.pop-bottom {background-color:#FAEEB6; position:absolute; width: 100%; margin-left:-50%; border-radius:4px; left:50%; border: 1px solid rgba(183, 148, 0, 0.55); box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); margin-top:6px; padding:11px 18px; animation:fade-in 200ms ease-in-out;}
+		.pop-bottom:before {background-color:#FAEEB6; width: 15px; height: 15px;  content: ""; position: absolute; left: 47.2%; transform: rotate(135deg) skewX(5deg) skewY(5deg); top: -9px; border-left: 1px solid rgba(183, 148, 0, 0.55); border-bottom: 1px solid rgba(183, 148, 0, 0.55); box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);}
+	}
 
-.hero {height:auto; background:$signin-background no-repeat; padding-top:48px; background-size:cover; background-position:0 0;}
-.page-content {padding-bottom:54px;}
-.page-content .container {max-width:$container-width; margin:auto; padding:0;}
-.page-content .intro {padding-top:30px;}
+	.error.pop-bottom {display:none;}
+	.error.pop-bottom.show {display:block;}
+	#error-msg {max-height:75px; overflow-y:auto;}
+	#error-msg error {display:block;}
 
-.flow-section {max-width:1200px; margin:auto; width:80%; padding:30px 0; border-bottom:1px solid $color-border-light;}
+	.error-msg-wrapper {
+		.popover {background-color:$color-form-error-bg; border-radius:4px; border:1px solid $color-form-error-border; box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); padding:11px 18px; font-size:16px; text-align:center; max-width:300px;}
+		.popover.top>.arrow {border-top-color:$color-form-error-border;}
+		.popover.top>.arrow:after {border-top-color:$color-form-error-bg;}
+		.popover.bottom>.arrow {border-bottom-color:$color-form-error-border;}
+		.popover.bottom>.arrow:after {border-bottom-color:$color-form-error-bg;}
+	}
+}
 
-.privacy-details {font-size:14px; padding:30px 0;}
-.controls-footer {max-width:100%; margin:auto; text-align:center;}
-.flow-controls {margin:auto; padding:0; text-align: center; padding-bottom:50px;}
+.si-body.auth {
+	input[type="submit"] {width:1px; height:1px; background-color:transparent; visibility:hidden; border:none; margin:0; padding:0;}
+	#wrapper {background:$signin-background no-repeat; background-position:center 50%; background-size:cover;}
+	
+	.logo {text-align:center; margin-bottom:0; line-height:.5;}
+	.clara-si-logo {width:214px;}
+	.auth-container {width:640px; height:480px; padding-top:140px; position:relative; z-index:inherit; box-sizing:border-box; text-align:center;
+		.si-button {border:0; position: absolute; top:88.5px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
+		.si-button:disabled {opacity:.3; pointer-events:none;}
+		.si-container {position:relative; text-align:center; width:350px; padding:0;}
+		.si-input-field {width:100%; border:0px; padding:8px 12px; border-radius:5px; outline:none; box-sizing:border-box; vertical-align:middle; line-height:inherit; -webkit-font-smoothing: antialiased; font-size:16px; font-weight:400; background: transparent; box-shadow:inherit;}
+		.si-password {padding-right:38px;}
+		.ux-border {border:1px solid $signin-input-border; background-color:#fff;}
+		.ux-border.clara-id {border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px;}
+		.ux-border.pwd {border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-width: 0px;}
+		.ux-border.focus {border-color:$color-focus !important;}
 
-/*-- NOTIFICATIONS --*/
-.si-notification-banner {position:absolute; top:48px; left:0; right:0; height:39px; background:rgba(0,0,0,.3); padding:10px 0;}
-.si-notification-msg-wrapper {margin:0 auto; width:640px;}
-.si-notification-msg {color:white; text-align:center; font-size:14px; margin-bottom:0;}
+		.field-separator {width:calc(100% - 2px); position:absolute; left:1px; background-color:$signin-input-border; height:1px; z-index:1;}
+		.field-separator.focus {background-color:$color-focus !important;}
+	}
+}
+
+.si-body.create-id, .si-body.faq, .si-body.recover-id {
+	.hero {height:auto; background:$signin-background no-repeat; padding-top:48px; background-size:cover; background-position:0 0;}
+	.page-content {padding-bottom:54px;
+		.container {max-width:$lg-screen-width; margin:auto; padding:0;}
+		.intro {padding-top:30px;}
+	}
+	
+	.flow-section {max-width:1200px; margin:auto; width:80%; padding:30px 0; border-bottom:1px solid $color-border-primary;}
+	.controls-footer {max-width:100%; margin:auto; text-align:center;}
+	.flow-controls {margin:auto; padding:0; text-align: center; padding-bottom:50px;}
+	
+	.privacy-details {font-size:14px; padding:30px 0;}
+}
 
 /*-- TYPOGRAPHY --*/
-.si-body, .si-content {color:$color-base-text;}
-.si-body .si-container-title {font-size:24px; font-weight:200; margin:22px auto 16px;}
-.description {font-size:18px; font-weight:400;}
+.si-body {color:$color-font-primary;
+	.si-container-title {font-size:24px; font-weight:200; margin:22px auto 16px;}
+	.description {font-size:18px; font-weight:400;}
+	.hero h1 {text-align:center; line-height:180px; padding:0; margin:0; font-size:40px;}
+	.pg-label {font-size:24px; line-height:1.2; font-weight:500; letter-spacing:0.015em;} 
 
-.hero h1 {text-align:center; line-height:180px; padding:0; margin:0; font-size:40px;}
-.pg-label {font-size:24px; line-height:1.2; font-weight:500; letter-spacing:0.015em;} 
+	.faq-item .question {margin-top: 30px; margin-bottom:7px;}
+	.faq-info {text-align:inherit; padding:32px 0;}
 
-.faq-item .question {margin-top: 30px; margin-bottom:7px;}
-.faq-info {text-align:inherit; padding:32px 0;}
-
-.controls-footer .button-link.primary-action {font-weight:500;}
-.icon-help {font-size:21px;}
-
-/*-- FORMS --*/
-.si-body .form-control:focus, .si-body .form-textbox:focus {box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);}
-
-.auth-container .si-input-field {width:100%; border:0px; padding:8px 12px; border-radius:5px; outline:none; box-sizing:border-box; vertical-align:middle; line-height:inherit; -webkit-font-smoothing: antialiased; font-size:16px; font-weight:400; background: transparent; box-shadow:inherit;}
-.auth-container .si-password {padding-right:38px;}
-.auth-container .ux-border {border:1px solid $signin-input-border; background-color:#fff;}
-.auth-container .ux-border.clara-id {border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px;}
-.auth-container .ux-border.pwd {border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-width: 0px;}
-.field-separator {width:calc(100% - 2px); position:absolute; left:1px; background-color:$signin-input-border; height:1px; z-index:1;}
-
-.auth-container .ux-border.focus {border-color:#AE00D8 !important;}
-.field-separator.focus {background-color:#AE00D8 !important;}
+	.controls-footer .button-link {font-size:18px;}
+	.controls-footer .button-link.primary-action {font-weight:500;}
+	
+	.icon-help {font-size:16px;}
+}
 
 /*-- SIGN IN HELPERS --*/
-.si-remember-password {display: inline-block; position: relative; font-size: 15px; margin: 18px 0 16px 0px; font-weight: 400;}
-.si-remember-password label[for=remember-me] {padding-left:3px; font-size:14px;}
-.forgot {display:flex; text-align: center; padding-top:85px; justify-content: center; width: 100%;}
-.forgot a {color:$color-base-text; font-size:13px; text-align:center;}
-.forgot-button {display:block; font-size:21px; margin-top:20px;}
+.si-body.auth {
+	.si-remember-password {display: inline-block; position: relative; font-size: 15px; margin: 18px 0 16px 0px; font-weight: 400;
+		label[for=remember-me] {padding-left:3px; font-size:14px;}
+	}
+	.forgot {display:flex; text-align: center; padding-top:85px; justify-content: center; width: 100%;
+		a {color:$color-font-primary; font-size:13px; text-align:center;}
+	}
+	.forgot-button {display:block; font-size:21px; margin-top:20px;}
+}
 
-/*-- CREATE YOUR CLARA ID HELPERS --*/
-.claraid-field-info + .popover {width:246px;}
-.bd-field-info + .popover {width:300px;}
-.form-field-birthday:focus::-webkit-input-placeholder, .form-field-birthday:focus::placeholder {color:#140A29;}
-.si-content .flow-controls .button-link {font-size:18px;}
+/*-- CREATE YOUR CLARA ID --*/
+.si-body.create-id {
+	.claraid-field-info + .popover {width:246px;}
+	.bd-field-info + .popover {width:300px;}
+	.form-field-birthday:focus::-webkit-input-placeholder, .form-field-birthday:focus::placeholder {color:$color-font-primary;}
+}
 
 /*-- RECOVER CLARA ID -*/
-.content-main {display:inline-block; position: relative; padding-bottom:26px;}
-.content-heading {margin-top:36px;
-	.subtitle {margin-bottom:8px; font-size:24px; font-weight:500; line-height:1.25;}
-	.description {margin-top:16px;}
-	.subtitle.narrow, .description.narrow {padding:0 20px;}
-}
-.content-body {margin-top:16px; padding:0 20px;}
-.content-item {margin-bottom:12px; position:relative;}
-input + .content-item, .error-msg-wrapper + .content-item {margin-top:8px;}
-.recover-id {
+.si-body.recover-id {
+	.content-main {display:inline-block; position: relative; padding-bottom:26px;}
+	.content-heading {margin-top:36px;
+		.subtitle {margin-bottom:8px; font-size:24px; font-weight:500; line-height:1.25;}
+		.description {margin-top:16px;}
+		.subtitle.narrow, .description.narrow {padding:0 20px;}
+	}
+	.content-body {margin-top:16px; padding:0 20px;}
+	.content-item {margin-bottom:12px; position:relative;}
+	input + .content-item, .error-msg-wrapper + .content-item {margin-top:8px;}
+	
 	.page-content {text-align:center;}
 	.flow-controls .button-link {font-size:21px; font-weight:400;}
+
+	.header-icon-wrap {margin-bottom:30px;}
+	.image.image-header {width:72px; height:72px;}
+	.icon-checkmark.success {color:$color-success;}
 }
-
-.password-input {
-	.popover {background:$color-panel-light; max-width:250px;}
-	.popover>.arrow:after {border-bottom-color:$color-panel-light;}
-	.popover-content {padding:18px 20px;}
-	.password-strength .error {line-height:1.85;}
-	.password-strength .error .message {display:inline-block; vertical-align: middle;}
-	.password-strength .hint {border-top:1px solid #D0CFD4; padding-top:6px; margin-top:14px; display:inline-block;}
-}
-
-.header-icon-wrap {margin-bottom:30px;}
-.image.image-header {width:72px; height:72px;}
-.icon-checkmark.success {color:#00cc56;}
-
-/*-- POPOVERS --*/
-.si-container .pop-container.error {margin:auto; max-width: 305px;}
-.si-container .signin-error {width:100%; font-weight:500; font-size:15px; color:#382b00;}
-.si-container .signin-error a {color:#382b00; display:block; font-weight:400; text-decoration: underline;}
-.si-container .pop-container {z-index:1000000; position:relative;}
-.si-container .pop-bottom {background-color:#FAEEB6; position:absolute; width: 100%; margin-left:-50%; border-radius:4px; left:50%; border: 1px solid rgba(183, 148, 0, 0.55); box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); margin-top:6px; padding:11px 18px; animation:fade-in 200ms ease-in-out;}
-.si-container .pop-bottom:before {background-color:#FAEEB6; width: 15px; height: 15px;  content: ""; position: absolute; left: 47.2%; transform: rotate(135deg) skewX(5deg) skewY(5deg); top: -9px; border-left: 1px solid rgba(183, 148, 0, 0.55); border-bottom: 1px solid rgba(183, 148, 0, 0.55); box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);}
-
-.error.pop-bottom {display:none;}
-.error.pop-bottom.show {display:block;}
-#error-msg {max-height:75px; overflow-y:auto;}
-#error-msg error {display:block;}
-
-.error-msg-wrapper {
-	.popover {background-color:$color-form-error-bg; border-radius:4px; border:1px solid $color-form-error-border; box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); padding:11px 18px; font-size:16px; text-align:center; max-width:300px;}
-	.popover.top>.arrow {border-top-color:$color-form-error-border;}
-	.popover.top>.arrow:after {border-top-color:$color-form-error-bg;}
-	.popover.bottom>.arrow {border-bottom-color:$color-form-error-border;}
-	.popover.bottom>.arrow:after {border-bottom-color:$color-form-error-bg;}
-}
-
-/*-- BUTTONS --*/
-input[type="submit"] {width:1px; height:1px; background-color:transparent; visibility:hidden; border:none; margin:0; padding:0;}
-.auth-container .si-button {border:0; position: absolute; top:91.5px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
-.auth-container .si-button:disabled {opacity:.3; pointer-events:none;}
-.auth-container .si-button.single-field {top:3px; padding-top:0;}
 
 /*-- RESPONSIVE --*/
 @media only screen and (min-width: 768px) {
-	.si-body, .si-content {min-height:600px;}
-	.content-main {width:484px;}
+	.si-body {min-height:600px;
+		.content-main {width:484px;}
+	}
 }
 
 @media only screen and (max-width: 767px) {
-	.auth-container {max-width:320px; padding:50px 18px 0; text-align: left;}
-	.auth-container .widen {max-width:100%; margin:0 auto;}
-	.logo-wrap .keystone-signin-logo {height:40px;}
-	
-	.description {font-size:14px;}
-	.forgot-button {font-size:18px;}
-	
-	icon.xl {font-size:65px;}
+	.si-body {
+		.auth-container {max-width:320px; padding:50px 18px 0; text-align: left;
+			.widen {max-width:100%; margin:0 auto;}
+		}
+		.logo-wrap .keystone-signin-logo {height:40px;}
+		.description {font-size:14px;}
+		.forgot-button {font-size:18px;}
+		icon.xl {font-size:65px;}
+	}
 }
 
 @media only screen and (max-width: 370px) {
-	.auth-container {max-width:300px; padding-left:10px; padding-right:10px;}
-	icon.xl {font-size:50px;}
+	.si-body {
+		.auth-container {max-width:300px; padding-left:10px; padding-right:10px;}
+		icon.xl {font-size:50px;}
+	}
 }

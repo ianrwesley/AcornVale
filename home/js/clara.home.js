@@ -71,4 +71,40 @@ $(document).ready(function () {
 		}
 	});
 	
+	$('#edit-allergies').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
+	$('#edit-homemeds').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
+	$('#edit-diagnoses').selectize({
+		plugins: ['remove_button'],
+		delimiter: ',',
+		persist: false,
+		create: function(input) {
+			return {
+				value: input,
+				text: input
+			};
+		}
+	});
+	
 });

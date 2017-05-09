@@ -1,4 +1,5 @@
 <?php
+	$fail = "true";
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
 ?>
@@ -41,7 +42,7 @@
 											<a href="../home/home-view.php">Cancel</a>
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action disabled">
-											<a href="add-medical-history-filled.php"><?php echo $primaryButtonLabel ?></a>
+											<a href="write-prescriptions.php"><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>

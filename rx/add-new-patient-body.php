@@ -22,13 +22,6 @@ $confirmInfoTitle = "New Patient";
 		<?php include "../global/globalnav.php"; ?>
 		<?php include "rx-subnav.php"; ?>
 		<div id="add-patient-content" class="page-content">
-			<!--div class="app-section-header">
-				<div class="container-lg centered">
-					<div class="app-header">
-						<h1>Add new patient</h1>	
-					</div>
-				</div>
-			</div-->
 		<div class="app-section-body-wrapper">
 			<div class="app-background-left">&nbsp;</div><div class="app-background-right">&nbsp;</div>
 			<div class="app-section-body clearfix">

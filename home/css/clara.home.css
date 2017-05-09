@@ -51,30 +51,50 @@
     outline: none;
     outline-offset: -7px;
     font-weight: 400;
-    cursor: pointer; }
+    cursor: default;
+    pointer-events: none; }
   #rx-subnav .gn-text {
     opacity: .5; }
   #rx-subnav .gn-link.active .gn-text {
-    opacity: 1; }
+    opacity: 1;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #140A29; }
   #rx-subnav .gn-link .icon-progress, #rx-subnav .gn-link .gn-text {
     vertical-align: middle; }
   #rx-subnav .gn-link .icon-progress {
     font-size: 14px;
     padding-right: 6px; }
   #rx-subnav .gn-link .icon-progress.incomplete:before {
-    content: "\77";
+    content: "\69";
     color: #9C96B1; }
   #rx-subnav .gn-link .icon-progress.complete:before {
-    content: "\6f";
+    content: "\64";
     color: #00CC56; }
 
 .rx-app .page-content {
   padding-top: 108px; }
+.rx-app .row-header, .rx-app .patient-medical-history .allergies-section .rxn-label {
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.33333;
+  color: #9C96B1; }
+.rx-app .section-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1; }
+.rx-app .fieldcontrols .list-populate .selectize-control, .rx-app .fieldcontrols .list-populate .checkbox-wrapper {
+  margin-bottom: 10px; }
 .rx-app .fieldcontrols .selectize-control {
   width: 83.33333%;
   display: inline-block;
   height: 40px;
   margin-bottom: 16px; }
+.rx-app .fieldcontrols .error-msg-wrapper .selectize-control {
+  width: 100%; }
 .rx-app .fieldcontrols .checkbox-wrapper {
   display: inline-block;
   height: 40px;
@@ -107,43 +127,80 @@
   border-bottom: 1px solid #D0CFD4; }
 .rx-app .ordered-list li:last-of-type {
   border-bottom: 0; }
-.rx-app .fieldcontrols .list-populate .selectize-control, .rx-app .fieldcontrols .list-populate .checkbox-wrapper {
-  margin-bottom: 10px; }
-
-.patient-medical-history .fieldcontrols {
+.rx-app .patient-medical-history .fieldcontrols {
   padding: 24px 20px 18px;
   margin-left: -20px;
   margin-right: -20px; }
-  .patient-medical-history .fieldcontrols .list-item-controls {
-    width: 80px;
-    height: 20px; }
-.patient-medical-history .fieldcontrols.first {
+  .rx-app .patient-medical-history .fieldcontrols .list-item-controls {
+    height: 20px;
+    display: flex;
+    align-items: flex-end; }
+.rx-app .patient-medical-history .fieldcontrols.first {
   padding-top: 0; }
-.patient-medical-history .list-item-controls.pull-right .item-control-button {
-  float: right;
-  vertical-align: middle;
+.rx-app .patient-medical-history .list-item-controls.pull-right .item-control-button {
   margin-left: 6px; }
-.patient-medical-history .item-control-button {
+.rx-app .patient-medical-history .item-control-button {
   width: 20px;
   height: 20px;
   font-family: "clara-icons";
   background: none;
   border: none;
-  font-size: 18px;
-  opacity: 0.5;
+  font-size: 16px;
+  opacity: 0.4;
   transition: opacity .25s ease; }
-.patient-medical-history .item-control-button:hover {
+.rx-app .patient-medical-history .item-control-button:hover {
   opacity: 1; }
-.patient-medical-history .item-edit:before {
-  content: "\72"; }
-.patient-medical-history .item-delete:before {
-  content: "\71"; }
-
-.allergies-section, .diagnoses-section {
+.rx-app .patient-medical-history .item-edit:before {
+  content: "\6c"; }
+.rx-app .patient-medical-history .item-delete:before {
+  content: "\6b"; }
+.rx-app .patient-medical-history .allergies-section, .rx-app .patient-medical-history .diagnoses-section {
   background: #fff; }
-
-.homemeds-section {
+.rx-app .patient-medical-history .homemeds-section {
   background: #F8F8F8; }
+.rx-app .patient-medical-history .allergies-section .allergy, .rx-app .patient-medical-history .allergies-section .rxn, .rx-app .patient-medical-history .allergies-section .rxn-label {
+  display: inline-block;
+  vertical-align: middle; }
+.rx-app .patient-medical-history .allergies-section .allergy, .rx-app .patient-medical-history .allergies-section .rxn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+.rx-app .patient-medical-history .allergies-section .allergy {
+  width: 25%;
+  margin-right: 16px; }
+.rx-app .patient-medical-history .allergies-section .rxn {
+  width: 50%; }
+.rx-app .patient-medical-history .allergies-section .rxn-label {
+  line-height: 1.2;
+  margin-right: 4px; }
+.rx-app .edit-patient-button {
+  text-align: right; }
+.rx-app .edit-patient-content {
+  padding-top: 28px; }
+  .rx-app .edit-patient-content .flow-section:first-child {
+    padding-top: 8px; }
+  .rx-app .edit-patient-content .flow-section {
+    padding: 16px 0; }
+  .rx-app .edit-patient-content .modal-header h1 {
+    color: #007FFF; }
+  .rx-app .edit-patient-content .modal-body {
+    padding: 0; }
+  .rx-app .edit-patient-content .controls-footer {
+    margin-top: 0; }
+  .rx-app .edit-patient-content .patient-medical-history {
+    padding-bottom: 0; }
+    .rx-app .edit-patient-content .patient-medical-history .fieldcontrols {
+      padding-top: 18px;
+      padding-bottom: 12px; }
+    .rx-app .edit-patient-content .patient-medical-history .fieldcontrols.first {
+      padding-top: 0; }
+  .rx-app .edit-patient-content .allergies-section .ordered-list li {
+    height: 61px; }
+  .rx-app .edit-patient-content .allergies-section .list-item-controls {
+    height: 41px;
+    padding-bottom: 4px; }
+  .rx-app .edit-patient-content .allergies-section .rxn-label {
+    margin-right: 8px; }
 
 .page-content {
   padding-top: 48px;
@@ -173,19 +230,20 @@
   left: 0;
   right: 0;
   height: 39px;
-  background: rgba(0, 204, 86, 0.125);
+  background: rgba(174, 0, 216, 0.1);
   padding: 10px 0; }
-
-.home-notification-msg-wrapper {
-  margin: 0 auto;
-  width: 640px; }
-
-.home-notification-msg {
-  color: #00cc56;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  margin: auto; }
+  .home-notification-banner .home-notification-msg-wrapper {
+    margin: 0 auto;
+    width: 640px; }
+  .home-notification-banner .home-notification-msg {
+    color: #140A29;
+    text-align: center;
+    font-size: 14px;
+    margin: auto; }
+  .home-notification-banner .home-notification-icon {
+    margin-right: 8px;
+    position: relative;
+    top: 2px; }
 
 /*-- TYPOGRAPHY --*/
 .title h1 {
@@ -270,6 +328,22 @@
   background: none;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75); }
 
+.selectize-dropdown div[data-value="Add new patient"]:before {
+  font-family: "clara-icons";
+  content: "\61";
+  font-size: 16px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: text-bottom; }
+
+.selectize-dropdown div[data-value="Add new patient"]:after {
+  content: "\2026";
+  margin-left: 1px; }
+
+.selectize-dropdown div[data-value="Add new patient"] .label {
+  display: inline-block;
+  vertical-align: text-bottom; }
+
 /*-- FORM VALIDATION --*/
 .error-msg-wrapper {
   position: relative;
@@ -284,7 +358,7 @@
 
 .error-msg-wrapper.has-error .form-text {
   margin-bottom: 4px; }
-.error-msg-wrapper.has-error .form-text::-webkit-input-placeholder, .error-msg-wrapper.has-error .form-text::placeholder, .error-msg-wrapper.has-error select, .error-msg-wrapper.has-error .select-wrapper:before {
+.error-msg-wrapper.has-error input::-webkit-input-placeholder, .error-msg-wrapper.has-error input::placeholder, .error-msg-wrapper.has-error select, .error-msg-wrapper.has-error .select-wrapper:before {
   color: #ff0058; }
 .error-msg-wrapper.has-error .error-msg.show {
   display: block; }
@@ -330,12 +404,6 @@
   /*margin-bottom:54px;*/ }
   .app-section-body .flow-section:first-child {
     padding-top: 0; }
-  .app-section-body .section-title {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 16px;
-    line-height: 1; }
 
 .app-background-left, .app-background-right {
   width: 50%;
@@ -365,14 +433,13 @@
 .confirm-info {
   border-radius: 4px;
   background-color: #F8F8F8;
-  padding: 0px; }
+  padding: 0px;
+  /*.header.filled {color:$color-link-primary;}*/ }
   .confirm-info .header {
     font-size: 24px;
     font-weight: 500;
     margin: 0;
     line-height: 1; }
-  .confirm-info .header.filled {
-    color: #007FFF; }
   .confirm-info .confirm-info-flow {
     font-size: 16px;
     line-height: 1.33333;
@@ -380,16 +447,9 @@
     border-top: 1px solid #D0CFD4; }
     .confirm-info .confirm-info-flow .row {
       padding: 6px 0; }
-    .confirm-info .confirm-info-flow .row-header {
-      margin: 0;
-      font-weight: normal;
-      text-transform: uppercase;
-      font-size: 14px;
-      line-height: 1.33333;
-      color: #9C96B1; }
     .confirm-info .confirm-info-flow .confirm-info-item {
       padding: 0 18px;
-      border-left: 1px solid #b8b8bc; }
+      border-left: 1px solid #9C9B9F; }
     .confirm-info .confirm-info-flow .confirm-info-item.first {
       padding-left: 0;
       border-left: none; }
@@ -400,6 +460,11 @@
     padding-bottom: 0; }
   .confirm-info .button-group.pull-left .button-link:first-child {
     padding-left: 0; }
+  .confirm-info .email-address {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 
 .confirm-info.empty .header {
   font-weight: 200; }

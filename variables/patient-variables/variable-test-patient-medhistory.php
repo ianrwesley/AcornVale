@@ -1,7 +1,7 @@
 <?php
 $allergies = "Tetracycline, Penicillin, NSAIDs";
 $allergiesArray = explode(', ', $allergies);
-$reactions = "Black Hairy Tongue, Nausea, Hives";
+$reactions = "Abnormal Tongue Coating (Hairy Tongue), Nausea, Hives";
 $reactionsArray = explode(', ', $reactions);
 $homemeds = "Tylenol, Benadryl";
 $homemedsArray = explode(', ', $homemeds);

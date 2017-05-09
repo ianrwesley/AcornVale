@@ -24,7 +24,7 @@ $pageTitle = "Create Your Clara ID";
 	<title>Create Your Clara ID</title>
 </head>
 
-<body class="si-content">
+<body class="si-body create-id">
 	<div id="wrapper">
 		<?php include "../global/claraidnav.php"; ?>	
 		<header class="hero">

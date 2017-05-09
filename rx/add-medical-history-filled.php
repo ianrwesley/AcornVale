@@ -1,10 +1,20 @@
-<?php include "../variables/patient-variables/variable-william-woolworth-wallace-demographics.php"; ?>
-<?php include "../variables/patient-variables/variable-william-woolworth-wallace-medhistory.php"; ?>
+<?php
+	include "../variables/patient-variables/variable-empty.php";
+	include "../variables/patient-variables/variable-test-patient-demographics.php";
+	include "../variables/patient-variables/variable-test-patient-medhistory.php";
+?>
 
 <?php include "add-medical-history-body.php"; ?>
 					<div class="column lg-6 app-right-col">
 						<div class="flow-section">
-							<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
+							<div class="row">
+								<div class="column lg-9">
+									<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
+								</div>
+								<div class="column lg-3 edit-patient-button">
+									<button role="button" class="button button-link button-compact" data-toggle="modal" data-target="#editPatient">Edit patient</button>
+								</div>
+							</div>
 							<div class="confirm-info">
 								<div class="header filled"><?php echo $fullName ?></div>
 								<div class="confirm-info-flow first">
@@ -22,7 +32,7 @@
 										<div class="column lg-6">
 											<h3 class="row-header">Contact</h3>
 											<span><?php echo $phone ?></span><br>
-											<span><?php echo $email ?></span>
+											<span class="email-address"><?php echo $email ?></span>
 										</div>
 									</div>
 								</div>
@@ -45,12 +55,12 @@
 									</div>
 								</div>
 								<div class="controls-footer clearfix">
-									<div class="button-group flow-controls pull-left">
+									<div class="button-group flow-controls pull-right">
 										<button type="button" role="link" class="button button-link secondary-action" data-toggle="modal" data-target="#cancelConfirm">
 											Cancel
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action">
-											<a href=""><?php echo $primaryButtonLabel ?></a>
+											<a href="write-prescriptions.php"><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>
@@ -63,29 +73,8 @@
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
-	<!-- Modal -->
-	<div class="modal fade" id="cancelConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog caution" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h1>Are you sure?</h1>
-		  </div>
-		  <div class="modal-body">
-			Continuing will discard this new patient's information.
-		  </div>
-		 	<div class="controls-footer clearfix">
-				<div class="button-group flow-controls">
-					<button type="button" role="link" class="button button-link secondary-action" data-dismiss="modal">
-						Cancel
-					</button>
-					<button type="button" role="link" class="button button-flat primary-action caution">
-						<a href="../home/home-view.php?patientdiscarded=true">Discard new patient…</a>
-					</button>
-				</div>
-			</div>
-		</div>
-	  </div>
-	</div>
+	<?php include "modal-discard-medical-history.php"; ?>
+	<?php include "modal-edit-patient.php"; ?>
 </body>
 
 </html>

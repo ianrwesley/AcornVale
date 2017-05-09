@@ -24,7 +24,7 @@ $pageTitle = "Recover Your Clara ID";
 	<title>Recover Your Clara ID - Bravado Health</title>
 </head>
 
-<body class="recover-id">
+<body class="si-body recover-id">
 	<div id="wrapper">
 		<?php include "../global/claraidnav.php"; ?>	
 		<header class="hero">

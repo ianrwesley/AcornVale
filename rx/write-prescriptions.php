@@ -1,9 +1,10 @@
 <?php
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
+	include "../variables/patient-variables/variable-test-patient-medhistory.php";
 ?>
 
-<?php include "add-medical-history-body.php"; ?>
+<?php include "write-prescriptions-body.php"; ?>
 					<div class="column lg-6 app-right-col">
 						<div class="flow-section">
 							<div class="row">
@@ -16,7 +17,7 @@
 							</div>
 							<div class="confirm-info">
 								<div class="header filled"><?php echo $fullName ?></div>
-								<div class="confirm-info-flow first last">
+								<div class="confirm-info-flow first">
 									<div class="row clearfix">
 										<div class="column lg-12">
 											<span class="confirm-info-item first"><?php echo $birthday ?></span><span class="confirm-info-item"><?php echo $gender ?></span><span class="confirm-info-item"><?php echo $weightString ?></span>
@@ -35,13 +36,31 @@
 										</div>
 									</div>
 								</div>
+								<div class="confirm-info-flow last">
+									<div class="row clearfix">
+										<div class="column lg-6">
+											<h3 class="row-header">Allergies</h3>
+											<span><?php echo $allergies ?></span><br>
+										</div>
+										<div class="column lg-6">
+											<h3 class="row-header">Home Medications</h3>
+											<span><?php echo $homemeds ?></span><br>
+										</div>
+									</div>
+									<div class="row clearfix">
+										<div class="column lg-12">
+											<h3 class="row-header">Diagnoses or Pre-existing Conditions</h3>
+											<span><?php echo $diagnoses ?></span><br>
+										</div>
+									</div>
+								</div>
 								<div class="controls-footer clearfix">
 									<div class="button-group flow-controls pull-right">
-										<button type="button" role="link" class="button button-link secondary-action">
-											<a href="../home/home-view.php">Cancel</a>
+										<button type="button" role="link" class="button button-link secondary-action" data-toggle="modal" data-target="#cancelConfirm">
+											Cancel
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action disabled">
-											<a href="add-medical-history-filled.php"><?php echo $primaryButtonLabel ?></a>
+											<a href=""><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>
@@ -54,6 +73,7 @@
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
+	<?php include "modal-cancel-writing-prescriptions.php"; ?>
 	<?php include "modal-edit-patient.php"; ?>
 </body>
 

@@ -2,6 +2,7 @@
 $pageTitle = "Prescriptions";
 $menuName = $pageTitle;
 $patientDiscarded = $_GET[ "patientdiscarded" ];
+$historyDiscarded = $_GET[ "historydiscarded" ];
 ?>
 
 <!doctype html>
@@ -18,10 +19,11 @@ $patientDiscarded = $_GET[ "patientdiscarded" ];
 <body>
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<div class="home-notification-banner <?php if ($patientDiscarded !== "true"){ echo "hidden"; } ?>">
+		<div class="home-notification-banner <?php if ($patientDiscarded !== "true" and $historyDiscarded !== "true"){ echo "hidden"; } ?>">
 			<div class="home-notification-msg-wrapper">
 				<p class="home-notification-msg">
-				<?php if ($patientDiscarded == "true"){ echo "New patient successfully discarded."; } ?>
+					<?php if ($patientDiscarded == "true"){ echo "<span class='home-notification-icon icon-checkmark'></span>New patient successfully discarded."; } ?>
+					<?php if ($historyDiscarded == "true"){ echo "<span class='home-notification-icon icon-checkmark'></span>Medical history successfully discarded."; } ?>
 				</p>
 			</div>
 		</div>
