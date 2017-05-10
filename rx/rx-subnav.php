@@ -1,4 +1,4 @@
-<subnav id="rx-subnav" class="subnav">
+<subnav id="rx-subnav" class="subnav" data-spy="affix" data-offset-top="48">
 	<div class="gn-content">
 		<ul class="gn-list gn-menuview">
 			<li class="gn-item gn-item-menu"> <a class="gn-link <?php if ($subnavTitle == "Add new patient"){ echo "active"; } ?>"> <icon class="icon-progress <?php if ($subnavProgress > 0){ echo "complete"; } else { echo "incomplete";} ?>"></icon><span class="gn-text">Add new patient</span> </a> </li>

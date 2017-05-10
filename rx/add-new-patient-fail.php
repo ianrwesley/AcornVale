@@ -4,7 +4,7 @@
 ?>
 
 <?php include "add-new-patient-body.php"; ?>
-					<div class="column lg-6 app-right-col">
+					<div class="column confirm-col">
 						<div class="flow-section">
 							<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
 							<div class="confirm-info empty">

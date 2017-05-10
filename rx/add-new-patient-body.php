@@ -13,20 +13,20 @@ $confirmInfoTitle = "New Patient";
 	<meta charset="UTF-8">
 	<title>Add New Patient - Clara</title>
 	<?php include "../global/globalui.php"; ?>
-	<script type="text/javascript" src="../home/js/clara.home.js"></script>
-	<link rel="stylesheet" href="../home/css/clara.home.css" type="text/css">
+	<script type="text/javascript" src="../global/js/clara.home.js"></script>
+	<link rel="stylesheet" href="../global/css/clara.home.css" type="text/css">
 </head>
 
-<body class="rx-app">
+<body class="rx-app app-flow add-patient">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
 		<?php include "rx-subnav.php"; ?>
-		<div id="add-patient-content" class="page-content">
+		<div class="page-content">
 		<div class="app-section-body-wrapper">
-			<div class="app-background-left">&nbsp;</div><div class="app-background-right">&nbsp;</div>
-			<div class="app-section-body clearfix">
+			<div class="app-background-edit">&nbsp;</div><div class="app-background-confirm">&nbsp;</div>
+			<div class="app-section-body">
 				<div class="row">
-					<div class="column lg-6 app-left-col">
+					<div class="column edit-col">
 						<div class="flow-section">
 							<h2 class="section-title">Demographics</h2>
 							<div class="fieldgroup">
@@ -142,29 +142,12 @@ $confirmInfoTitle = "New Patient";
 						<div class="flow-section">
 							<h2 class="section-title">Contact</h2>
 							<div class="fieldgroup">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-4 optional" placeholder="phone" name="phone" value="<?php echo $phone ?>">
-								<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-8 optional" placeholder="email" name="email" value="<?php echo $email ?>">
+								<div class="input-wrapper lg-4">
+									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text optional" placeholder="phone" name="phone" value="<?php echo $phone ?>">
+								</div>
+								<div class="input-wrapper lg-8">
+									<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text optional" placeholder="email" name="email" value="<?php echo $email ?>">
+								</div>
 							</div>
 						</div>
-						<!--div class="flow-section">
-							<h2 class="section-title">Medical History</h2>
-							<div class="fieldcontrols">
-								<input type="text" id="add-allergies" placeholder="<?php if ($allergies == "None"){ echo "No "; } ?>allergies" value="<?php echo $allergies ?>">
-								<div class="checkbox-wrapper">
-									<input type="checkbox" id="no-allergies-check" class="checkbox" <?php if ($allergies == "None"){ echo "checked"; } ?>><label for="no-allergies-check">None</label>
-								</div>
-							</div>
-							<div class="fieldcontrols">
-								<input type="text" id="add-homemeds" placeholder="<?php if ($homemeds == "None"){ echo "No "; } ?>home medications" value="<?php if ($homemeds == "None"){ echo ""; } else {echo $homemeds;} ?>">
-								<div class="checkbox-wrapper">
-									<input type="checkbox" id="no-homemeds-check" class="checkbox" <?php if ($homemeds == "None"){ echo "checked"; } ?>><label for="no-homemeds-check">None</label>
-								</div>
-							</div>
-							<div class="fieldcontrols">
-								<input type="text" id="add-diagnoses" placeholder="<?php if ($diagnoses == "None"){ echo "No "; } ?>diagnoses or pre-existing conditions" value="<?php if ($diagnoses == "None"){ echo ""; } else {echo $diagnoses;} ?>">
-								<div class="checkbox-wrapper">
-									<input type="checkbox" id="no-diagnoses-check" class="checkbox" <?php if ($diagnoses == "None"){ echo "checked"; } ?>><label for="no-diagnoses-check">None</label>
-								</div>
-							</div>
-						</div-->
 					</div>

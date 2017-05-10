@@ -8,7 +8,7 @@
     top: 48px;
     left: 0;
     right: 0;
-    height: 39px;
+    height: 43px;
     background: rgba(0, 0, 0, 0.3);
     padding: 10px 0; }
     .si-body .si-notification-banner .si-notification-msg-wrapper {
@@ -18,7 +18,8 @@
       color: white;
       text-align: center;
       font-size: 14px;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      height: 21px; }
   .si-body .password-input .popover {
     background: #F8F8F8;
     max-width: 250px; }
@@ -57,9 +58,21 @@
     position: absolute;
     width: 100%;
     margin-left: -50%;
+    -webkit-border-radius: 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px;
+    /* Firefox */
+    -ms-border-radius: 4px;
+    /* Internet Explorer */
     border-radius: 4px;
     left: 50%;
     border: 1px solid rgba(183, 148, 0, 0.55);
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Safari and Chrome */
+    -moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Firefox */
+    -ms-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Internet Explorer */
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     margin-top: 6px;
     padding: 11px 18px;
@@ -75,6 +88,12 @@
     top: -9px;
     border-left: 1px solid rgba(183, 148, 0, 0.55);
     border-bottom: 1px solid rgba(183, 148, 0, 0.55);
+    -webkit-box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);
+    /* Safari and Chrome */
+    -moz-box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);
+    /* Firefox */
+    -ms-box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55);
+    /* Internet Explorer */
     box-shadow: -1px 1px 2px -1px rgba(183, 148, 0, 0.55); }
   .si-body .error.pop-bottom {
     display: none; }
@@ -87,8 +106,20 @@
     display: block; }
   .si-body .error-msg-wrapper .popover {
     background-color: #FAEEB6;
+    -webkit-border-radius: 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px;
+    /* Firefox */
+    -ms-border-radius: 4px;
+    /* Internet Explorer */
     border-radius: 4px;
     border: 1px solid rgba(183, 148, 0, 0.55);
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Safari and Chrome */
+    -moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Firefox */
+    -ms-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    /* Internet Explorer */
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     padding: 11px 18px;
     font-size: 16px;
@@ -112,7 +143,7 @@
   margin: 0;
   padding: 0; }
 .si-body.auth #wrapper {
-  background: #201042 url(../../global/images/signin/clara_signin_desktop_@2x.jpg) no-repeat;
+  background: #201042 url(../images/signin/clara_signin_desktop_@2x.jpg) no-repeat;
   background-position: center 50%;
   background-size: cover; }
 .si-body.auth .logo {
@@ -127,8 +158,14 @@
   padding-top: 140px;
   position: relative;
   z-index: inherit;
-  box-sizing: border-box;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  /* Safari and Chrome */
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -ms-box-sizing: border-box;
+  /* Internet Explorer */
+  box-sizing: border-box; }
   .si-body.auth .auth-container .si-button {
     border: 0;
     position: absolute;
@@ -152,16 +189,37 @@
     width: 100%;
     border: 0px;
     padding: 8px 12px;
-    border-radius: 5px;
     outline: none;
-    box-sizing: border-box;
     vertical-align: middle;
     line-height: inherit;
     -webkit-font-smoothing: antialiased;
+    /* Safari and Chrome */
+    -moz-osx-font-smoothing: grayscale;
+    /* Firefox */
     font-size: 16px;
     font-weight: 400;
     background: transparent;
-    box-shadow: inherit; }
+    -webkit-border-radius: 5px;
+    /* Safari and Chrome */
+    -moz-border-radius: 5px;
+    /* Firefox */
+    -ms-border-radius: 5px;
+    /* Internet Explorer */
+    border-radius: 5px;
+    -webkit-box-shadow: inherit;
+    /* Safari and Chrome */
+    -moz-box-shadow: inherit;
+    /* Firefox */
+    -ms-box-shadow: inherit;
+    /* Internet Explorer */
+    box-shadow: inherit;
+    -webkit-box-sizing: border-box;
+    /* Safari and Chrome */
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -ms-box-sizing: border-box;
+    /* Internet Explorer */
+    box-sizing: border-box; }
   .si-body.auth .auth-container .si-password {
     padding-right: 38px; }
   .si-body.auth .auth-container .ux-border {
@@ -193,14 +251,16 @@
 
 .si-body.create-id .hero, .si-body.faq .hero, .si-body.recover-id .hero {
   height: auto;
-  background: #201042 url(../../global/images/signin/clara_signin_desktop_@2x.jpg) no-repeat;
+  background: #201042 url(../images/signin/clara_signin_desktop_@2x.jpg) no-repeat;
   padding-top: 48px;
   background-size: cover;
   background-position: 0 0; }
 .si-body.create-id .page-content, .si-body.faq .page-content, .si-body.recover-id .page-content {
   padding-bottom: 54px; }
   .si-body.create-id .page-content .container, .si-body.faq .page-content .container, .si-body.recover-id .page-content .container {
+    min-width: 600px;
     max-width: 992px;
+    width: auto;
     margin: auto;
     padding: 0; }
   .si-body.create-id .page-content .intro, .si-body.faq .page-content .intro, .si-body.recover-id .page-content .intro {
@@ -276,7 +336,7 @@
   width: 100%; }
   .si-body.auth .forgot a {
     color: #140A29;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center; }
 .si-body.auth .forgot-button {
   display: block;
@@ -329,19 +389,15 @@
   color: #00CC56; }
 
 /*-- RESPONSIVE --*/
+@media only screen and (max-width: 1279px) {
+  .si-body.create-id .page-content .container, .si-body.faq .page-content .container, .si-body.recover-id .page-content .container {
+    padding: 0 20px; } }
 @media only screen and (min-width: 768px) {
   .si-body {
     min-height: 600px; }
     .si-body .content-main {
       width: 484px; } }
 @media only screen and (max-width: 767px) {
-  .si-body .auth-container {
-    max-width: 320px;
-    padding: 50px 18px 0;
-    text-align: left; }
-    .si-body .auth-container .widen {
-      max-width: 100%;
-      margin: 0 auto; }
   .si-body .logo-wrap .keystone-signin-logo {
     height: 40px; }
   .si-body .description {

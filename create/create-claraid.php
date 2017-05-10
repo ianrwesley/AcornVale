@@ -14,13 +14,13 @@ $pageTitle = "Create Your Clara ID";
 	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../global/css/clara.global.css" type="text/css">
-	<link rel="stylesheet" href="../signin/css/clara.signin.css" type="text/css">
+	<link rel="stylesheet" href="../global/css/clara.signin.css" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../global/js/clara.global.js"></script>
-	<script type="text/javascript" src="../signin/js/clara.signin.js"></script>
+	<script type="text/javascript" src="../global/js/clara.signin.js"></script>
 	<title>Create Your Clara ID</title>
 </head>
 
@@ -47,7 +47,7 @@ $pageTitle = "Create Your Clara ID";
 				<div class="container-xs centered">
 					<div class="row fieldset">
 						<div class="column lg-12">
-							<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-12" placeholder="name@example.com" name="claraID">
+							<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="name@example.com" name="claraID">
 							<div class="field-info-wrapper">
 								<button type="button" tabindex="-1" class="button button-link field-info claraid-field-info" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="This will be your new Clara ID.">
 									<icon class="icon icon-help"></icon>
@@ -58,7 +58,7 @@ $pageTitle = "Create Your Clara ID";
 					<div class="row fieldset">
 						<div class="column lg-12">
 							<div class="password-input">
-								<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="password" name="pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
+								<input type="password" autocomplete="off" class="form-text form-pwd" placeholder="password" name="pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
 								<div class='sub-heading'>Your password must have:</div>
 								<div class='error error-one'>
 										<icon class='icon-checkmark'></icon>
@@ -78,20 +78,26 @@ $pageTitle = "Create Your Clara ID";
 								<span class='hint'>Avoid using a password that you use with other websites or that might be easy for someone else to guess.</span>
 								</div>">
 							</div>
-							<input type="password" autocomplete="off" class="form-text form-pwd lg-12" placeholder="confirm password" name="confirm-pwd">
+							<input type="password" autocomplete="off" class="form-text form-pwd" placeholder="confirm password" name="confirm-pwd">
 						</div>
 					</div>
 					<div class="row">
 						<div class="column lg-12">
 							<div class="fieldgroup">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-6" placeholder="first name" name="first-name">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text lg-6" placeholder="last name" name="last-name">
+								<div class="error-msg-wrapper lg-6 <?php if ($fail == "true"){ echo "has-error"; } ?>">
+									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="first name" name="first-name">
+									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">First name is required.</div>
+								</div>
+								<div class="error-msg-wrapper lg-6 <?php if ($fail == "true"){ echo "has-error"; } ?>">
+									<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="last name" name="last-name">
+									<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Last name is required.</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="column lg-12">
-							<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text form-field-birthday lg-12" placeholder="birthday" name="birthday">
+							<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text form-field-birthday" placeholder="birthday" name="birthday">
 							<div class="field-info-wrapper">
 								<button type="button" tabindex="-1" class="button button-link field-info bd-field-info" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Birth date information may be used to help verify your identity or enable certain Clara services.">
 									<icon class="icon icon-help"></icon>

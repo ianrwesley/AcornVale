@@ -5,7 +5,7 @@
 ?>
 
 <?php include "add-medical-history-body.php"; ?>
-					<div class="column lg-6 app-right-col">
+					<div class="column confirm-col">
 						<div class="flow-section">
 							<div class="row">
 								<div class="column lg-9">

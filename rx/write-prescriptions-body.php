@@ -13,20 +13,20 @@ $confirmInfoTitle = "New Patient";
 	<meta charset="UTF-8">
 	<title>Add New Patient - Clara</title>
 	<?php include "../global/globalui.php"; ?>
-	<script type="text/javascript" src="../home/js/clara.home.js"></script>
-	<link rel="stylesheet" href="../home/css/clara.home.css" type="text/css">
+	<script type="text/javascript" src="../global/js/clara.home.js"></script>
+	<link rel="stylesheet" href="../global/css/clara.home.css" type="text/css">
 </head>
 
-<body class="rx-app">
+<body class="rx-app app-flow write-prescriptions">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
 		<?php include "rx-subnav.php"; ?>
 		<div class="page-content">
 		<div class="app-section-body-wrapper">
-			<div class="app-background-left">&nbsp;</div><div class="app-background-right">&nbsp;</div>
-			<div class="app-section-body clearfix">
+			<div class="app-background-edit">&nbsp;</div><div class="app-background-confirm">&nbsp;</div>
+			<div class="app-section-body">
 				<div class="row">
-					<div class="column lg-6 app-left-col">
+					<div class="column edit-col">
 						<div class="flow-section filled-rx-history">
 							<h2 class="section-title">Filled Rx History</h2>
 							<div class="">

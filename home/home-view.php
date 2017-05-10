@@ -12,11 +12,11 @@ $historyDiscarded = $_GET[ "historydiscarded" ];
 	<meta charset="UTF-8">
 	<title>Pick a Patient - Clara</title>
 	<?php include "../global/globalui.php"; ?>
-	<script type="text/javascript" src="js/clara.home.js"></script>
-	<link rel="stylesheet" href="css/clara.home.css" type="text/css">
+	<script type="text/javascript" src="../global/js/clara.home.js"></script>
+	<link rel="stylesheet" href="../global/css/clara.home.css" type="text/css">
 </head>
 
-<body>
+<body id="patient-search" class="rx-app">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
 		<div class="home-notification-banner <?php if ($patientDiscarded !== "true" and $historyDiscarded !== "true"){ echo "hidden"; } ?>">
@@ -27,7 +27,7 @@ $historyDiscarded = $_GET[ "historydiscarded" ];
 				</p>
 			</div>
 		</div>
-		<div id="pick-patient-content" class="page-content">
+		<div class="page-content">
 			<div class="flow-section">
 				<div class="container-xs centered">
 					<div class="title">
