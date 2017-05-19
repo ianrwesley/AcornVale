@@ -90,11 +90,13 @@ $(document).ready(function () {
 		});
 	});
 	
-	$(".form-field-birthday").focus(function() {
-		$(this).attr('placeholder', 'mm/dd/yyyy');
-	}).blur(function() {
-		$(this).attr('placeholder', 'birthday');
-	});
+	//$(".form-field-birthday").focus(function() {
+	//	$(this).attr('placeholder', 'mm/dd/yyyy');
+	//}).blur(function() {
+	//	$(this).attr('placeholder', 'birthday');
+	//});
+	
+	$(".form-field-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
 	
 	$("#pwd").popover({ 
 		content: function() {
@@ -104,6 +106,6 @@ $(document).ready(function () {
 	
 	$(".field-info").popover();
 	$(".form-pwd").popover();
-	$(".has-error").popover("show");
+	$(".popover-error").popover("show");
 	
 });

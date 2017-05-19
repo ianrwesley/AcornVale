@@ -19,6 +19,7 @@ $pageTitle = "Create Your Clara ID";
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../global/js/jquery.maskedinput.js"></script>
 	<script type="text/javascript" src="../global/js/clara.global.js"></script>
 	<script type="text/javascript" src="../global/js/clara.signin.js"></script>
 	<title>Create Your Clara ID</title>
@@ -48,14 +49,14 @@ $pageTitle = "Create Your Clara ID";
 					<div class="row fieldset">
 						<div class="column lg-12">
 							<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="name@example.com" name="claraID">
-							<div class="field-info-wrapper">
+							<div class="field-info-wrapper attach-right">
 								<button type="button" tabindex="-1" class="button button-link field-info claraid-field-info" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="This will be your new Clara ID.">
 									<icon class="icon icon-help"></icon>
 								</button>
 							</div>
 						</div>
-					</div>
-					<div class="row fieldset">
+					<!--/div>
+					<div class="row fieldset"-->
 						<div class="column lg-12">
 							<div class="password-input">
 								<input type="password" autocomplete="off" class="form-text form-pwd" placeholder="password" name="pwd" id="pwd" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="<div class='password-strength'>
@@ -98,7 +99,7 @@ $pageTitle = "Create Your Clara ID";
 					<div class="row">
 						<div class="column lg-12">
 							<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text form-field-birthday" placeholder="birthday" name="birthday">
-							<div class="field-info-wrapper">
+							<div class="field-info-wrapper attach-right">
 								<button type="button" tabindex="-1" class="button button-link field-info bd-field-info" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Birth date information may be used to help verify your identity or enable certain Clara services.">
 									<icon class="icon icon-help"></icon>
 								</button>
@@ -121,22 +122,40 @@ $pageTitle = "Create Your Clara ID";
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
 	<!-- Modal -->
-	<div class="modal fade" id="verifyEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-		  </div>
-		  <div class="modal-body">
-			Content goes here…
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
-		  </div>
+	<div class="modal fade" id="verifyEmail" tabindex="-1" role="dialog" aria-labelledby="Discard new patient">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content text-centered">
+				<div class="modal-body">
+					<icon class="icon-mail"></icon>
+					<h1 class="header">Verify your email address to create your new Clara&nbsp;ID.</h1>
+					<p class="description">An email with a verification code has been sent to <span class="email user-data bold">drlivingstone@ipresume.com</span>.<br>Enter the code here:</p>
+					<div class="fieldgroup security-code">
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+						<div class="input-wrapper lg-2"><input class="form-text" maxlength="1"></div>
+					</div>
+					<div class="field-info-wrapper">
+						<button tabindex="-1" class="button button-link field-info" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Check your Junk mail folder or wait a few minutes. If you’re still having trouble, you can request a new code.">Didn't get an email?</button>
+					</div>
+				</div>
+				<div class="toolbar-wrapper">
+					<div class="controls-footer clearfix">
+						<div class="button-group pull-left">
+							<button type="button" role="link" class="button button-link left-icon disabled"><icon class="icon-refresh"></icon>Send a new code</button>
+						</div>
+						<div class="button-group flow-controls pull-right">
+							<button type="button" role="link" class="button button-link" data-dismiss="modal">Cancel</button>
+							<button type="button" role="link" class="button button-link disabled">
+								<a href="../account/account-view.php">Continue</a>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	  </div>
 	</div>
 </body>
 

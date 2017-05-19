@@ -13,6 +13,7 @@ $confirmInfoTitle = "New Patient";
 	<meta charset="UTF-8">
 	<title>Add New Patient - Clara</title>
 	<?php include "../global/globalui.php"; ?>
+	<script type="text/javascript" src="../global/js/switchery.js"></script>
 	<script type="text/javascript" src="../global/js/clara.home.js"></script>
 	<link rel="stylesheet" href="../global/css/clara.home.css" type="text/css">
 </head>
@@ -27,22 +28,14 @@ $confirmInfoTitle = "New Patient";
 			<div class="app-section-body">
 				<div class="row">
 					<div class="column edit-col">
-						<div class="flow-section filled-rx-history">
-							<h2 class="section-title">Filled Rx History</h2>
-							<div class="">
-								Medication History
-							</div>
+						<div class="medications-wrapper">
+							<?php include "write-prescriptions-medication.php"; ?>
 						</div>
-						<div class="flow-section medication">
-							<h2 class="section-title">First Medication</h2>
-							<div class="">
-								First Med
-							</div>
-						</div>
-						<div class="flow-section medication">
-							<h2 class="section-title">Second Medication</h2>
-							<div class="">
-								Second Med
+						<div class="add-more-wrapper">
+							<div class="add-more pull-right" id="add-more-medications-btn">
+								<button class="button button-link button-compact">
+									<icon class="icon-add"></icon>Add medication
+								</button>
 							</div>
 						</div>
 					</div>

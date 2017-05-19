@@ -169,7 +169,7 @@
   .si-body.auth .auth-container .si-button {
     border: 0;
     position: absolute;
-    top: 88.5px;
+    top: 91.5px;
     right: 5px;
     background: transparent;
     outline: none;
@@ -265,21 +265,21 @@
     padding: 0; }
   .si-body.create-id .page-content .intro, .si-body.faq .page-content .intro, .si-body.recover-id .page-content .intro {
     padding-top: 30px; }
+  .si-body.create-id .page-content .controls-footer, .si-body.faq .page-content .controls-footer, .si-body.recover-id .page-content .controls-footer {
+    max-width: 100%;
+    margin: auto;
+    text-align: center; }
+  .si-body.create-id .page-content .flow-controls, .si-body.faq .page-content .flow-controls, .si-body.recover-id .page-content .flow-controls {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 50px; }
 .si-body.create-id .flow-section, .si-body.faq .flow-section, .si-body.recover-id .flow-section {
   max-width: 1200px;
   margin: auto;
   width: 80%;
   padding: 30px 0;
   border-bottom: 1px solid #D0CFD4; }
-.si-body.create-id .controls-footer, .si-body.faq .controls-footer, .si-body.recover-id .controls-footer {
-  max-width: 100%;
-  margin: auto;
-  text-align: center; }
-.si-body.create-id .flow-controls, .si-body.faq .flow-controls, .si-body.recover-id .flow-controls {
-  margin: auto;
-  padding: 0;
-  text-align: center;
-  padding-bottom: 50px; }
 .si-body.create-id .privacy-details, .si-body.faq .privacy-details, .si-body.recover-id .privacy-details {
   font-size: 14px;
   padding: 30px 0; }
@@ -289,7 +289,7 @@
   color: #140A29; }
   .si-body .si-container-title {
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 300;
     margin: 22px auto 16px; }
   .si-body .description {
     font-size: 18px;
@@ -350,6 +350,31 @@
   width: 300px; }
 .si-body.create-id .form-field-birthday:focus::-webkit-input-placeholder, .si-body.create-id .form-field-birthday:focus::placeholder {
   color: #140A29; }
+
+#verifyEmail .modal-dialog {
+  max-width: 520px; }
+#verifyEmail .modal-content {
+  padding: 0; }
+#verifyEmail .modal-body {
+  max-width: 372px;
+  padding: 16px 16px 28px; }
+  #verifyEmail .modal-body h1 {
+    margin-bottom: 16px; }
+  #verifyEmail .modal-body .description {
+    line-height: 1.4;
+    margin-bottom: 12px; }
+#verifyEmail .icon-mail:before {
+  font-size: 96px;
+  line-height: 1;
+  color: #9C96B1; }
+#verifyEmail .security-code {
+  max-width: 280px;
+  margin: 0 auto; }
+  #verifyEmail .security-code .form-text {
+    text-align: center;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 500; }
 
 /*-- RECOVER CLARA ID -*/
 .si-body.recover-id .content-main {

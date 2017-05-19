@@ -12,7 +12,7 @@
 				<div class="button-group flow-controls">
 					<button type="button" role="link" class="button button-link secondary-action" data-dismiss="modal">Cancel</button>
 					<button type="button" role="link" class="button button-flat primary-action caution">
-						<a href="../home/home-view.php?patientdiscarded=true">Discard new patient…</a>
+						<a href="../home/home-view.php?patientdiscarded=true">Discard new patient</a>
 					</button>
 				</div>
 			</div>

@@ -129,7 +129,7 @@ $border-darker: 1px solid #9C9B9F;
 	.logo {text-align:center; margin-bottom:0; line-height:.5;}
 	.clara-si-logo {width:214px;}
 	.auth-container {width:640px; height:480px; padding-top:140px; position:relative; z-index:inherit; text-align:center; @include box-sizing(border-box);
-		.si-button {border:0; position: absolute; top:88.5px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
+		.si-button {border:0; position: absolute; top:91.5px; right:5px; background: transparent; outline: none; cursor: pointer; padding:6px; color:#2A2A2A; font-size:26px;}
 		.si-button:disabled {opacity:.3; pointer-events:none;}
 		.si-container {position:relative; text-align:center; width:350px; padding:0;}
 		.si-input-field {width:100%; border:0px; padding:8px 12px;  outline:none; vertical-align:middle; line-height:inherit; @include font-smoothing; font-size:$base-font-size; font-weight:$font-weight-book; background: transparent; @include border-radius($button-radius); @include box-shadow(inherit); @include box-sizing(border-box);}
@@ -149,18 +149,17 @@ $border-darker: 1px solid #9C9B9F;
 	.page-content {padding-bottom:$globalfooter-height;
 		.container {min-width:600px; max-width:$lg-screen-width; width:auto; margin:auto; padding:0;}
 		.intro {padding-top:30px;}
+		.controls-footer {max-width:100%; margin:auto; text-align:center;}
+		.flow-controls {margin:auto; padding:0; text-align: center; padding-bottom:50px;}
 	}
 	
 	.flow-section {max-width:1200px; margin:auto; width:80%; padding:30px 0; border-bottom:1px solid $color-border-primary;}
-	.controls-footer {max-width:100%; margin:auto; text-align:center;}
-	.flow-controls {margin:auto; padding:0; text-align: center; padding-bottom:50px;}
-	
 	.privacy-details {font-size:$sm-font-size; padding:30px 0;}
 }
 
 /*-- TYPOGRAPHY --*/
 .si-body {color:$color-font-primary;
-	.si-container-title {font-size:$md-header-font-size; font-weight:200; margin:22px auto 16px;}
+	.si-container-title {font-size:$md-header-font-size; font-weight:$font-weight-light; margin:22px auto 16px;}
 	.description {font-size:$sm-header-font-size; font-weight:$font-weight-book;}
 	.hero h1 {text-align:center; line-height:180px; padding:0; margin:0; font-size:40px;}
 	.pg-label {font-size:$md-header-font-size; line-height:1.2; font-weight:$font-weight-medium; letter-spacing:0.015em;} 
@@ -190,6 +189,20 @@ $border-darker: 1px solid #9C9B9F;
 	.claraid-field-info + .popover {width:246px;}
 	.bd-field-info + .popover {width:300px;}
 	.form-field-birthday:focus::-webkit-input-placeholder, .form-field-birthday:focus::placeholder {color:$color-font-primary;}
+}
+#verifyEmail {
+	.modal-dialog {max-width:520px;}
+	.modal-content {padding:0;}
+	.modal-body {max-width:372px; padding:16px 16px 28px;
+		h1 {margin-bottom:16px;}
+		.description {line-height:1.4; margin-bottom:12px;}
+	}
+	
+	.icon-mail:before {font-size:96px; line-height:1; color:$color-font-placeholder;}
+	
+	.security-code {max-width:280px; margin:0 auto;
+		.form-text {text-align:center; height:50px; font-size:24px; font-weight: $font-weight-medium;}
+	}
 }
 
 /*-- RECOVER CLARA ID -*/

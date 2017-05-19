@@ -107,4 +107,83 @@ $(document).ready(function () {
 		}
 	});
 	
+	$("#patient-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+	$("#patient-phone").mask("(999) 999-9999");
+	
+	$('#select-none-allergies').on('click',function(){
+		$(this).closest('.fieldcontrols').html('<icon class="icon-allergy allergy-label"></icon>No allergies. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addAllergies">Add allergies</button></div>');
+	});
+	$('#select-none-homemeds').on('click',function(){
+		$(this).closest('.fieldcontrols').html('<icon class="icon-medication-tablet homemed-label"></icon>No home medications. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addHomeMeds">Add home medications</button></div>');
+	});
+	$('#select-none-diagnoses').on('click',function(){
+		$(this).closest('.fieldcontrols').html('<icon class="icon-diagnosis diagnosis-label"></icon>No diagnoses or pre-existing conditions. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addDiagnoses">Add diagnoses</button></div>');
+	});
+	
+	$('.add-more-allergies-btn').on('click',function(){
+		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><div class="header-wrap clearfix"><h2 class="section-title">New allergy</h2><div class="pull-right"><button class="button button-link button-tiny secondary-action discontinue"><icon class="icon-discontinue"></icon>Discontinue</button></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="allergy" name="phone" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-8"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="reactions" name="email" value=""><div class="error-msg">Error</div></div></div></div>');
+		//$(this).remove();
+	});
+	
+	$('.add-more-homemeds-btn').on('click',function(){
+		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><h2 class="section-title">New home medication</h2><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="medication" name="medication" value=""><div class="error-msg">Error</div></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="dose" name="dose" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="frequency" name="frequency" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="last taken" name="last taken" value=""><div class="error-msg">Error</div></div></div></div>');
+		//$(this).remove();
+	});
+	
+	$('.add-more-diagnoses-btn').on('click',function(){
+		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><h2 class="section-title">New diagnosis or condition</h2><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="diagnosis or pre-existing condition" name="phone" value=""><div class="error-msg">Error</div></div></div></div>');
+		//$(this).remove();
+	});
+	
+	$('.field-icon').on('click',function(){
+		$(this).siblings('.nofocus-icon').addClass('in-focus');
+	});
+	
+	$('.show-discontinued').on('click',function(){
+		//$(this).closest('.fieldcontrols').find('.discontinued-list').addClass('show');
+		$(this).closest('.button-group').find('.hide-discontinued').addClass('active');
+		$(this).removeClass('active');
+	});
+	
+	$('.hide-discontinued').on('click',function(){
+		//$(this).closest('.fieldcontrols').find('.discontinued-list').removeClass('show');
+		$(this).closest('.button-group').find('.show-discontinued').addClass('active');
+		$(this).removeClass('active');
+	});
+	
+	$('#add-more-medications-btn').on('click',function(){
+		$('.medication').removeClass('in').removeClass('expanded').addClass('collapsed');
+		$.ajax({
+			url: 'write-prescriptions-medication.php',
+			success: function(html) {
+				$('.medications-wrapper').append(html);
+			}
+		});
+    });
+	
+	$(".medication-title").each(function(i) {
+		$(this).find(".med-ordinal").addClass("med-ordinal-" + (i));
+	});
+
+	var ordinals = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth", "Eighteenth", "Nineteenth", "Twentieth"];
+	$.each(ordinals, function(index, value) {
+		$('.med-ordinal-' + index).text(value);
+	});
+	
+	$('.medication-favorite-btn').on('click',function(){
+		$(this).children('icon').toggleClass('icon-favorite').toggleClass('icon-favorite-selected');
+	});
+	
+	$(document).ready(function() {
+		var elem = document.querySelector('.js-switch');
+		var switchery = new Switchery(elem, { size: 'small' });
+	});
+	
+	$('.edit-med-history-toggle').on('click',function(){
+		var sectionTarget = $(this).attr('data-target');
+		$(this).closest('.btn-group').children('.btn').removeClass('focus');
+		$(this).closest('.patient-medical-history').children('.flow-section').removeClass('show');
+		$(this).closest('.patient-medical-history').find(sectionTarget).addClass('show');
+	});
+	
 });
