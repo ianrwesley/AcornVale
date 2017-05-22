@@ -58,12 +58,19 @@
     padding-right: 56px; }
   .rx-app .has-controls.dosage .form-text {
     padding-right: 74px; }
+  .rx-app .control.dosage-unit {
+    width: 60%;
+    text-align: left; }
+  .rx-app .dispense-amount {
+    color: #9C96B1; }
   .rx-app .allergy-label {
     color: #00AB44 !important; }
   .rx-app .homemed-label {
     color: #720DBF !important; }
   .rx-app .diagnosis-label {
-    color: #FF6010 !important; }
+    color: #0B51FF !important; }
+  .rx-app .prescriptions-label {
+    color: #FF066C !important; }
   .rx-app .title h1 {
     text-align: center;
     line-height: 140px;
@@ -146,6 +153,9 @@
   .rx-app .sub-detail {
     font-size: 14px;
     color: #605868; }
+  .rx-app .sub-detail.small {
+    font-size: 11px;
+    text-transform: uppercase; }
   .rx-app .detail icon {
     color: #9C96B1; }
   .rx-app .show-discontinued, .rx-app .hide-discontinued {
@@ -215,6 +225,8 @@
       opacity: 1; }
   .rx-app .field-icon ~ icon {
     color: #9C96B1; }
+  .rx-app .has-error .field-icon ~ icon {
+    color: #FF0058; }
   .rx-app .confirm-info {
     -webkit-border-radius: 4px;
     /* Safari and Chrome */
@@ -236,11 +248,16 @@
       font-size: 16px;
       line-height: 1.25;
       padding: 10px 0;
-      border-top: 1px solid #D0CFD4; }
+      border-top: 1px solid #D0CFD4;
+      opacity: .5; }
       .rx-app .confirm-info .confirm-info-flow .row-header, .rx-app .confirm-info .confirm-info-flow .allergies-section .rxn-label, .rx-app .allergies-section .confirm-info .confirm-info-flow .rxn-label {
         margin-bottom: 6px; }
       .rx-app .confirm-info .confirm-info-flow .row {
         padding: 6px 0; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .row-header, .rx-app .confirm-info .confirm-info-flow.prescriptions .allergies-section .rxn-label, .rx-app .allergies-section .confirm-info .confirm-info-flow.prescriptions .rxn-label {
+      margin-bottom: 0; }
+    .rx-app .confirm-info .confirm-info-flow.current-flow-step {
+      opacity: 1; }
     .rx-app .confirm-info .confirm-info-flow:first-child {
       border-top: none;
       padding-top: 0; }
@@ -298,11 +315,13 @@
     margin-left: 0; }
     .rx-app .ordered-list li {
       padding: 10px 0;
-      height: 40px;
+      min-height: 40px;
       line-height: 1.2;
       border-bottom: 1px solid #D0CFD4; }
     .rx-app .ordered-list li:last-of-type {
       border-bottom: 0; }
+    .rx-app .ordered-list .rx-drug-name {
+      font-weight: 500; }
     .rx-app .ordered-list .discontinued-list {
       background: rgba(65, 65, 65, 0.06);
       margin-left: -20px;
@@ -408,7 +427,7 @@
       color: #FFB806; }
   .rx-app .medications-wrapper .medication:first-child {
     height: 275px; }
-  .rx-app .medications-wrapper .medication.in:last-child .medication-edit-btn {
+  .rx-app .medications-wrapper .medication:only-child .medication-edit-btn, .rx-app .medications-wrapper .medication .medication-edit-btn {
     display: none; }
   .rx-app .medications-wrapper .medication:only-child .medication-delete-btn {
     display: none; }
@@ -421,6 +440,8 @@
     margin-right: -20px;
     padding: 16px 20px 18px;
     animation: collapse-medication-slide 450ms both; }
+    .rx-app .medications-wrapper .medication.collapsed .medication-edit-btn {
+      display: inline-block; }
     .rx-app .medications-wrapper .medication.collapsed .fieldgroup {
       opacity: 0;
       visibility: hidden;
@@ -500,8 +521,6 @@
     text-align: right; }
   .rx-app .edit-patient-content {
     padding: 0; }
-    .rx-app .edit-patient-content .flow-section:first-child {
-      padding-top: 8px; }
     .rx-app .edit-patient-content .flow-section {
       padding: 16px 0; }
     .rx-app .edit-patient-content .modal-header h1 {
@@ -512,6 +531,8 @@
       border-top: 1px solid #D0CFD4;
       padding: 16px 18px;
       margin: 0; }
+    .rx-app .edit-patient-content .patient-demographics {
+      border-bottom: none; }
     .rx-app .edit-patient-content .patient-medical-history {
       padding-bottom: 0; }
       .rx-app .edit-patient-content .patient-medical-history .fieldcontrols {
@@ -521,7 +542,8 @@
       .rx-app .edit-patient-content .patient-medical-history .fieldcontrols.first {
         padding-top: 0; }
       .rx-app .edit-patient-content .patient-medical-history > .section-title {
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        padding-top: 16px; }
       .rx-app .edit-patient-content .patient-medical-history > .flow-section {
         display: none;
         border: none;
@@ -573,8 +595,8 @@
         border-color: #720DBF;
         z-index: 3; }
       .rx-app .medical-history-content .segmented-control-wrap.medical-history-toggle .btn.btn-show-diagnoses.focus, .rx-app .medical-history-content .segmented-control-wrap.medical-history-toggle .btn.btn-show-diagnoses:focus {
-        background-color: rgba(255, 96, 16, 0.08);
-        border-color: #FF6010;
+        background-color: rgba(11, 81, 255, 0.08);
+        border-color: #0B51FF;
         z-index: 3; }
   .rx-app .selectize-input {
     min-height: 40px;
@@ -783,6 +805,60 @@
     color: #00CC56; }
 
 /*-- RESPONSIVE --*/
+@media only screen and (min-width: 1280px) {
+  #editPatient .modal-dialog {
+    width: 1200px; }
+
+  .rx-app .edit-patient-content .patient-demographics, .rx-app .edit-patient-content .patient-medical-history {
+    width: 50%;
+    float: left;
+    padding: 0 28px; }
+  .rx-app .edit-patient-content .patient-demographics {
+    border-right: 1px solid #D0CFD4;
+    padding-bottom: 28px; }
+  .rx-app .edit-patient-content .patient-medical-history {
+    border-left: 1px solid #D0CFD4;
+    margin-left: -1px; }
+  .rx-app .edit-patient-content .edit-patient-section-wrap {
+    margin: 0 -28px;
+    margin-top: 14px; }
+  .rx-app .edit-patient-content .ep-subnav {
+    display: none; } }
+@media only screen and (max-width: 1279px) {
+  .rx-app .edit-patient-content .ep-subnav {
+    margin: 0 -28px;
+    border-bottom: 1px solid #D0CFD4; }
+    .rx-app .edit-patient-content .ep-subnav .ep-content {
+      margin: 0;
+      margin-top: 6px;
+      padding: 12px 10px; }
+    .rx-app .edit-patient-content .ep-subnav .ep-item {
+      display: inline-block;
+      padding: 0 18px;
+      position: relative; }
+    .rx-app .edit-patient-content .ep-subnav .ep-link {
+      color: #140A29;
+      font-size: 14px;
+      cursor: pointer; }
+    .rx-app .edit-patient-content .ep-subnav .ep-item.active .ep-link {
+      opacity: .3; }
+    .rx-app .edit-patient-content .ep-subnav .ep-item.active:after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      bottom: -19.5px;
+      left: 50%;
+      margin-left: -9px;
+      background: white;
+      transform: rotate(45deg);
+      border-top: 1px solid #D0CFD4;
+      border-left: 1px solid #D0CFD4; }
+  .rx-app .edit-patient-content .edit-patient-section-wrap > .flow-section {
+    display: none; }
+  .rx-app .edit-patient-content .edit-patient-section-wrap > .flow-section.show {
+    display: block; } }
 @media only screen and (max-width: 1280px) {
   .rx-app .app-section-body {
     max-width: 100%; }

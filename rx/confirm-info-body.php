@@ -21,39 +21,57 @@ $confirmInfoTitle = "Patient Details";
 		</div>
 	</div>
 	<div class="confirm-info-flow-wrap">
-			<?php 
-				if ($rxFlowProgress !== 0) {
-					echo "<div class='confirm-info-flow'>
-							<div class='row clearfix'>
-								<div class='column lg-6'>
-									<h3 class='row-header'><icon class='icon-home'></icon>Address</h3>
-									<span class='detail-overflow address-street'>$address</span><br>
-									<span class='detail-overflow address-city-state'>$city, $state $zipCode</span>
-								</div>
-								<div class='column lg-6'>
-									<h3 class='row-header'>Contact</h3>
-									<span class='detail phone'><icon class='icon-smartphone'></icon>$phone</span><br>
-									<span class='detail email'><icon class='icon-mail'></icon>$email</span>
-								</div>
-							</div>
-						  </div>";
-				}
-			?>
-		<div class="confirm-info-flow <?php if ($rxFlowProgress < 2) { echo "hidden"; } ?>">
+		<div class="confirm-info-flow <?php if ($rxFlowProgress == 0) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 1) { echo "current-flow-step"; } ?>">
+			<div class="row clearfix">
+				<div class="column lg-6">
+					<h3 class="row-header"><icon class="icon-home"></icon>Address</h3>
+					<span class="detail-overflow address-street"><?php echo $address ?></span><br>
+					<span class="detail-overflow address-city-state"><?php echo "$city, $state $zipCode"; ?></span>
+				</div>
+				<div class="column lg-6">
+					<h3 class="row-header">Contact</h3>
+					<span class="detail phone"><icon class="icon-smartphone"></icon><?php echo $phone ?></span><br>
+					<span class="detail email"><icon class="icon-mail"></icon><?php echo $email ?></span>
+				</div>
+			</div>
+		</div>
+		<div class="confirm-info-flow <?php if ($rxFlowProgress < 3) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 2 || $rxFlowProgress == 3) { echo "current-flow-step"; } ?>">
 			<div class="row clearfix">
 				<div class="column lg-6">
 					<h3 class="row-header allergy-label"><icon class="icon-allergy"></icon>Allergies</h3>
-					<span class="detail-overflow allergies"><?php echo $allergies ?></span><br>
+					<span class="allergies"><?php echo $allergies ?></span>
 				</div>
 				<div class="column lg-6">
 					<h3 class="row-header homemed-label"><icon class="icon-medication-bottle"></icon>Home Medications</h3>
-					<span class="detail-overflow homemeds"><?php echo $homemeds ?></span><br>
+					<span class="homemeds"><?php echo $homemeds ?></span>
 				</div>
 			</div>
 			<div class="row clearfix">
 				<div class="column lg-12">
 					<h3 class="row-header diagnosis-label"><icon class="icon-diagnosis"></icon>Diagnoses &amp; Conditions</h3>
-					<span class="detail-overflow diagnoses"><?php echo $diagnoses ?></span><br>
+					<span class="diagnoses"><?php echo $diagnoses ?></span>
+				</div>
+			</div>
+		</div>
+		<div class="confirm-info-flow prescriptions <?php if ($rxFlowProgress < 5) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5) { echo "current-flow-step"; } ?>">
+			<div class="row clearfix">
+				<div class="column lg-12">
+					<h3 class="row-header prescriptions-label"><icon class="icon-prescription"></icon>Prescriptions</h3>
+					<ol class="ordered-list">
+						<?php
+							if ($RXdrugNames !== "" and $RXdrugNames !== "None") {
+								foreach ($RXdrugNamesArray as $RXdrugNamesKey => $RXdrugNamesValue) {
+									echo "<li><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'><b>$RXrefillsArray[$RXdrugNamesKey]</b> refill";
+									if ($RXrefillsArray[$RXdrugNamesKey] !== "1") {
+										echo 's';
+									}
+									echo "</span></div><div class='column lg-2'><span class='sub-detail small'>$RXsubstitutionsArray[$RXdrugNamesKey]</span></div></div><span class='sub-detail lg-3'>#<b>$RXdispenseAmtArray[$RXdrugNamesKey]</b></span><span class='sub-detail lg-9'><i>sig.</i> $RXcustomSigArray[$RXdrugNamesKey]</span></li>";
+								}
+							} elseif ($RXdrugNames == "" or $RXdrugNames == "None") {
+								echo "<li>None</li>";
+							}
+						?>
+					</ol>
 				</div>
 			</div>
 		</div>

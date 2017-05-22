@@ -7,13 +7,16 @@
 							<h2 class='section-title'>First home medication</h2>
 							<div class='fieldgroup'>
 								<div class='error-msg-wrapper lg-12'>
-									<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='medication' name='medication' value=''>
+									<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='drug name' name='drug name' value=''>
 									<div class='error-msg'>Error</div>
 								</div>
 							</div>
 							<div class='fieldgroup'>
-								<div class='error-msg-wrapper lg-4'>
-									<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='dose' name='dose' value=''>
+								<div class='error-msg-wrapper lg-4 has-controls dosage'>
+									<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' maxlength='4' class='form-text' placeholder='dose' name='dose' value=''>
+									<div class='control dosage-unit'>
+										<span>units</span>
+									</div>
 									<div class='error-msg'>Error</div>
 								</div>
 								<div class='error-msg-wrapper lg-4'>
@@ -35,13 +38,16 @@
 									</div>
 									<div class='fieldgroup'>
 										<div class='error-msg-wrapper lg-12'>
-											<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='medication' name='medication' value='$homemedsValue'>
+											<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='drug name' name='drug name' value='$homemedsValue'>
 											<div class='error-msg'>Error</div>
 										</div>
 									</div>
 									<div class='fieldgroup'>
-										<div class='error-msg-wrapper lg-4'>
-											<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' class='form-text' placeholder='dose' name='dose' value='$homemedsDoseArray[$homemedsKey]'>
+										<div class='error-msg-wrapper lg-4 has-controls dosage'>
+											<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' maxlength='4' class='form-text' placeholder='dose' name='dose' value='$homemedsDoseArray[$homemedsKey]'>
+											<div class='control dosage-unit'>
+												<span>$homemedsDoseUnitArray[$homemedsKey]</span>
+											</div>
 											<div class='error-msg'>Error</div>
 										</div>
 										<div class='error-msg-wrapper lg-4'>

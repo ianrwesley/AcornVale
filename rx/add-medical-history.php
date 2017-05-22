@@ -1,7 +1,7 @@
 <?php
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
-	$rxFlowProgress = 1;
+	$rxFlowProgress = 2;
 ?>
 
 <?php include "add-medical-history-body.php"; ?>

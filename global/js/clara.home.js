@@ -114,7 +114,7 @@ $(document).ready(function () {
 		$(this).closest('.fieldcontrols').html('<icon class="icon-allergy allergy-label"></icon>No allergies. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addAllergies">Add allergies</button></div>');
 	});
 	$('#select-none-homemeds').on('click',function(){
-		$(this).closest('.fieldcontrols').html('<icon class="icon-medication-tablet homemed-label"></icon>No home medications. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addHomeMeds">Add home medications</button></div>');
+		$(this).closest('.fieldcontrols').html('<icon class="icon-medication-bottle homemed-label"></icon>No home medications. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addHomeMeds">Add home medications</button></div>');
 	});
 	$('#select-none-diagnoses').on('click',function(){
 		$(this).closest('.fieldcontrols').html('<icon class="icon-diagnosis diagnosis-label"></icon>No diagnoses or pre-existing conditions. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addDiagnoses">Add diagnoses</button></div>');
@@ -126,12 +126,12 @@ $(document).ready(function () {
 	});
 	
 	$('.add-more-homemeds-btn').on('click',function(){
-		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><h2 class="section-title">New home medication</h2><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="medication" name="medication" value=""><div class="error-msg">Error</div></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="dose" name="dose" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="frequency" name="frequency" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="last taken" name="last taken" value=""><div class="error-msg">Error</div></div></div></div>');
+		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><div class="header-wrap clearfix"><h2 class="section-title">New home medication</h2><div class="pull-right"><button class="button button-link button-tiny secondary-action discontinue"><icon class="icon-discontinue"></icon>Discontinue</button></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="drug name" name="drug name" value=""><div class="error-msg">Error</div></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-4 has-controls dosage"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="dose" name="dose" value=""><div class="control dosage-unit"><span>units</span></div><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="frequency" name="frequency" value=""><div class="error-msg">Error</div></div><div class="error-msg-wrapper lg-4"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="last taken" name="last taken" value=""><div class="error-msg">Error</div></div></div></div>');
 		//$(this).remove();
 	});
 	
 	$('.add-more-diagnoses-btn').on('click',function(){
-		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><h2 class="section-title">New diagnosis or condition</h2><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="diagnosis or pre-existing condition" name="phone" value=""><div class="error-msg">Error</div></div></div></div>');
+		$(this).closest('.active-items-wrap').find('.active-items-content').append('<div class="flow-section"><div class="header-wrap clearfix"><h2 class="section-title">New diagnosis or condition</h2><div class="pull-right"><button class="button button-link button-tiny secondary-action discontinue"><icon class="icon-discontinue"></icon>Discontinue</button></div></div><div class="fieldgroup"><div class="error-msg-wrapper lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-text" placeholder="diagnosis or pre-existing condition" name="phone" value=""><div class="error-msg">Error</div></div></div></div>');
 		//$(this).remove();
 	});
 	
@@ -152,9 +152,9 @@ $(document).ready(function () {
 	});
 	
 	$('#add-more-medications-btn').on('click',function(){
-		$('.medication').removeClass('in').removeClass('expanded').addClass('collapsed');
+		$('.medication').removeClass('expanded').addClass('collapsed');
 		$.ajax({
-			url: 'write-prescriptions-medication.php',
+			url: 'write-prescriptions-medication-empty.php',
 			success: function(html) {
 				$('.medications-wrapper').append(html);
 			}
@@ -184,6 +184,14 @@ $(document).ready(function () {
 		$(this).closest('.btn-group').children('.btn').removeClass('focus');
 		$(this).closest('.patient-medical-history').children('.flow-section').removeClass('show');
 		$(this).closest('.patient-medical-history').find(sectionTarget).addClass('show');
+	});
+	
+	$('.ep-link').on('click',function(){
+		var contentTarget = $(this).attr('data-target');
+		$('.ep-item').removeClass('active');
+		$(this).parent('.ep-item').addClass('active');
+		$(this).closest('.modal-body').find('.edit-patient-section-wrap > .flow-section').removeClass('show');
+		$(this).closest('.modal-body').find(contentTarget).addClass('show');
 	});
 	
 });

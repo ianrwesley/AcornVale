@@ -29,7 +29,13 @@ $confirmInfoTitle = "New Patient";
 				<div class="row">
 					<div class="column edit-col">
 						<div class="medications-wrapper">
-							<?php include "write-prescriptions-medication.php"; ?>
+							<?php
+								if ($RXdrugNames == "") {
+									include "write-prescriptions-medication-empty.php";
+								} elseif ($RXdrugNames !== "") {
+									include "write-prescriptions-medication-full.php";
+								}
+							?>
 						</div>
 						<div class="add-more-wrapper">
 							<div class="add-more pull-right" id="add-more-medications-btn">

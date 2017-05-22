@@ -14,12 +14,12 @@
 		});
 		
 		$('.medication-edit-btn').on('click',function(){
-			$('.medication').removeClass('in').removeClass('expanded').addClass('collapsed');
+			$('.medication').removeClass('expanded').addClass('collapsed');
 			$(this).closest('.medication').removeClass('collapsed').addClass('in').addClass('expanded');
 		});
 
 		$('.medication-save-changes-btn').on('click',function(){
-			$(this).closest('.medication').addClass('collapsed').removeClass('in').removeClass('expanded');
+			$(this).closest('.medication').addClass('collapsed').removeClass('expanded');
 		});
 
 		$('.medication-delete-btn').on('click',function(){
@@ -50,8 +50,8 @@
 	</div>
 	<div class="fieldgroup">
 		<div class="error-msg-wrapper lg-4 has-controls dosage <?php if ($fail == "true"){ echo "has-error"; } ?>">
-			<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="dose" name="dose" value="">
-			<div class="control">
+			<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="4" class="form-text" placeholder="dose" name="dose" value="">
+			<div class="control dosage-unit">
 				<span>unit</span>
 			</div>
 			<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Error.</div>
@@ -71,7 +71,7 @@
 			<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Error.</div>
 		</div>
 		<div class="error-msg-wrapper lg-4 <?php if ($fail == "true"){ echo "has-error"; } ?>">
-			<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text field-icon field-disabled" placeholder="dispense amount" name="dispense amount" value="" tabindex="-1">
+			<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text field-icon field-disabled dispense-amount" placeholder="dispense amount" name="dispense amount" value="" tabindex="-1">
 			<icon class="icon-calculator nofocus-icon"></icon>
 			<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Error.</div>
 		</div>

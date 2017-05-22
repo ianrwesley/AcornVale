@@ -20,7 +20,8 @@ $reactionsDiscontinued = "Itchy Skin, Abdominal Pain";
 $homemeds = "Tylenol 500mg Capsule, Benadryl 50mg Tablet";
 $homemedsDiscontinued = "Nexium 20mg Capsule, Lyrica 50mg Capsule";
 // Home Meds - Dosage
-$homemedsDose = "1 capsule, 2 tablets";
+$homemedsDose = "1, 2";
+$homemedsDoseUnit = "capsule, tablets";
 $homemedsDoseDiscontinued = "1 capsule, 1 capsule";
 // Home Meds - Frequency
 $homemedsFrequency = "4 times daily, Every 12 hours";
@@ -40,6 +41,7 @@ $reactionsDiscontinuedArray = explode(', ', $reactionsDiscontinued);
 $homemedsArray = explode(', ', $homemeds);
 $homemedsDiscontinuedArray = explode(', ', $homemedsDiscontinued);
 $homemedsDoseArray = explode(', ', $homemedsDose);
+$homemedsDoseUnitArray = explode(', ', $homemedsDoseUnit);
 $homemedsDoseDiscontinuedArray = explode(', ', $homemedsDoseDiscontinued);
 $homemedsFrequencyArray = explode(', ', $homemedsFrequency);
 $homemedsFrequencyDiscontinuedArray = explode(', ', $homemedsFrequencyDiscontinued);

@@ -1,4 +1,5 @@
 <?php
+// Demographics
 $firstName = "";
 $middleName = "";
 $lastName = "";
@@ -39,6 +40,17 @@ $homemedsLastTakenDiscontinued = "";
 // Diagnoses
 $diagnoses = "";
 $diagnosesDiscontinued = "";
+
+// Prescriptions
+$RXdrugNames = "";
+$RXdosage = "";
+$RXdosageUnit = "";
+$RXfrequency = "";
+$RXduration = "";
+$RXcustomSig = "";
+$RXdispenseAmt = "";
+$RXrefills = "";
+$RXsubstitutions = "";
 
 // FUNCTIONS
 $allergiesArray = explode(', ', $allergies);

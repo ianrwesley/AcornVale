@@ -104,7 +104,7 @@ $(document).ready(function () {
 		}
 	});
 	
-	$(".field-info").popover();
+	$(".field-info").popover("show");
 	$(".form-pwd").popover();
 	$(".popover-error").popover("show");
 	

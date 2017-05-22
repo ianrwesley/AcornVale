@@ -2,7 +2,8 @@
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
 	include "../variables/patient-variables/variable-test-patient-medhistory.php";
-	$rxFlowProgress = 4;
+	include "../variables/patient-variables/variable-test-patient-prescriptions.php";
+	$rxFlowProgress = 5;
 ?>
 
 <?php include "write-prescriptions-body.php"; ?>
@@ -14,8 +15,8 @@
 										<button type="button" role="link" class="button button-link secondary-action" data-toggle="modal" data-target="#cancelConfirm">
 											Cancel
 										</button>
-										<button type="button" role="link" class="button button-flat primary-action disabled">
-											<a href="write-prescriptions-filled.php"><?php echo $primaryButtonLabel ?></a>
+										<button type="button" role="link" class="button button-flat primary-action">
+											<a href=""><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>

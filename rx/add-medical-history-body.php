@@ -84,7 +84,7 @@ $confirmInfoTitle = "New Patient";
 										<?php
 											if ($homemeds !== "" and $homemeds !== "None") {
 												foreach ($homemedsArray as $homemedsKey => $homemedsValue) {
-													echo "<li><div class='list-item-details pull-left lg-11'><span class='detail home-medication-name'>$homemedsValue</span><span class='sub-detail home-medication-dosage'>$homemedsDoseArray[$homemedsKey]</span><span class='sub-detail home-medication-frequency lg-3'>$homemedsFrequencyArray[$homemedsKey]</span><span class='sub-detail home-medication-last-taken'>$homemedsLastTakenArray[$homemedsKey]</span></div><div class='list-item-controls pull-right'><!--button class='item-control-button item-edit'--><button class='item-control-button item-discontinue'></button></button></div></li>";
+													echo "<li><div class='list-item-details pull-left lg-11'><span class='detail home-medication-name'>$homemedsValue</span><span class='sub-detail home-medication-dosage'>$homemedsDoseArray[$homemedsKey] $homemedsDoseUnitArray[$homemedsKey]</span><span class='sub-detail home-medication-frequency lg-3'>$homemedsFrequencyArray[$homemedsKey]</span><span class='sub-detail home-medication-last-taken'>$homemedsLastTakenArray[$homemedsKey]</span></div><div class='list-item-controls pull-right'><!--button class='item-control-button item-edit'--><button class='item-control-button item-discontinue'></button></button></div></li>";
 												}
 											} elseif ($homemeds == "None") {
 												echo "<li>None</li>";

@@ -379,6 +379,9 @@ ul.disc {
 .icon-medication-bottle:before {
   content: "\43"; }
 
+.icon-prescription:before {
+  content: "\44"; }
+
 icon.xl {
   font-size: 98px; }
 
@@ -664,7 +667,7 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
   z-index: 99; }
 
 .error-msg-wrapper.has-error.has-icon:before {
-  right: 38px; }
+  display: none; }
 
 .error-msg-wrapper.has-error.select:before {
   background-color: transparent; }
@@ -844,7 +847,7 @@ button a {
 
 .btn-default:hover {
   border-color: 1px solid #9C9B9F;
-  background-color: #F8F8F8; }
+  background-color: white; }
 
 /*-- disabled buttons --*/
 .button:disabled, .button-link:disabled, .form-control:disabled, .form-textbox:disabled, a.disabled, button.disabled {
