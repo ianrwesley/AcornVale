@@ -61,7 +61,7 @@ $confirmInfoTitle = "Patient Details";
 						<?php
 							if ($RXdrugNames !== "" and $RXdrugNames !== "None") {
 								foreach ($RXdrugNamesArray as $RXdrugNamesKey => $RXdrugNamesValue) {
-									echo "<li><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'><b>$RXrefillsArray[$RXdrugNamesKey]</b> refill";
+									echo "<li><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'>$RXrefillsArray[$RXdrugNamesKey] refill";
 									if ($RXrefillsArray[$RXdrugNamesKey] !== "1") {
 										echo 's';
 									}

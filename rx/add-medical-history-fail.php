@@ -1,8 +1,8 @@
 <?php
+	$rxFlowProgress = 2;
 	$fail = "true";
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
-	$rxFlowProgress = 1;
 ?>
 
 <?php include "add-medical-history-body.php"; ?>

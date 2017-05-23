@@ -1,9 +1,10 @@
 <?php
+	$rxFlowProgress = 5;
+	$loaderDisplay = $_GET[ "loader" ];
 	include "../variables/patient-variables/variable-empty.php";
 	include "../variables/patient-variables/variable-test-patient-demographics.php";
 	include "../variables/patient-variables/variable-test-patient-medhistory.php";
 	include "../variables/patient-variables/variable-test-patient-prescriptions.php";
-	$rxFlowProgress = 5;
 ?>
 
 <?php include "write-prescriptions-body.php"; ?>
@@ -28,6 +29,7 @@
 			</div>
 		</div>
 	</div>
+	<?php if ($loaderDisplay == "true") { include "../global/loader.php"; } ?>
 	<?php include "../global/globalfooter.php"; ?>
 	<?php include "modal-cancel-writing-prescriptions.php"; ?>
 	<?php include "modal-edit-patient.php"; ?>

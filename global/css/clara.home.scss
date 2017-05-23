@@ -282,7 +282,8 @@ $border-darker: 1px solid #9C9B9F;
 	
 	/*-- write prescriptions --*/
 	.medications-wrapper {
-		.medication {/*transition:height .3s ease-in-out, background .35s ease-in-out;*/ height:299px;
+		.flow-section {box-sizing:content-box;}
+		.medication {/*transition:height .3s ease-in-out, background .35s ease-in-out;*/ height:242px;
 			.fieldgroup {opacity:1; visibility:visible; transition:all .2s ease .4s;}
 			.medication-save-changes-btn {display:none;}
 			.medication-favorite-btn {
@@ -290,10 +291,10 @@ $border-darker: 1px solid #9C9B9F;
 				.icon-favorite-selected {color:$color-favorite;}
 			}
 		}
-		.medication:first-child {height:275px;}
+		.medication:first-child {height:242px;}
 		.medication:only-child .medication-edit-btn, .medication .medication-edit-btn {display:none;}
 		.medication:only-child .medication-delete-btn {display:none;}
-		.medication.collapsed {height:112px !important; display:block; overflow:hidden; background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px; animation:collapse-medication-slide 450ms both;
+		.medication.collapsed {height:78px !important; display:block; overflow:hidden; background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px; animation:collapse-medication-slide 450ms both;
 			.medication-edit-btn {display:inline-block;}
 			.fieldgroup {opacity:0; visibility:hidden; transition:all .2s ease .1s;}
 			.drug-name {display:block; opacity:1; visibility:visible;
@@ -313,27 +314,27 @@ $border-darker: 1px solid #9C9B9F;
 		}
 		
 		@keyframes collapse-medication-slide {
-			0% {height:299px; background:white;}
-			60% {height:112px; background:white;}
-			100% {height:112px; background:$color-panel;}
+			0% {height:242px; background:white;}
+			60% {height:78px; background:white;}
+			100% {height:78px; background:$color-panel;}
 		}
 		
 		@keyframes expand-medication-slide {
-			0% {height:112px; background:$color-panel;}
-			20% {height:112px; background:white;}
-			100% {height:299px; background:white;}
+			0% {height:78px; background:$color-panel;}
+			20% {height:78px; background:white;}
+			100% {height:242px; background:white;}
 		}
 		
 		@keyframes collapse-first-medication-slide {
-			0% {height:275px; background:white;}
-			60% {height:112px; background:white;}
-			100% {height:112px; background:$color-panel;}
+			0% {height:242px; background:white;}
+			60% {height:78px; background:white;}
+			100% {height:78px; background:$color-panel;}
 		}
 		
 		@keyframes expand-first-medication-slide {
-			0% {height:112px; background:$color-panel;}
-			40% {height:112px; background:white;}
-			100% {height:275px; background:white;}
+			0% {height:78px; background:$color-panel;}
+			40% {height:78px; background:white;}
+			100% {height:242px; background:white;}
 		}
 	}
 	
@@ -474,7 +475,7 @@ $border-darker: 1px solid #9C9B9F;
 				.ep-item {display:inline-block; padding:0 18px; position:relative;}
 				.ep-link {color:$color-font-primary; font-size:$sm-font-size; cursor:pointer;}
 				.ep-item.active .ep-link {opacity:.3;}
-				.ep-item.active:after {content:""; width:14px; height:14px; display:block; position:absolute; bottom:-19.5px; left:50%; margin-left:-9px; background:white; transform:rotate(45deg); border-top:$border-primary; border-left:$border-primary;}
+				.ep-item.active:after {content:""; width:14px; height:14px; display:block; position:absolute; bottom:-19.5px; left:50%; margin-left:-8px; background:white; transform:rotate(45deg); border-top:$border-primary; border-left:$border-primary;}
 			}
 			.edit-patient-section-wrap {
 				> .flow-section {display:none;}
@@ -514,9 +515,13 @@ $border-darker: 1px solid #9C9B9F;
 		.app-background-edit, .app-background-confirm {display:none;}
 		.edit-col, .confirm-col {width:100%; padding-left:20px; padding-right:20px;
 			.flow-section {max-width:504px;}
-			.flow-section:last-of-type {padding-bottom:0;}
 		}
-		.edit-col {}
+		.edit-col {
+			.medications-wrapper, .add-more-wrapper {max-width:504px; margin:auto;
+				.flow-section {width:100%;}
+				.medication.collapsed {height:90px !important;}
+			}
+		}
 		.confirm-col {padding-top:36px; padding-bottom:36px; background:$color-panel; border:none; }
 		.allergies-section, .homemeds-section, .diagnoses-section {
 			.lg-10 {width:83.33333%;}

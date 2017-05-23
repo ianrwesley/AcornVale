@@ -31,7 +31,13 @@ $(document).ready(function () {
 		},
 		onItemAdd: function(value, $item) {
 			var patientLink = value.replace(/\s+/g, '-').toLowerCase();
-			window.location.href = '/acorn-vale-03457798624180578193/rx/' + patientLink + '.php';
+			//window.location.href = '/acorn-vale-03457798624180578193/rx/' + patientLink + '.php';
+			if (patientLink === 'add-new-patient') {
+				window.location.href = '/acorn-vale-03457798624180578193/rx/' + patientLink + '.php';
+			}
+			if (patientLink !== 'add-new-patient') {
+				window.location.href = '/acorn-vale-03457798624180578193/rx/write-prescriptions.php?existing=' + patientLink;
+			}
 		}
 	});
 	

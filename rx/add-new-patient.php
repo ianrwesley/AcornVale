@@ -1,6 +1,6 @@
-<?php 
-	include "../variables/patient-variables/variable-empty.php";
+<?php
 	$rxFlowProgress = 0;
+	include "../variables/patient-variables/variable-empty.php";
 ?>
 
 <?php include "add-new-patient-body.php"; ?>

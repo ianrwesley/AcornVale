@@ -73,7 +73,7 @@
 		if ($homemedsDiscontinued !== "") {
 			echo "<div class='discontinued-section'><ol class='ordered-list'><div class='discontinued-label'>Discontinued home medications</div>";
 			foreach ($homemedsDiscontinuedArray as $homemedsDiscontinuedKey => $homemedsDiscontinuedValue) {
-				echo "<li class='discontinued-item'><div class='list-item-details pull-left lg-10'><span class='detail home-medication-name'>$homemedsDiscontinuedValue</span><span class='sub-detail home-medication-dosage'>$homemedsDoseDiscontinuedArray[$homemedsDiscontinuedKey]</span><span class='sub-detail home-medication-frequency lg-3'>$homemedsFrequencyDiscontinuedArray[$homemedsDiscontinuedKey]</span><span class='sub-detail home-medication-last-taken'>$homemedsLastTakenDiscontinuedArray[$homemedsDiscontinuedKey]</span></div><div class='list-item-controls pull-right'><button class='button button-link button-tiny secondary-action'><icon class='icon-add'></icon>Recontinue</button></div></li>";
+				echo "<li class='discontinued-item'><div class='list-item-details pull-left lg-10'><span class='detail home-medication-name'>$homemedsDiscontinuedValue</span><span class='sub-detail home-medication-dosage'>$homemedsDoseDiscontinuedArray[$homemedsDiscontinuedKey]</span><span class='sub-detail home-medication-frequency lg-3'>$homemedsFrequencyDiscontinuedArray[$homemedsDiscontinuedKey]</span><span class='sub-detail home-medication-last-taken'>$homemedsLastTakenDiscontinuedArray[$homemedsDiscontinuedKey]</span></div><div class='list-item-controls pull-right'><button class='button button-link button-tiny secondary-action recontinue'><icon class='icon-add'></icon>Recontinue</button></div></li>";
 			}
 			echo "</ol></div>";
 		}

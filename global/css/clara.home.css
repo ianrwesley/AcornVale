@@ -414,9 +414,11 @@
     width: 22.5%; }
   .rx-app .homemeds-section .home-medication-last-taken {
     width: 22.5%; }
+  .rx-app .medications-wrapper .flow-section {
+    box-sizing: content-box; }
   .rx-app .medications-wrapper .medication {
     /*transition:height .3s ease-in-out, background .35s ease-in-out;*/
-    height: 299px; }
+    height: 242px; }
     .rx-app .medications-wrapper .medication .fieldgroup {
       opacity: 1;
       visibility: visible;
@@ -428,13 +430,13 @@
     .rx-app .medications-wrapper .medication .medication-favorite-btn .icon-favorite-selected {
       color: #FFB806; }
   .rx-app .medications-wrapper .medication:first-child {
-    height: 275px; }
+    height: 242px; }
   .rx-app .medications-wrapper .medication:only-child .medication-edit-btn, .rx-app .medications-wrapper .medication .medication-edit-btn {
     display: none; }
   .rx-app .medications-wrapper .medication:only-child .medication-delete-btn {
     display: none; }
   .rx-app .medications-wrapper .medication.collapsed {
-    height: 112px !important;
+    height: 78px !important;
     display: block;
     overflow: hidden;
     background: #F8F8F8;
@@ -481,43 +483,43 @@
       cursor: pointer; }
 @keyframes collapse-medication-slide {
   0% {
-    height: 299px;
+    height: 242px;
     background: white; }
   60% {
-    height: 112px;
+    height: 78px;
     background: white; }
   100% {
-    height: 112px;
+    height: 78px;
     background: #F8F8F8; } }
 @keyframes expand-medication-slide {
   0% {
-    height: 112px;
+    height: 78px;
     background: #F8F8F8; }
   20% {
-    height: 112px;
+    height: 78px;
     background: white; }
   100% {
-    height: 299px;
+    height: 242px;
     background: white; } }
 @keyframes collapse-first-medication-slide {
   0% {
-    height: 275px;
+    height: 242px;
     background: white; }
   60% {
-    height: 112px;
+    height: 78px;
     background: white; }
   100% {
-    height: 112px;
+    height: 78px;
     background: #F8F8F8; } }
 @keyframes expand-first-medication-slide {
   0% {
-    height: 112px;
+    height: 78px;
     background: #F8F8F8; }
   40% {
-    height: 112px;
+    height: 78px;
     background: white; }
   100% {
-    height: 275px;
+    height: 242px;
     background: white; } }
   .rx-app .edit-patient-button {
     text-align: right; }
@@ -862,7 +864,7 @@
       position: absolute;
       bottom: -19.5px;
       left: 50%;
-      margin-left: -9px;
+      margin-left: -8px;
       background: white;
       transform: rotate(45deg);
       border-top: 1px solid #D0CFD4;
@@ -912,8 +914,13 @@
     padding-right: 20px; }
     .rx-app .edit-col .flow-section, .rx-app .confirm-col .flow-section {
       max-width: 504px; }
-    .rx-app .edit-col .flow-section:last-of-type, .rx-app .confirm-col .flow-section:last-of-type {
-      padding-bottom: 0; }
+  .rx-app .edit-col .medications-wrapper, .rx-app .edit-col .add-more-wrapper {
+    max-width: 504px;
+    margin: auto; }
+    .rx-app .edit-col .medications-wrapper .flow-section, .rx-app .edit-col .add-more-wrapper .flow-section {
+      width: 100%; }
+    .rx-app .edit-col .medications-wrapper .medication.collapsed, .rx-app .edit-col .add-more-wrapper .medication.collapsed {
+      height: 90px !important; }
   .rx-app .confirm-col {
     padding-top: 36px;
     padding-bottom: 36px;

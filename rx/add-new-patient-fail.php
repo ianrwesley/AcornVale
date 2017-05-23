@@ -1,7 +1,7 @@
 <?php
+	$rxFlowProgress = 0;
 	$fail = "true";
 	include "../variables/patient-variables/variable-empty.php";
-	$rxFlowProgress = 0;
 ?>
 
 <?php include "add-new-patient-body.php"; ?>

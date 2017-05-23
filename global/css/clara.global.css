@@ -346,7 +346,7 @@ ul.disc {
 .icon-mail:before {
   content: "\72"; }
 
-.icon-refresh:before {
+.icon-refresh:before, .icon-reload:before {
   content: "\73"; }
 
 .icon-resend:before {
@@ -914,20 +914,41 @@ button a {
     vertical-align: text-bottom; }
 
 /*-- LOADER --*/
-.animated-loading-holder {
+.animated-loading-container {
   position: fixed;
-  top: 100px;
+  top: 40%;
   left: 50%;
-  margin-left: -10.5px; }
+  margin-left: -300px;
+  width: 600px;
+  padding: 20px 0px;
+  background: rgba(255, 255, 255, 0.94);
+  text-align: center;
+  border: 1px solid #D0CFD4;
+  -webkit-border-radius: 6px;
+  /* Safari and Chrome */
+  -moz-border-radius: 6px;
+  /* Firefox */
+  -ms-border-radius: 6px;
+  /* Internet Explorer */
+  border-radius: 6px;
+  z-index: 100000; }
+
+.loading-message {
+  padding-left: 10px; }
+
+.loading-message-wrapper, .animated-loading-wrapper {
+  display: inline-block;
+  vertical-align: middle; }
 
 .animated-loading-wrapper {
-  width: 21px;
-  height: 21px;
+  width: 28px;
+  height: 28px;
+  margin: auto;
   position: relative; }
   .animated-loading-wrapper .animated-loading-circle {
     display: block;
-    width: 23.80952%;
-    height: 23.80952%;
+    width: 25%;
+    height: 25%;
     position: absolute;
     animation: animated-loading-circle-fade .7s linear infinite;
     -webkit-border-radius: 50%;
@@ -940,38 +961,38 @@ button a {
   .animated-loading-wrapper .loading-circle-1 {
     animation-delay: 0s;
     background: #f15a2a;
-    top: 0.177px;
-    left: 8.224px; }
+    top: 0.8428571428571%;
+    left: 39.1619047619048%; }
   .animated-loading-wrapper .loading-circle-2 {
     animation-delay: 0.1s;
     background: #ef4136;
-    top: 3.207px;
-    left: 14.516px; }
+    top: 15.2714285714286%;
+    left: 69.1238095238095%; }
   .animated-loading-wrapper .loading-circle-3 {
     animation-delay: 0.2s;
     background: #d71c5d;
-    top: 10.015px;
-    left: 16.069px; }
+    top: 47.6904761904762%;
+    left: 76.5190476190476%; }
   .animated-loading-wrapper .loading-circle-4 {
     animation-delay: 0.3s;
     background: #9e2064;
-    top: 15.474px;
-    left: 11.716px; }
+    top: 73.6857142857143%;
+    left: 55.7904761904762%; }
   .animated-loading-wrapper .loading-circle-5 {
     animation-delay: 0.4s;
     background: #662f8f;
-    top: 15.474px;
-    left: 4.733px; }
+    top: 73.6857142857143%;
+    left: 22.5380952380952%; }
   .animated-loading-wrapper .loading-circle-6 {
     animation-delay: 0.5s;
     background: #293b8e;
-    top: 10.015px;
-    left: 0.379px; }
+    top: 47.6904761904762%;
+    left: 1.8047619047619%; }
   .animated-loading-wrapper .loading-circle-7 {
     animation-delay: 0.6s;
     background: #2d1075;
-    top: 3.207px;
-    left: 1.933px; }
+    top: 15.2714285714286%;
+    left: 9.2047619047619%; }
 
 @keyframes animated-loading-circle-fade {
   0% {

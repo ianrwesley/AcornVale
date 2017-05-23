@@ -1,8 +1,18 @@
 <?php
-	include "../variables/patient-variables/variable-empty.php";
-	include "../variables/patient-variables/variable-test-patient-demographics.php";
-	include "../variables/patient-variables/variable-test-patient-medhistory.php";
 	$rxFlowProgress = 4;
+	$existingPatient = $_GET[ "existing" ];
+	include "../variables/patient-variables/variable-empty.php";
+
+	if ($existingPatient == "william-woolworth-wallace") {
+		include "../variables/patient-variables/variable-test-patient-demographics.php";
+		include "../variables/patient-variables/variable-test-patient-medhistory.php";
+	} elseif ($existingPatient == "william-hamish-wallace") {
+		include "../variables/patient-variables/variable-wallace2-patient-demographics.php";
+		include "../variables/patient-variables/variable-wallace2-patient-medhistory.php";
+	} else {
+		include "../variables/patient-variables/variable-test-patient-demographics.php";
+		include "../variables/patient-variables/variable-test-patient-medhistory.php";
+	}
 ?>
 
 <?php include "write-prescriptions-body.php"; ?>

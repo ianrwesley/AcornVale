@@ -47,7 +47,7 @@
 		if ($allergiesDiscontinued !== "") {
 			echo "<div class='discontinued-section'><ol class='ordered-list'><div class='discontinued-label'>Discontinued allergies</div>";
 			foreach ($allergiesDiscontinuedArray as $allergiesDiscontinuedKey => $allergiesDiscontinuedValue) {
-				echo "<li class='discontinued-item'><span class='detail allergy'>$allergiesDiscontinuedValue</span><label class='rxn-label'>RXN</label><span class='sub-detail rxn'>$reactionsDiscontinuedArray[$allergiesDiscontinuedKey]</span><div class='list-item-controls pull-right'><button class='button button-link button-tiny secondary-action'><icon class='icon-add'></icon>Recontinue</button></div></li>";
+				echo "<li class='discontinued-item'><span class='detail allergy'>$allergiesDiscontinuedValue</span><label class='rxn-label'>RXN</label><span class='sub-detail rxn'>$reactionsDiscontinuedArray[$allergiesDiscontinuedKey]</span><div class='list-item-controls pull-right'><button class='button button-link button-tiny secondary-action recontinue'><icon class='icon-add'></icon>Recontinue</button></div></li>";
 			}
 			echo "</ol></div>";
 		}

@@ -8,7 +8,7 @@
 				</div>
 				<nav class="ep-subnav">
 					<ul class="ep-content">
-						<li class="ep-item active"><a class="ep-link" data-target="#edit-patient-demographics">Demographics</a></li>
+						<li class="ep-item active"><a class="ep-link" data-target="#edit-patient-demographics">Profile</a></li>
 						<li class="ep-item"><a class="ep-link" data-target="#edit-patient-medical-history">Medical History</a></li>
 					</ul>
 				</nav>
