@@ -2,23 +2,23 @@
 date_default_timezone_set('America/New_York');
 
 $firstName = "William";
-$middleName = "Woolworth";
+$middleName = "Hamish";
 $lastName = "Wallace";
 
-$address = "1501 San Christopher Drive";
-$city = "Dunedin";
+$address = "306 Lagoon Drive";
+$city = "Palm Harbor";
 $state = "FL";
-$zipCode = "34698";
+$zipCode = "34683";
 $birthMonth = "04";
 $birthDayUnit = "03";
-$birthYear = "1270";
+$birthYear = "2006";
 
 $gender = "Male";
-$weight = "184";
+$weight = "80";
 $weightUnit = "lbs";
 
-$email = "williamwallace@freedom.scot";
-$phone = "(555) 555-5785";
+$email = "";
+$phone = "";
 
 $fullName = "$firstName $middleName $lastName";
 $birthday = "$birthMonth/$birthDayUnit/$birthYear";

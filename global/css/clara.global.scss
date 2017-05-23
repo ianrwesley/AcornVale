@@ -116,6 +116,10 @@ img {border: 0;}
 .wrap-line {white-space:normal !important;}
 .hidden, .mobile-only {display:none !important;}
 .no-margin {margin:0 !important;}
+.inline-confirmation {margin-left:1em;
+	.confirm-option {padding:0 14px; border-left:$border-primary; margin-left:-4px; cursor:pointer;}
+	.confirm-option:first-child {border:none;}
+}
 
 /*-- IMAGES --*/
 .image {display: inline-block; background-size: contain; background-repeat: no-repeat; background-position: center center; width:36px; height:36px;}
@@ -162,6 +166,9 @@ ul.square, ul.circle, ul.disc {margin-bottom: $base-text-spacing; margin-left:1.
 ul.square { list-style:square outside; }
 ul.circle { list-style:circle outside; }
 ul.disc { list-style:disc outside; }
+
+.error {color:$color-error;}
+.success {color:$color-success;}
 
 /*-- ICON CLASSES --*/
 [data-icon]:before, [data-icon]:after {font-family: $clara-icons-font-stack !important; content: attr(data-icon); font-style: normal !important; font-weight: normal !important; font-variant: normal !important; text-transform: none !important; speak: none; @include font-smoothing; display:inline-block; line-height:1;}
@@ -295,7 +302,7 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 .button.right-icon icon {padding-left:4px;}
 
 .button-link {outline:none; background:none; border:none; color:$color-link-primary; text-decoration:none; text-shadow:none; padding:0; font-size:$base-font-size; text-align:left;}
-.button-link.secondary-action, .button-link.secondary-action a {color:$color-font-placeholder;}
+.button-link.secondary-action, .button-link.secondary-action a, .secondary-action {color:$color-font-placeholder;}
 .button-link:hover {text-decoration:underline;
 	.icon {text-decoration:none; pointer-events: none;}
 }

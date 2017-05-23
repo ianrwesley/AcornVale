@@ -28,6 +28,24 @@ $confirmInfoTitle = "New Patient";
 			<div class="app-section-body">
 				<div class="row">
 					<div class="column edit-col">
+						<?php
+							if ($age < 18) {
+								echo "<div class='pediatric-notification inapp-notification-container'>
+										<div class='notification-header-wrap'>
+											<h4 class='notification-header'>Pediatric dosing enabled</h4>
+										</div>
+										<div class='notification-msg-wrap'>
+										<p class='notification-msg'>Does <span class='strong'>$fullName</span> weigh <span>$weight $weightUnit</span>?</p>
+										</div>
+										<div class='notification-controls clearfix'>
+											<div class='button-group pull-right'>
+												<button class='button button-link button-compact secondary-action peds-update-weight'>Update weight…</button>
+												<button class='button button-link button-compact peds-confirm-weight'>Yes</button>
+											</div>
+										</div>
+									  </div>";
+							}
+						?>
 						<div class="medications-wrapper">
 							<?php
 								if ($RXdrugNames == "") {

@@ -162,8 +162,6 @@
     display: none; }
   .rx-app .show-discontinued.active, .rx-app .hide-discontinued.active {
     display: inline-block; }
-  .rx-app .hide-discontinued {
-    border-left: none !important; }
   .rx-app .add-more-wrapper {
     position: relative;
     padding: 10px 0px 14px; }
@@ -189,12 +187,14 @@
     content: "\6c"; }
   .rx-app .item-discontinue:before {
     content: "\78"; }
+  .rx-app .item-markerror:before {
+    content: "\45"; }
+  .rx-app .item-recontinue:before {
+    content: "\61"; }
   .rx-app .item-discontinue:hover, .rx-app .discontinue:hover {
     color: #FF6010; }
   .rx-app .item-markerror:hover, .rx-app .markerror:hover {
     color: #FF0058; }
-  .rx-app .item-recontinue:before {
-    content: "\61"; }
   .rx-app .item-recontinue:hover, .rx-app .recontinue:hover {
     color: #007FFF; }
   .rx-app .field-icon {
@@ -353,7 +353,10 @@
     padding-bottom: 12px;
     margin-left: -20px;
     margin-right: -20px; }
+    .rx-app .patient-medical-history .fieldcontrols .list-home-med-details, .rx-app .medication .fieldcontrols .list-home-med-details {
+      width: 90%; }
     .rx-app .patient-medical-history .fieldcontrols .list-item-controls, .rx-app .medication .fieldcontrols .list-item-controls {
+      width: 10%;
       height: 20px; }
     .rx-app .patient-medical-history .fieldcontrols icon, .rx-app .medication .fieldcontrols icon {
       font-size: 15px;
@@ -608,6 +611,60 @@
         background-color: rgba(11, 81, 255, 0.08);
         border-color: #0B51FF;
         z-index: 3; }
+  .rx-app .inapp-notification-container {
+    margin-bottom: 24px;
+    padding: 0;
+    border: 1px solid #D0CFD4;
+    -webkit-border-radius: 6px;
+    /* Safari and Chrome */
+    -moz-border-radius: 6px;
+    /* Firefox */
+    -ms-border-radius: 6px;
+    /* Internet Explorer */
+    border-radius: 6px; }
+    .rx-app .inapp-notification-container .notification-header-wrap {
+      background: #00D6BA;
+      color: white;
+      padding: 12px;
+      -webkit-border-radius: 6px 6px 0px 0px;
+      /* Safari and Chrome */
+      -moz-border-radius: 6px 6px 0px 0px;
+      /* Firefox */
+      -ms-border-radius: 6px 6px 0px 0px;
+      /* Internet Explorer */
+      border-radius: 6px 6px 0px 0px; }
+      .rx-app .inapp-notification-container .notification-header-wrap .notification-header {
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase; }
+    .rx-app .inapp-notification-container .notification-msg-wrap {
+      padding: 12px; }
+      .rx-app .inapp-notification-container .notification-msg-wrap .notification-msg icon {
+        padding-right: 8px;
+        vertical-align: text-top; }
+      .rx-app .inapp-notification-container .notification-msg-wrap .notification-msg .button-link {
+        vertical-align: text-bottom; }
+    .rx-app .inapp-notification-container .notification-controls {
+      border-top: 1px solid #D0CFD4;
+      padding: 6px 12px; }
+      .rx-app .inapp-notification-container .notification-controls .button-group {
+        margin: 0 -12px; }
+        .rx-app .inapp-notification-container .notification-controls .button-group .button-link {
+          border-left: 1px solid #D0CFD4;
+          margin-left: -4px; }
+        .rx-app .inapp-notification-container .notification-controls .button-group .button-link:first-child {
+          border: none; }
+    .rx-app .inapp-notification-container .notification-controls.collapsed {
+      animation: collapse-notification-controls 350ms both;
+      overflow: hidden; }
+@keyframes collapse-notification-controls {
+  0% {
+    height: 37px; }
+  100% {
+    height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent; } }
   .rx-app .selectize-input {
     min-height: 40px;
     padding: 10px 12px;
@@ -914,12 +971,13 @@
     padding-right: 20px; }
     .rx-app .edit-col .flow-section, .rx-app .confirm-col .flow-section {
       max-width: 504px; }
-  .rx-app .edit-col .medications-wrapper, .rx-app .edit-col .add-more-wrapper {
+  .rx-app .edit-col .medications-wrapper, .rx-app .edit-col .add-more-wrapper, .rx-app .edit-col .pediatric-notification {
     max-width: 504px;
-    margin: auto; }
-    .rx-app .edit-col .medications-wrapper .flow-section, .rx-app .edit-col .add-more-wrapper .flow-section {
+    margin-left: auto;
+    margin-right: auto; }
+    .rx-app .edit-col .medications-wrapper .flow-section, .rx-app .edit-col .add-more-wrapper .flow-section, .rx-app .edit-col .pediatric-notification .flow-section {
       width: 100%; }
-    .rx-app .edit-col .medications-wrapper .medication.collapsed, .rx-app .edit-col .add-more-wrapper .medication.collapsed {
+    .rx-app .edit-col .medications-wrapper .medication.collapsed, .rx-app .edit-col .add-more-wrapper .medication.collapsed, .rx-app .edit-col .pediatric-notification .medication.collapsed {
       height: 90px !important; }
   .rx-app .confirm-col {
     padding-top: 36px;

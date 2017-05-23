@@ -119,6 +119,16 @@ img {
 .no-margin {
   margin: 0 !important; }
 
+.inline-confirmation {
+  margin-left: 1em; }
+  .inline-confirmation .confirm-option {
+    padding: 0 14px;
+    border-left: 1px solid #D0CFD4;
+    margin-left: -4px;
+    cursor: pointer; }
+  .inline-confirmation .confirm-option:first-child {
+    border: none; }
+
 /*-- IMAGES --*/
 .image {
   display: inline-block;
@@ -261,6 +271,12 @@ ul.circle {
 
 ul.disc {
   list-style: disc outside; }
+
+.error {
+  color: #FF0058; }
+
+.success {
+  color: #00CC56; }
 
 /*-- ICON CLASSES --*/
 [data-icon]:before, [data-icon]:after {
@@ -770,7 +786,7 @@ button a {
   font-size: 16px;
   text-align: left; }
 
-.button-link.secondary-action, .button-link.secondary-action a {
+.button-link.secondary-action, .button-link.secondary-action a, .secondary-action {
   color: #9C96B1; }
 
 .button-link:hover {

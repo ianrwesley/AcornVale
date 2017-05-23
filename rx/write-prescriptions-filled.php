@@ -2,9 +2,16 @@
 	$rxFlowProgress = 5;
 	$loaderDisplay = $_GET[ "loader" ];
 	include "../variables/patient-variables/variable-empty.php";
-	include "../variables/patient-variables/variable-test-patient-demographics.php";
-	include "../variables/patient-variables/variable-test-patient-medhistory.php";
-	include "../variables/patient-variables/variable-test-patient-prescriptions.php";
+
+	if ($existingPatient !== null) {
+		include "../variables/patient-variables/variable-$existingPatient-demographics.php";
+		include "../variables/patient-variables/variable-$existingPatient-medhistory.php";
+		include "../variables/patient-variables/variable-$existingPatient-prescriptions.php";
+	} else {
+		include "../variables/patient-variables/variable-test-patient-demographics.php";
+		include "../variables/patient-variables/variable-test-patient-medhistory.php";
+		include "../variables/patient-variables/variable-test-patient-prescriptions.php";
+	}
 ?>
 
 <?php include "write-prescriptions-body.php"; ?>

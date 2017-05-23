@@ -3,12 +3,9 @@
 	$existingPatient = $_GET[ "existing" ];
 	include "../variables/patient-variables/variable-empty.php";
 
-	if ($existingPatient == "william-woolworth-wallace") {
-		include "../variables/patient-variables/variable-test-patient-demographics.php";
-		include "../variables/patient-variables/variable-test-patient-medhistory.php";
-	} elseif ($existingPatient == "william-hamish-wallace") {
-		include "../variables/patient-variables/variable-wallace2-patient-demographics.php";
-		include "../variables/patient-variables/variable-wallace2-patient-medhistory.php";
+	if ($existingPatient !== null) {
+		include "../variables/patient-variables/variable-$existingPatient-demographics.php";
+		include "../variables/patient-variables/variable-$existingPatient-medhistory.php";
 	} else {
 		include "../variables/patient-variables/variable-test-patient-demographics.php";
 		include "../variables/patient-variables/variable-test-patient-medhistory.php";
@@ -25,7 +22,7 @@
 											Cancel
 										</button>
 										<button type="button" role="link" class="button button-flat primary-action disabled">
-											<a href="write-prescriptions-filled.php"><?php echo $primaryButtonLabel ?></a>
+											<a href="write-prescriptions-filled.php<?php if ($existingPatient !== null){ echo "?existing=$existingPatient"; } ?>"><?php echo $primaryButtonLabel ?></a>
 										</button>
 									</div>
 								</div>
