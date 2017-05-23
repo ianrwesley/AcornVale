@@ -1,5 +1,5 @@
 <div class="flow-section">
-	<h2 class="section-title">Demographics</h2>
+	<h2 class="section-title">Profile</h2>
 	<div class="fieldgroup">
 		<div class="error-msg-wrapper lg-4 <?php if ($fail == "true"){ echo "has-error"; } ?>">
 			<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="first name" name="first-name" value="<?php echo $firstName ?>">

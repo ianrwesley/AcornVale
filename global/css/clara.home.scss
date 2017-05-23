@@ -47,6 +47,7 @@ $color-error: #FF0058;
 $color-success: #00CC56;
 $color-panel: #F8F8F8;
 $color-favorite: #FFB806;
+$color-discontinue: #FF6010;
 
 $color-allergies: #00AB44;
 $color-homemeds: #720DBF;
@@ -165,7 +166,8 @@ $border-darker: 1px solid #9C9B9F;
 	
 	.item-edit:before {content:"\6c";}
 	.item-discontinue:before {content:"\78";}
-	.item-discontinue:hover, .discontinue:hover {color:$color-error;}
+	.item-discontinue:hover, .discontinue:hover {color:$color-discontinue;}
+	.item-markerror:hover, .markerror:hover {color:$color-error;}
 	.item-recontinue:before {content:"\61";}
 	.item-recontinue:hover, .recontinue:hover {color:$color-link-primary;}
 	
@@ -351,6 +353,13 @@ $border-darker: 1px solid #9C9B9F;
 			> .flow-section {display:none; border:none; padding:8px 0 0;}
 			> .flow-section.show {display:block;}
 		}
+		.med-history-item-header {
+			.button-group {margin:0 -10px;
+				button { padding:0 10px; 
+					icon {padding-right:4px;}
+				}
+			}
+		}
 		
 		//.allergies-section {
 		//	.list-item-controls {height:41px; padding-bottom:4px;}
@@ -449,6 +458,10 @@ $border-darker: 1px solid #9C9B9F;
 			.patient-medical-history {border-left:$border-primary; margin-left:-1px;}
 			.edit-patient-section-wrap {margin:0 -28px; margin-top:14px;}
 			.ep-subnav {display:none;}
+			
+			.edit-patient-section-wrap.demographics-only, .edit-patient-section-wrap.medical-history-only {
+				.patient-demographics, .patient-medical-history {width:100%; float:none; border:none;}
+			}
 		}
 	}
 }

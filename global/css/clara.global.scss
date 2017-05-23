@@ -196,6 +196,7 @@ ul.disc { list-style:disc outside; }
 .icon-diagnosis:before {content: "\42";}
 .icon-medication-bottle:before {content: "\43";}
 .icon-prescription:before {content: "\44";}
+.icon-error:before {content: "\45";}
 
 icon.xl {font-size:98px;}
 
@@ -323,10 +324,8 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 		.btn icon {padding-right:4px; padding-bottom:2px; vertical-align:middle;}
 	}
 }
-.btn.focus, .btn:focus {box-shadow:none; outline:0;}
-.btn-default.focus, .btn-default:focus {border-color:$border-darker;
-	.section-label {}
-}
+.btn.focus, .btn:focus, .btn:active {box-shadow:none;}
+.btn-default.focus, .btn-default:focus {border-color:$border-darker; outline:none !important;}
 .btn-default:hover {border-color:$border-darker; background-color:white;}
 
 /*-- disabled buttons --*/

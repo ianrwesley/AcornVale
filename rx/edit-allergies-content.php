@@ -19,9 +19,9 @@
 				elseif ($allergies !== "" and $allergies !== "None") {
 					foreach ($allergiesArray as $allergiesKey => $allergiesValue) {
 						echo "<div class='flow-section'>
-								<div class='header-wrap clearfix'>
+								<div class='header-wrap med-history-item-header clearfix'>
 									<h2 class='section-title'>$ordinalsArray[$allergiesKey] allergy</h2>
-									<div class='pull-right'><button class='button button-link button-tiny secondary-action discontinue'><icon class='icon-discontinue'></icon>Discontinue</button></div>
+									<div class='pull-right button-group'><button class='button button-link button-tiny secondary-action markerror'><icon class='icon-error'></icon>Mark Error</button><button class='button button-link button-tiny secondary-action discontinue'><icon class='icon-discontinue'></icon>Discontinue</button></div>
 								</div>
 								<div class='fieldgroup'>
 									<div class='error-msg-wrapper lg-4'>

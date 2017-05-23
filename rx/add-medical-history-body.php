@@ -32,13 +32,13 @@ $confirmInfoTitle = "New Patient";
 							<div class="fieldcontrols first allergies-section">
 								<?php
 									if ($allergies == "") {
-										echo '<div class="details-popover"><icon class="icon-allergy allergy-label"></icon><a href="#" data-toggle="modal" data-target="#addAllergies">Add allergies</a> or select <a href="#" id="select-none-allergies">none</a>.</div>';
+										echo '<div class="details-popover"><icon class="icon-allergy allergy-label"></icon><a href="#" data-toggle="modal" data-target="#editMedicalHistory">Add allergies</a> or select <a href="#" id="select-none-allergies">none</a>.</div>';
 									} else {
 										echo '<div class="section-header"><div class="section-label allergy-label"><icon class="icon-allergy"></icon>Allergies</div><div class="button-group pull-right">';
 										if ($allergiesDiscontinued !== "") {
 											echo '<button class="button-link button-tiny secondary-action show-discontinued active" data-toggle="collapse" data-target="#discontinued-allergies-list" aria-expanded="false" aria-controls="discontinued-allergies-list">Show discontinued</button><button class="button-link button-tiny secondary-action hide-discontinued" data-toggle="collapse" data-target="#discontinued-allergies-list" aria-expanded="false" aria-controls="discontinued-allergies-list">Hide discontinued</button>';
 										}
-										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#addAllergies">Edit</button></div></div>';
+										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#editMedicalHistory">Edit</button></div></div>';
 									}
 								?>
 								<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Make a selection.</div>
@@ -69,13 +69,13 @@ $confirmInfoTitle = "New Patient";
 							<div class="fieldcontrols homemeds-section">
 								<?php
 									if ($homemeds == "") {
-										echo '<div class="details-popover"><icon class="icon-medication-bottle homemed-label"></icon><a href="#" data-toggle="modal" data-target="#addHomeMeds">Add home medications</a> or select <a href="#" id="select-none-homemeds">none</a>.</div>';
+										echo '<div class="details-popover"><icon class="icon-medication-bottle homemed-label"></icon><a href="#" data-toggle="modal" data-target="#editMedicalHistory">Add home medications</a> or select <a href="#" id="select-none-homemeds">none</a>.</div>';
 									} else {
 										echo '<div class="section-header"><div class="section-label homemed-label"><icon class="icon-medication-bottle"></icon>Home Medications</div><div class="button-group pull-right">';
 										if ($homemedsDiscontinued !== "") {
 											echo '<button class="button-link button-tiny secondary-action show-discontinued active" data-toggle="collapse" data-target="#discontinued-homemeds-list" aria-expanded="false" aria-controls="discontinued-homemeds-list">Show discontinued</button><button class="button-link button-tiny secondary-action hide-discontinued" data-toggle="collapse" data-target="#discontinued-homemeds-list" aria-expanded="false" aria-controls="discontinued-homemeds-list">Hide discontinued</button>';
 										}
-										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#addHomeMeds">Edit</button></div></div>';
+										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#editMedicalHistory">Edit</button></div></div>';
 									}
 								?>
 								<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Make a selection.</div>
@@ -106,13 +106,13 @@ $confirmInfoTitle = "New Patient";
 							<div class="fieldcontrols diagnoses-section">
 								<?php
 									if ($diagnoses == "") {
-										echo '<div class="details-popover"><icon class="icon-diagnosis diagnosis-label"></icon><a href="#" data-toggle="modal" data-target="#addDiagnoses">Add diagnoses or conditions</a> or select <a href="#" id="select-none-diagnoses">none</a>.</div>';
+										echo '<div class="details-popover"><icon class="icon-diagnosis diagnosis-label"></icon><a href="#" data-toggle="modal" data-target="#editMedicalHistory">Add diagnoses or conditions</a> or select <a href="#" id="select-none-diagnoses">none</a>.</div>';
 									} else {
 										echo '<div class="section-header"><div class="section-label diagnosis-label"><icon class="icon-diagnosis"></icon>Diagnoses &amp; Conditions</div><div class="button-group pull-right">';
 										if ($diagnosesDiscontinued !== "") {
 											echo '<button class="button-link button-tiny secondary-action">Show discontinued</button>';
 										}
-										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#addDiagnoses">Edit</button></div></div>';
+										echo '<button class="button-link button-tiny" data-toggle="modal" data-target="#editMedicalHistory">Edit</button></div></div>';
 									}
 								?>
 								<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Make a selection.</div>

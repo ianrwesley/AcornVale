@@ -7,8 +7,8 @@ $confirmInfoTitle = "Patient Details";
 	<div class="column lg-9">
 		<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
 	</div>
-	<div class="column lg-3 edit-patient-button <?php if ($rxFlowProgress < 1) { echo "hidden"; } ?>">
-		<button role="button" class="button button-link button-tiny" data-toggle="modal" data-target="#editPatient">Edit patient</button>
+	<div class="column lg-3 edit-patient-button <?php if ($rxFlowProgress < 2) { echo "hidden"; } ?>">
+		<button role="button" class="button button-link button-tiny" data-toggle="modal" data-target="#edit<?php if ($rxFlowProgress < 4) { echo "Demographics"; } else { echo "Patient"; } ?>">Edit <?php if ($rxFlowProgress < 4) { echo "profile"; } else { echo "patient"; } ?></button>
 	</div>
 </div>
 <div class="confirm-info <?php if ($rxFlowProgress == 0) { echo "empty"; } ?>">

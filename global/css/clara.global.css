@@ -382,6 +382,9 @@ ul.disc {
 .icon-prescription:before {
   content: "\44"; }
 
+.icon-error:before {
+  content: "\45"; }
+
 icon.xl {
   font-size: 98px; }
 
@@ -838,12 +841,12 @@ button a {
       padding-bottom: 2px;
       vertical-align: middle; }
 
-.btn.focus, .btn:focus {
-  box-shadow: none;
-  outline: 0; }
+.btn.focus, .btn:focus, .btn:active {
+  box-shadow: none; }
 
 .btn-default.focus, .btn-default:focus {
-  border-color: 1px solid #9C9B9F; }
+  border-color: 1px solid #9C9B9F;
+  outline: none !important; }
 
 .btn-default:hover {
   border-color: 1px solid #9C9B9F;

@@ -190,6 +190,8 @@
   .rx-app .item-discontinue:before {
     content: "\78"; }
   .rx-app .item-discontinue:hover, .rx-app .discontinue:hover {
+    color: #FF6010; }
+  .rx-app .item-markerror:hover, .rx-app .markerror:hover {
     color: #FF0058; }
   .rx-app .item-recontinue:before {
     content: "\61"; }
@@ -550,6 +552,12 @@
         padding: 8px 0 0; }
       .rx-app .edit-patient-content .patient-medical-history > .flow-section.show {
         display: block; }
+    .rx-app .edit-patient-content .med-history-item-header .button-group {
+      margin: 0 -10px; }
+      .rx-app .edit-patient-content .med-history-item-header .button-group button {
+        padding: 0 10px; }
+        .rx-app .edit-patient-content .med-history-item-header .button-group button icon {
+          padding-right: 4px; }
   .rx-app .medical-history-content {
     padding: 0; }
     .rx-app .medical-history-content .modal-body {
@@ -823,7 +831,11 @@
     margin: 0 -28px;
     margin-top: 14px; }
   .rx-app .edit-patient-content .ep-subnav {
-    display: none; } }
+    display: none; }
+  .rx-app .edit-patient-content .edit-patient-section-wrap.demographics-only .patient-demographics, .rx-app .edit-patient-content .edit-patient-section-wrap.demographics-only .patient-medical-history, .rx-app .edit-patient-content .edit-patient-section-wrap.medical-history-only .patient-demographics, .rx-app .edit-patient-content .edit-patient-section-wrap.medical-history-only .patient-medical-history {
+    width: 100%;
+    float: none;
+    border: none; } }
 @media only screen and (max-width: 1279px) {
   .rx-app .edit-patient-content .ep-subnav {
     margin: 0 -28px;

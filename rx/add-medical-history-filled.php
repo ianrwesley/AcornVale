@@ -30,6 +30,8 @@
 	<?php include "../global/globalfooter.php"; ?>
 	<?php include "modal-discard-medical-history.php"; ?>
 	<?php include "modal-edit-patient.php"; ?>
+	<?php include "modal-edit-demographics.php"; ?>
+	<?php include "modal-edit-medical-history.php"; ?>
 </body>
 
 </html>
