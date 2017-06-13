@@ -23,6 +23,12 @@
   .rx-app .page-content {
     padding-top: 108px;
     padding-bottom: 54px; }
+    .rx-app .page-content .app-section-body-wrapper {
+      position: relative; }
+      .rx-app .page-content .app-section-body-wrapper .app-section-body-scroll {
+        overflow: auto;
+        margin: auto;
+        z-index: 1; }
   .rx-app .subnav, .rx-app .submenu {
     background: rgba(255, 255, 255, 0.96);
     width: 100%;
@@ -138,9 +144,10 @@
     margin-right: -20px; }
   .rx-app .app-background-edit, .rx-app .app-background-confirm {
     position: absolute;
-    top: 108px;
+    top: 0;
     bottom: 0;
-    width: 50%; }
+    width: 50%;
+    z-index: 0; }
   .rx-app .app-background-edit {
     left: 0;
     min-width: 528px; }
@@ -901,23 +908,40 @@
   cursor: default;
   pointer-events: none; }
 
-#rx-subnav .gn-text {
-  opacity: .5; }
-#rx-subnav .gn-link.active .gn-text {
-  opacity: 1;
-  padding-bottom: 2px;
-  border-bottom: 2px solid #140A29; }
-#rx-subnav .gn-link .icon-progress, #rx-subnav .gn-link .gn-text {
-  vertical-align: middle; }
-#rx-subnav .gn-link .icon-progress {
-  font-size: 14px;
-  padding-right: 6px; }
-#rx-subnav .gn-link .icon-progress.incomplete:before {
-  content: "\69";
-  color: #9C96B1; }
-#rx-subnav .gn-link .icon-progress.complete:before {
-  content: "\64";
-  color: #00CC56; }
+#rx-subnav {
+  position: fixed;
+  top: 48px; }
+  #rx-subnav .gn-text {
+    opacity: .5; }
+  #rx-subnav .gn-link.active .gn-text {
+    opacity: 1;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #140A29; }
+  #rx-subnav .gn-link .icon-progress, #rx-subnav .gn-link .gn-text {
+    vertical-align: middle; }
+  #rx-subnav .gn-link .icon-progress {
+    font-size: 14px;
+    padding-right: 6px; }
+  #rx-subnav .gn-link .icon-progress.incomplete:before {
+    content: "\69";
+    color: #9C96B1; }
+  #rx-subnav .gn-link .icon-progress.complete:before {
+    content: "\64";
+    color: #00CC56; }
+
+/*-- NAVIGATION --*/
+#globalnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+/*-- FOOTER -- */
+#globalfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 /*-- RESPONSIVE --*/
 @media only screen and (min-width: 1280px) {

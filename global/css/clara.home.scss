@@ -98,7 +98,11 @@ $medication-height-collapsed: 78px;
 	.button-link {transition:all .2s ease;}
 	.ellipsis {text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
 	.icon {padding-right:6px; padding-bottom:2px; vertical-align:text-bottom;}
-	.page-content {padding-top:108px; padding-bottom:$globalfooter-height;}
+	.page-content {padding-top:$globalnav-height + $subnav-height; padding-bottom:$globalfooter-height;
+		.app-section-body-wrapper {position:relative;
+			.app-section-body-scroll {overflow:auto; margin:auto; z-index:1;}
+		}
+	}
 	.subnav, .submenu {background:rgba(255,255,255,.96); width:100%; height:$subnav-height; position:absolute; top:$globalnav-height; border-bottom:$border-primary; z-index:5998;}
 	.subnav.affix, .submenu.affix {position:fixed; top:0; @include box-shadow(0px 0px 30px -8px rgba(0,0,0,0.15));}
 	.flow-section {max-width:$xl-screen-width; margin:auto; padding:24px 0 30px; border-bottom:$border-primary;
@@ -138,7 +142,7 @@ $medication-height-collapsed: 78px;
 	}
 	.app-section-body > .row {margin-left:-20px; margin-right:-20px;}
 
-	.app-background-edit, .app-background-confirm {position:absolute; top:108px; bottom:0; width:50%;}
+	.app-background-edit, .app-background-confirm {position:absolute; top:0; bottom:0; width:50%; z-index:0;}
 	.app-background-edit {left:0; min-width:528px;}
 	.app-background-confirm {right:0; border-left:$border-primary; background-color:$color-panel;}
 	
@@ -510,7 +514,7 @@ $medication-height-collapsed: 78px;
 	.gn-link {font-size:12px; line-height:3.33333; color:$color-font-primary; position:relative; z-index:1; display:inline-block; padding:8px 20px 0; height:52px; background:no-repeat; text-decoration:none; white-space:nowrap; transition:opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); outline:none; outline-offset:-7px; font-weight:$font-weight-book; cursor:default; pointer-events: none;}
 }
 
-#rx-subnav {
+#rx-subnav { position:fixed; top:$globalnav-height;
 	.gn-text {opacity:.5;}
 	.gn-link.active .gn-text {opacity:1; padding-bottom:2px; border-bottom:2px solid $color-font-primary;}
 	.gn-link .icon-progress, .gn-link .gn-text {vertical-align:middle;}
@@ -518,6 +522,13 @@ $medication-height-collapsed: 78px;
 	.gn-link .icon-progress.incomplete:before {content: "\69"; color:$color-font-placeholder;}
 	.gn-link .icon-progress.complete:before {content: "\64"; color:$color-success;}
 }
+
+/*-- NAVIGATION --*/
+#globalnav {position:fixed; top:0; left:0; right:0;}
+
+
+/*-- FOOTER -- */
+#globalfooter {position:fixed; bottom:0; left:0; right:0;}
 
 /*-- RESPONSIVE --*/
 @media only screen and (min-width: 1280px) {

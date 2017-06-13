@@ -31,7 +31,7 @@
 
 			$(".medication-edit-btn").on("click",function(){
 				$(".medication").removeClass("expanded").addClass("collapsed");
-				$(this).closest(".medication").removeClass("collapsed").addClass("in").addClass("expanded");
+				$(this).closest(".medication-item-wrap").find(".medication").removeClass("collapsed").addClass("in").addClass("expanded");
 			});
 
 			$(".medication-save-changes-btn").on("click",function(){
@@ -39,7 +39,7 @@
 			});
 
 			$(".medication-delete-btn").on("click",function(){
-				$(this).closest(".medication").remove();
+				$(this).closest(".medication-item-wrap").remove();
 				$(".medication-title").each(function(i) {
 					$(this).find(".med-ordinal").removeClass("med-ordinal-" + (i+1)).addClass("med-ordinal-" + (i));
 				});

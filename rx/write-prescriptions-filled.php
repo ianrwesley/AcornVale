@@ -36,6 +36,7 @@
 				</div>
 			</div>
 			</div>
+			</div>
 		</div>
 	</div>
 	<?php if ($loaderDisplay == "true") { include "../global/loader.php"; } ?>

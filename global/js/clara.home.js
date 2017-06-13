@@ -213,4 +213,8 @@ $(document).ready(function () {
 	$("#patient-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
 	$("#patient-phone").mask("(999) 999-9999");
 	
+	$(window).on('resize',function() {
+		$('.app-section-body-scroll').height($(window).height() - 162);
+	}).trigger('resize');
+	
 });

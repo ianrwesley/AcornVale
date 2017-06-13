@@ -24,6 +24,7 @@ $confirmInfoTitle = "New Patient";
 		<div class="page-content">
 		<div class="app-section-body-wrapper">
 			<div class="app-background-edit">&nbsp;</div><div class="app-background-confirm">&nbsp;</div>
+			<div class="app-section-body-scroll">
 			<div class="app-section-body">
 				<div class="row">
 					<div class="column edit-col">
