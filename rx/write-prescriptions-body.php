@@ -11,7 +11,7 @@ $confirmInfoTitle = "New Patient";
 
 <head>
 	<meta charset="UTF-8">
-	<title>Add New Patient - Clara</title>
+	<title>Write Prescriptions - Clara</title>
 	<?php include "../global/globalui.php"; ?>
 	<script type="text/javascript" src="../global/js/switchery.js"></script>
 	<script type="text/javascript" src="../global/js/clara.home.js"></script>

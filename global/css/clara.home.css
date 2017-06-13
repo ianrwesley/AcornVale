@@ -431,9 +431,34 @@
     /*.medication:first-child {height:$medication-height-expanded;}*/ }
     .rx-app .medications-wrapper .flow-section {
       box-sizing: content-box; }
+    .rx-app .medications-wrapper .expand-button-wrap {
+      display: none;
+      opacity: 0.5; }
+    .rx-app .medications-wrapper .medication-item-wrap {
+      position: relative; }
+      .rx-app .medications-wrapper .medication-item-wrap .medication {
+        padding-top: 16px; }
+      .rx-app .medications-wrapper .medication-item-wrap .medication.collapsed + .expand-button-wrap {
+        display: inline-flex;
+        float: left;
+        position: absolute;
+        width: 24px;
+        height: 112px;
+        left: -36px;
+        top: 0; }
+        .rx-app .medications-wrapper .medication-item-wrap .medication.collapsed + .expand-button-wrap .expand-medication-button {
+          margin: auto;
+          font-family: "clara-icons";
+          background: none;
+          outline: none;
+          border: none; }
+        .rx-app .medications-wrapper .medication-item-wrap .medication.collapsed + .expand-button-wrap .expand-medication-button:before {
+          content: "\67";
+          font-size: 24px; }
     .rx-app .medications-wrapper .medication {
       height: 242px;
-      transition: height .35s ease; }
+      transition: height .35s ease;
+      position: relative; }
       .rx-app .medications-wrapper .medication .fieldgroup {
         opacity: 1;
         visibility: visible;
@@ -457,6 +482,7 @@
       display: block;
       overflow: hidden;
       /*background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px;*/
+      padding-top: 16px;
       padding-bottom: 18px;
       animation: collapse-medication-slide 450ms both;
       opacity: 1; }

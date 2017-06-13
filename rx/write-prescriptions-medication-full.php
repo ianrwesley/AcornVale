@@ -3,7 +3,7 @@
 		echo "";
 	} else {
 		foreach ($RXdrugNamesArray as $RXdrugNamesKey => $RXdrugNamesValue) {
-			echo '<div class="flow-section medication collapse in';
+			echo '<div class="medication-item-wrap"><div class="flow-section medication collapse in';
 			if ($RXdrugNamesValue !== $RXlastDrug) {
 				echo ' collapsed';
 			}
@@ -51,9 +51,8 @@
 		<div class="section-header">
 			<h2 class="section-title medication-title"><span class="med-ordinal"></span> Medication <span class="med-count"></span></h2>
 			<div class="button-group condensed pull-right">
-				<!--button class="button button-link button-tiny">Edit</button-->
-				<button class="button button-link button-tiny medication-save-changes-btn">Save changes</button>
-				<button class="button button-link button-icon medication-edit-btn"><icon class="icon-edit"></icon></button>
+				<!--button class="button button-link button-tiny medication-save-changes-btn">Save changes</button>
+				<button class="button button-link button-icon medication-edit-btn"><icon class="icon-edit"></icon></button-->
 				<button class="button button-link button-icon medication-delete-btn"><icon class="icon-delete"></icon></button>
 				<button class="button button-link button-icon medication-revert-btn"><icon class="icon-revert"></icon></button>
 				<button class="button button-link button-icon medication-pharmacynote-btn"><icon class="icon-add-note"></icon></button>
@@ -134,6 +133,10 @@
 				<div class="error-msg">Error.</div>
 			</div>
 		</div>
+	</div>
+	<div class="expand-button-wrap">
+		<button class="expand-medication-button medication-edit-btn"></button>
+	</div>
 	</div>';}
 	}
 ?>

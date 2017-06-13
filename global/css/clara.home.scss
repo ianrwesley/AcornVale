@@ -291,7 +291,15 @@ $medication-height-collapsed: 78px;
 	/*-- write prescriptions --*/
 	.medications-wrapper {
 		.flow-section {box-sizing:content-box;}
-		.medication {height:$medication-height-expanded; transition:height .35s ease;
+		.expand-button-wrap {display:none; opacity:0.5;}
+		.medication-item-wrap {position:relative;
+			.medication {padding-top:16px;}
+			.medication.collapsed + .expand-button-wrap {display:inline-flex; float:left; position:absolute; width:24px; height:112px; left:-36px; top:0;
+				.expand-medication-button {margin:auto; font-family:$clara-icons-font-stack; background:none; outline:none; border:none;}
+				.expand-medication-button:before {content:"\67"; font-size:24px;}
+			}
+		}
+		.medication {height:$medication-height-expanded; transition:height .35s ease; position:relative;
 			.fieldgroup {opacity:1; visibility:visible; transition:all .2s ease .4s;}
 			.medication-save-changes-btn {display:none;}
 			.medication-favorite-btn {
@@ -305,7 +313,7 @@ $medication-height-collapsed: 78px;
 		.medication.has-note {height:$medication-height-expanded + 62px + $input-spacing;
 			.medication-pharmacynote-btn {color:$color-prescriptions !important;}
 		}
-		.medication.collapsed {height:$medication-height-collapsed !important; display:block; overflow:hidden; /*background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px;*/ padding-bottom:18px; animation:collapse-medication-slide 450ms both; opacity:1;
+		.medication.collapsed {height:$medication-height-collapsed !important; display:block; overflow:hidden; /*background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px;*/ padding-top:16px; padding-bottom:18px; animation:collapse-medication-slide 450ms both; opacity:1;
 			.medication-edit-btn {display:inline-block;}
 			.fieldgroup {opacity:0; visibility:hidden; transition:all .2s ease .1s;}
 			.drug-name {display:block; visibility:visible;
