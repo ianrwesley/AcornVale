@@ -123,7 +123,7 @@
 				<div class="switch-wrapper">
 					<input type="checkbox" class="js-switch" name="substitutes allowed" id="substitutes-allowed" />
 				</div>
-				<div class="label-vertical-center"><label for="refill-quantity">refills</label></div>
+				<div class="label-vertical-center"><label for="refill-quantity">substitutes OK</label></div>
 				<div class="error-msg">Error.</div>
 			</div>
 		</div>
