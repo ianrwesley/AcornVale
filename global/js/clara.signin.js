@@ -90,22 +90,16 @@ $(document).ready(function () {
 		});
 	});
 	
-	//$(".form-field-birthday").focus(function() {
-	//	$(this).attr('placeholder', 'mm/dd/yyyy');
-	//}).blur(function() {
-	//	$(this).attr('placeholder', 'birthday');
-	//});
-	
-	$(".form-field-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-	
 	$("#pwd").popover({ 
 		content: function() {
 		  return $("#pwd-strength-content").html();
 		}
 	});
 	
-	$(".field-info").popover("show");
+	$(".field-info").popover();
 	$(".form-pwd").popover();
 	$(".popover-error").popover("show");
+	
+	$(".form-field-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
 	
 });

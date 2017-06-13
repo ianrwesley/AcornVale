@@ -25,14 +25,17 @@ $rootDir = "/acorn-vale-03457798624180578193";
 				</a>
 			</li>
 		</ul-->
-		<a href="<?php echo $rootDir;?>/" class="gn-link gn-link-clara"></a>
-		<div class="menu-wrapper pull-right">
-			<ul class="gn-list gn-menuview">
+		<ul class="gn-list gn-menuview">
+			<div class="menu-wrapper pull-left">
+				<li class="gn-item gn-item-clara"><a href="<?php echo $rootDir;?>/" class="gn-link gn-link-clara"></a> </li>
+			</div>
+			<div class="menu-wrapper pull-right">
 				<li class="gn-item gn-item-menu gn-item-signin"> <a href="<?php echo $rootDir;?>/" class="gn-link <?php if ($pageTitle == "Sign In"){ echo "active"; } ?>"> <span class="gn-text">Sign In</span> </a> </li>
-				<li class="gn-item gn-item-menu gn-item-createid"> <a href="<?php echo $rootDir;?>/create/create-claraid.php" class="gn-link <?php if ($pageTitle == "Create Your Clara ID"){ echo "active"; } ?>"> <span class="gn-text">Create Your Clara ID</span> </a> </li>
+				<li class="gn-item gn-item-menu gn-item-meetclara"> <a href="<?php echo $rootDir;?>/meetclara/" class="gn-link <?php if ($pageTitle == "Meet Clara"){ echo "active"; } ?>"> <span class="gn-text">Meet Clara</span> </a> </li>
+				<!--li class="gn-item gn-item-menu gn-item-createid"> <a href="<?php echo $rootDir;?>/create/create-claraid.php" class="gn-link <?php if ($pageTitle == "Create Your Clara ID"){ echo "active"; } ?>"> <span class="gn-text">Create Your Clara ID</span> </a> </li-->
 				<li class="gn-item gn-item-menu gn-item-learnmore"> <a href="<?php echo $rootDir;?>/learnmore/claraid-faq.php" class="gn-link <?php if ($pageTitle == "Learn More"){ echo "active"; } ?>"> <span class="gn-text">Learn More</span> </a> </li>
-			</ul>
-		</div>
+			</div>
+		</ul>
 		<!--aside id="gn-accountview" class="gn-accountview" role="menu">
 			<div class="gn-accountview-content">
 				<div class="gn-accountmenu-wrapper">

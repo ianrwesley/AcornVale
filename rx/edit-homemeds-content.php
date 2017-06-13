@@ -14,8 +14,10 @@
 							<div class='fieldgroup'>
 								<div class='error-msg-wrapper lg-4 has-controls dosage'>
 									<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' maxlength='4' class='form-text' placeholder='dose' name='dose' value=''>
-									<div class='control dosage-unit'>
-										<span>units</span>
+									<div class='select-wrapper control dosage-unit'>
+										<select class='dosage-unit-select'>
+											<option>units</option>
+										</select>
 									</div>
 									<div class='error-msg'>Error</div>
 								</div>
@@ -45,9 +47,14 @@
 									<div class='fieldgroup'>
 										<div class='error-msg-wrapper lg-4 has-controls dosage'>
 											<input type='text' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' maxlength='4' class='form-text' placeholder='dose' name='dose' value='$homemedsDoseArray[$homemedsKey]'>
-											<div class='control dosage-unit'>
-												<span>$homemedsDoseUnitArray[$homemedsKey]</span>
+											<div class='select-wrapper control dosage-unit'>
+												<select class='dosage-unit-select'>
+													<option>$homemedsDoseUnitArray[$homemedsKey]</option>
+												</select>
 											</div>
+											<!--div class='control dosage-unit'>
+												<span>$homemedsDoseUnitArray[$homemedsKey]</span>
+											</div-->
 											<div class='error-msg'>Error</div>
 										</div>
 										<div class='error-msg-wrapper lg-4'>

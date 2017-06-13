@@ -1,5 +1,6 @@
 <?php
-$pageTitle = "Create Your Clara ID";
+$pageTitle = "Meet Clara";
+$titleTag = "Create Your Clara ID";
 ?>
 
 <!doctype html>
@@ -22,7 +23,7 @@ $pageTitle = "Create Your Clara ID";
 	<script type="text/javascript" src="../global/js/jquery.maskedinput.js"></script>
 	<script type="text/javascript" src="../global/js/clara.global.js"></script>
 	<script type="text/javascript" src="../global/js/clara.signin.js"></script>
-	<title>Create Your Clara ID</title>
+	<title><?php echo $titleTag; ?></title>
 </head>
 
 <body class="si-body create-id">
@@ -122,7 +123,7 @@ $pageTitle = "Create Your Clara ID";
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
 	<!-- Modal -->
-	<div class="modal fade" id="verifyEmail" tabindex="-1" role="dialog" aria-labelledby="Discard new patient">
+	<div class="modal fade" id="verifyEmail" tabindex="-1" role="dialog" aria-labelledby="Verify your email">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content text-centered">
 				<div class="modal-body">
@@ -148,8 +149,11 @@ $pageTitle = "Create Your Clara ID";
 						</div>
 						<div class="button-group flow-controls pull-right">
 							<button type="button" role="link" class="button button-link" data-dismiss="modal">Cancel</button>
-							<button type="button" role="link" class="button button-link disabled">
+							<!--button type="button" role="link" class="button button-link disabled">
 								<a href="../account/account-view.php">Continue</a>
+							</button-->
+							<button type="button" role="link" class="button button-link disabled">
+								<a href="../meetclara/configure.php">Continue</a>
 							</button>
 						</div>
 					</div>

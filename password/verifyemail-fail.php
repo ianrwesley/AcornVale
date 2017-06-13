@@ -43,8 +43,10 @@ $pageTitle = "Recover Your Clara ID";
 					</p>
 				</div>
 				<div class="content-body">
-					<div class="error-msg-wrapper lg-12">
-						<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text popover-error" placeholder="name@example.com" name="claraID" data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-content="drlivingstone@iassume.com is not a Clara&nbsp;ID.">
+					<div class="fieldgroup">
+						<div class="error-msg-wrapper lg-12">
+							<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text popover-error" placeholder="name@example.com" name="claraID" data-toggle="popover" data-placement="top" data-trigger="focus"  data-content="drlivingstone@iassume.com is not a Clara&nbsp;ID.">
+						</div>
 					</div>
 					<div class="content-item">
 						<a href="find-claraid.php" class="button-compact">Forgot Clara ID?</a>

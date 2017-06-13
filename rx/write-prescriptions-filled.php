@@ -1,6 +1,6 @@
 <?php
 	$rxFlowProgress = 5;
-	$loaderDisplay = $_GET[ "loader" ];
+	$existingPatient = $_GET[ "existing" ];
 	include "../variables/patient-variables/variable-empty.php";
 
 	if ($existingPatient !== null) {
@@ -12,6 +12,8 @@
 		include "../variables/patient-variables/variable-test-patient-medhistory.php";
 		include "../variables/patient-variables/variable-test-patient-prescriptions.php";
 	}
+
+	$loaderDisplay = $_GET[ "loader" ];
 ?>
 
 <?php include "write-prescriptions-body.php"; ?>

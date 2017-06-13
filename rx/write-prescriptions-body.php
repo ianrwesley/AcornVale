@@ -29,7 +29,7 @@ $confirmInfoTitle = "New Patient";
 				<div class="row">
 					<div class="column edit-col">
 						<?php
-							if ($age < 18) {
+							if ($age < 18 && $rxFlowProgress == 4) {
 								echo "<div class='pediatric-notification inapp-notification-container'>
 										<div class='notification-header-wrap'>
 											<h4 class='notification-header'>Pediatric dosing enabled</h4>
@@ -63,3 +63,7 @@ $confirmInfoTitle = "New Patient";
 							</div>
 						</div>
 					</div>
+					<script type="text/javascript">
+						var elem = document.querySelector('.js-switch');
+						var switchery = new Switchery(elem, { size: 'small' });
+					</script>

@@ -9,8 +9,8 @@ $(document).ready(function () {
 		labelField: 'details',
 		searchField: ['name', 'details'],
 		options: [
-			{details: 'Male' + resultSpacer + '4/3/1270' + resultSpacer + '1501 San Christopher Drive, Dunedin, FL 34698', name: 'William Woolworth Wallace'},
-			{details: 'Male' + resultSpacer + '4/3/2006' + resultSpacer + '306 Lagoon Drive, Palm Harbor, FL 34683', name: 'William Hamish Wallace'},
+			{name: 'William Woolworth Wallace', details: 'Male' + resultSpacer + '4/3/1270' + resultSpacer + '1501 San Christopher Drive, Dunedin, FL 34698'},
+			{name: 'William Hamish Wallace', details: 'Male' + resultSpacer + '4/3/2006' + resultSpacer + '306 Lagoon Drive, Palm Harbor, FL 34683'},
 			{name: 'Add new patient'}
 		],
 		render: {
@@ -113,9 +113,6 @@ $(document).ready(function () {
 		}
 	});
 	
-	$("#patient-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-	$("#patient-phone").mask("(999) 999-9999");
-	
 	$('#select-none-allergies').on('click',function(){
 		$(this).closest('.fieldcontrols').html('<icon class="icon-allergy allergy-label"></icon>No allergies. <div class="pull-right"><button class="button-link button-tiny" data-toggle="modal" data-target="#addAllergies">Add allergies</button></div>');
 	});
@@ -158,7 +155,7 @@ $(document).ready(function () {
 	});
 	
 	$('#add-more-medications-btn').on('click',function(){
-		$('.medication').removeClass('expanded').addClass('collapsed');
+		$('.medication').addClass('collapsed').removeClass('expanded');
 		$.ajax({
 			url: 'write-prescriptions-medication-empty.php',
 			success: function(html) {
@@ -180,9 +177,12 @@ $(document).ready(function () {
 		$(this).children('icon').toggleClass('icon-favorite').toggleClass('icon-favorite-selected');
 	});
 	
-	$(document).ready(function() {
-		var elem = document.querySelector('.js-switch');
-		var switchery = new Switchery(elem, { size: 'small' });
+	$('.medication-pharmacynote-btn').on('click',function(){
+		$(this).closest('.medication').addClass('has-note').find('.pharmacy-note').addClass('show');
+	});
+	
+	$('.remove-pharmacy-note').on('click',function(){
+		$(this).closest('.medication').removeClass('has-note').find('.pharmacy-note').removeClass('show');
 	});
 	
 	$('.edit-med-history-toggle').on('click',function(){
@@ -206,8 +206,11 @@ $(document).ready(function () {
 	});
 	
 	$('.peds-confirm-weight').on('click',function(){
-		$(this).closest('.inapp-notification-container').find('.notification-msg').html('<icon class="icon-checkmark success"></icon><span class="strong">William Hamish Wallace</span> weighs <span>80 lbs</span><div class="pull-right"><button class="button button-link button-tiny secondary-action">Update weight</button></div>.');
+		$(this).closest('.inapp-notification-container').find('.notification-msg').html('<icon class="icon-checkmark success-color"></icon><span class="strong">William Hamish Wallace</span> weighs <span>80 lbs</span><div class="pull-right"><button class="button button-link button-tiny secondary-action">Update weight</button></div>.');
 		$(this).closest('.notification-controls').addClass('collapsed');
 	});
+	
+	$("#patient-birthday").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+	$("#patient-phone").mask("(999) 999-9999");
 	
 });

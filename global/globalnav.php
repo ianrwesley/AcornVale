@@ -54,28 +54,3 @@ $rootDir = "/acorn-vale-03457798624180578193";
 		</aside>
 	</div>
 </nav>
-<!--div class="alert-curtain hidden">
-	<div class="popover-container alert">
-		<div class="popover">
-			<div class="popover-inner-content">
-				<div class="row">
-					<div class="column center-row not-mobile">
-						<img src="../global/images/alert_icon.png" alt="Alert" width="62" class="alert-icon" />
-					</div>
-					<div class="column center-row">
-						<h4 class="alert-popup-header">Are you still there?</h4>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column large-12">
-						<p class="alert-popup-msg"></p>
-					</div>
-				</div>
-				<div class="button-alert-wrapper">
-					<button role="button" class="button button-link subdued button-back closealert"><a tabindex="0" href="<?php echo $rootDir;?>/?expired=true">Sign Out</a></button>
-					<button role="button" class="button button-link button-next closealert"><a tabindex="0">Continue</a></button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div-->

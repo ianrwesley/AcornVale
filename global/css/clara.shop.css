@@ -1,0 +1,363 @@
+/*-- LAYOUT --*/
+.shop-body .cs-buttonlink {
+  border: 0;
+  background: transparent;
+  color: #007FFF;
+  vertical-align: inherit;
+  text-decoration: none; }
+.shop-body .cs-buttonlink:hover {
+  text-decoration: underline; }
+.shop-body .cs-button-lg {
+  width: 100%;
+  font-weight: 400;
+  padding: 5px 16px; }
+.shop-body .content-wrapper {
+  padding: 48px 0 54px; }
+.shop-body .plan-selection {
+  padding: 20px 0;
+  width: 620px; }
+.shop-body .container {
+  width: 980px;
+  box-sizing: content-box; }
+.shop-body .spaced-header {
+  /*padding:$globalnav-height 0 0;*/
+  padding: 0;
+  text-align: center; }
+  .shop-body .spaced-header .header-wrap {
+    padding: 64px 0 18px; }
+    .shop-body .spaced-header .header-wrap h1 {
+      font-size: 40px; }
+.shop-body .meetclara.hero {
+  background: #201042 url(../images/meetclara/meetclara-hero-@2x.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px; }
+  .shop-body .meetclara.hero .section-title {
+    font-size: 48px; }
+  .shop-body .meetclara.hero .section-subtitle {
+    font-size: 21px; }
+  .shop-body .meetclara.hero .section-title, .shop-body .meetclara.hero .section-subtitle {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(33, 33, 33, 0.4); }
+  .shop-body .meetclara.hero .section-subtitle {
+    margin: 16px 0 8px; }
+  .shop-body .meetclara.hero .hero-img-link {
+    font-size: 18px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); }
+.shop-body .column {
+  min-height: 2px; }
+.shop-body .full-width {
+  width: 100%;
+  background: #F8F8F8; }
+.shop-body .little-clara {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: auto; }
+.shop-body .lc-helper-img.affix {
+  top: 48px; }
+.shop-body .price-toggle-wrap {
+  width: 400px;
+  margin: auto; }
+.shop-body .plan-btn {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 0 24px;
+  background: white;
+  border: 1px solid #D0CFD4;
+  outline: 0;
+  z-index: 0;
+  overflow: visible; }
+  .shop-body .plan-btn .btn-text {
+    margin: auto;
+    display: block; }
+.shop-body .plan-btn:hover {
+  border-color: #9C9B9F;
+  color: #AE00D8;
+  z-index: 1; }
+.shop-body .plan-btn:focus, .shop-body .plan-btn.active {
+  border-width: 2px;
+  border-color: #AE00D8;
+  z-index: 2;
+  padding: 15px 0 23px; }
+  .shop-body .plan-btn:focus .plan-btn-label, .shop-body .plan-btn.active .plan-btn-label {
+    bottom: -1px; }
+.shop-body .plan-btn:focus {
+  -webkit-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+  /* Safari and Chrome */
+  -moz-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+  /* Firefox */
+  -ms-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+  /* Internet Explorer */
+  box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2); }
+.shop-body .plan-btn.active {
+  -webkit-box-shadow: none;
+  /* Safari and Chrome */
+  -moz-box-shadow: none;
+  /* Firefox */
+  -ms-box-shadow: none;
+  /* Internet Explorer */
+  box-shadow: none; }
+.shop-body .plan-btn-label {
+  white-space: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.33;
+  width: calc(100% + 16px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  background: #5D008E;
+  color: white;
+  font-weight: 500;
+  padding: 2px 0;
+  display: block; }
+.shop-body .ribbon-right:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #BC00EA;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -13px;
+  right: 6px;
+  z-index: -1; }
+.shop-body .plan-selection.bundle {
+  /*width: 620px;*/
+  padding-bottom: 48px; }
+  .shop-body .plan-selection.bundle .configure-btn-wrap {
+    margin-top: 42px; }
+.shop-body .cs-chatbox {
+  padding: 10px 0 30px; }
+.shop-body .cs-claraplan .cs-plandetails {
+  border-left: 1px solid #D0CFD4;
+  padding: 0 32px; }
+  .shop-body .cs-claraplan .cs-plandetails .cs-plan-title {
+    font-size: 26px;
+    font-weight: 500; }
+  .shop-body .cs-claraplan .cs-plandetails .add-to-cart {
+    padding: 24px 0; }
+.shop-body .cs-claraplan .cs-plandetails:first-child {
+  border-left: none; }
+.shop-body .cs-claraplan .cs-add-licenses .license-quantity {
+  border: 1px solid #D0CFD4;
+  -webkit-border-radius: 4px;
+  /* Safari and Chrome */
+  -moz-border-radius: 4px;
+  /* Firefox */
+  -ms-border-radius: 4px;
+  /* Internet Explorer */
+  border-radius: 4px;
+  margin: 0; }
+.shop-body .cs-claraplan .cs-add-licenses .option-description {
+  font-size: 18px;
+  display: inline-block;
+  padding: 6px 0; }
+.shop-body .cs-claraplan .cs-option-learnmoretxt {
+  font-size: 13px;
+  display: block;
+  margin: 12px auto 2px; }
+.shop-body .cs-planspecs {
+  margin: 20px 0 0;
+  font-size: 14px; }
+  .shop-body .cs-planspecs li {
+    line-height: 1;
+    padding-bottom: 12px; }
+  .shop-body .cs-planspecs .sub-spec {
+    margin-left: 24px; }
+  .shop-body .cs-planspecs .cumulative {
+    color: #9C96B1; }
+  .shop-body .cs-planspecs .cumulative-pkg {
+    /*color:$color-link-primary;*/
+    font-weight: 500; }
+  .shop-body .cs-planspecs .highlight {
+    font-weight: 500;
+    color: #AE00D8; }
+  .shop-body .cs-planspecs .linked:after {
+    content: "\*"; }
+.shop-body .cs-price {
+  margin: 14px 0 0; }
+  .shop-body .cs-price .cs-current-price {
+    font-size: 26px;
+    font-weight: 500;
+    padding-right: 2px; }
+  .shop-body .cs-price .cs-price-freq-unit {
+    padding-left: 1px;
+    font-size: 12px;
+    position: relative;
+    top: -0.5em;
+    vertical-align: baseline;
+    line-height: 1; }
+.shop-body .cs-compare {
+  margin-bottom: 112px; }
+  .shop-body .cs-compare .cs-compare-header {
+    text-align: center;
+    padding: 80px 0 40px; }
+    .shop-body .cs-compare .cs-compare-header h2 {
+      font-size: 38px;
+      font-weight: 500; }
+    .shop-body .cs-compare .cs-compare-header .cs-compare-link {
+      padding-top: 12px; }
+  .shop-body .cs-compare .cs-compare-info {
+    position: relative; }
+    .shop-body .cs-compare .cs-compare-info .cs-compare-img-placeholder {
+      display: block;
+      width: 100%;
+      height: 220px; }
+    .shop-body .cs-compare .cs-compare-info .cs-compare-img {
+      position: absolute;
+      left: 50%;
+      margin-left: -170px;
+      bottom: -94px; }
+.shop-body .cs-configure-container {
+  padding-top: 98px; }
+  .shop-body .cs-configure-container .section-content {
+    padding-bottom: 186px; }
+  .shop-body .cs-configure-container .cs-configure-title {
+    font-size: 32px;
+    font-weight: 500; }
+  .shop-body .cs-configure-container .cs-planspecs {
+    margin-bottom: 28px; }
+  .shop-body .cs-configure-container .cs-configuration-selections {
+    /*border-top:$border-primary;*/
+    padding-top: 8px; }
+  .shop-body .cs-configure-container .cs-configuration-category {
+    padding-top: 8px; }
+  .shop-body .cs-configure-container .cs-configuration-optiongroup {
+    margin-top: 18px; }
+  .shop-body .cs-configure-container .option-toggle-wrap {
+    width: 100%;
+    margin: auto; }
+    .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-group {
+      width: inherit;
+      display: table;
+      padding: 9px 0 12px; }
+    .shop-body .cs-configure-container .option-toggle-wrap .plan-btn {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 16px 0 18px;
+      height: 76px; }
+    .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn {
+      width: 100%;
+      display: table-cell; }
+      .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .btn-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .cs-optional-price-delta, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .btn-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .cs-optional-price-delta, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .btn-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .cs-optional-price-delta {
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative; }
+      .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .btn-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .btn-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .btn-text {
+        padding-left: 20px;
+        text-align: left; }
+        .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .btn-text .input-wrapper, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .btn-text .input-wrapper, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .btn-text .input-wrapper {
+          margin-right: 12px; }
+          .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .btn-text .input-wrapper .form-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .btn-text .input-wrapper .form-text, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .btn-text .input-wrapper .form-text {
+            margin: 0;
+            border: 1px solid #D0CFD4;
+            -webkit-border-radius: 4px;
+            /* Safari and Chrome */
+            -moz-border-radius: 4px;
+            /* Firefox */
+            -ms-border-radius: 4px;
+            /* Internet Explorer */
+            border-radius: 4px; }
+      .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .cs-optional-price-delta, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .cs-optional-price-delta, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .cs-optional-price-delta {
+        padding-right: 20px;
+        text-align: right; }
+      .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-proCS-licenses .plan-btn .btn-option-description, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-pro-licenses .plan-btn .btn-option-description, .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-basic-licenses .plan-btn .btn-option-description {
+        display: inline-block;
+        padding: 9px 0; }
+    .shop-body .cs-configure-container .option-toggle-wrap .option-toggle-meded .plan-btn {
+      width: 50%;
+      display: table-cell; }
+    .shop-body .cs-configure-container .option-toggle-wrap .cs-optional-price-delta {
+      color: #9C96B1; }
+      .shop-body .cs-configure-container .option-toggle-wrap .cs-optional-price-delta .cs-price-freq-unit {
+        top: -0.25em; }
+  .shop-body .cs-configure-container .cs-configuration-group-title {
+    font-size: 24px;
+    margin-top: 18px; }
+  .shop-body .cs-configure-container .cs-option-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 14px; }
+  .shop-body .cs-configure-container .cs-help-btn {
+    font-size: 14px;
+    padding-left: 6px; }
+  .shop-body .cs-configure-container .cs-option-learnmoretxt {
+    font-size: 14px;
+    display: block;
+    margin: 4px auto 2px; }
+.shop-body .cs-shoptray {
+  background: #F8F8F8;
+  font-size: 13px;
+  line-height: 1.42;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  -webkit-box-sizing: border-box;
+  /* Safari and Chrome */
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -ms-box-sizing: border-box;
+  /* Internet Explorer */
+  box-sizing: border-box;
+  padding-top: 22px; }
+  .shop-body .cs-shoptray .cs-shoptray-gethelp {
+    float: left;
+    width: 180px;
+    padding-left: 30px;
+    position: relative; }
+    .shop-body .cs-shoptray .cs-shoptray-gethelp .chat-online {
+      display: block;
+      width: auto;
+      height: auto; }
+  .shop-body .cs-shoptray .cs-shoptray-gethelp:before {
+    font-family: "clara-icons";
+    content: "\47";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 21px; }
+  .shop-body .cs-shoptray .cs-purchaseoptions {
+    display: inline;
+    float: right;
+    max-width: 380px; }
+  .shop-body .cs-shoptray .purchase-info {
+    width: 100%;
+    display: table; }
+  .shop-body .cs-shoptray .cs-price {
+    margin: 0; }
+  .shop-body .cs-shoptray .cs-price.primary, .shop-body .cs-shoptray .add-to-cart.primary {
+    display: table-cell;
+    vertical-align: middle; }
+  .shop-body .cs-shoptray .cs-price.primary {
+    text-align: right; }
+  .shop-body .cs-shoptray .cs-price.primary > span {
+    display: block; }
+  .shop-body .cs-shoptray .cs-current-price {
+    font-size: 32px;
+    line-height: 1.2; }
+  .shop-body .cs-shoptray .cs-price-freq-unit {
+    top: -1em;
+    font-weight: 400; }
+  .shop-body .cs-shoptray .add-to-cart.primary {
+    padding-left: 22px; }
+    .shop-body .cs-shoptray .add-to-cart.primary .cs-button-lg {
+      font-size: 18px; }
+.shop-body .sticky-shoptray {
+  min-height: 104px;
+  bottom: 54px;
+  top: auto;
+  border-top: 1px solid #D0CFD4;
+  border-bottom: 0; }
+.shop-body #globalfooter {
+  position: fixed;
+  bottom: 0;
+  z-index: 999; }
