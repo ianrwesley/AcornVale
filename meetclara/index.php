@@ -68,7 +68,7 @@ $pageTitle = "Meet Clara";
 					</div>
 					<div class="container plan-selection bundle">
 						<div class="cs-claraplan clearfix">
-							<div class="column lg-4 cs-plandetails cs-basic">
+							<!--div class="column lg-4 cs-plandetails cs-basic">
 								<h3 class="cs-plan-title">Basic</h3>
 								<ul class="cs-planspecs">
 									<li>Administer Clara accounts</li>
@@ -90,26 +90,27 @@ $pageTitle = "Meet Clara";
 										</div>
 										<span class="cs-option-learnmoretxt"><a href="#">How many Basic licenses do you need?</a></span>
 									</div>
-									<!--button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?product=basic">Select</a></button-->
+									<button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?product=basic">Select</a></button>
 								</div>
-							</div>
-							<div class="column lg-4 cs-plandetails cs-clarapro">
+							</div-->
+							<div class="column lg-6 cs-plandetails cs-clarapro">
 								<h3 class="cs-plan-title">Clara Pro</h3>
 								<ul class="cs-planspecs">
 									<!--li class="cumulative">Administer Clara accounts</li>
 									<li class="cumulative">Manage patients</li>
 									<li class="cumulative">Manage schedule</li-->
-									<li class="cumulative-pkg">Basic &#43;</li>
-									<li class="highlight">E-prescribe non-controlled substances</li>
+									<!--li class="cumulative-pkg">Basic &#43;</li-->
+									<li>E-prescribe <span class="highlight">non-controlled</span> substances</li>
 									<li class="sub-spec linked">Annual identity proofing</li>
 									<li class="sub-spec linked">Contraindication alerts</li>
 									<li class="sub-spec linked">Pediatric dosing</li>
+									<li>Technical support Monday through Friday, 8:00 a.m. to 5:00 p.m. ET</li>
 								</ul>
 								<div class="cs-price">
 									<span class="cs-current-price"></span><sup class="cs-price-freq-unit">/user</sup><sup class="cs-price-freq-unit cs-price-freq-unit-toggle"></sup>
 								</div>
 								<div class="add-to-cart">
-									<div class="cs-add-licenses-wrap">
+									<!--div class="cs-add-licenses-wrap">
 										<div class="cs-add-licenses clearfix">
 											<div class="input-wrapper lg-3">
 												<input id="proCS-license-quantity" class="license-quantity form-text" maxlength="4" placeholder="0" value="1">
@@ -119,11 +120,11 @@ $pageTitle = "Meet Clara";
 											</div>
 										</div>
 										<span class="cs-option-learnmoretxt"><a href="#">How many Clara Pro licenses do you need?</a></span>
-									</div>
-									<!--button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?product=pro">Select</a></button-->
+									</div-->
+									<button type="submit" class="button button-flat cs-button-lg"><a href="../create/create-claraid.php?product=pro">Select</a></button>
 								</div>
 							</div>
-							<div class="column lg-4 cs-plandetails cs-clarapro-cs">
+							<div class="column lg-6 cs-plandetails cs-clarapro-cs">
 								<h3 class="cs-plan-title">Clara Pro CS</h3>
 								<ul class="cs-planspecs">
 									<!--li class="cumulative">Administer Clara accounts</li>
@@ -133,16 +134,15 @@ $pageTitle = "Meet Clara";
 									<li class="sub-spec cumulative">Annual identity proofing&#42;</li>
 									<li class="sub-spec cumulative">Contraindication alerts&#42;</li>
 									<li class="sub-spec cumulative">Pediatric dosing&#42;</li-->
-									<li class="cumulative-pkg">Clara Pro &#43;</li>
-									<li class="highlight">E-prescribe controlled substances</li>
-									<li class="sub-spec">Schedule II-V</li>
-									<li class="sub-spec linked">All e-prescribing features included</li>
+									<li class="cumulative-pkg">Clara Pro plus…</li>
+									<li>E-prescribe <span class="highlight">controlled</span> substances</li>
+									<li class="sub-spec linked reference">All e-prescribing features included</li>
 								</ul>
 								<div class="cs-price">
 									<span class="cs-current-price"></span><sup class="cs-price-freq-unit">/user</sup><sup class="cs-price-freq-unit cs-price-freq-unit-toggle"></sup>
 								</div>
 								<div class="add-to-cart">
-									<div class="cs-add-licenses-wrap">
+									<!--div class="cs-add-licenses-wrap">
 										<div class="cs-add-licenses clearfix">
 											<div class="input-wrapper lg-3">
 												<input id="proCS-license-quantity" class="license-quantity form-text" maxlength="4" placeholder="0" value="">
@@ -152,17 +152,16 @@ $pageTitle = "Meet Clara";
 											</div>
 										</div>
 										<span class="cs-option-learnmoretxt"><a href="#">How many Clara Pro CS licenses do you need?</a></span>
-									</div>
-									<!--button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?product=proCS">Select</a></button-->
+									</div-->
+									<button type="submit" class="button button-flat cs-button-lg"><a href="../create/create-claraid.php?product=proCS">Select</a></button>
 								</div>
 							</div>
 						</div>
-						<div class="configure-btn-wrap row">
+						<!--div class="configure-btn-wrap row">
 							<div class="column lg-4">&nbsp;</div>
-							<!--div class="column lg-4"><button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?product=proCS">Customize Your Plan</a></button></div-->
 							<div class="column lg-4"><button type="submit" class="button button-flat cs-button-lg"><a href="../create/create-claraid.php">Create Your Clara&nbsp;ID</a></button></div>
 							<div class="column lg-4">&nbsp;</div>
-						</div>
+						</div-->
 					</div>
 					<div class="full-width cs-compare">
 						<div class="cs-compare-header">

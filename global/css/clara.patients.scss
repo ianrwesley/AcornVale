@@ -108,6 +108,9 @@ $border-darker: 1px solid #9C9B9F;
 		.submenu-group {
 			.button-group {margin-right:18px;}
 		}
+		.toggle-view.show-deactivated {background:$color-font-placeholder; border-color:#585563;
+			icon {color:white;}
+		}
 	}
 	.tablenav {background:white; bottom:$globalfooter-height; height:$tablenav-height; width:100%; border-top:$border-primary; padding:10px 0px; font-size:$xs-font-size;
 		.record-count, .pagination-button-wrap {padding:2px 0;}
@@ -131,7 +134,7 @@ $border-darker: 1px solid #9C9B9F;
 		.patients-table-header {
 			.header-row {text-transform:uppercase; font-size:$sm-font-size; color:$color-font-placeholder;}
 			.header-column {vertical-align:text-bottom; padding:12px 0; height:48px; padding:0; height:auto;
-				.header-text {position:absolute; top:-$tablenav-height; z-index:2; padding:12px 0; height:48px; width:auto; background:white; border:red; display:block; border-bottom:$border-primary;
+				.header-text {position:absolute; top:-$tablenav-height; z-index:2; padding:14px 0 10px; height:48px; width:auto; background:white; border:red; display:block; border-bottom:$border-primary;
 					input {margin:0;}
 				}
 			}
@@ -140,5 +143,11 @@ $border-darker: 1px solid #9C9B9F;
 			.patient-row {border-bottom:1px solid #EEEDF2;}
 			.patient-column {padding:11px 0;}
 		}
+	}
+}
+
+#mg-patients-submenu {
+	.submenu-filter-display {position:fixed; padding:6px 18px; background:$color-font-placeholder; color:white; font-size:$sm-font-size; top:92px; margin-left:-141px; left:50%; @include border-radius($border-radius); text-transform: uppercase; z-index:3; display:none;
+		.remove-filter {vertical-align:middle; padding-bottom:2px; padding-left:12px;}
 	}
 }

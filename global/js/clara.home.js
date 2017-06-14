@@ -138,9 +138,9 @@ $(document).ready(function () {
 		//$(this).remove();
 	});
 	
-	$('.field-icon').on('click',function(){
-		$(this).siblings('.nofocus-icon').addClass('in-focus');
-	});
+	//$('.field-icon').on('click',function(){
+	//	$(this).siblings('.nofocus-icon').addClass('in-focus');
+	//});
 	
 	$('.show-discontinued').on('click',function(){
 		//$(this).closest('.fieldcontrols').find('.discontinued-list').addClass('show');

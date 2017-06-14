@@ -355,6 +355,12 @@ ul.disc {
 .icon-close-cancel:before {
   content: "\6a"; }
 
+.icon-close:before {
+  content: "\6a"; }
+
+.icon-cancel:before {
+  content: "\6a"; }
+
 .icon-delete:before {
   content: "\6b"; }
 
@@ -429,6 +435,12 @@ ul.disc {
 
 .icon-variable:before {
   content: "\49"; }
+
+.icon-toggle-view:before {
+  content: "\4a"; }
+
+.icon-deactivate-patient:before {
+  content: "\4b"; }
 
 icon.xl {
   font-size: 98px; }
@@ -922,7 +934,7 @@ button a {
   padding: 6px 10px 10px;
   background: white;
   font-size: 14px;
-  margin-right: -4px;
+  margin-right: 18px;
   -webkit-border-radius: 4px;
   /* Safari and Chrome */
   -moz-border-radius: 4px;
@@ -938,6 +950,11 @@ button a {
     padding-bottom: 1px; }
   .button-menu-item icon + span {
     padding-left: 4px; }
+  .button-menu-item .lg-icon {
+    font-size: 18px; }
+
+.button-menu-item:last-of-type {
+  margin-right: 0; }
 
 .button-menu-item:hover, .button-menu-item:active, .button-menu-item:focus {
   background: #F8F8F8;

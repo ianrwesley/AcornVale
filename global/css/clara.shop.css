@@ -128,7 +128,7 @@
   right: 6px;
   z-index: -1; }
 .shop-body .plan-selection.bundle {
-  /*width: 620px;*/
+  width: 620px;
   padding-bottom: 48px; }
   .shop-body .plan-selection.bundle .configure-btn-wrap {
     margin-top: 42px; }
@@ -166,7 +166,7 @@
   margin: 20px 0 0;
   font-size: 14px; }
   .shop-body .cs-planspecs li {
-    line-height: 1;
+    line-height: 1.32;
     padding-bottom: 12px; }
   .shop-body .cs-planspecs .sub-spec {
     margin-left: 24px; }
@@ -179,6 +179,10 @@
     font-weight: 500;
     color: #AE00D8; }
   .shop-body .cs-planspecs .linked:after {
+    content: "\*"; }
+  .shop-body .cs-planspecs .linked.reference:after {
+    content: ""; }
+  .shop-body .cs-planspecs .linked.reference:before {
     content: "\*"; }
 .shop-body .cs-price {
   margin: 14px 0 0; }

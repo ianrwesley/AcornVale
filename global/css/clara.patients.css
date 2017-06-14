@@ -53,6 +53,11 @@
       top: 10px; }
   .mg-patients .submenu .submenu-group .button-group {
     margin-right: 18px; }
+  .mg-patients .submenu .toggle-view.show-deactivated {
+    background: #9C96B1;
+    border-color: #585563; }
+    .mg-patients .submenu .toggle-view.show-deactivated icon {
+      color: white; }
 .mg-patients .tablenav {
   background: white;
   bottom: 54px;
@@ -115,7 +120,7 @@
         position: absolute;
         top: -45px;
         z-index: 2;
-        padding: 12px 0;
+        padding: 14px 0 10px;
         height: 48px;
         width: auto;
         background: white;
@@ -128,3 +133,27 @@
       border-bottom: 1px solid #EEEDF2; }
     #mg-patients-content .mg-patients-table .patients-table-body .patient-column {
       padding: 11px 0; }
+
+#mg-patients-submenu .submenu-filter-display {
+  position: fixed;
+  padding: 6px 18px;
+  background: #9C96B1;
+  color: white;
+  font-size: 14px;
+  top: 92px;
+  margin-left: -141px;
+  left: 50%;
+  -webkit-border-radius: 4px;
+  /* Safari and Chrome */
+  -moz-border-radius: 4px;
+  /* Firefox */
+  -ms-border-radius: 4px;
+  /* Internet Explorer */
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 3;
+  display: none; }
+  #mg-patients-submenu .submenu-filter-display .remove-filter {
+    vertical-align: middle;
+    padding-bottom: 2px;
+    padding-left: 12px; }
