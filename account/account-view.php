@@ -2,6 +2,27 @@
 $pageTitle = "Profile";
 $menuName = $pageTitle;
 $adminView = $_GET[ "admin" ];
+include "../variables/user-variables/variable-test-user-profile.php";
+//$fail = "true";
+
+$accountSectionTitle = "Account";
+$securitySectionTitle = "Security";
+$credentialsSectionTitle = "Credentials";
+$paymentSectionTitle = "Payment";
+
+$subTitle_ClaraID = "CLARA&nbsp;ID";
+$subTitle_Role = "ROLE";
+
+$subTitle_Password = "PASSWORD";
+$subTitle_MobileNumber = "MOBILE NUMBER";
+
+$subTitle_Designation = "DESIGNATION";
+$subTitle_StateLicense = "STATE LICENSE";
+$subTitle_NPInumber = "NPI NUMBER";
+$subTitle_DEAnumber = "DEA NUMBER";
+
+$subTitle_PaymentMethod = "PAYMENT METHOD";
+
 ?>
 
 <!doctype html>
@@ -9,10 +30,10 @@ $adminView = $_GET[ "admin" ];
 
 <head>
 	<meta charset="UTF-8">
-	<title>Manage your Keystone ID</title>
+	<title>Manage your Clara ID</title>
 	<?php include "../global/globalui.php"; ?>
-	<script type="text/javascript" src="js/clara.account.js"></script>
-	<link rel="stylesheet" href="css/clara.account.css" type="text/css">
+	<script type="text/javascript" src="../global/js/clara.account.js"></script>
+	<link rel="stylesheet" href="../global/css/clara.account.css" type="text/css">
 </head>
 
 <body>
@@ -23,20 +44,23 @@ $adminView = $_GET[ "admin" ];
 				<div class="persona-bg"></div>
 				<div class="container no-float">
 					<div class="row person-wrapper">
-						<div class="column large-9 small-12">
+						<div class="column lg-9 sm-12">
 							<div class="flex-container">
-								<h1 class="keystone-user"> <span id="first_name" class="first_name">Sherry</span> <span id="last_name" class="last_name">Dillon</span> <small id="username" class="keystone-username">Your Keystone&nbsp;ID is <span><strong class="username">sdillon@bravadohealth.com</strong></span></small> </h1>
+								<h1 class="clara-user">
+									<span class="first_name"><?php echo "$userFirstName"; ?></span> <span class="last_name"><?php echo "$userLastName"; ?></span>, <span class="designation_title"><?php echo "$designation"; ?></span>
+									<small class="clara-username">Your Clara&nbsp;ID is <span><strong class="username"><?php echo "$claraID"; ?></strong></span></small>
+								</h1>
 							</div>
 						</div>
-						<!--div class="column large-3 not-mobile">
+						<div class="column lg-3 not-mobile">
 							<div class="flex-container">
 								<div class="switch pull-right">
 									<button id="switch-view-button" class="button button-flat">
-										<a href="admin-view.php?admin=true">Admin</a>
+										<a href="<?php echo "$rootDir"; ?>/?signout=true">Sign Out</a>
 									</button>
 								</div>
 							</div>
-						</div-->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -45,204 +69,73 @@ $adminView = $_GET[ "admin" ];
 					<section id="profile" class="flow-section">
 						<div class="profile-wrapper">
 							<div class="row">
-								<div class="column large-3 medium-12">
-									<h2 class="section-title mobile-edit">Profile</h2>
+								<div class="column lg-3 md-12">
+									<h2 class="section-title mobile-edit"><?php echo "$accountSectionTitle"; ?></h2>
 								</div>
-								<div class="column large-9 medium-12 profile-content">
+								<div class="column lg-9 md-12 profile-content">
 									<accordian class="closed">
 										<div class="accordian-fade">
 											<div class="profile-details clearfix">
 												<div class="row">
-													<div class="column large-5">
-														<h3 class="section-subtitle"> KEYSTONE ID </h3>
+													<div class="column lg-5">
+														<h3 class="section-subtitle"> <?php echo "$subTitle_ClaraID"; ?> </h3>
 														<div class="username ellipsis">
-															sdillon@bravadohealth.com
+															<?php echo "$claraID"; ?>
 														</div>
 													</div>
-													<div class="column large-5">
-														<h3 class="section-subtitle"> ROLE </h3>
-														<div class="role">Administrator</div>
+													<div class="column lg-5">
+														<h3 class="section-subtitle"> <?php echo "$subTitle_Role"; ?> </h3>
+														<div class="user-role"><?php echo "$userRole"; ?></div>
 													</div>
-													<div class="column large-2 section-edit">
+													<div class="column lg-2 section-edit">
 														<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
-													</div>
-												</div>
-												<div class="row next-row">
-													<div class="column large-5">
-														<h3 class="section-subtitle"> OFFICE LOCATION </h3>
-														<div class="location">Dallas, TX</div>
-													</div>
-													<div class="column large-5">
-														<h3 class="section-subtitle"> DEPARTMENT </h3>
-														<div class="department">Product Management</div>
 													</div>
 												</div>
 											</div>
 											<div class="editable profile-edit clearfix">
 												<div class="editable-header mobile-only">
-													<h2 class="mobile-section-title">Profile</h2>
+													<h2 class="mobile-section-title"><?php echo "$accountSectionTitle"; ?></h2>
 													<button class="button button-flat button-done button-done-mobile">Done</button>
 												</div>
 												<div class="mobile-section-wrap">
-												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> KEYSTONE ID </h3>
+												<div class="row edit-row tall-row">
+													<div class="column lg-5 sm-12">
+														<h3 class="section-subtitle"> <?php echo "$subTitle_ClaraID"; ?> </h3>
 														<div class="username ellipsis" id="usernameConfirmation">
-															sdillon@bravadohealth.com
+															<?php echo "$claraID"; ?>
 														</div>
-														<div class="pop-wrapper extended" id="popwrapper-0">
-															<button id="startChangeUsernameFlow" class="button button-link" onclick="startChangeUsernameFlow()"> Change Email Address… </button>
-															<div class="popover-content">
-																<div class="popover-container" id="popover-0">
-																	<div class="popover-wrapper popover-wrapper-direction-bottom popover-wrapper-align-center">
-																		<div class="popover popover-direction-bottom popover-align-center popover-type-action">
-																			<div class="popover-inner-content">
-																				<div class="step-content" id="step-1">
-																						<div class="details">
-																							<div class="flow-label">Enter a new email to use as your Keystone ID:</div>
-																						</div>
-																						<div class="pop-wrapper field-pop-wrapper">
-																							<div class="email-input-wrapper">
-																								<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-control emailInputId form-textbox popover-field" placeholder="yourname@bravadohealth.com" id="emailInputId">
-																							</div>
-																						</div>
-																				</div>
-																				<div class="step-content next-step" id="step-2">
-																						<div class="details">
-																							<div class="flow-label">An email with a verification code has been sent to <strong id="step-2-email">x</strong>.
-																								<hr class="separator"/>Enter the code here:</div>
-																						</div>
-																						<div class="pop-wrapper field-pop-wrapper">
-																							<div class="email-input-wrapper">
-																								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="6" class="form-control codeInputId form-textbox popover-field" placeholder="Enter code here" id="codeInputId">
-																							</div>
-																						</div>
-																				</div>
-																				<div class="step-footer clearfix">
-																					<div class="toolbar-footer clearfix">
-																						<button tabindex="0" type="button" class="button button-link last nav-action pull-left icon-suffix resend" id="emailResendCode">Resend Code</button>
-																						<div class="button-group pull-right">
-																							<button tabindex="0" type="button" class="button button-link last nav-cancel pull-right" onclick="cancelChangeUsername()">Cancel</button>
-																							<button tabindex="0" type="button" class="button button-link first nav-action pull-right" onclick="step2UsernameFlow()" id="emailContinue" disabled="">Continue</button>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<!--div class="editable email-edit clearfix">
-															<div class="editable-header mobile-only">
-																<h2 class="mobile-section-title">Email</h2>
-															</div>
-															<div class="mobile-section-wrap">
-																<div class="column large-5 small-12">
-																	<div class="step-content" id="step-1">
-																		<div class="details">
-																			<div class="flow-label">Enter a new email to use as your Keystone ID:</div>
-																		</div>
-																		<div class="pop-wrapper field-pop-wrapper">
-																			<div class="email-input-wrapper">
-																				<input type="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-control emailInputId form-textbox popover-field" placeholder="yourname@bravadohealth.com">
-																			</div>
-																		</div>
-																	</div>
-																	<div class="step-footer clearfix">
-																		<div class="toolbar-footer clearfix">
-																			<div class="button-group pull-right">
-																				<button tabindex="0" type="button" class="button button-link last nav-action pull-right" onclick="step2UsernameFlow()" id="emailContinue" disabled="">Continue</button>
-																				<button tabindex="0" type="button" class="button button-link first nav-cancel pull-right mobileFlowCancel">Cancel</button>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div-->
+														<?php include "popover-change-claraid.php"; ?>
 													</div>
-													<div class="column large-5 small-12">
-														<div class="description"> Use your Keystone ID to manage all Bravado Health products and services. </div>
+													<div class="column lg-5 sm-12">
+														<div class="description"> Use your Clara&nbsp;ID to access all your Bravado Health products and services. </div>
 													</div>
-													<div class="column large-2 section-edit">
+													<div class="column lg-2 section-edit">
 														<button class="button button-flat button-done" onclick="saveProfile()">Save</button>
 													</div>
 												</div>
 												<div class="row edit-row">
-													<div class="column large-5 small-12">
+													<div class="column lg-5 sm-12">
 														<h3 class="section-subtitle" id="nameLabel"> NAME </h3>
 														<div class="form-group change-name">
-															<div class="field-wrapper first-wrapper">
-																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="first-name form-textbox" type="text" value="Sherry" placeholder="first name" id="firstNameInput">
-																<!--div class="pop-container form-field-error">
-																	<div class="error pop-bottom">
-																		<p class="error-msg">
-																			<error class="error">First name cannot be empty.</error>
-																		</p>
-																	</div>
-																</div-->
+															<div class="error-msg-wrapper lg-12">
+																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="first-name form-text has-popover-error" type="text" value="<?php echo "$userFirstName"; ?>" placeholder="first name" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="First name cannot be empty.">
 															</div>
-															<div class="field-wrapper middle-wrapper">
-																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="middle-name form-textbox" type="text" value="" placeholder="middle name (optional)">
+															<div class="error-msg-wrapper lg-12">
+																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="middle-name form-text" type="text" value="<?php echo "$userMiddleName"; ?>" placeholder="middle name (optional)">
 															</div>
-															<div class="field-wrapper last-wrapper">
-																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="last-name form-textbox" type="text" value="Dillon" placeholder="last name" id="lastNameInput">
-																<div class="pop-container form-field-error">
-																	<div class="error pop-bottom">
-																		<p class="error-msg">
-																			<error class="error">Last name cannot be empty.</error>
-																		</p>
-																	</div>
-																</div>
+															<div class="error-msg-wrapper lg-12">
+																<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="last-name form-text has-popover-error" type="text" value="<?php echo "$userLastName"; ?>" placeholder="last name" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="Last name cannot be empty.">
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle">OFFICE LOCATION</h3>
-														<div class="select-wrapper">
-															<select class="form-control selected" id="locationInputId">
-																<option selected="" value="Dallas, TX">Dallas, TX</option>
-																<option value="Corporate">Corporate</option>
-																<option value="Miami, FL">Miami, FL</option>
-															</select>
-														</div>
+													<div class="column lg-5 sm-12">
+														<h3 class="section-subtitle"> <?php echo "$subTitle_Role"; ?> </h3>
+														<div class="user-role"> <?php echo "$userRole"; ?> </div>
 													</div>
-													<div class="column large-5 small-12">
-														<div class="description">Your office location helps deliver more relevant content in Keystone.</div>
-													</div>
-												</div>
-												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> DEPARTMENT </h3>
-														<div class="select-wrapper">
-															<select class="form-control selected" id="departmentInputId">
-																<option selected="" value="Product Management">Product Management</option>
-																<option value="C-Suite">C-Suite</option>
-																<option value="Sales">Sales</option>
-																<option value="Marketing">Marketing</option>
-																<option value="Technical Support">Technical Support</option>
-																<option value="RCM">RCM</option>
-																<option value="Finance">Finance</option>
-																<option value="Business Development">Business Development</option>
-																<option value="Software Engineering">Software Engineering</option>
-																<option value="Human Resources">Human Resources</option>
-																<option value="Training & Implementation">Training &amp; Implementation</option>
-															</select>
-														</div>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description">Your department allows access to certain functions in Keystone.</div>
-													</div>
-												</div>
-												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> ROLE </h3>
-														<div class="role"> Administrator </div>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description"> Your role defines your privileges in Keystone. </div>
+													<div class="column lg-5 sm-12">
+														<div class="description"> Your role defines your privileges in Clara. </div>
 													</div>
 												</div>
 											</div>
@@ -256,131 +149,182 @@ $adminView = $_GET[ "admin" ];
 					<section id="security" class="flow-section flow-section-border">
 						<div class="security-wrapper">
 							<div class="row">
-								<div class="column large-3 medium-12">
-									<h2 class="section-title mobile-edit">Security</h2>
+								<div class="column lg-3 md-12">
+									<h2 class="section-title mobile-edit"><?php echo "$securitySectionTitle"; ?></h2>
 								</div>
-								<div class="column large-9 medium-12 security-content">
-									<!--accordian class="closed">
-										<div class="accordian-fade"-->
-											<div class="security-details clearfix">
-												<div class="row">
-													<div class="column large-5">
-														<h3 class="section-subtitle"> PASSWORD </h3>
-														<div class="pop-wrapper extended" id="popwrapper-1">
-															<button id="startChangePasswordFlow" class="button button-link" onclick="startChangePasswordFlow()">Change Password…</button>
-															<div class="popover-content">
-																<div class="popover-container" id="popover-1">
-																	<div class="popover-wrapper popover-wrapper-direction-top popover-wrapper-align-center">
-																		<div class="popover popover-direction-top popover-align-center popover-type-action">
-																			<div class="popover-inner-content">
-																				<div class="step-content" id="popover-1-step-1">
-																					<div class="pop-wrapper field-pop-wrapper">
-																						<div class="inline-error-wrapper">
-																							<input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-control form-textbox popover-field" placeholder="current password" id="currentPassword">
-																							<span class="inline-error-msg">The current password you entered does not match our records.</span>
-																						</div>
-																						<div class="inline-error-wrapper">
-																							<input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-control form-textbox popover-field override" placeholder="new password" id="newPassword">
-																						</div>
-																						<div class="inline-error-wrapper">
-																							<input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-control form-textbox popover-field override" placeholder="confirm password" id="newPasswordConfirm">
-																							<span class="inline-error-msg">The new password and confirm password fields must match exactly.</span>
-																						</div>
-																					</div>
-																					<div class="password-strength">
-																						<div class="sub-heading">Your password must have:</div>
-																						<div class="error error-one">
-																								<icon class="icon-checkmark"></icon>
-																								<span class="message">8 or more characters</span>
-																								<error></error>
-																						</div>
-																						<div class="error error-two">
-																								<icon class="icon-checkmark"></icon>
-																								<span class="message">Uppercase &amp; lowercase letters</span>
-																								<error></error>
-																						</div>
-																						<div class="error error-three success">
-																								<icon class="icon-checkmark"></icon>
-																								<span class="message">At least one number</span>
-																								<error></error>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="step-footer clearfix">
-																					<div class="toolbar-footer clearfix">
-																						<div class="button-group pull-right">
-																							<button tabindex="0" type="button" class="button button-link last nav-cancel pull-right" onclick="cancelChangePassword()">Cancel</button>
-																							<button tabindex="0" type="button" class="button button-link first nav-action pull-right" onclick="successChangePassword()" id="passwordContinue" disabled="">Change Password…</button>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description">Password last changed March 14, 2017.</div>
-													</div>
-													<!--div class="column large-5">
-														<h3 class="section-subtitle"> SECURITY QUESTIONS </h3>
-														<button class="button button-link"> Change Security Questions… </button>
-														<p>&nbsp;</p>
-													</div>
-													<div class="column large-2 section-edit">
-														<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
-													</div-->
-												</div>
-												<!--div class="row next-row">
-													<div class="column large-5">
-														<h3 class="section-subtitle"> RESCUE MOBILE NUMBER </h3>
-														<div class="rescue-number">+1 (214) 519-4541</div>
-													</div>
-												</div-->
+								<div class="column lg-9 md-12 security-content">
+									<div class="security-details clearfix">
+										<div class="row">
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_Password"; ?> </h3>
+												<?php include "popover-change-password.php"; ?>
 											</div>
-											<div class="editable security-edit clearfix">
-												<div class="editable-header mobile-only">
-													<h2 class="mobile-section-title">Security</h2>
-													<button class="button button-flat button-done button-done-mobile">Done</button>
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_MobileNumber"; ?> </h3>
+												<div class="rescue-number">+1 <?php echo "$mobileNumber"; ?></div>
+											</div>
+											<div class="column lg-2 section-edit">
+												<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
+											</div>
+										</div>
+									</div>
+									<div class="editable security-edit clearfix">
+										<div class="editable-header mobile-only">
+											<h2 class="mobile-section-title"><?php echo "$securitySectionTitle"; ?></h2>
+											<button class="button button-flat button-done button-done-mobile">Done</button>
+										</div>
+										<div class="mobile-section-wrap">
+										<div class="row edit-row">
+											<div class="column lg-5 sm-12">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_Password"; ?> </h3>
+												<?php include "popover-change-password.php"; ?>
+											</div>
+											<div class="column lg-5 sm-12">
+												<div class="description">Last changed March 14, 2017.</div>
+											</div>
+											<div class="column lg-2 section-edit">
+												<button class="button button-flat button-done" onclick="saveSection()">Save</button>
+											</div>
+										</div>
+										<!--div class="row edit-row">
+											<div class="column lg-5 sm-12">
+												<h3 class="section-subtitle"> SECURITY QUESTIONS </h3>
+												<button class="button button-link"> Change Security Questions… </button>
+											</div>
+											<div class="column lg-5 sm-12">
+												<div class="description"> These questions are used to verify your identity or help reset your password. </div>
+											</div>
+										</div-->
+										<div class="row edit-row">
+											<div class="column lg-5 sm-12">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_MobileNumber"; ?> </h3>
+												<div class="rescue-number">+1 <?php echo "$mobileNumber"; ?></div>
+												<button class="button button-link"> Change Mobile Number… </button>
+											</div>
+											<div class="column lg-5 sm-12">
+												<div class="description"> A verified mobile number can be used to help reset your password. </div>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section id="credentials" class="flow-section flow-section-border">
+						<div class="credentials-wrapper">
+							<div class="row">
+								<div class="column lg-3 md-12">
+									<h2 class="section-title mobile-edit"><?php echo "$credentialsSectionTitle"; ?></h2>
+								</div>
+								<div class="column lg-9 md-12 credentials-content">
+									<div class="credentials-details clearfix">
+										<div class="row">
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_Designation"; ?> </h3>
+												<div class="designation"> <?php echo "$designation"; ?> </div>
+											</div>
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_StateLicense"; ?> </h3>
+												<div class="state-license-number"> <?php echo "$stateLicenseNumber ($stateLicenseLocation)"; ?> </div>
+											</div>
+											<div class="column lg-2 section-edit">
+												<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
+											</div>
+										</div>
+										<div class="row next-row">
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_NPInumber"; ?> </h3>
+												<div class="npi-number"> <?php echo "$NPInumber"; ?> </div>
+											</div>
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_DEAnumber"; ?> </h3>
+												<div class="dea-number"> <?php echo "$DEAnumber"; ?> </div>
+											</div>
+										</div>
+									</div>
+									<div class="editable credentials-edit clearfix">
+										<div class="editable-header mobile-only">
+											<h2 class="mobile-section-title"><?php echo "$credentialsSectionTitle"; ?></h2>
+											<button class="button button-flat button-done button-done-mobile">Done</button>
+										</div>
+										<div class="mobile-section-wrap">
+											<div class="row edit-row">
+												<div class="column lg-5 sm-12">
+													<h3 class="section-subtitle"> <?php echo "$subTitle_Designation"; ?> </h3>
+													<div class="select-wrapper selected error-msg-wrapper lg-12">
+														<select class="form-text selected">
+															<option selected=""><?php echo "$designation"; ?></option>
+															<option>DO</option>
+															<option>NP</option>
+															<option>PA</option>
+															<option>HMD</option>
+															<option>ND</option>
+															<option>OD</option>
+														</select>
+													</div>
 												</div>
-												<div class="mobile-section-wrap">
-												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> PASSWORD </h3>
-														<button class="button button-link">Change Password…</button>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description">Last changed March 14, 2017.</div>
-													</div>
-													<div class="column large-2 section-edit">
-														<button class="button button-flat button-done" onclick="saveSection()">Save</button>
-													</div>
+												<div class="column lg-5 sm-12">
+													<div class="description"> Your clinical designation determines your prescribing privileges in Clara. </div>
 												</div>
-												<!--div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> SECURITY QUESTIONS </h3>
-														<button class="button button-link"> Change Security Questions… </button>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description"> These questions are used to verify your identity or help reset your password. </div>
-													</div>
-												</div>
-												<div class="row edit-row">
-													<div class="column large-5 small-12">
-														<h3 class="section-subtitle"> RESCUE MOBILE NUMBER </h3>
-														<div class="rescue-number">+1 (214) 519-4541</div>
-														<button class="button button-link"> Change Rescue Number… </button>
-													</div>
-													<div class="column large-5 small-12">
-														<div class="description"> A verified mobile number can be used to help reset your password. </div>
-													</div>
-												</div-->
+												<div class="column lg-2 section-edit">
+													<button class="button button-flat button-done" onclick="saveSection()">Save</button>
 												</div>
 											</div>
-										<!--/div>
-									</accordian-->
+											<div class="row edit-row">
+												<div class="column lg-5 sm-12">
+													<h3 class="section-subtitle"> <?php echo "$subTitle_StateLicense"; ?> </h3>
+													<div class="inline-update"><div class="state-license-number"> <?php echo "$stateLicenseNumber ($stateLicenseLocation)"; ?> </div></div>
+													<button class="button button-link"> Change State License Number… </button>
+												</div>
+												<div class="column lg-5 sm-12">
+													<div class="description"> A verified medical state license is required to prescribe in Clara. </div>
+												</div>
+											</div>
+											<div class="row edit-row">
+												<div class="column lg-5 sm-12">
+													<h3 class="section-subtitle"> <?php echo "$subTitle_NPInumber"; ?> </h3>
+													<div class="inline-update"><div class="npi-number"> <?php echo "$NPInumber"; ?> </div></div>
+													<button class="button button-link"> Change NPI Number… </button>
+												</div>
+												<div class="column lg-5 sm-12">
+													<div class="description"> A verified NPI number is required to prescribe in Clara. </div>
+												</div>
+											</div>
+											<div class="row edit-row">
+												<div class="column lg-5 sm-12">
+													<h3 class="section-subtitle"> <?php echo "$subTitle_DEAnumber"; ?> </h3>
+													<div class="inline-update"><div class="npi-number"> <?php echo "$DEAnumber"; ?> </div></div>
+													<button class="button button-link"> Change DEA Number… </button>
+												</div>
+												<div class="column lg-5 sm-12">
+													<div class="description"> A verified DEA number is required to prescribe controlled substances in Clara. </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section id="payment" class="flow-section flow-section-border">
+						<div class="payment-wrapper">
+							<div class="row">
+								<div class="column lg-3 md-12">
+									<h2 class="section-title mobile-edit"><?php echo "$paymentSectionTitle"; ?></h2>
+								</div>
+								<div class="column lg-9 md-12 payment-content">
+									<div class="payment-details clearfix">
+										<div class="row">
+											<div class="column lg-5">
+												<h3 class="section-subtitle"> <?php echo "$subTitle_PaymentMethod"; ?> </h3>
+												<div class="card-number-masked">
+													<?php echo "$paymentCardType $paymentCardNumberMasked"; ?>
+												</div>
+												<button class="button button-link trigger-flow">Edit Payment Information…</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

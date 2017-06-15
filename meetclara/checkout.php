@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Meet Clara";
 $licenseType = $_GET[ "license" ];
+include "../variables/user-variables/variable-test-user-profile.php";
 ?>
 
 <!doctype html>
@@ -91,8 +92,8 @@ $licenseType = $_GET[ "license" ];
 												<!--button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart">
 													Create Your Clara&nbsp;ID
 												</button-->
-												<button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart">
-													<a href="#">Order Now</a>
+												<button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart" data-toggle="modal" data-target="#checkoutPayment">
+													Order Now
 												</button>
 											</div>
 										</div>
@@ -106,6 +107,7 @@ $licenseType = $_GET[ "license" ];
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
+	<?php include "modal-checkout-payment.php"; ?>
 </body>
 
 </html>

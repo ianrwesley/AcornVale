@@ -48,6 +48,7 @@ $color-focus: #AE00D8;
 $color-error: #FF0058;
 $color-success: #00CC56;
 $color-panel: #F8F8F8;
+$color-popover-error: #382B00;
 $color-favorite: #FFB806;
 $color-discontinue: #FF6010;
 
@@ -113,6 +114,7 @@ $border-darker: 1px solid #9C9B9F;
 		}
 	}
 	.tablenav {background:white; bottom:$globalfooter-height; height:$tablenav-height; width:100%; border-top:$border-primary; padding:10px 0px; font-size:$xs-font-size;
+		.tablenav-wrap {padding:0 20px; @include box-sizing(content-box);}
 		.record-count, .pagination-button-wrap {padding:2px 0;}
 		.pagination {
 			.pagination-button-wrap {display:inline-block; margin-left:14px;}
@@ -128,7 +130,9 @@ $border-darker: 1px solid #9C9B9F;
 #mg-patients-content {padding-top:$globalnav-height + $submenu-height; padding-bottom:$globalfooter-height + $tablenav-height - 1px;
 	.fixed-table-header {position:absolute; top:-$tablenav-height; background:white; width:100%; border-bottom:$border-primary; height:48px;}
 	.table-wrapper {position:relative;}
-	.table-scroll {max-height:50%; overflow:auto; margin-top:$tablenav-height;}
+	.table-scroll {max-height:50%; overflow:auto; margin-top:$tablenav-height;
+		.table-scroll-wrap {padding-left:30px; padding-right:10px; @include box-sizing(content-box); }
+	}
 	.mg-patients-table {width:100%;
 		.select-column {width:38px;}
 		.patients-table-header {
@@ -147,7 +151,16 @@ $border-darker: 1px solid #9C9B9F;
 }
 
 #mg-patients-submenu {
-	.submenu-filter-display {position:fixed; padding:6px 18px; background:$color-font-placeholder; color:white; font-size:$sm-font-size; top:92px; margin-left:-141px; left:50%; @include border-radius($border-radius); text-transform: uppercase; z-index:3; display:none;
+	.submenu-filter-display {position:fixed; padding:6px 18px; background:$color-font-placeholder; color:white; font-size:$sm-font-size; top:92px; margin-left:-141px; left:50%; @include border-radius($border-radius); text-transform: uppercase; z-index:3; visibility: none; opacity:0; transition:opacity .25s ease;
 		.remove-filter {vertical-align:middle; padding-bottom:2px; padding-left:12px;}
+	}
+	.submenu-filter-display.show {visibility: visible; opacity:1;}
+}
+
+@media (max-width: 1260px) {
+	#mg-patients-content {
+		.table-scroll {
+			.table-scroll-wrap {padding-left:20px;}
+		}
 	}
 }

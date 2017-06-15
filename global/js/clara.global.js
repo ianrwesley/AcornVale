@@ -68,4 +68,8 @@ $(document).ready(function () {
 		showAlertPopup();
 		$(".alert-popup-msg").text("Do you want to delete these Keystone invitations? This action cannot be undone.");
 	});
+	
+	$(".select-all-checkbox").click(function() {
+		$("input[type='checkbox']").prop('checked', this.checked);
+	});
 });

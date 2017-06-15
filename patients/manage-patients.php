@@ -23,11 +23,12 @@ include "../variables/patient-variables/variable-test-patients-BATCH.php";
 		<div id="mg-patients-content">
 			<div class="table-wrapper">
 				<div class="fixed-table-header"></div>
-				<div class="table-scroll container-xl">
+				<div class="table-scroll">
+				<div class="table-scroll-wrap container-xl">
 					<table class="mg-patients-table" cellpadding="0" cellspacing="0">
 						<thead class="patients-table-header">
 							<tr class="header-row">
-								<th class="header-column select-column"><span class="header-text"><input type="checkbox"></span></th>
+								<th class="header-column select-column"><span class="header-text"><input type="checkbox" class="select-all-checkbox"></span></th>
 								<th class="header-column name"><span class="header-text">Patient name</span></th>
 								<th class="header-column birthday"><span class="header-text">Birthday</span></th>
 								<th class="header-column address"><span class="header-text">Address</span></th>
@@ -51,11 +52,12 @@ include "../variables/patient-variables/variable-test-patients-BATCH.php";
 						</tbody>
 					</table>
 				</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<nav class="tablenav">
-		<div class="container-xl">
+		<div class="tablenav-wrap container-xl">
 			<div class="pull-left">
 				<div class="record-count">
 					<p>Total records: <b class="record-count-text">50</b></p>

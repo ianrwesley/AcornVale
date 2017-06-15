@@ -66,6 +66,15 @@
   border-top: 1px solid #D0CFD4;
   padding: 10px 0px;
   font-size: 12px; }
+  .mg-patients .tablenav .tablenav-wrap {
+    padding: 0 20px;
+    -webkit-box-sizing: content-box;
+    /* Safari and Chrome */
+    -moz-box-sizing: content-box;
+    /* Firefox */
+    -ms-box-sizing: content-box;
+    /* Internet Explorer */
+    box-sizing: content-box; }
   .mg-patients .tablenav .record-count, .mg-patients .tablenav .pagination-button-wrap {
     padding: 2px 0; }
   .mg-patients .tablenav .pagination .pagination-button-wrap {
@@ -102,6 +111,16 @@
     max-height: 50%;
     overflow: auto;
     margin-top: 45px; }
+    #mg-patients-content .table-scroll .table-scroll-wrap {
+      padding-left: 30px;
+      padding-right: 10px;
+      -webkit-box-sizing: content-box;
+      /* Safari and Chrome */
+      -moz-box-sizing: content-box;
+      /* Firefox */
+      -ms-box-sizing: content-box;
+      /* Internet Explorer */
+      box-sizing: content-box; }
   #mg-patients-content .mg-patients-table {
     width: 100%; }
     #mg-patients-content .mg-patients-table .select-column {
@@ -152,8 +171,17 @@
   border-radius: 4px;
   text-transform: uppercase;
   z-index: 3;
-  display: none; }
+  visibility: none;
+  opacity: 0;
+  transition: opacity .25s ease; }
   #mg-patients-submenu .submenu-filter-display .remove-filter {
     vertical-align: middle;
     padding-bottom: 2px;
     padding-left: 12px; }
+#mg-patients-submenu .submenu-filter-display.show {
+  visibility: visible;
+  opacity: 1; }
+
+@media (max-width: 1260px) {
+  #mg-patients-content .table-scroll .table-scroll-wrap {
+    padding-left: 20px; } }

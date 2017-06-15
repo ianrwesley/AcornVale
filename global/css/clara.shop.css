@@ -403,3 +403,75 @@
 
 .checkout-body .container {
   max-width: 640px; }
+
+#checkoutPayment {
+  text-align: center; }
+  #checkoutPayment .modal-dialog {
+    width: 360px; }
+  #checkoutPayment .modal-header .checkout-header {
+    /*font-weight:$font-weight-book;*/
+    font-size: 28px; }
+  #checkoutPayment .modal-header .checkout-logo {
+    width: 86px;
+    margin-bottom: 21px; }
+  #checkoutPayment .modal-header, #checkoutPayment .remember-pmt {
+    margin-bottom: 28px; }
+  #checkoutPayment .id-confirm, #checkoutPayment .fieldgroup-stacked {
+    margin-bottom: 14px; }
+  #checkoutPayment .id-confirm, #checkoutPayment .remember-pmt {
+    font-size: 14px; }
+  #checkoutPayment .id-confirm .clara-id {
+    font-weight: 500; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup .form-text {
+    margin-bottom: 0;
+    border-bottom: none;
+    -webkit-border-radius: 0;
+    /* Safari and Chrome */
+    -moz-border-radius: 0;
+    /* Firefox */
+    -ms-border-radius: 0;
+    /* Internet Explorer */
+    border-radius: 0; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup:first-child .form-text {
+    -webkit-border-radius: 4px 4px 0 0;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px 4px 0 0;
+    /* Firefox */
+    -ms-border-radius: 4px 4px 0 0;
+    /* Internet Explorer */
+    border-radius: 4px 4px 0 0; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup:last-child .form-text {
+    border-bottom: 1px solid #D0CFD4; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup:last-child .error-msg-wrapper:only-child .form-text {
+    -webkit-border-radius: 0 0 4px 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 0 0 4px 4px;
+    /* Firefox */
+    -ms-border-radius: 0 0 4px 4px;
+    /* Internet Explorer */
+    border-radius: 0 0 4px 4px; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup:last-child .error-msg-wrapper:first-child .form-text {
+    -webkit-border-radius: 0 0 0 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 0 0 0 4px;
+    /* Firefox */
+    -ms-border-radius: 0 0 0 4px;
+    /* Internet Explorer */
+    border-radius: 0 0 0 4px; }
+  #checkoutPayment .fieldgroup-stacked .fieldgroup:last-child .error-msg-wrapper:last-child .form-text {
+    -webkit-border-radius: 0 0 4px 0;
+    /* Safari and Chrome */
+    -moz-border-radius: 0 0 4px 0;
+    /* Firefox */
+    -ms-border-radius: 0 0 4px 0;
+    /* Internet Explorer */
+    border-radius: 0 0 4px 0; }
+  #checkoutPayment .remember-pmt input[type=checkbox] {
+    margin: 0 8px 0 0; }
+  #checkoutPayment .remember-pmt label {
+    font-weight: 400;
+    margin: 0; }
+  #checkoutPayment .controls-footer {
+    text-align: center; }
+  #checkoutPayment .button-group {
+    margin: auto; }

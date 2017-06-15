@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 $xl-screen-width: 1200px;
 $lg-screen-width: 992px;
 $md-screen-width: 768px;
@@ -46,6 +44,7 @@ $color-focus: #AE00D8;
 $color-error: #FF0058;
 $color-success: #00CC56;
 $color-panel: #F8F8F8;
+$color-popover-error: #382B00;
 $color-favorite: #FFB806;
 $color-discontinue: #FF6010;
 
@@ -261,4 +260,44 @@ $border-darker: 1px solid #9C9B9F;
 
 .checkout-body {
 	.container {max-width: 640px;}
+}
+
+#checkoutPayment {text-align:center;
+	.modal-dialog {width:360px;}
+	//.modal-collect-pmt {text-align:left;}
+	.modal-header {
+		.checkout-header {/*font-weight:$font-weight-book;*/ font-size:28px;}
+		.checkout-logo {width:86px; margin-bottom:21px;}
+	}
+	
+	.modal-header, .remember-pmt {margin-bottom:28px;}
+	.id-confirm, .fieldgroup-stacked {margin-bottom:14px;}
+	.id-confirm, .remember-pmt {font-size:$sm-font-size;}
+	
+	.id-confirm {
+		.clara-id {font-weight:$font-weight-medium;}
+	}
+	
+	.fieldgroup-stacked {
+		.fieldgroup {
+			.form-text {margin-bottom:0; border-bottom:none; @include border-radius(0);}
+		}
+		.fieldgroup:first-child {
+			.form-text {@include border-radius($border-radius $border-radius 0 0);}
+		}
+		.fieldgroup:last-child {
+			.form-text {border-bottom:$border-primary;}
+			.error-msg-wrapper:only-child .form-text {@include border-radius(0 0 $border-radius $border-radius);}
+			.error-msg-wrapper:first-child .form-text {@include border-radius(0 0 0 $border-radius);}
+			.error-msg-wrapper:last-child .form-text {@include border-radius(0 0 $border-radius 0);}
+		}
+	}
+	
+	.remember-pmt {
+		input[type=checkbox] {margin:0 8px 0 0;}
+		label {font-weight:$font-weight-book; margin:0;}
+	}
+	
+	.controls-footer {text-align:center;}
+	.button-group {margin:auto;}
 }

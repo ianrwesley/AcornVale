@@ -1,5 +1,6 @@
 <?php
 $rootDir = "/acorn-vale-03457798624180578193";
+include "../variables/user-variables/variable-test-user-profile.php";
 ?>
 <nav id="globalnav">
 	<div class="gn-content">
@@ -31,16 +32,16 @@ $rootDir = "/acorn-vale-03457798624180578193";
 			</div>
 			<div class="menu-wrapper pull-right">
 				<!--li class="gn-item"> <a class="gn-link gn-link-search" role="button"> <span class="gn-placeholder">Search Keystone</span> </a> </li-->
-				<li class="gn-item gn-item-menu gn-item-account"> <a id="gn-link-account" class="gn-link gn-link-account <?php #if ($pageTitle == "Profile"){ echo "active"; } ?>" role="button"><span>David Livingstone, MD</span> <span class="gn-placeholder">My Account</span> </a> </li>
+				<li class="gn-item gn-item-menu gn-item-account"> <a id="gn-link-account" class="gn-link gn-link-account <?php #if ($pageTitle == "Profile"){ echo "active"; } ?>" role="button"><span><?php echo $userFirstName;?> <?php echo $userLastName;?>, <?php echo $designation;?></span> <span class="gn-placeholder">My Account</span> </a> </li>
 			</div>
 		</ul>
 		<aside id="gn-accountview" class="gn-accountview" role="menu">
 			<div class="gn-accountview-content">
 				<div class="gn-accountmenu-wrapper">
 					<ul class="gn-list sub-menu">
-						<li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/account-view.php" class="gn-link <?php if ($pageTitle == "Profile"){ echo "active"; } ?>"> <span class="gn-text">Manage Account</span> </a> </li>
-						<li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/admin-view.php?admin=true" class="gn-link <?php if ($pageTitle == "Admin"){ echo "active"; } ?>"> <span class="gn-text">Administration</span> </a> </li>
-						<li class="gn-item sub-item"> <a class="gn-link expiresession-link"> <span class="gn-text">Expire Session</span> </a> </li>
+						<li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/account-view.php" class="gn-link <?php if ($pageTitle == "Profile"){ echo "active"; } ?>"> <span class="gn-text">Account</span> </a> </li>
+						<!--li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/admin-view.php?admin=true" class="gn-link <?php if ($pageTitle == "Admin"){ echo "active"; } ?>"> <span class="gn-text">Administration</span> </a> </li-->
+						<!--li class="gn-item sub-item"> <a class="gn-link expiresession-link"> <span class="gn-text">Expire Session</span> </a> </li-->
 						<li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/?signout=true" class="gn-link"> <span class="gn-text">Sign Out</span> </a> </li>	
 					</ul>
 				</div>
