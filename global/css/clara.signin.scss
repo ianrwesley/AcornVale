@@ -189,7 +189,9 @@ $border-darker: 1px solid #9C9B9F;
 	.claraid-field-info + .popover {width:246px;}
 	.bd-field-info + .popover {width:300px;}
 	.form-field-birthday:focus::-webkit-input-placeholder, .form-field-birthday:focus::placeholder {color:$color-font-primary;}
+	.intro-link {font-size:13px; margin-top:12px;}
 }
+
 #verifyEmail {
 	.modal-dialog {max-width:520px;}
 	.modal-content {padding:0;}

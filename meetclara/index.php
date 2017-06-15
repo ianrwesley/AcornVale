@@ -101,7 +101,7 @@ $pageTitle = "Meet Clara";
 									<li class="cumulative">Manage schedule</li-->
 									<!--li class="cumulative-pkg">Basic &#43;</li-->
 									<li>E-prescribe <span class="highlight">non-controlled</span> substances</li>
-									<li class="sub-spec linked">Annual identity proofing</li>
+									<li class="sub-spec linked">Identity proofing</li>
 									<li class="sub-spec linked">Contraindication alerts</li>
 									<li class="sub-spec linked">Pediatric dosing</li>
 									<li>Technical support Monday through Friday, 8:00 a.m. to 5:00 p.m. ET</li>
@@ -121,7 +121,7 @@ $pageTitle = "Meet Clara";
 										</div>
 										<span class="cs-option-learnmoretxt"><a href="#">How many Clara Pro licenses do you need?</a></span>
 									</div-->
-									<button type="submit" class="button button-flat cs-button-lg"><a href="../create/create-claraid.php?product=pro">Select</a></button>
+									<button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?license=pro">Select</a></button>
 								</div>
 							</div>
 							<div class="column lg-6 cs-plandetails cs-clarapro-cs">
@@ -153,7 +153,7 @@ $pageTitle = "Meet Clara";
 										</div>
 										<span class="cs-option-learnmoretxt"><a href="#">How many Clara Pro CS licenses do you need?</a></span>
 									</div-->
-									<button type="submit" class="button button-flat cs-button-lg"><a href="../create/create-claraid.php?product=proCS">Select</a></button>
+									<button type="submit" class="button button-flat cs-button-lg"><a href="configure.php?license=proCS">Select</a></button>
 								</div>
 							</div>
 						</div>

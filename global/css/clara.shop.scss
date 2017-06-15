@@ -120,10 +120,10 @@ $border-darker: 1px solid #9C9B9F;
 	
 	
 	.price-toggle-wrap {width:400px; margin:auto;}
-	.plan-btn {width:200px; font-size:$base-font-size; font-weight:$font-weight-medium; padding:16px 0 24px; background:white; border:$border-primary; outline:0; z-index:0; overflow:visible;
+	.plan-btn {width:200px; font-size:$base-font-size; font-weight:$font-weight-medium; padding:16px 0 24px; background:white; border:$border-primary; outline:0; z-index:0; overflow:visible; @include border-radius($border-radius);
 		.btn-text {margin:auto; display:block;}
 	}
-	.plan-btn:hover {border-color:$color-border-darker; color:$color-focus; z-index:1;}
+	//.plan-btn:hover {border-color:$color-border-darker; color:$color-focus; z-index:1;}
 	.plan-btn:focus, .plan-btn.active {border-width:2px; border-color:$color-focus; z-index:2; padding:15px 0 23px;
 		.plan-btn-label {bottom:-1px;}
 	}
@@ -181,8 +181,8 @@ $border-darker: 1px solid #9C9B9F;
 		.section-content {padding-bottom:$globalfooter-height + $stickyshoptray-height + 28px;}
 		
 		.cs-configure-title {font-size:32px; font-weight:$font-weight-medium;}
-		.cs-planspecs {margin-bottom:28px;}
-		.cs-configuration-selections {/*border-top:$border-primary;*/ padding-top:8px;}
+		.cs-planspecs {padding-bottom:21fpx; border-bottom:$border-primary;}
+		.cs-configuration-selections {padding-top:8px;}
 		.cs-configuration-category {padding-top:8px;}
 		.cs-configuration-optiongroup {margin-top:18px;}
 		
@@ -211,7 +211,29 @@ $border-darker: 1px solid #9C9B9F;
 		.cs-configuration-group-title {font-size:$md-header-font-size; margin-top:18px;}
 		.cs-option-title {font-size:$base-font-size; font-weight:$font-weight-medium; margin-top:14px;}
 		.cs-help-btn {font-size:14px; padding-left:6px;}
-		.cs-option-learnmoretxt {font-size:$sm-font-size; display:block; margin:4px auto 2px;}
+		.cs-option-learnmoretxt {font-size:13px; display:block; margin:4px auto 2px;
+			a {cursor:pointer;}
+		}
+		
+		.cs-quantity-input {max-width:64px;}
+	}
+	
+	.cs-checkout {
+		.cs-configuration-optiongroup {margin-top:6px;}
+		.option-toggle-wrap {
+			.cs-optional-price-delta {color:$color-font-primary; font-weight:$font-weight-medium;}
+			.cs-price-freq-unit {font-weight:$font-weight-book;}
+		}
+	}
+	
+	.cs-overlay-popup {
+		.modal-dialog {width:auto; max-width:800px;}
+		.cs-overlay-content {padding:64px 84px 72px;
+			.header {padding-bottom:28px; font-weight:$font-weight-light;}
+			.description {margin-bottom:18px; text-align:left;}
+			.description:last-child {margin-bottom:0;}
+		}
+		.close {position:absolute; top:0; left:0; opacity:1; font-size:54px; font-weight:$font-weight-light; padding:24px 24px;}
 	}
 	
 	.cs-shoptray {background:$color-panel; font-size:13px; line-height:1.42; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:22px;
@@ -235,4 +257,8 @@ $border-darker: 1px solid #9C9B9F;
 	.sticky-shoptray {min-height:$stickyshoptray-height; bottom:$globalfooter-height; top:auto; border-top:$border-primary; border-bottom:0;}
 	
 	#globalfooter {position:fixed; bottom:0; z-index:999;}
+}
+
+.checkout-body {
+	.container {max-width: 640px;}
 }

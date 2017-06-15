@@ -350,6 +350,9 @@
   width: 300px; }
 .si-body.create-id .form-field-birthday:focus::-webkit-input-placeholder, .si-body.create-id .form-field-birthday:focus::placeholder {
   color: #140A29; }
+.si-body.create-id .intro-link {
+  font-size: 13px;
+  margin-top: 12px; }
 
 #verifyEmail .modal-dialog {
   max-width: 520px; }

@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Meet Clara";
 $titleTag = "Create Your Clara ID";
+$licenseType = $_GET[ "license" ];
 ?>
 
 <!doctype html>
@@ -38,10 +39,13 @@ $titleTag = "Create Your Clara ID";
 			<div class="container">
 				<div class="intro text-centered">
 					<div class="intro-text">
-					Access all Clara services with a single Clara&nbsp;ID.
+					Create your Clara&nbsp;ID before proceeding to checkout.
 					</div>
-					<div class="intro-link">
-					Already have a Clara&nbsp;ID? <a target="_blank" href="../password/verifyemail.php">Find it here<i class="icon icon-text icon_right_chevron" aria-hidden="true"></i></a>
+					<!--div class="intro-link">
+					Already have a Clara&nbsp;ID? <a target="_blank" href="../password/verifyemail.php" class="more">Find it here</a>
+					</div-->
+              		<div class="intro-link">
+					Access all Clara services with a single Clara&nbsp;ID. <a target="_blank" href="../learnmore/claraid-faq.php" class="more">Learn more</a>
 					</div>
                 </div>
 			</div>
@@ -153,7 +157,7 @@ $titleTag = "Create Your Clara ID";
 								<a href="../account/account-view.php">Continue</a>
 							</button-->
 							<button type="button" role="link" class="button button-link disabled">
-								<a href="../meetclara/configure.php">Continue</a>
+								<a href="../meetclara/checkout.php?license=<?php echo $licenseType; ?>">Continue</a>
 							</button>
 						</div>
 					</div>

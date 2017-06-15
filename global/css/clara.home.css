@@ -28,7 +28,8 @@
       .rx-app .page-content .app-section-body-wrapper .app-section-body-scroll {
         overflow: auto;
         margin: auto;
-        z-index: 1; }
+        z-index: 1;
+        position: relative; }
   .rx-app .subnav, .rx-app .submenu {
     background: rgba(255, 255, 255, 0.96);
     width: 100%;

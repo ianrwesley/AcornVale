@@ -69,14 +69,17 @@
   border: 1px solid #D0CFD4;
   outline: 0;
   z-index: 0;
-  overflow: visible; }
+  overflow: visible;
+  -webkit-border-radius: 4px;
+  /* Safari and Chrome */
+  -moz-border-radius: 4px;
+  /* Firefox */
+  -ms-border-radius: 4px;
+  /* Internet Explorer */
+  border-radius: 4px; }
   .shop-body .plan-btn .btn-text {
     margin: auto;
     display: block; }
-.shop-body .plan-btn:hover {
-  border-color: #9C9B9F;
-  color: #AE00D8;
-  z-index: 1; }
 .shop-body .plan-btn:focus, .shop-body .plan-btn.active {
   border-width: 2px;
   border-color: #AE00D8;
@@ -226,9 +229,9 @@
     font-size: 32px;
     font-weight: 500; }
   .shop-body .cs-configure-container .cs-planspecs {
-    margin-bottom: 28px; }
+    padding-bottom: 21fpx;
+    border-bottom: 1px solid #D0CFD4; }
   .shop-body .cs-configure-container .cs-configuration-selections {
-    /*border-top:$border-primary;*/
     padding-top: 8px; }
   .shop-body .cs-configure-container .cs-configuration-category {
     padding-top: 8px; }
@@ -293,9 +296,41 @@
     font-size: 14px;
     padding-left: 6px; }
   .shop-body .cs-configure-container .cs-option-learnmoretxt {
-    font-size: 14px;
+    font-size: 13px;
     display: block;
     margin: 4px auto 2px; }
+    .shop-body .cs-configure-container .cs-option-learnmoretxt a {
+      cursor: pointer; }
+  .shop-body .cs-configure-container .cs-quantity-input {
+    max-width: 64px; }
+.shop-body .cs-checkout .cs-configuration-optiongroup {
+  margin-top: 6px; }
+.shop-body .cs-checkout .option-toggle-wrap .cs-optional-price-delta {
+  color: #140A29;
+  font-weight: 500; }
+.shop-body .cs-checkout .option-toggle-wrap .cs-price-freq-unit {
+  font-weight: 400; }
+.shop-body .cs-overlay-popup .modal-dialog {
+  width: auto;
+  max-width: 800px; }
+.shop-body .cs-overlay-popup .cs-overlay-content {
+  padding: 64px 84px 72px; }
+  .shop-body .cs-overlay-popup .cs-overlay-content .header {
+    padding-bottom: 28px;
+    font-weight: 300; }
+  .shop-body .cs-overlay-popup .cs-overlay-content .description {
+    margin-bottom: 18px;
+    text-align: left; }
+  .shop-body .cs-overlay-popup .cs-overlay-content .description:last-child {
+    margin-bottom: 0; }
+.shop-body .cs-overlay-popup .close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  font-size: 54px;
+  font-weight: 300;
+  padding: 24px 24px; }
 .shop-body .cs-shoptray {
   background: #F8F8F8;
   font-size: 13px;
@@ -365,3 +400,6 @@
   position: fixed;
   bottom: 0;
   z-index: 999; }
+
+.checkout-body .container {
+  max-width: 640px; }

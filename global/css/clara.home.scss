@@ -100,7 +100,7 @@ $medication-height-collapsed: 78px;
 	.icon {padding-right:6px; padding-bottom:2px; vertical-align:text-bottom;}
 	.page-content {padding-top:$globalnav-height + $subnav-height; padding-bottom:$globalfooter-height;
 		.app-section-body-wrapper {position:relative;
-			.app-section-body-scroll {overflow:auto; margin:auto; z-index:1;}
+			.app-section-body-scroll {overflow:auto; margin:auto; z-index:1; position:relative;}
 		}
 	}
 	.subnav, .submenu {background:rgba(255,255,255,.96); width:100%; height:$subnav-height; position:absolute; top:$globalnav-height; border-bottom:$border-primary; z-index:5998;}
