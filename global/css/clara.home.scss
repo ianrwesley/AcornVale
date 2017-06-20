@@ -128,7 +128,7 @@ $medication-height-collapsed: 78px;
 	/*-- tyopgraphy --*/
 	.title h1 {text-align:center; line-height:140px; padding:0; margin:0; font-size:40px; font-weight:$font-weight-book;}
 	.app-header, .modal-header {
-		h1 {text-align:center; line-height:1.2; padding:0; margin:0; font-size:$lg-header-font-size; font-weight:300;
+		h1 {text-align:center; line-height:1.2; padding:0; margin:0; font-size:$lg-header-font-size; font-weight:$font-weight-medium;
 			icon {font-size:28px; padding-right:8px;}
 		}
 	}
@@ -393,7 +393,7 @@ $medication-height-collapsed: 78px;
 	.edit-patient-content {padding:0;
 		//.flow-section:first-child {padding-top:8px;}
 		.flow-section {padding:16px 0;}
-		.modal-header h1 {color:$color-link-primary;}
+		//.modal-header h1 {color:$color-link-primary;}
 		.modal-body {padding:28px 28px 0;}
 		.controls-footer {border-top:$border-primary; padding:16px 18px; margin:0;}
 		.patient-demographics {border-bottom:none;}

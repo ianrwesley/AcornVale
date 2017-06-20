@@ -1,23 +1,20 @@
 <?php
-$pageTitle = "Account";
+$pageTitle = "Facility";
 $menuName = $pageTitle;
 $adminView = $_GET[ "admin" ];
 include "../variables/user-variables/variable-test-user-profile.php";
+include "../variables/user-variables/variable-test-facility-profile.php";
 //$fail = "true";
 
-$accountSectionTitle = "Account";
-$subTitle_ClaraID = "CLARA&nbsp;ID";
-$subTitle_Role = "ROLE";
+$facilitySectionTitle = "Facility";
+$subTitle_FacilityName = "FACILITY NAME";
+$subTitle_Address = "ADDRESS";
+$subTitle_Phone = "PHONE";
+$subTitle_Fax = "FAX";
 
-$securitySectionTitle = "Security";
-$subTitle_Password = "PASSWORD";
+$settingsSectionTitle = "Settings";
+$subTitle_PediatricDosingThreshold = "PEDIATRIC DOSING THRESHOLD";
 $subTitle_MobileNumber = "MOBILE NUMBER";
-
-$credentialsSectionTitle = "Credentials";
-$subTitle_Designation = "DESIGNATION";
-$subTitle_StateLicense = "STATE LICENSE";
-$subTitle_NPInumber = "NPI NUMBER";
-$subTitle_DEAnumber = "DEA NUMBER";
 ?>
 
 <!doctype html>
@@ -25,7 +22,7 @@ $subTitle_DEAnumber = "DEA NUMBER";
 
 <head>
 	<meta charset="UTF-8">
-	<title>Manage your Clara ID</title>
+	<title>Manage your Facility</title>
 	<?php include "../global/globalui.php"; ?>
 	<script type="text/javascript" src="../global/js/clara.account.js"></script>
 	<link rel="stylesheet" href="../global/css/clara.account.css" type="text/css">
@@ -37,7 +34,7 @@ $subTitle_DEAnumber = "DEA NUMBER";
 		<div class="manage <?php echo strtolower($menuName); ?>">
 			<?php include "account-persona.php"; ?>
 			<?php include "account-subnav.php"; ?>
-			<?php include "account-content.php"; ?>
+			<?php include "facility-content.php"; ?>
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>

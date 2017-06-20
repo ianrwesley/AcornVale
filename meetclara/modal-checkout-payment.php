@@ -10,7 +10,7 @@
 				<div class="modal-main">
 					<div class="id-confirm">
 						<div class="name">
-							<span><?php echo "$firstName"; ?></span> <span><?php echo "$lastName"; ?></span>
+							<span><?php echo "$userFirstName"; ?></span> <span><?php echo "$userLastName"; ?></span>
 						</div>
 						<div class="clara-id">
 							<span><?php echo "$claraID"; ?></span>

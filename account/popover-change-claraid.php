@@ -1,6 +1,6 @@
 <div class="pop-wrapper">
 	<button id="startChangeUsernameFlow" class="button button-link" onclick="startChangeUsernameFlow()"> Change Email Address… </button>
-	<div class="popover-content">
+	<!--div class="popover-content">
 		<div class="popover-container" id="popover-0">
 			<div class="popover-wrapper popover-wrapper-direction-bottom popover-wrapper-align-center">
 				<div class="popover popover-direction-bottom popover-align-center popover-type-action">
@@ -39,5 +39,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div-->
 </div>

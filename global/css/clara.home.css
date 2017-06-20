@@ -100,7 +100,7 @@
     padding: 0;
     margin: 0;
     font-size: 36px;
-    font-weight: 300; }
+    font-weight: 500; }
     .rx-app .app-header h1 icon, .rx-app .modal-header h1 icon {
       font-size: 28px;
       padding-right: 8px; }
@@ -588,8 +588,6 @@
     padding: 0; }
     .rx-app .edit-patient-content .flow-section {
       padding: 16px 0; }
-    .rx-app .edit-patient-content .modal-header h1 {
-      color: #007FFF; }
     .rx-app .edit-patient-content .modal-body {
       padding: 28px 28px 0; }
     .rx-app .edit-patient-content .controls-footer {

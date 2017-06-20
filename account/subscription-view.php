@@ -1,23 +1,15 @@
 <?php
-$pageTitle = "Account";
+$pageTitle = "Subscription";
 $menuName = $pageTitle;
 $adminView = $_GET[ "admin" ];
 include "../variables/user-variables/variable-test-user-profile.php";
 //$fail = "true";
 
-$accountSectionTitle = "Account";
-$subTitle_ClaraID = "CLARA&nbsp;ID";
-$subTitle_Role = "ROLE";
+$paymentSectionTitle = "Payment";
+$subTitle_PaymentMethod = "PAYMENT METHOD";
 
-$securitySectionTitle = "Security";
-$subTitle_Password = "PASSWORD";
-$subTitle_MobileNumber = "MOBILE NUMBER";
-
-$credentialsSectionTitle = "Credentials";
-$subTitle_Designation = "DESIGNATION";
-$subTitle_StateLicense = "STATE LICENSE";
-$subTitle_NPInumber = "NPI NUMBER";
-$subTitle_DEAnumber = "DEA NUMBER";
+$licensesSectionTitle = "Licenses";
+$subTitle_ActiveLicenses = "Active Licenses";
 ?>
 
 <!doctype html>
@@ -25,7 +17,7 @@ $subTitle_DEAnumber = "DEA NUMBER";
 
 <head>
 	<meta charset="UTF-8">
-	<title>Manage your Clara ID</title>
+	<title>Manage your Clara Subscription</title>
 	<?php include "../global/globalui.php"; ?>
 	<script type="text/javascript" src="../global/js/clara.account.js"></script>
 	<link rel="stylesheet" href="../global/css/clara.account.css" type="text/css">
@@ -37,7 +29,7 @@ $subTitle_DEAnumber = "DEA NUMBER";
 		<div class="manage <?php echo strtolower($menuName); ?>">
 			<?php include "account-persona.php"; ?>
 			<?php include "account-subnav.php"; ?>
-			<?php include "account-content.php"; ?>
+			<?php include "subscription-content.php"; ?>
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
