@@ -173,4 +173,5 @@ $(document).ready(function () {
 	
 	$(".trigger-flow").popover();
 	$(".has-popover-error").popover();
+	$(".sn-button").popover();
 });

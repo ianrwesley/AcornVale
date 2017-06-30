@@ -1,0 +1,325 @@
+/*-- LAYOUT --*/
+.setup-body {
+  color: #140A29; }
+  .setup-body .page-content .container {
+    min-width: 600px;
+    max-width: 992px;
+    width: auto;
+    margin: auto;
+    padding: 0; }
+  .setup-body .page-content .intro {
+    padding-top: 34px; }
+    .setup-body .page-content .intro .description {
+      margin-bottom: 28px; }
+    .setup-body .page-content .intro .intro-header {
+      font-size: 24px; }
+  .setup-body .page-content .controls-footer {
+    max-width: 100%;
+    margin: auto;
+    text-align: center; }
+  .setup-body .page-content .flow-controls {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 50px; }
+  .setup-body .description {
+    font-size: 18px;
+    font-weight: 400; }
+  .setup-body .hero h1 {
+    text-align: center;
+    line-height: 180px;
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+    color: white; }
+  .setup-body .pg-label {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.015em; }
+  .setup-body .controls-footer .button-link, .setup-body .controls-footer .button-flat {
+    font-size: 18px; }
+  .setup-body .controls-footer .button-link.primary-action {
+    font-weight: 500; }
+  .setup-body .faq-item .question {
+    margin-top: 30px;
+    margin-bottom: 7px; }
+  .setup-body .faq-info {
+    text-align: inherit;
+    padding: 32px 0; }
+  .setup-body .icon-help {
+    font-size: 16px; }
+  .setup-body .flow-section .lg-selection-wrap, .setup-body .flow-section .id-ver-section-wrap {
+    text-align: center;
+    padding: 18px 20px;
+    background: white;
+    border: 1px solid #D0CFD4;
+    -webkit-border-radius: 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px;
+    /* Firefox */
+    -ms-border-radius: 4px;
+    /* Internet Explorer */
+    border-radius: 4px; }
+    .setup-body .flow-section .lg-selection-wrap .description, .setup-body .flow-section .id-ver-section-wrap .description {
+      font-size: 12px;
+      line-height: 1.36; }
+  .setup-body .flow-section .lg-selection-wrap {
+    padding-bottom: 24px; }
+    .setup-body .flow-section .lg-selection-wrap .license-type {
+      font-size: 32px;
+      margin-bottom: 10px; }
+  .setup-body .flow-section .selection-wrap-btn:focus, .setup-body .flow-section .selection-wrap-btn:active {
+    border-width: 2px;
+    border-color: #AE00D8;
+    z-index: 2;
+    padding: 17px 19px;
+    -webkit-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+    /* Safari and Chrome */
+    -moz-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+    /* Firefox */
+    -ms-box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2);
+    /* Internet Explorer */
+    box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2); }
+
+.setup-body.welcome .page-content {
+  padding-bottom: 54px;
+  padding-top: 48px;
+  text-align: center; }
+  .setup-body.welcome .page-content .content-main {
+    display: inline-block;
+    position: relative;
+    padding: 36px 0; }
+    .setup-body.welcome .page-content .content-main .clara-welcome-img {
+      width: 420px; }
+  .setup-body.welcome .page-content .content-heading {
+    margin: 18px 0 38px; }
+    .setup-body.welcome .page-content .content-heading .welcome-header {
+      color: #140A29;
+      text-decoration: none; }
+    .setup-body.welcome .page-content .content-heading .welcome-header h1 {
+      font-size: 42px; }
+  .setup-body.welcome .page-content .flow-controls .button-link {
+    font-size: 28px;
+    font-weight: 400; }
+  .setup-body.welcome .page-content .footnote {
+    color: #928A9D;
+    font-size: 13px; }
+
+.setup-body.flow-step-body .hero {
+  height: auto;
+  background: #201042 url(../images/account/clara_id_desktop_@2x.jpg) no-repeat;
+  padding-top: 48px;
+  background-size: cover;
+  background-position: 0 0; }
+.setup-body.flow-step-body .page-content {
+  padding-bottom: 54px; }
+.setup-body.flow-step-body .flow-section {
+  max-width: 1200px;
+  margin: auto;
+  width: 80%;
+  padding: 30px 0; }
+
+.setup-body.choose-license .icon-checkmark.success {
+  color: #00CC56; }
+.setup-body.choose-license .id-ver-section-wrap {
+  min-height: 161px;
+  background-color: #F8F8F8; }
+  .setup-body.choose-license .id-ver-section-wrap .form-text {
+    margin-bottom: 10px; }
+  .setup-body.choose-license .id-ver-section-wrap .id-ver-type {
+    font-size: 18px;
+    margin-bottom: 10px; }
+  .setup-body.choose-license .id-ver-section-wrap .save-button {
+    margin-top: 6px; }
+.setup-body.choose-license .section-wrap.success {
+  border-color: transparent;
+  background: none; }
+  .setup-body.choose-license .section-wrap.success .id-ver-value-wrap {
+    margin-bottom: 14px; }
+  .setup-body.choose-license .section-wrap.success .id-ver-value {
+    font-size: 21px;
+    font-weight: 500; }
+.setup-body.choose-license .identity-verification .row {
+  margin-bottom: 18px; }
+.setup-body.choose-license .identity-verification .row:last-child {
+  margin-bottom: 0; }
+.setup-body.choose-license .container-id-verification {
+  width: 400px; }
+  .setup-body.choose-license .container-id-verification .section-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: #817A92;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 2px;
+    line-height: inherit; }
+
+.setup-body.identity-proofing .id-ver-section-wrap {
+  width: 320px;
+  border: none;
+  padding: 0;
+  margin: auto;
+  display: block; }
+  .setup-body.identity-proofing .id-ver-section-wrap .id-ver-type {
+    font-size: 24px;
+    margin-bottom: 18px; }
+  .setup-body.identity-proofing .id-ver-section-wrap .id-ver-launch-flow {
+    height: 40px;
+    margin-bottom: 10px; }
+  .setup-body.identity-proofing .id-ver-section-wrap .id-ver-launch-flow:after {
+    font-family: "clara-icons";
+    content: "\4e";
+    font-size: 13px;
+    padding-left: 6px;
+    text-decoration: none; }
+.setup-body.identity-proofing .flow-section.identity-proofing {
+  padding-bottom: 48px; }
+
+.setup-body.getting-started .lg-selection-wrap .selection-header {
+  font-size: 28px;
+  margin-bottom: 28px; }
+.setup-body.getting-started .lg-selection-wrap .selection-description {
+  font-size: 14px;
+  line-height: 1.25;
+  margin-bottom: 42px; }
+
+.setup-body.invite-users .license-type-header {
+  font-size: 28px;
+  margin-bottom: 12px; }
+.setup-body.invite-users .form-add-users {
+  margin-bottom: 4px; }
+.setup-body.invite-users .assigned-value-wrap {
+  font-size: 13px; }
+.setup-body.invite-users .assign-license-type-wrap {
+  background-color: #F8F8F8;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  border: 1px solid #D0CFD4;
+  -webkit-border-radius: 4px;
+  /* Safari and Chrome */
+  -moz-border-radius: 4px;
+  /* Firefox */
+  -ms-border-radius: 4px;
+  /* Internet Explorer */
+  border-radius: 4px; }
+.setup-body.invite-users .last-row .assign-license-type-wrap {
+  margin-bottom: 0; }
+
+.setup-body.finished .clara-img-menu {
+  display: flex;
+  align-content: center; }
+  .setup-body.finished .clara-img-menu .clara-img {
+    display: block;
+    width: 300px;
+    height: 340px;
+    background: url(../images/setup/little-clara-welcome.png) no-repeat center; }
+  .setup-body.finished .clara-img-menu .button-wrap {
+    margin: auto;
+    padding-bottom: 60px; }
+    .setup-body.finished .clara-img-menu .button-wrap .button {
+      margin-bottom: 18px; }
+
+/*-- SETUP NAVIGATION --*/
+#setupnav * {
+  -webkit-box-sizing: content-box;
+  /* Safari and Chrome */
+  -moz-box-sizing: content-box;
+  /* Firefox */
+  -ms-box-sizing: content-box;
+  /* Internet Explorer */
+  box-sizing: content-box;
+  pointer-events: auto;
+  margin: 0;
+  padding: 0; }
+
+#setupnav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5999;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 48px;
+  background: rgba(34, 34, 39, 0.8);
+  font-size: 18px;
+  user-select: none;
+  transition: background 0.35s linear,height 0.35s ease-in; }
+  #setupnav input, #setupnav button {
+    border: none;
+    background-color: transparent; }
+  #setupnav .sn-list {
+    cursor: default;
+    margin: 0 -10px;
+    padding: 0;
+    width: auto;
+    height: 48px;
+    text-align: center;
+    list-style: none; }
+  #setupnav .sn-list::after {
+    width: 100%;
+    display: inline-block;
+    content: ".";
+    visibility: hidden; }
+  #setupnav .sn-item {
+    display: inline-block;
+    position: relative;
+    height: 48px;
+    z-index: 1;
+    vertical-align: top; }
+  #setupnav .sn-text {
+    font-size: 14px;
+    line-height: 3.33333;
+    opacity: 1;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 2px 15px 0;
+    height: 46px;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    outline: none;
+    outline-offset: -7px;
+    font-weight: 400; }
+  #setupnav .sn-text-clara {
+    background-repeat: no-repeat;
+    background-size: 60px 20px;
+    background-image: url(../images/logo/clara_logo-inverted.svg);
+    background-position: center;
+    width: 60px;
+    height: 48px;
+    padding-top: 0;
+    padding-bottom: 0; }
+  #setupnav .sn-item-facility {
+    position: relative;
+    left: 22px; }
+  #setupnav .sn-content {
+    margin: 0 auto;
+    min-width: 600px;
+    max-width: 1200px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2; }
+
+/*-- RESPONSIVE --*/
+@media only screen and (max-width: 1279px) {
+  .setup-body.welcome .page-content .container {
+    padding: 0 20px; } }
+@media only screen and (min-width: 768px) {
+  .setup-body {
+    min-height: 600px; }
+    .setup-body .content-main {
+      width: 484px; } }
+@media only screen and (max-width: 767px) {
+  .setup-body .description {
+    font-size: 14px; }
+  .setup-body .forgot-button {
+    font-size: 18px; }
+  .setup-body icon.xl {
+    font-size: 65px; } }

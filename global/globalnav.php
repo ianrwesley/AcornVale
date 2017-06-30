@@ -1,6 +1,7 @@
 <?php
 $rootDir = "/acorn-vale-03457798624180578193";
 include "../variables/user-variables/variable-test-user-profile.php";
+include "../variables/user-variables/variable-test-facility-profile.php";
 ?>
 <nav id="globalnav">
 	<div class="gn-content">
@@ -32,7 +33,7 @@ include "../variables/user-variables/variable-test-user-profile.php";
 			</div>
 			<div class="menu-wrapper pull-right">
 				<!--li class="gn-item"> <a class="gn-link gn-link-search" role="button"> <span class="gn-placeholder">Search Keystone</span> </a> </li-->
-				<li class="gn-item gn-item-menu gn-item-account"> <a id="gn-link-account" class="gn-link gn-link-account <?php #if ($pageTitle == "Profile"){ echo "active"; } ?>" role="button"><span><?php echo $userFirstName;?> <?php echo $userLastName;?>, <?php echo $designation;?></span> <span class="gn-placeholder">My Account</span> </a> </li>
+				<li class="gn-item gn-item-menu gn-item-account"> <a id="gn-link-account" class="gn-link gn-link-account <?php #if ($pageTitle == "Profile"){ echo "active"; } ?>" role="button"><span><?php echo $userFirstName;?> <?php echo $userLastName;?><?php echo ", $designation";?></span> <span class="gn-placeholder">My Account</span> </a> </li>
 			</div>
 		</ul>
 		<aside id="gn-accountview" class="gn-accountview" role="menu">

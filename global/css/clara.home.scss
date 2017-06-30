@@ -7,6 +7,7 @@ $xs-container-width: 484px;
 $globalnav-height: 48px;
 $subnav-height: 60px;
 $globalfooter-height: 54px;
+$stickyauthtray-height: 104px;
 
 $xl-app-inner-padding: 80px;
 $lg-app-inner-padding: 50px;
@@ -36,10 +37,13 @@ $color-font-primary: #140A29;
 $color-font-secondary: #605868;
 $color-font-placeholder: #9C96B1;
 $color-link-primary: #007FFF;
+$color-highlight: #DEF9FF;
 $color-link-focus-outline: rgba(206, 0, 255, 0.4);
 $color-form-error-bg: #FAEEB6;
 $color-form-error-border: rgba(183, 148, 0, 0.55);
 $color-border-primary: #D0CFD4;
+$color-border-darker: #9C9B9F;
+$color-border-lighter: #EBEAEF;
 
 $color-button-primary: #00D6BA;
 $color-focus: #AE00D8;
@@ -54,9 +58,11 @@ $color-allergies: #00AB44;
 $color-homemeds: #720DBF;
 $color-diagnoses: #0B51FF;
 $color-prescriptions: #FF066C;
+$color-pharmacy: #FF7122;
 
 $border-primary: 1px solid #D0CFD4;
 $border-darker: 1px solid #9C9B9F;
+$border-lighter: 1px solid #EBEAEF;
 
 //$medication-height-expanded: 322px;
 $medication-height-expanded: 242px;
@@ -124,6 +130,7 @@ $medication-height-collapsed: 78px;
 	.homemed-label {color:$color-homemeds !important;}
 	.diagnosis-label {color:$color-diagnoses !important;}
 	.prescriptions-label {color:$color-prescriptions !important;}
+	.pharmacy-label {color:$color-pharmacy !important;}
 	
 	/*-- tyopgraphy --*/
 	.title h1 {text-align:center; line-height:140px; padding:0; margin:0; font-size:40px; font-weight:$font-weight-book;}
@@ -139,6 +146,10 @@ $medication-height-collapsed: 78px;
 	/*-- application view --*/
 	.app-section-header {padding:22px 0 26px;}
 	.app-section-body {max-width:$xl-screen-width; margin:auto; padding-left:20px; padding-right:20px; @include box-sizing(content-box); /*margin-bottom:$globalfooter-height;*/
+		.stickytray {position:fixed; bottom:$globalfooter-height; left:0; right:0; width:100%; margin:0;
+			.confirm-col {padding-top:16px; padding-bottom:16px; float:right;}
+		}
+		.controls-footer-bg {background-color:$color-panel; width:50%; height:74px; border-top:$border-primary; border-left:$border-primary; position:absolute; right:0; bottom:0;}
 		.flow-section:first-child {padding-top:0;}
 	}
 	.app-section-body > .row {margin-left:-20px; margin-right:-20px;}
@@ -147,7 +158,7 @@ $medication-height-collapsed: 78px;
 	.app-background-edit {left:0; min-width:528px;}
 	.app-background-confirm {right:0; border-left:$border-primary; background-color:$color-panel;}
 	
-	.edit-col, .confirm-col {padding-top:30px; padding-bottom:64px; width:50%;}
+	.edit-col, .confirm-col {padding-top:30px; padding-bottom:30px; width:50%;}
 	.edit-col {padding-right:$xl-app-inner-padding; min-width:$xs-container-width + $xl-app-inner-padding + $column-padding;}
 	.confirm-col {padding-left:$xl-app-inner-padding;}
 	
@@ -182,21 +193,6 @@ $medication-height-collapsed: 78px;
 	.item-discontinue:hover, .discontinue:hover {color:$color-discontinue;}
 	.item-markerror:hover, .markerror:hover {color:$color-error;}
 	.item-recontinue:hover, .recontinue:hover {color:$color-link-primary;}
-	
-	.field-icon {transition:all .2s ease; padding-right:30px;
-		~ icon:before {text-align:center; vertical-align: middle; transition:all .2s ease;}
-		~ icon {position:absolute;top:12px; z-index:3;}
-		~ .nofocus-icon {right:12px;}
-		~ .hasfocus-icon {left:12px;}
-		~ .nofocus-icon:before {opacity:1;}
-		~ .hasfocus-icon:before {font-size:1px; opacity:0;}
-	}
-	.field-icon:focus {padding-left:36px;
-		~ .nofocus-icon:before {font-size:1px; opacity:0;}
-		~ .hasfocus-icon:before {font-size:$base-font-size; opacity:1;}
-	}
-	.field-icon ~ icon {color:$color-font-placeholder;}
-	.has-error .field-icon ~ icon {color:$color-error;}
 
 	/*-- confirm info panel --*/
 	.confirm-info {@include border-radius($border-radius); padding:0px;
@@ -209,9 +205,19 @@ $medication-height-collapsed: 78px;
 		}
 		.confirm-info-flow.prescriptions {
 			.row-header {margin-bottom:0;}
+			.row {padding-bottom:1px;}
+		}
+		.confirm-info-flow.pharmacy {
+			.pharmacy-confirm-wrap {
+				.pharmacy-name, .pharmacy-filters {font-weight:$font-weight-medium;}
+				.pharmacy-address-wrap span {display:block;}
+				.pharmacy-details {
+					div {display:inline-block; float:right; clear:both;}
+				}
+			}
 		}
 		.confirm-info-flow.current-flow-step {opacity:1;}
-		.confirm-info-flow:first-child {border-top:none; padding-top:0;}
+		.confirm-info-flow:first-child, .confirm-info-flow.first {border-top:none; padding-top:0;}
 		.confirm-info-flow:last-child {padding-bottom:0;}
 		.confirm-info-sticky { line-height:1.25;
 			.row {padding:4px 0 6px;}
@@ -388,6 +394,68 @@ $medication-height-collapsed: 78px;
 		}
 	}
 	
+	/*-- select a pharmacy --*/
+	.select-pharmacy {
+		.proximity-selection-wrap {margin:0 0 16px 16px; display:inline-block;
+			.option-wrap {display:inline-block; margin-left:28px;}
+			.button {margin-right:8px;}
+		}
+		.pharmacy-results-wrap {margin-top:16px; min-height:210px; border:$border-primary; @include border-radius($border-radius); @include box-sizing(content-box); z-index:2;
+			.row {margin:0; height:inherit; min-height:inherit;}
+			.column {padding:0; height:inherit; min-height:inherit;}
+			.pharmacy-results-list {overflow:auto; border-right:$border-primary; height:inherit; min-height:inherit;
+				.pharmacy-result {border-bottom:$border-primary; padding:6px 8px; font-size:$sm-font-size; line-height:1.25;
+					.pharmacy-name {font-weight:$font-weight-medium; display:inline-block; width:100%; margin-bottom:-4px; overflow:hidden; white-space: nowrap; text-overflow:ellipsis;}
+					.pharmacy-filters-wrap {margin-bottom:2px;
+						.pharmacy-filters {color:$color-font-placeholder;}
+					}
+					.pharmacy-address-wrap {
+						span {display:block;}
+					}
+				}
+				.pharmacy-result:last-child {border-bottom:none;}
+				.pharmacy-result.selected {background-color:$color-highlight;
+					.pharmacy-name {color:$color-link-primary;}
+				}
+			}
+			.pharmacy-results-map {margin-bottom:-7px; height:inherit; min-height:inherit; z-index:1;}
+		}
+	}
+	
+	/*-- authorize prescriptions --*/
+	.page-content.auth-prescriptions-content {padding-top:$globalnav-height + $subnav-height + 129px;}
+	.authorize-prescriptions-wrap {max-width:720px; margin-left:auto; margin-right:auto; line-height:1.25;
+		.container {max-width:960px; @include box-sizing(content-box);}
+		
+		.rx-header {background:$color-panel; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:24px; padding-bottom:24px; border-bottom:$border-primary; top:$globalnav-height + $subnav-height;}
+		.auth-break-wrap {
+			span {display:block;}
+			label {color:$color-font-placeholder;}
+			.date-issued, .prescriber-DEA-number {display:inline;}
+		}
+		.patient-name {font-size:32px; font-weight:$font-weight-book;}
+		.prescriber-name {font-weight:$font-weight-medium;}
+		
+		.ordered-list li {border-bottom-color:$color-border-primary;}
+		.rx-auth-ready {padding:0; cursor:pointer;
+			.rx-info-wrap {padding-top:12px; padding-bottom:12px;
+				.sub-detail {display:block; font-size:16px; line-height:1.35;}
+			}
+			.rx-drug-name {font-size:21px;}
+			.confirm-auth-ready {text-align: center; font-size:64px; color:white; line-height:normal; background-color:$color-border-lighter; padding:8px 0;
+				icon {vertical-align:middle; padding-bottom:0.125em;}
+			}
+			.confirm-auth-ready.marked {background-color:$color-success;}
+		}
+		
+		.cl-authtray {background:$color-panel; font-size:13px; line-height:1.42; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:22px;
+			.auth-button-wrap {text-align:right;}
+			.auth-button-lg {font-size:$sm-header-font-size;}
+		}
+		
+		.sticky-authtray {min-height:$stickyauthtray-height; bottom:$globalfooter-height; top:auto; border-top:$border-primary; border-bottom:0;}
+	}
+	
 	/*-- edit patient --*/
 	.edit-patient-button {text-align: right;}
 	.edit-patient-content {padding:0;
@@ -483,6 +551,12 @@ $medication-height-collapsed: 78px;
 	.selectize-control.multi .selectize-input .active[data-value] {border:1px solid #004488;}
 	.selectize-control.plugin-remove_button [data-value] .remove {border:none; padding-right:4px;}
 	.selectize-control.plugin-remove_button [data-value] .remove:hover {background: none; text-shadow: 0px 1px 2px rgba(0, 0, 0, .75);}
+}
+
+.auth-body {
+	.cl-auth-overlay-popup {
+		.close {position: absolute; top: 0; left: 0; opacity: 1; font-size: 54px; font-weight: 300; padding: 24px 24px;}
+	}
 }
 
 /*-- HOME - PATIENT SEARCH --*/

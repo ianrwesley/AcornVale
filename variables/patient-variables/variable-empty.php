@@ -52,6 +52,13 @@ $RXdispenseAmt = "";
 $RXrefills = "";
 $RXsubstitutions = "";
 
+//Pharmacy
+$selectedPharmacyName = "";
+$selectedPharmacyStreet = "";
+$selectedPharmacyLocation = "";
+$selectedPharmacyPhone = "";
+$selectedPharmacyFeatures = "";
+
 // FUNCTIONS
 $allergiesArray = explode(', ', $allergies);
 $allergiesDiscontinuedArray = explode(', ', $allergiesDiscontinued);

@@ -8,6 +8,7 @@ include "../variables/user-variables/variable-test-user-profile.php";
 $accountSectionTitle = "Account";
 $subTitle_ClaraID = "CLARA&nbsp;ID";
 $subTitle_Role = "ROLE";
+$subTitle_Birthday = "BIRTHDAY";
 
 $securitySectionTitle = "Security";
 $subTitle_Password = "PASSWORD";

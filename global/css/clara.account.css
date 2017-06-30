@@ -5,35 +5,11 @@
   /*-- TYPOGRAPHY --*/
   /*-- PERSONA --*/
   /*-- ACCOUNT SUBNAV --*/
-  	/*-- ERROR POPOVERS --
-  	.pop-container {z-index:1000; position:relative;}
-  	.pop-container.form-field-error {margin:auto; max-width: 305px; text-align:center;}
-  	.form-field-error {width:100%; font-weight:500; font-size:15px; color:$color-popover-error;}
-  	.form-field-error a {color:#d12345; display:block;}
-  
-  	.pop-bottom {background-color:#ffee9c; position: absolute; width: 100%; margin-left: -50%; border-radius: 4px; left: 50%; top:-14px; border: 1px solid rgba(183, 148, 0, 0.6); box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1); margin-top: 5px; padding:11px 18px; animation:fade-in 200ms ease-in-out;}
-  	.pop-bottom:before {background-color:#ffee9c; width: 15px; height: 15px; content: ""; position: absolute; left: 47.2%; transform: rotate(135deg) skewX(5deg) skewY(5deg); top: -9px; border-left: 1px solid rgba(183, 148, 0, 0.6); border-bottom: 1px solid rgba(183, 148, 0, 0.6); box-shadow: -1px 1px 2px -1px rgba(185, 149, 1, 0.55); border-radius:15px;}
-  	/*.error.pop-bottom {display:none;}
-  	.error.pop-bottom.show {display:block;}
-  	.error-msg {max-height:75px; overflow-y:auto; margin-bottom:0;}
-  	.error-msg error {display:block;}
-  
-  	.field-wrapper:last-child .pop-bottom, .single-field-wrapper .pop-bottom {top:0;}
-  
-  	.error-wrapper {height:1px; float:left;}
-  	.flex-field-error-row .pop-bottom {top:-6px;}
-  	.flex-field-error-row .error-wrapper {padding-left:10px; padding-right:10px;}
-  
-  	.error-msg-wrapper {
-  		.popover.bottom {position:absolute; background-color:$color-form-error-bg; border-color:$color-form-error-border; color:$color-popover-error;
-  			.popover-content {padding:10px 18px;}
-  			> .arrow {border-bottom-color:rgba(183, 148, 0, 0.75);}
-  			> .arrow:after {border-bottom-color:$color-form-error-bg;}
-  		}
-  	}*/
   /*-- POPOVERS --*/
+  /*-- POPOVER ERRORS --*/
   /*-- ACCORDIAN --*/
-  /*-- BUTTONS --*/ }
+  /*-- BUTTONS --*/
+  /*-- TEAM --*/ }
   .account-body #globalnav {
     z-index: 1; }
   .account-body .container {
@@ -66,11 +42,16 @@
       min-height: 80px; }
     .account-body .flow-section .button-link {
       font-size: 18px; }
-    .account-body .flow-section .button-edit, .account-body .flow-section .button-done {
+    .account-body .flow-section .button-edit, .account-body .flow-section .button-done, .account-body .flow-section .button-cancel {
       font-size: 13px;
       font-weight: 400; }
     .account-body .flow-section .button-done {
       background: #007FFF; }
+    .account-body .flow-section .button-cancel {
+      clear: both;
+      width: 60px;
+      text-align: center;
+      margin-top: 4px; }
     .account-body .flow-section .editable {
       display: none; }
   .account-body .field-push {
@@ -137,13 +118,13 @@
   .account-body accordian.show-overflow {
     overflow: visible !important; }
   .account-body #profile accordian.open {
-    height: 391px; }
+    height: 496px; }
+  .account-body #profile accordian.closed {
+    height: 136px; }
   .account-body #security accordian.open {
     height: 254px; }
-  .account-body #profile accordian.closed, .account-body #security accordian.closed {
+  .account-body #security accordian.closed {
     height: 53px; }
-  .account-body #account accordian.closed {
-    height: 155px; }
   .account-body .clara-user {
     font-weight: 200;
     font-size: 42px;
@@ -164,7 +145,7 @@
     font-size: inherit; }
   .account-body .first-name, .account-body .last-name {
     white-space: nowrap; }
-  .account-body .profile-value, .account-body .username, .account-body .role, .account-body .user-role, .account-body .mobile-number, .account-body .card-number, .account-body .card-number-masked, .account-body .designation, .account-body .state-license-number, .account-body .npi-number, .account-body .dea-number, .account-body .active-licenses, .account-body .available-licenses {
+  .account-body .profile-value, .account-body .username, .account-body .role, .account-body .user-role, .account-body .user-birthday, .account-body .mobile-number, .account-body .card-number, .account-body .card-number-masked, .account-body .designation, .account-body .state-license-number, .account-body .npi-number, .account-body .dea-number, .account-body .active-licenses, .account-body .available-licenses {
     font-size: 18px;
     margin-bottom: 2px; }
   .account-body .active-licenses ul, .account-body .available-licenses ul {
@@ -294,6 +275,21 @@
       height: 48px;
       z-index: 1;
       vertical-align: top; }
+      .account-body #account-subnav .sn-item icon {
+        padding-left: 6px;
+        font-size: 9px; }
+      .account-body #account-subnav .sn-item .popover {
+        padding: 0; }
+      .account-body #account-subnav .sn-item .popover.bottom {
+        margin-top: 0; }
+      .account-body #account-subnav .sn-item .popover-content {
+        padding: 0;
+        width: 180px; }
+        .account-body #account-subnav .sn-item .popover-content .select-facility-row {
+          border-bottom: 1px solid #D0CFD4;
+          padding: 8px 12px; }
+        .account-body #account-subnav .sn-item .popover-content .select-facility-row:last-child {
+          border-bottom: none; }
     .account-body #account-subnav .sn-link {
       font-size: 14px;
       line-height: 3.33333;
@@ -327,6 +323,18 @@
       transform: rotate(45deg);
       border-top: 1px solid #D0CFD4;
       border-left: 1px solid #D0CFD4; }
+    .account-body #account-subnav .menu-wrapper.pull-right {
+      padding: 7px 15px; }
+      .account-body #account-subnav .menu-wrapper.pull-right button {
+        font-size: 14px;
+        max-height: 20px;
+        vertical-align: middle;
+        margin-left: 8px; }
+      .account-body #account-subnav .menu-wrapper.pull-right .button-flat {
+        padding: 6px 12px; }
+        .account-body #account-subnav .menu-wrapper.pull-right .button-flat icon {
+          padding-left: 6px;
+          padding-top: 2px; }
   .account-body .popover {
     width: auto;
     max-width: 360px; }
@@ -351,6 +359,19 @@
         display: inline-block; }
     .account-body .change-password-popover-content .toolbar-footer .button-link {
       font-size: 14px; }
+  .account-body .error-msg-wrapper .form-text.has-popover-error.has-error {
+    background-color: #FFFCDC !important;
+    z-index: 1000; }
+  .account-body .error-msg-wrapper .popover {
+    background-color: #FAEEB6;
+    border-color: rgba(183, 148, 0, 0.55);
+    font-size: 16px; }
+    .account-body .error-msg-wrapper .popover .popover-content {
+      padding: 12px 16px; }
+  .account-body .error-msg-wrapper .popover.top > .arrow {
+    border-top-color: rgba(183, 148, 0, 0.8); }
+  .account-body .error-msg-wrapper .popover.top > .arrow:after {
+    border-top-color: #FAEEB6; }
   .account-body .collapsed .row.header-row {
     margin-bottom: 6px;
     cursor: pointer; }
@@ -398,6 +419,148 @@
     .account-body .button-group .button-link:last-of-type {
       border-right: 0;
       padding-right: 0; }
+  .account-body #user-mgmt .btn-group.full-width {
+    width: 100%;
+    margin-bottom: 18px; }
+  .account-body #user-mgmt .btn-default .badge {
+    background-color: #9C96B1;
+    margin-left: 6px; }
+  .account-body #user-mgmt .btn-default.active .badge {
+    background-color: #007FFF; }
+  .account-body #user-mgmt .table-wrapper {
+    border: 1px solid #D0CFD4;
+    -webkit-border-radius: 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px;
+    /* Firefox */
+    -ms-border-radius: 4px;
+    /* Internet Explorer */
+    border-radius: 4px; }
+  .account-body #user-mgmt .mg-team-table {
+    line-height: 1.4; }
+    .account-body #user-mgmt .mg-team-table th, .account-body #user-mgmt .mg-team-table td {
+      border-bottom: 1px solid #D0CFD4; }
+    .account-body #user-mgmt .mg-team-table tr:last-child td {
+      border-bottom: none; }
+    .account-body #user-mgmt .mg-team-table th {
+      padding: 8px 12px;
+      border-right: 1px solid #D0CFD4;
+      background-color: #F8F8F8; }
+    .account-body #user-mgmt .mg-team-table th:last-child, .account-body #user-mgmt .mg-team-table td:last-child {
+      border-right: none; }
+    .account-body #user-mgmt .mg-team-table th:first-child {
+      -webkit-border-radius: 4px 0 0 0;
+      /* Safari and Chrome */
+      -moz-border-radius: 4px 0 0 0;
+      /* Firefox */
+      -ms-border-radius: 4px 0 0 0;
+      /* Internet Explorer */
+      border-radius: 4px 0 0 0; }
+    .account-body #user-mgmt .mg-team-table th:last-child {
+      -webkit-border-radius: 0 4px 0 0;
+      /* Safari and Chrome */
+      -moz-border-radius: 0 4px 0 0;
+      /* Firefox */
+      -ms-border-radius: 0 4px 0 0;
+      /* Internet Explorer */
+      border-radius: 0 4px 0 0; }
+    .account-body #user-mgmt .mg-team-table td {
+      padding: 4px 12px;
+      border-right: 1px solid #EBEAEF; }
+      .account-body #user-mgmt .mg-team-table td span {
+        display: block; }
+    .account-body #user-mgmt .mg-team-table .user-name {
+      font-weight: 500; }
+    .account-body #user-mgmt .mg-team-table .clara-ID {
+      font-size: 14px; }
+    .account-body #user-mgmt .mg-team-table .user-control button {
+      margin-left: 8px;
+      font-size: 14px;
+      color: #140A29; }
+    .account-body #user-mgmt .mg-team-table .user-control .popover {
+      -webkit-border-radius: 4px;
+      /* Safari and Chrome */
+      -moz-border-radius: 4px;
+      /* Firefox */
+      -ms-border-radius: 4px;
+      /* Internet Explorer */
+      border-radius: 4px;
+      padding: 18px 20px; }
+    .account-body #user-mgmt .mg-team-table .user-control .popover-content {
+      padding: 0; }
+    .account-body #user-mgmt .mg-team-table .user-control .controls-footer {
+      margin-top: 6px; }
+      .account-body #user-mgmt .mg-team-table .user-control .controls-footer .button-link {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid #D0CFD4;
+        -webkit-border-radius: 0;
+        /* Safari and Chrome */
+        -moz-border-radius: 0;
+        /* Firefox */
+        -ms-border-radius: 0;
+        /* Internet Explorer */
+        border-radius: 0; }
+      .account-body #user-mgmt .mg-team-table .user-control .controls-footer .button-link:first-child {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none; }
+      .account-body #user-mgmt .mg-team-table .user-control .controls-footer .secondary-action {
+        opacity: 0.5; }
+      .account-body #user-mgmt .mg-team-table .user-control .controls-footer .primary-action {
+        color: #007FFF; }
+    .account-body #user-mgmt .mg-team-table .user-control .controls-footer:before, .account-body #user-mgmt .mg-team-table .user-control .controls-footer:after {
+      display: block;
+      content: "";
+      clear: both; }
+  .account-body .ca-account-overlay-popup .row {
+    margin-bottom: 0; }
+  .account-body .ca-account-overlay-popup .modal-content {
+    padding: 0; }
+  .account-body .ca-account-overlay-popup .modal-body {
+    padding: 28px 28px 0; }
+  .account-body .ca-account-overlay-popup .header {
+    margin-bottom: 16px; }
+  .account-body .ca-account-overlay-popup .controls-footer {
+    border-top: 1px solid #D0CFD4;
+    padding: 16px 18px;
+    margin: 0; }
+  .account-body .option-toggle-wrap {
+    margin-top: 24px; }
+  .account-body .option-quantity {
+    width: 52px;
+    margin-bottom: 2px; }
+  .account-body .btn-option-details {
+    color: #9C96B1;
+    font-size: 13px; }
+  .account-body .new-price-wrap {
+    text-align: left;
+    margin: 24px auto; }
+    .account-body .new-price-wrap sup {
+      top: -.25em; }
+    .account-body .new-price-wrap .row {
+      margin-bottom: 12px; }
+    .account-body .new-price-wrap .new-total {
+      font-weight: 500; }
+  .account-body .assign-license-type-wrap {
+    background-color: #F8F8F8;
+    padding: 12px 20px;
+    margin-bottom: 24px;
+    border: 1px solid #D0CFD4;
+    -webkit-border-radius: 4px;
+    /* Safari and Chrome */
+    -moz-border-radius: 4px;
+    /* Firefox */
+    -ms-border-radius: 4px;
+    /* Internet Explorer */
+    border-radius: 4px;
+    text-align: left; }
+    .account-body .assign-license-type-wrap .license-type-header {
+      margin-bottom: 12px; }
+    .account-body .assign-license-type-wrap .form-add-users {
+      margin-bottom: 4px; }
+    .account-body .assign-license-type-wrap .assigned-value-wrap {
+      font-size: 13px; }
 
 /*-- RESPONSIVE --*/
 @media only screen and (max-device-width: 1024px) {

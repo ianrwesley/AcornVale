@@ -37,7 +37,7 @@ $licenseType = $_GET[ "license" ];
 				<div class="column lg-6">
 					<header>
 						<div class="header-wrap">
-							<h1 class="cs-configure-title">Customize your Clara plan.</h1>
+							<h1 class="cs-configure-title">Customize your Clara <?php if($licenseType == "proCS") {echo 'Pro CS';} elseif($licenseType == "pro") {echo 'Pro';}?> plan.</h1>
 						</div>
 						<ul class="cs-planspecs">
 							<li>E-prescribe <span class="highlight">non-controlled</span> substances</li>

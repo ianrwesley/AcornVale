@@ -21,7 +21,7 @@ $confirmInfoTitle = "Patient Details";
 		</div>
 	</div>
 	<div class="confirm-info-flow-wrap">
-		<div class="confirm-info-flow <?php if ($rxFlowProgress == 0) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 1) { echo "current-flow-step"; } ?>">
+		<div class="confirm-info-flow <?php if ($rxFlowProgress == 0 || $rxFlowProgress == 6 || $rxFlowProgress == 7) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 1) { echo "current-flow-step"; } ?>">
 			<div class="row clearfix">
 				<div class="column lg-6">
 					<h3 class="row-header"><icon class="icon-home"></icon>Address</h3>
@@ -35,7 +35,7 @@ $confirmInfoTitle = "Patient Details";
 				</div>
 			</div>
 		</div>
-		<div class="confirm-info-flow <?php if ($rxFlowProgress < 3) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 2 || $rxFlowProgress == 3) { echo "current-flow-step"; } ?>">
+		<div class="confirm-info-flow medical-history <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5 || $rxFlowProgress < 3) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 2 || $rxFlowProgress == 3) { echo "current-flow-step"; } ?> <?php if ($rxFlowProgress == 6 || $rxFlowProgress == 7) { echo "first"; }?>">
 			<div class="row clearfix">
 				<div class="column lg-6">
 					<h3 class="row-header allergy-label"><icon class="icon-allergy"></icon>Allergies</h3>
@@ -53,7 +53,7 @@ $confirmInfoTitle = "Patient Details";
 				</div>
 			</div>
 		</div>
-		<div class="confirm-info-flow prescriptions <?php if ($rxFlowProgress < 5) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5) { echo "current-flow-step"; } ?>">
+		<div class="confirm-info-flow prescriptions <?php if ($rxFlowProgress < 7) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 6 || $rxFlowProgress == 7) { echo "current-flow-step"; } ?>">
 			<div class="row clearfix">
 				<div class="column lg-12">
 					<h3 class="row-header prescriptions-label"><icon class="icon-prescription"></icon>Prescriptions</h3>
@@ -72,6 +72,32 @@ $confirmInfoTitle = "Patient Details";
 							}
 						?>
 					</ol>
+				</div>
+			</div>
+		</div>
+		<div class="confirm-info-flow pharmacy <?php if ($rxFlowProgress == 6 || $rxFlowProgress == 7 || $rxFlowProgress < 5) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5) { echo "current-flow-step"; } ?>">
+			<div class="row clearfix">
+				<div class="column lg-12">
+					<h3 class="row-header pharmacy-label"><icon class="icon-pharmacy"></icon>Pharmacy</h3>
+					<div class="pharmacy-confirm-wrap">
+						<div class="row">
+							<div class="column lg-6">
+								<span class="pharmacy-name"><?php echo "$selectedPharmacyName"; ?></span>
+								<div class="pharmacy-address-wrap">
+									<span class="pharmacy-street"><?php echo "$selectedPharmacyStreet"; ?></span>
+									<span class="pharmacy-location"><?php echo "$selectedPharmacyLocation"; ?></span>
+								</div>
+							</div>
+							<div class="column lg-6 pharmacy-details">
+								<div class="pharmacy-filters-wrap">
+									<span class="pharmacy-filters"><?php echo "$selectedPharmacyFeatures"; ?></span>
+								</div>
+								<div class="pharmacy-phone-wrap">
+									<span class="pharmacy-phone"><?php echo "$selectedPharmacyPhone"; ?></span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

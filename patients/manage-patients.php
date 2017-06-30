@@ -29,7 +29,7 @@ include "../variables/patient-variables/variable-test-patients-BATCH.php";
 						<thead class="patients-table-header">
 							<tr class="header-row">
 								<th class="header-column select-column"><span class="header-text"><input type="checkbox" class="select-all-checkbox"></span></th>
-								<th class="header-column name"><span class="header-text">Patient name</span></th>
+								<th class="header-column name"><span class="header-text">Patient name<span class="sort-column"><icon class="icon-chevron-small-down"></icon></span></span></th>
 								<th class="header-column birthday"><span class="header-text">Birthday</span></th>
 								<th class="header-column address"><span class="header-text">Address</span></th>
 								<th class="header-column phone"><span class="header-text">Phone</span></th>

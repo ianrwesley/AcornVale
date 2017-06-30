@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="checkoutPayment" tabindex="-1" role="dialog" aria-labelledby="Payment">
+<div class="modal fade" id="checkout-payment" tabindex="-1" role="dialog" aria-labelledby="Payment">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-body">
@@ -49,7 +49,7 @@
 			</div>
 			<div class="controls-footer clearfix">
 				<div class="button-group flow-controls">
-					<button type="button" role="link" class="button button-flat">Place Order Now</button>
+					<button type="button" role="link" class="button button-flat"><a href="../setup/">Place Order Now</a></button>
 				</div>
 			</div>
 		</div>

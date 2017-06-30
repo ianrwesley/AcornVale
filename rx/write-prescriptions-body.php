@@ -1,8 +1,8 @@
 <?php
 $pageTitle = "Prescriptions";
 $subnavTitle = "Write prescriptions";
-$subnavProgress = 1;
-$primaryButtonLabel = "Select a pharmacy…";
+$subnavProgress = 2;
+$primaryButtonLabel = "Authorize…";
 $confirmInfoTitle = "New Patient";
 ?>
 

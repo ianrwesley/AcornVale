@@ -53,4 +53,9 @@ $(document).ready(function () {
 		$(this).css('min-height', maxHeight);
 	});
 	
+	$('#user-accept-terms').on('click',function(){
+		$('#license-terms').modal('hide');
+	});
+	
+	
 });

@@ -217,4 +217,8 @@ $(document).ready(function () {
 		$('.app-section-body-scroll').height($(window).height() - 162);
 	}).trigger('resize');
 	
+	$(window).on('resize',function() {
+		$('.auth-body-scroll').height($(window).height() - 395);
+	}).trigger('resize');
+	
 });

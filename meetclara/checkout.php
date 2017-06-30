@@ -44,28 +44,61 @@ include "../variables/user-variables/variable-test-user-profile.php";
 								<div class="cs-configuration-optiongroup">
 									<div class="option-toggle-wrap">
 										<div class="btn-group option-toggle-group option-toggle-proCS-licenses">
-											<div class="plan-btn"><span class="btn-text"><div class="input-wrapper lg-3 cs-quantity-input"><input id="proCS-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="1" value="4"></div> <span class="btn-option-description"><b>Pro CS</b> licenses</span></span><span class="cs-optional-price-delta">$3,040.00<sup class="cs-price-freq-unit">/year</sup></span></div>
+											<div class="plan-btn">
+												<span class="btn-text">
+													<div class="input-wrapper lg-3 cs-quantity-input">
+														<input id="proCS-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="1" value="4">
+													</div>
+													<span class="btn-option-description"><b>Pro CS</b> licenses</span>
+												</span>
+												<span class="cs-optional-price-delta">$3,040.00<sup class="cs-price-freq-unit">/year</sup></span>
+												<span class="cs-remove-item"><button class="button button-link button-tiny">remove</button></span>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="cs-configuration-optiongroup">
 									<div class="option-toggle-wrap">
 										<div class="btn-group option-toggle-group option-toggle-pro-licenses">
-											<div class="plan-btn"><span class="btn-text"><div class="input-wrapper lg-3 cs-quantity-input"><input id="pro-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="0" value="2"></div><span class="btn-option-description"><b>Pro</b> licenses</span></span><span class="cs-optional-price-delta">$1,120.00<sup class="cs-price-freq-unit">/year</sup></span></div>
+											<div class="plan-btn">
+												<span class="btn-text">
+													<div class="input-wrapper lg-3 cs-quantity-input">
+														<input id="pro-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="0" value="2">
+													</div>
+													<span class="btn-option-description"><b>Pro</b> licenses</span>
+												</span>
+												<span class="cs-optional-price-delta">$1,120.00<sup class="cs-price-freq-unit">/year</sup></span>
+												<span class="cs-remove-item"><button class="button button-link button-tiny">remove</button></span>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="cs-configuration-optiongroup">
 									<div class="option-toggle-wrap">
 										<div class="btn-group option-toggle-group option-toggle-basic-licenses">
-											<div class="plan-btn"><span class="btn-text"><div class="input-wrapper lg-3 cs-quantity-input"><input id="basic-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="0" value="1"></div><span class="btn-option-description"><b>Basic</b> licenses</span></span><span class="cs-optional-price-delta">$196.00<sup class="cs-price-freq-unit">/year</sup></span></div>
+											<div class="plan-btn">
+												<span class="btn-text">
+													<div class="input-wrapper lg-3 cs-quantity-input">
+														<input id="basic-license-quantity" class="option-quantity form-text" maxlength="2" placeholder="0" value="1">
+													</div>
+													<span class="btn-option-description"><b>Basic</b> licenses</span>
+												</span>
+												<span class="cs-optional-price-delta">$196.00<sup class="cs-price-freq-unit">/year</sup></span>
+												<span class="cs-remove-item"><button class="button button-link button-tiny">remove</button></span>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="cs-configuration-optiongroup">
 									<div class="option-toggle-wrap">
 										<div class="btn-group option-toggle-group option-toggle-basic-licenses">
-											<div class="plan-btn"><span class="btn-text"><span class="btn-option-description">Medication education</span></span><span class="cs-optional-price-delta">$1,020.00<sup class="cs-price-freq-unit">/year</sup></span></div>
+											<div class="plan-btn">
+												<span class="btn-text">
+													<span class="btn-option-description">Medication education</span>
+												</span>
+												<span class="cs-optional-price-delta">$1,020.00<sup class="cs-price-freq-unit">/year</sup></span>
+												<span class="cs-remove-item"><button class="button button-link button-tiny">remove</button></span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -92,7 +125,7 @@ include "../variables/user-variables/variable-test-user-profile.php";
 												<!--button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart">
 													Create Your Clara&nbsp;ID
 												</button-->
-												<button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart" data-toggle="modal" data-target="#checkoutPayment">
+												<button type="submit" class="button button-flat cs-button-lg" name="add-to-cart" value="add-to-cart" data-toggle="modal" data-target="#license-terms">
 													Order Now
 												</button>
 											</div>
@@ -107,6 +140,7 @@ include "../variables/user-variables/variable-test-user-profile.php";
 		</div>
 	</div>
 	<?php include "../global/globalfooter.php"; ?>
+	<?php include "modal-checkout-license-terms.php"; ?>
 	<?php include "modal-checkout-payment.php"; ?>
 </body>
 

@@ -140,6 +140,7 @@ $border-darker: 1px solid #9C9B9F;
 			.header-column {vertical-align:text-bottom; padding:12px 0; height:48px; padding:0; height:auto;
 				.header-text {position:absolute; top:-$tablenav-height; z-index:2; padding:14px 0 10px; height:48px; width:auto; background:white; border:red; display:block; border-bottom:$border-primary;
 					input {margin:0;}
+					.sort-column {padding-left:8px; font-size:10px;}
 				}
 			}
 		}

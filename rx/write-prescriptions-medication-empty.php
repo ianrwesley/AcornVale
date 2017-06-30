@@ -109,7 +109,7 @@
 		<div class="fieldgroup">
 			<div class="error-msg-wrapper lg-12 <?php if ($fail == "true"){ echo "has-error"; } ?>">
 				<textarea class="form-text form-text-area pharmacy-note" placeholder="note to pharmacy" name="note to pharmacy" value="" rows="2"></textarea>
-				<div class="remove-note"><button class="button button-link button-tiny secondary-action remove-pharmacy-note">remove note</button></div>
+				<div class="remove-note"><button class="button button-link button-tiny secondary-action remove-pharmacy-note">hide note</button></div>
 				<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Error.</div>
 			</div>
 		</div>

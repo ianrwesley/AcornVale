@@ -148,6 +148,9 @@
         border-bottom: 1px solid #D0CFD4; }
         #mg-patients-content .mg-patients-table .patients-table-header .header-column .header-text input {
           margin: 0; }
+        #mg-patients-content .mg-patients-table .patients-table-header .header-column .header-text .sort-column {
+          padding-left: 8px;
+          font-size: 10px; }
     #mg-patients-content .mg-patients-table .patients-table-body .patient-row {
       border-bottom: 1px solid #EEEDF2; }
     #mg-patients-content .mg-patients-table .patients-table-body .patient-column {

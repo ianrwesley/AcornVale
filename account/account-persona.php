@@ -5,7 +5,13 @@
 			<div class="column lg-9 sm-12">
 				<div class="flex-container">
 					<h1 class="clara-user">
-						<span class="first_name"><?php echo "$userFirstName"; ?></span> <span class="last_name"><?php echo "$userLastName"; ?></span>, <span class="designation_title"><?php echo "$designation"; ?></span>
+						<?php
+							if($pageTitle == "Account") {
+								echo "<span class='first_name'>$userFirstName</span> <span class='last_name'>$userLastName</span>, <span class='designation_title'>$designation</span>";
+							} else {
+								echo "<span class'facility_name'>$facilityName</span>";
+							}
+						?>
 						<small class="clara-username">Your Clara&nbsp;ID is <span><strong class="username"><?php echo "$claraID"; ?></strong></span></small>
 					</h1>
 				</div>

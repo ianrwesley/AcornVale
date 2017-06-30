@@ -187,16 +187,17 @@ $border-darker: 1px solid #9C9B9F;
 		
 		.option-toggle-wrap {width:100%; margin:auto;
 			.option-toggle-group {width:inherit; display:table; padding:9px 0 12px;} 
-			.plan-btn {font-size:$sm-font-size; font-weight:$font-weight-book; padding:16px 0 18px; height:76px;}
+			.plan-btn {font-size:$base-font-size; font-weight:$font-weight-book; padding:16px 0 18px; height:76px;}
 			.option-toggle-proCS-licenses, .option-toggle-pro-licenses, .option-toggle-basic-licenses {
 				.plan-btn {width:100%; display:table-cell;
-					.btn-text, .cs-optional-price-delta {width:50%; display:inline-block; vertical-align: middle; position:relative;}
-					.btn-text {padding-left:20px; text-align:left;
+					.btn-text, .cs-optional-price-delta, .cs-remove-item {display:inline-block; vertical-align: middle; position:relative;}
+					.btn-text {padding-left:20px; text-align:left; width:50%;
 						.input-wrapper {margin-right:12px;
 							.form-text {margin:0; border:$border-primary; @include border-radius($border-radius);}
 						}
 					}
-					.cs-optional-price-delta {padding-right:20px; text-align:right;}
+					.cs-optional-price-delta, .cs-remove-item {padding-right:20px; text-align:right; float:right; margin-top:9px;}
+					.cs-optional-price-delta {width:50%;}
 					.btn-option-description {display:inline-block; padding:9px 0;}
 				}
 			}
@@ -260,9 +261,32 @@ $border-darker: 1px solid #9C9B9F;
 
 .checkout-body {
 	.container {max-width: 640px;}
+	
+	.cs-configure-container {
+		.option-toggle-wrap {
+			.option-toggle-proCS-licenses, .option-toggle-pro-licenses, .option-toggle-basic-licenses {
+				.plan-btn {
+					.cs-optional-price-delta, .cs-remove-item {width:20%;}
+				}
+			}
+		}
+	}
 }
 
-#checkoutPayment {text-align:center;
+#license-terms {text-align:center;
+	.modal-dialog {width:640px;}
+	.modal-header {
+		.license-logo {width:156px; margin-top:12px; margin-bottom:21px;}
+	}
+	.modal-main {
+		.description {font-size:$sm-font-size; margin-bottom:8px;}
+		.terms-body {width:100%; max-height:200px; border:$border-primary; overflow-y:scroll; padding:14px 24px; text-align:left; line-height:1.2; font-size:$sm-font-size;; font-weight:$font-weight-book; margin-bottom:12px;
+			p {margin-bottom:12px;}
+		}
+	}
+}
+
+#checkout-payment {text-align:center;
 	.modal-dialog {width:360px;}
 	//.modal-collect-pmt {text-align:left;}
 	.modal-header {

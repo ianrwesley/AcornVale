@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Subscription";
+$pageTitle = "Payment";
 $menuName = $pageTitle;
 $adminView = $_GET[ "admin" ];
 include "../variables/user-variables/variable-test-user-profile.php";

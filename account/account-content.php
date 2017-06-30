@@ -25,6 +25,14 @@
 											<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
 										</div>
 									</div>
+									<div class="row">
+										<div class="column lg-5">
+											<h3 class="section-subtitle"> <?php echo "$subTitle_Birthday"; ?> </h3>
+											<div class="user-birthday">
+												<?php echo "$userBirthday"; ?>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="editable profile-edit clearfix">
 									<div class="editable-header mobile-only">
@@ -45,6 +53,7 @@
 										</div>
 										<div class="column lg-2 section-edit">
 											<button class="button button-flat button-done" onclick="saveProfile()">Save</button>
+											<button class="button button-link button-cancel secondary-action">Cancel</button>
 										</div>
 									</div>
 									<div class="row edit-row">
@@ -52,15 +61,26 @@
 											<h3 class="section-subtitle" id="nameLabel"> NAME </h3>
 											<div class="form-group change-name">
 												<div class="error-msg-wrapper lg-12">
-													<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="first-name form-text has-popover-error" type="text" value="<?php echo "$userFirstName"; ?>" placeholder="first name" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="First name cannot be empty.">
+													<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="first-name form-text has-popover-error" type="text" value="<?php echo "$userFirstName"; ?>" placeholder="first name" data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-content="Enter a first name.">
 												</div>
 												<div class="error-msg-wrapper lg-12">
 													<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="middle-name form-text" type="text" value="<?php echo "$userMiddleName"; ?>" placeholder="middle name (optional)">
 												</div>
 												<div class="error-msg-wrapper lg-12">
-													<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="last-name form-text has-popover-error" type="text" value="<?php echo "$userLastName"; ?>" placeholder="last name" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-content="Last name cannot be empty.">
+													<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="last-name form-text has-popover-error" type="text" value="<?php echo "$userLastName"; ?>" placeholder="last name" data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-content="Enter a last name.">
 												</div>
 											</div>
+										</div>
+									</div>
+									<div class="row edit-row">
+										<div class="column lg-5 sm-12">
+											<h3 class="section-subtitle"> <?php echo "$subTitle_Birthday"; ?> </h3>
+											<div class="error-msg-wrapper lg-12">
+												<input autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" class="first-name form-text has-popover-error has-error" type="text" value="<?php echo "$userBirthday"; ?>" placeholder="first name" data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-content="Enter a valid birthday.">
+											</div>
+										</div>
+										<div class="column lg-5 sm-12">
+											<div class="description"> Your correct birth date is required to enable some Clara services. </div>
 										</div>
 									</div>
 									<div class="row edit-row">
@@ -95,7 +115,7 @@
 								</div>
 								<div class="column lg-5">
 									<h3 class="section-subtitle"> <?php echo "$subTitle_MobileNumber"; ?> </h3>
-									<div class="mobile-number">+1 <?php echo "$mobileNumber"; ?></div>
+									<div class="mobile-number"><?php echo "$mobileNumber"; ?></div>
 								</div>
 								<div class="column lg-2 section-edit">
 									<button class="button button-link button-compact button-edit" onclick="editSection()">Edit</button>
@@ -118,6 +138,7 @@
 								</div>
 								<div class="column lg-2 section-edit">
 									<button class="button button-flat button-done" onclick="saveSection()">Save</button>
+									<button class="button button-link button-cancel secondary-action">Cancel</button>
 								</div>
 							</div>
 							<!--div class="row edit-row">
@@ -132,7 +153,7 @@
 							<div class="row edit-row">
 								<div class="column lg-5 sm-12">
 									<h3 class="section-subtitle"> <?php echo "$subTitle_MobileNumber"; ?> </h3>
-									<div class="mobile-number">+1 <?php echo "$mobileNumber"; ?></div>
+									<div class="mobile-number"><?php echo "$mobileNumber"; ?></div>
 									<button class="button button-link"> Change Mobile Number… </button>
 								</div>
 								<div class="column lg-5 sm-12">
@@ -203,6 +224,7 @@
 									</div>
 									<div class="column lg-2 section-edit">
 										<button class="button button-flat button-done" onclick="saveSection()">Save</button>
+										<button class="button button-link button-cancel secondary-action">Cancel</button>
 									</div>
 								</div>
 								<div class="row edit-row">
