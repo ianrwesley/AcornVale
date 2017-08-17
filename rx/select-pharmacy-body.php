@@ -206,6 +206,6 @@ $confirmInfoTitle = "New Patient";
 					</div>
 					<script type="text/javascript">
 						$(window).on('resize',function() {
-							$('.pharmacy-results-wrap').css("height", $(window).height() - 482);
+							$('.pharmacy-results-wrap').css("height", $(window).height() - 496);
 						}).trigger('resize');
 					</script>
