@@ -80,7 +80,7 @@ $facilityCreated = "true";
 								<span class="error-msg"></span>
 							</div>
 							<div class="error-msg-wrapper lg-12">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text optional" placeholder="state registration" value="<?php if($verificationSuccess == "true") {echo $stateRegistration;} ?>">
+								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="NADEAN number" value="<?php if($verificationSuccess == "true") {echo $NADEANnumber;} ?>">
 								<span class="error-msg"></span>
 							</div>
 						</div>

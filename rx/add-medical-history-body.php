@@ -2,7 +2,7 @@
 $pageTitle = "Prescriptions";
 $subnavTitle = "Add new patient";
 $subnavProgress = 0;
-$primaryButtonLabel = "Select a pharmacy…";
+$primaryButtonLabel = "Write prescriptions…";
 $confirmInfoTitle = "New Patient";
 ?>
 
@@ -20,7 +20,7 @@ $confirmInfoTitle = "New Patient";
 <body class="rx-app app-flow add-medical-history">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<?php include "rx-subnav.php"; ?>
+		<!--?php include "rx-subnav.php"; ?-->
 		<div class="page-content">
 		<div class="app-section-body-wrapper">
 			<div class="app-background-edit">&nbsp;</div><div class="app-background-confirm">&nbsp;</div>

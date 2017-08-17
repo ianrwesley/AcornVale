@@ -49,7 +49,7 @@ include "../variables/user-variables/variable-test-facility-profile.php";
 					<form class="section-wrap success">
 						<div class="row">
 							<div class="column lg-12">
-								<span class="id-ver-value"><?php if($verificationSuccess == "true") {echo $userFullName;} ?></span>
+								<span class="id-ver-value username"><?php if($verificationSuccess == "true") {echo $userFullName;} ?></span>
 							</div>
 						</div>
 						<div class="row">
@@ -78,8 +78,8 @@ include "../variables/user-variables/variable-test-facility-profile.php";
 								<span class="id-ver-value"><?php if($verificationSuccess == "true") {echo $DEAnumber;} ?></span>
 							</div>
 							<div class="column lg-6">
-								<h3 class="section-subtitle">STATE REGISTRATION</h3>
-								<span class="id-ver-value"><?php if($verificationSuccess == "true") {echo $stateRegistration;} ?></span>
+								<h3 class="section-subtitle">NADEAN NUMBER</h3>
+								<span class="id-ver-value"><?php if($verificationSuccess == "true") {echo $NADEANnumber;} ?></span>
 							</div>
 						</div>
 					</form>

@@ -154,6 +154,7 @@ $border-darker: 1px solid #9C9B9F;
 	.section-wrap.success {border-color:transparent; background:none;
 		.id-ver-value-wrap {margin-bottom:14px;}
 		.id-ver-value {font-size:21px; font-weight:$font-weight-medium;}
+		.id-ver-value.username {font-size:28px; font-weight:$font-weight-book;}
 	}
 	
 	.identity-verification {

@@ -488,6 +488,9 @@ ul.disc {
 .icon-arrow-small-up:before {
   content: "\54"; }
 
+.icon-phone:before {
+  content: ""; }
+
 icon.xl {
   font-size: 98px; }
 
@@ -1274,13 +1277,29 @@ button a {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.975);
   display: flex;
   align-content: center;
   align-items: center; }
 
 .animated-loading-container {
-  margin: auto; }
+  margin: auto;
+  background: rgba(255, 255, 255, 0.975);
+  padding: 30px 45px;
+  -webkit-border-radius: 4px;
+  /* Safari and Chrome */
+  -moz-border-radius: 4px;
+  /* Firefox */
+  -ms-border-radius: 4px;
+  /* Internet Explorer */
+  border-radius: 4px;
+  border: 1px solid #D0CFD4;
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.25);
+  /* Safari and Chrome */
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.25);
+  /* Firefox */
+  -ms-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.25);
+  /* Internet Explorer */
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.25); }
 
 .loading-message {
   padding-left: 10px; }

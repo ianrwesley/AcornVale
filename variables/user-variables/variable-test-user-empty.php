@@ -15,6 +15,7 @@ $stateLicenseNumber = "";
 $stateLicenseLocation = "";
 $NPInumber = "";
 $DEAnumber = "";
+$NADEANnumber = "";
 $stateRegistration = "";
 
 $paymentCardType = "";

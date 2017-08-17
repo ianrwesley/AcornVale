@@ -214,7 +214,7 @@ $(document).ready(function () {
 	$("#patient-phone").mask("(999) 999-9999");
 	
 	$(window).on('resize',function() {
-		$('.app-section-body-scroll').height($(window).height() - 162);
+		$('.app-section-body-scroll').height($(window).height() - 176);
 	}).trigger('resize');
 	
 	$(window).on('resize',function() {

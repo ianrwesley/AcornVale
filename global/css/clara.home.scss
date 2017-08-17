@@ -49,7 +49,8 @@ $color-button-primary: #00D6BA;
 $color-focus: #AE00D8;
 $color-error: #FF0058;
 $color-success: #00CC56;
-$color-panel: #F8F8F8;
+$color-panel: #FCFCFC;
+$color-panel-darker: #EFEFEF;
 $color-popover-error: #382B00;
 $color-favorite: #FFB806;
 $color-discontinue: #FF6010;
@@ -105,7 +106,7 @@ $medication-height-collapsed: 78px;
 	.button-link {transition:all .2s ease;}
 	.ellipsis {text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
 	.icon {padding-right:6px; padding-bottom:2px; vertical-align:text-bottom;}
-	.page-content {padding-top:$globalnav-height + $subnav-height; padding-bottom:$globalfooter-height;
+	.page-content {padding-top:$globalnav-height + $subnav-height; padding-top:$globalnav-height; padding-bottom:$globalfooter-height;
 		.app-section-body-wrapper {position:relative;
 			.app-section-body-scroll {overflow:auto; margin:auto; z-index:1; position:relative;}
 		}
@@ -118,6 +119,13 @@ $medication-height-collapsed: 78px;
 	.flow-section:last-child {border-bottom:none;}
 	.flow-section.medication:last-child {border-bottom:$border-primary;}
 	.controls-footer {margin-top:20px; font-size:$base-font-size; text-align:center;}
+	.controls-footer.stickytray {background-color:$color-panel-darker; height:74px; border-top:$border-primary; position:absolute; left:0; right:0; bottom:0;
+		.flow-controls {padding-top:16px;}
+		.select-pharmacy-control {text-align:left; font-size:12px; line-height:1.25; padding-top:12px;
+			.control-header icon {padding-right:4px;}
+			.inline-edit-link {margin-left:10px;}
+		}
+	}
 	
 	/*-- form controls --*/
 	.has-controls.weight .form-text {padding-right:56px;}
@@ -212,7 +220,8 @@ $medication-height-collapsed: 78px;
 				.pharmacy-name, .pharmacy-filters {font-weight:$font-weight-medium;}
 				.pharmacy-address-wrap span {display:block;}
 				.pharmacy-details {
-					div {display:inline-block; float:right; clear:both;}
+					div {display:inline-block; clear:both;}
+					.pharmacy-contact-wrap {margin-top:4px;}
 				}
 			}
 		}
@@ -310,6 +319,7 @@ $medication-height-collapsed: 78px;
 				.expand-medication-button:before {content:"\67"; font-size:24px;}
 			}
 		}
+		.medication-item-wrap:first-child .medication, .medication-item-wrap:first-child .medication.collapsed {padding-top:0;}
 		.medication {height:$medication-height-expanded; transition:height .35s ease; position:relative;
 			.fieldgroup {opacity:1; visibility:visible; transition:all .2s ease .4s;}
 			.medication-save-changes-btn {display:none;}
@@ -396,14 +406,44 @@ $medication-height-collapsed: 78px;
 	
 	/*-- select a pharmacy --*/
 	.select-pharmacy {
-		.proximity-selection-wrap {margin:0 0 16px 16px; display:inline-block;
-			.option-wrap {display:inline-block; margin-left:28px;}
-			.button {margin-right:8px;}
+		.pharmacy-search-form {
+			.pharmacy-name-wrapper {padding-right:30px;
+				.pharmacy-name {border-right:$border-primary; @include border-radius($border-radius);}
+			}
+			.proximity-search-wrapper {margin-top:-8px;}
+			.field-label {font-size:$sm-font-size;}
+			.button-menu-item {padding:6px 14px;}
 		}
-		.pharmacy-results-wrap {margin-top:16px; min-height:210px; border:$border-primary; @include border-radius($border-radius); @include box-sizing(content-box); z-index:2;
+		.proximity-selection-wrap {
+			.option-wrap {display:inline-block; margin-left:28px;}
+			.button, .section-title, .field-label {margin-right:10px; float:left;}
+			.input-wrapper:first-child {margin-right:-1px;}
+			.button {height:40px; z-index:1;}
+			.button.active, .button:hover, .button:focus {border:1px solid;}
+			.button:hover, .button:focus, .button.active {z-index:2;}
+			.button:focus {border:1px solid #AE00D8 !important; @include box-shadow(0 0 0 3px rgba(206, 0, 255, 0.2));}
+		}
+		.filtergroup {font-size:$sm-font-size; margin-top:8px;
+			.button {margin-bottom:10px;}
+			.input-wrapper .button-menu-item {margin-right:8px;}
+			.button:hover, .button:focus {z-index: 2; background-color:$color-highlight;}
+			.button:hover {border-color:$color-link-primary;}
+			.button:focus {z-index:2; border:1px solid #AE00D8 !important; @include box-shadow(0 0 0 3px rgba(206, 0, 255, 0.2));}
+			
+			.button-menu-item .icon-checkmark {padding:0; margin:0; outline:0;}
+			.button-menu-item .icon-checkmark:before {content:"";}
+			.button-menu-item:focus {color:$color-success; border-color:$color-success !important; @include box-shadow(none); background-color:#e3fcee; font-weight:$font-weight-medium;
+				.icon-checkmark {padding:2px 0 0 8px;}
+				.icon-checkmark:before {content:"\64";}
+			}
+		}
+		.pharmacy-results-wrap {margin-top:4px; min-height:210px; border:$border-primary; @include border-radius($border-radius); @include box-sizing(content-box); z-index:2;
 			.row {margin:0; height:inherit; min-height:inherit;}
 			.column {padding:0; height:inherit; min-height:inherit;}
-			.pharmacy-results-list {overflow:auto; border-right:$border-primary; height:inherit; min-height:inherit;
+			.no-results-wrap {display:flex; align-items:center; height:inherit;
+				.no-results {margin-left:auto; margin-right:auto; font-size:21px; opacity:0.2;}
+			}
+			.pharmacy-results-list {overflow:auto; /*border-right:$border-primary;*/ height:inherit; min-height:inherit;
 				.pharmacy-result {border-bottom:$border-primary; padding:6px 8px; font-size:$sm-font-size; line-height:1.25;
 					.pharmacy-name {font-weight:$font-weight-medium; display:inline-block; width:100%; margin-bottom:-4px; overflow:hidden; white-space: nowrap; text-overflow:ellipsis;}
 					.pharmacy-filters-wrap {margin-bottom:2px;
@@ -412,6 +452,11 @@ $medication-height-collapsed: 78px;
 					.pharmacy-address-wrap {
 						span {display:block;}
 					}
+					.pharmacy-main-info-wrap, .pharmacy-contact-wrap {float:left;}
+					.pharmacy-phone, .pharmacy-fax {display:block; padding-bottom:2px;}
+					.pharmacy-phone:before, .pharmacy-fax:before {font-family:$clara-icons-font-stack; padding-right:4px; vertical-align: text-top;}
+					.pharmacy-phone:before {content:"\7a";}
+					.pharmacy-fax:before {content:"\4d";}
 				}
 				.pharmacy-result:last-child {border-bottom:none;}
 				.pharmacy-result.selected {background-color:$color-highlight;
@@ -591,6 +636,17 @@ $medication-height-collapsed: 78px;
 
 #rx-subnav { position:fixed; top:$globalnav-height;
 	.gn-text {opacity:.5;}
+	.gn-link.active .gn-text {opacity:1; padding-bottom:2px; border-bottom:2px solid $color-font-primary;}
+	.gn-link .icon-progress, .gn-link .gn-text {vertical-align:middle;}
+	.gn-link .icon-progress {font-size:$sm-font-size; padding-right:6px;}
+	.gn-link .icon-progress.incomplete:before {content: "\69"; color:$color-font-placeholder;}
+	.gn-link .icon-progress.complete:before {content: "\64"; color:$color-success;}
+}
+
+#rx-flogress { position:fixed; bottom:$globalfooter-height; top:auto; position:static; width:auto; background:none; float:left; border-bottom:none; height:58px;
+	.gn-content {min-width:auto; text-align:left; padding-left:0;}
+	.gn-text {opacity:.5;}
+	.gn-link {padding-top:12px;}
 	.gn-link.active .gn-text {opacity:1; padding-bottom:2px; border-bottom:2px solid $color-font-primary;}
 	.gn-link .icon-progress, .gn-link .gn-text {vertical-align:middle;}
 	.gn-link .icon-progress {font-size:$sm-font-size; padding-right:6px;}

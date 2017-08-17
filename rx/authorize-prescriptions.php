@@ -18,7 +18,7 @@
 	$pageTitle = "Prescriptions";
 	$subnavTitle = "Authorize";
 	$subnavProgress = 3;
-	$primaryButtonLabel = "Sign prescriptions…";
+	$primaryButtonLabel = "Sign prescriptions";
 	$confirmInfoTitle = "New Patient";
 ?>
 

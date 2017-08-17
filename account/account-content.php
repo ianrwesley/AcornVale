@@ -89,7 +89,7 @@
 											<div class="user-role"> <?php echo "$userRole"; ?> </div>
 										</div>
 										<div class="column lg-5 sm-12">
-											<div class="description"> Your role defines your privileges in Clara. </div>
+											<div class="description"> You are the facility owner.<br>To transfer ownership of <?php echo "$facilityName"; ?> to another Clara user, or to cancel the account, call 1-866-727-4789. </div>
 										</div>
 									</div>
 								</div>

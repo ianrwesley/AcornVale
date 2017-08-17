@@ -140,6 +140,9 @@
   .setup-body.choose-license .section-wrap.success .id-ver-value {
     font-size: 21px;
     font-weight: 500; }
+  .setup-body.choose-license .section-wrap.success .id-ver-value.username {
+    font-size: 28px;
+    font-weight: 400; }
 .setup-body.choose-license .identity-verification .row {
   margin-bottom: 18px; }
 .setup-body.choose-license .identity-verification .row:last-child {

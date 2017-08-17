@@ -2,7 +2,7 @@
 $pageTitle = "Prescriptions";
 $subnavTitle = "Write prescriptions";
 $subnavProgress = 2;
-$primaryButtonLabel = "Authorize…";
+$primaryButtonLabel = "Send prescriptions";
 $confirmInfoTitle = "New Patient";
 ?>
 
@@ -21,7 +21,7 @@ $confirmInfoTitle = "New Patient";
 <body class="rx-app app-flow write-prescriptions">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<?php include "rx-subnav.php"; ?>
+		<!--?php include "rx-subnav.php"; ?-->
 		<div class="page-content">
 		<div class="app-section-body-wrapper">
 			<div class="app-background-edit">&nbsp;</div>

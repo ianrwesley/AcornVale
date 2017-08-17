@@ -92,8 +92,9 @@ $confirmInfoTitle = "Patient Details";
 								<div class="pharmacy-filters-wrap">
 									<span class="pharmacy-filters"><?php echo "$selectedPharmacyFeatures"; ?></span>
 								</div>
-								<div class="pharmacy-phone-wrap">
-									<span class="pharmacy-phone"><?php echo "$selectedPharmacyPhone"; ?></span>
+								<div class="pharmacy-contact-wrap">
+									<span class="detail pharmacy-phone"><icon class="icon-smartphone"></icon><?php echo "$selectedPharmacyPhone"; ?></span>
+									<span class="detail pharmacy-fax"><icon class="icon-fax"></icon><?php echo "$selectedPharmacyFax"; ?></span>
 								</div>
 							</div>
 						</div>

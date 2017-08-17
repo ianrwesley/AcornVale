@@ -5,7 +5,7 @@ $userFirstName = "David";
 $userMiddleName = "";
 $userLastName = "Livingstone";
 $claraID = "drlivingstone@ipresume.com";
-$userRole = "Administrator (Primary)";
+$userRole = "Facility Owner";
 $userBirthday = "03/19/1973";
 
 $mobileNumber = "(555) 555-5785";
@@ -15,6 +15,7 @@ $stateLicenseNumber = "ME37622";
 $stateLicenseLocation = "Florida";
 $NPInumber = "1629005061";
 $DEAnumber = "C91234567";
+$NADEANnumber = "X-C91234567";
 $stateRegistration = "";
 
 $paymentCardType = "American Express";

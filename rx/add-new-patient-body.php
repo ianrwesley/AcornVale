@@ -20,7 +20,7 @@ $confirmInfoTitle = "Patient Details";
 <body class="rx-app app-flow add-patient">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<?php include "rx-subnav.php"; ?>
+		<!--?php include "rx-subnav.php"; ?-->
 		<div class="page-content">
 		<div class="app-section-body-wrapper">
 			<div class="app-background-edit">&nbsp;</div><div class="app-background-confirm">&nbsp;</div>
