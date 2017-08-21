@@ -61,11 +61,11 @@ $confirmInfoTitle = "Patient Details";
 						<?php
 							if ($RXdrugNames !== "" and $RXdrugNames !== "None") {
 								foreach ($RXdrugNamesArray as $RXdrugNamesKey => $RXdrugNamesValue) {
-									echo "<li><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'>$RXrefillsArray[$RXdrugNamesKey] refill";
+									echo "<li class='rx-det-item'><div class='row'><div class='column lg-10 rx-det-main'><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'>$RXrefillsArray[$RXdrugNamesKey] refill";
 									if ($RXrefillsArray[$RXdrugNamesKey] !== "1") {
 										echo 's';
 									}
-									echo "</span></div><div class='column lg-2'><span class='sub-detail small'>$RXsubstitutionsArray[$RXdrugNamesKey]</span></div></div><span class='sub-detail lg-3'>#<b>$RXdispenseAmtArray[$RXdrugNamesKey]</b></span><span class='sub-detail lg-9'><i>sig.</i> $RXcustomSigArray[$RXdrugNamesKey]</span></li>";
+									echo "</span></div><div class='column lg-2'><span class='sub-detail small'>$RXsubstitutionsArray[$RXdrugNamesKey]</span></div></div><div class='row'><div class='column lg-3'><span class='sub-detail'>#<b>$RXdispenseAmtArray[$RXdrugNamesKey]</b></span></div><div class='column lg-9'><span class='sub-detail'>$RXcustomSigArray[$RXdrugNamesKey]</span></div></div></div><div class='column lg-2'><div class='queue-rx-print'><icon class='icon-electronic-prescribing'></icon></div></div></div></li>";
 								}
 							} elseif ($RXdrugNames == "" or $RXdrugNames == "None") {
 								echo "<li>None</li>";
@@ -103,3 +103,9 @@ $confirmInfoTitle = "Patient Details";
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">		
+		$('.queue-rx-print').on('click',function(){
+			$(this).toggleClass('marked');
+			$(this).find('icon').toggleClass('icon-electronic-prescribing').toggleClass('icon-printing-prescriptions');
+		});
+	</script>

@@ -218,7 +218,7 @@ $(document).ready(function () {
 	}).trigger('resize');
 	
 	$(window).on('resize',function() {
-		$('.auth-body-scroll').height($(window).height() - 395);
+		$('.auth-body-scroll').height($(window).height() - 335);
 	}).trigger('resize');
 	
 });

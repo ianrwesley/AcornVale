@@ -287,8 +287,29 @@
         padding: 6px 0; }
     .rx-app .confirm-info .confirm-info-flow.prescriptions .row-header, .rx-app .confirm-info .confirm-info-flow.prescriptions .allergies-section .rxn-label, .rx-app .allergies-section .confirm-info .confirm-info-flow.prescriptions .rxn-label {
       margin-bottom: 0; }
-    .rx-app .confirm-info .confirm-info-flow.prescriptions .row {
-      padding-bottom: 1px; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-item, .rx-app .confirm-info .confirm-info-flow.prescriptions .row {
+      padding: 0; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-main {
+      padding-top: 11px;
+      padding-bottom: 9px; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-main .row {
+        padding-top: 3px; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-main .row:first-child {
+        padding-top: 0; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print {
+      text-align: center;
+      font-size: 36px;
+      line-height: normal;
+      color: #007FFF;
+      background-color: #DEF9FF;
+      padding: 8px 0;
+      cursor: pointer; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print icon {
+        vertical-align: middle;
+        padding-bottom: 0.125em; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print.marked {
+      color: #9C9B9F;
+      background-color: #EBEAEF; }
     .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-name, .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-filters {
       font-weight: 500; }
     .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-address-wrap span {
@@ -671,12 +692,12 @@
       /* Internet Explorer */
       box-shadow: 0 0 0 3px rgba(206, 0, 255, 0.2); }
     .rx-app .select-pharmacy .filtergroup .button-menu-item .icon-checkmark {
-      padding: 0;
+      padding: 2px 0 0 8px;
       margin: 0;
       outline: 0; }
     .rx-app .select-pharmacy .filtergroup .button-menu-item .icon-checkmark:before {
-      content: ""; }
-    .rx-app .select-pharmacy .filtergroup .button-menu-item:focus {
+      content: "\69"; }
+    .rx-app .select-pharmacy .filtergroup .button-menu-item:focus, .rx-app .select-pharmacy .filtergroup .button-menu-item.selected {
       color: #00CC56;
       border-color: #00CC56 !important;
       -webkit-box-shadow: none;
@@ -688,9 +709,9 @@
       box-shadow: none;
       background-color: #e3fcee;
       font-weight: 500; }
-      .rx-app .select-pharmacy .filtergroup .button-menu-item:focus .icon-checkmark {
+      .rx-app .select-pharmacy .filtergroup .button-menu-item:focus .icon-checkmark, .rx-app .select-pharmacy .filtergroup .button-menu-item.selected .icon-checkmark {
         padding: 2px 0 0 8px; }
-      .rx-app .select-pharmacy .filtergroup .button-menu-item:focus .icon-checkmark:before {
+      .rx-app .select-pharmacy .filtergroup .button-menu-item:focus .icon-checkmark:before, .rx-app .select-pharmacy .filtergroup .button-menu-item.selected .icon-checkmark:before {
         content: "\64"; }
   .rx-app .select-pharmacy .pharmacy-results-wrap {
     margin-top: 4px;
@@ -777,7 +798,7 @@
       min-height: inherit;
       z-index: 1; }
   .rx-app .page-content.auth-prescriptions-content {
-    padding-top: 237px; }
+    padding-top: 177px; }
   .rx-app .authorize-prescriptions-wrap {
     max-width: 720px;
     margin-left: auto;
@@ -809,7 +830,7 @@
       padding-top: 24px;
       padding-bottom: 24px;
       border-bottom: 1px solid #D0CFD4;
-      top: 108px; }
+      top: 48px; }
     .rx-app .authorize-prescriptions-wrap .auth-break-wrap span {
       display: block; }
     .rx-app .authorize-prescriptions-wrap .auth-break-wrap label {

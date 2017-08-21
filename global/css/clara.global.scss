@@ -150,7 +150,9 @@ img {border: 0;}
 
 /*-- GRID --*/
 .row {margin-left:-$column-padding; margin-right:-$column-padding;}
+.row.nomargin {margin-left:0; margin-right:0;}
 .column {margin:0; padding:0 $column-padding; z-index:inherit; @include box-sizing(border-box); position:relative; float:left;}
+.column.nopadding {padding:0;}
 .lg-1 {width:8.33333%}
 .lg-2 {width:16.66667%;}
 .lg-3 {width:25%;}
@@ -249,6 +251,9 @@ ul.disc { list-style:disc outside; }
 .icon-arrow-small-left:before {content: "\52";}
 .icon-arrow-small-right:before {content: "\53";}
 .icon-arrow-small-up:before {content: "\54";}
+.icon-electronic-prescribing:before {content: "\55";}
+.icon-printing-prescriptions:before {content: "\56";}
+
 .icon-phone:before {content:"";}
 
 icon.xl {font-size:98px;}

@@ -37,7 +37,7 @@
 <body class="rx-app app-flow auth-body">
 	<div id="wrapper">
 		<?php include "../global/globalnav.php"; ?>
-		<?php include "rx-subnav.php"; ?>
+		<!--?php include "rx-subnav.php"; ?-->
 		<div class="page-content auth-prescriptions-content">
 			<div class="app-section-body-wrapper">
 				<div class="app-section-body-scroll auth-body-scroll">

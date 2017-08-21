@@ -213,7 +213,15 @@ $medication-height-collapsed: 78px;
 		}
 		.confirm-info-flow.prescriptions {
 			.row-header {margin-bottom:0;}
-			.row {padding-bottom:1px;}
+			.rx-det-item, .row {padding:0;}
+			.rx-det-main {padding-top:11px; padding-bottom:9px;
+				.row {padding-top:3px;}
+				.row:first-child {padding-top:0;}
+			}
+			.queue-rx-print {text-align: center; font-size:36px; line-height:normal; color:$color-link-primary; background-color:$color-highlight; padding:8px 0; cursor:pointer;
+				icon {vertical-align:middle; padding-bottom:0.125em;}
+			}
+			.queue-rx-print.marked {color:$color-border-darker; background-color:$color-border-lighter;}
 		}
 		.confirm-info-flow.pharmacy {
 			.pharmacy-confirm-wrap {
@@ -430,9 +438,9 @@ $medication-height-collapsed: 78px;
 			.button:hover {border-color:$color-link-primary;}
 			.button:focus {z-index:2; border:1px solid #AE00D8 !important; @include box-shadow(0 0 0 3px rgba(206, 0, 255, 0.2));}
 			
-			.button-menu-item .icon-checkmark {padding:0; margin:0; outline:0;}
-			.button-menu-item .icon-checkmark:before {content:"";}
-			.button-menu-item:focus {color:$color-success; border-color:$color-success !important; @include box-shadow(none); background-color:#e3fcee; font-weight:$font-weight-medium;
+			.button-menu-item .icon-checkmark {padding:2px 0 0 8px; margin:0; outline:0;}
+			.button-menu-item .icon-checkmark:before {content:"\69";}
+			.button-menu-item:focus, .button-menu-item.selected {color:$color-success; border-color:$color-success !important; @include box-shadow(none); background-color:#e3fcee; font-weight:$font-weight-medium;
 				.icon-checkmark {padding:2px 0 0 8px;}
 				.icon-checkmark:before {content:"\64";}
 			}
@@ -468,11 +476,11 @@ $medication-height-collapsed: 78px;
 	}
 	
 	/*-- authorize prescriptions --*/
-	.page-content.auth-prescriptions-content {padding-top:$globalnav-height + $subnav-height + 129px;}
+	.page-content.auth-prescriptions-content {padding-top:$globalnav-height + 129px;}
 	.authorize-prescriptions-wrap {max-width:720px; margin-left:auto; margin-right:auto; line-height:1.25;
 		.container {max-width:960px; @include box-sizing(content-box);}
 		
-		.rx-header {background:$color-panel; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:24px; padding-bottom:24px; border-bottom:$border-primary; top:$globalnav-height + $subnav-height;}
+		.rx-header {background:$color-panel; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:24px; padding-bottom:24px; border-bottom:$border-primary; top:$globalnav-height;}
 		.auth-break-wrap {
 			span {display:block;}
 			label {color:$color-font-placeholder;}
