@@ -698,8 +698,8 @@
     .rx-app .select-pharmacy .filtergroup .button-menu-item .icon-checkmark:before {
       content: "\69"; }
     .rx-app .select-pharmacy .filtergroup .button-menu-item:focus, .rx-app .select-pharmacy .filtergroup .button-menu-item.selected {
-      color: #00CC56;
-      border-color: #00CC56 !important;
+      color: #007FFF;
+      border-color: #007FFF !important;
       -webkit-box-shadow: none;
       /* Safari and Chrome */
       -moz-box-shadow: none;
@@ -707,7 +707,7 @@
       -ms-box-shadow: none;
       /* Internet Explorer */
       box-shadow: none;
-      background-color: #e3fcee;
+      background-color: #DEF9FF;
       font-weight: 500; }
       .rx-app .select-pharmacy .filtergroup .button-menu-item:focus .icon-checkmark, .rx-app .select-pharmacy .filtergroup .button-menu-item.selected .icon-checkmark {
         padding: 2px 0 0 8px; }

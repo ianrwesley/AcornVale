@@ -440,7 +440,7 @@ $medication-height-collapsed: 78px;
 			
 			.button-menu-item .icon-checkmark {padding:2px 0 0 8px; margin:0; outline:0;}
 			.button-menu-item .icon-checkmark:before {content:"\69";}
-			.button-menu-item:focus, .button-menu-item.selected {color:$color-success; border-color:$color-success !important; @include box-shadow(none); background-color:#e3fcee; font-weight:$font-weight-medium;
+			.button-menu-item:focus, .button-menu-item.selected {color:$color-link-primary; border-color:$color-link-primary !important; @include box-shadow(none); background-color:$color-highlight; font-weight:$font-weight-medium;
 				.icon-checkmark {padding:2px 0 0 8px;}
 				.icon-checkmark:before {content:"\64";}
 			}
