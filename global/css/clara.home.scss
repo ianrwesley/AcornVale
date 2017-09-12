@@ -48,6 +48,7 @@ $color-border-lighter: #EBEAEF;
 $color-button-primary: #00D6BA;
 $color-focus: #AE00D8;
 $color-error: #FF0058;
+$color-error-highlight: #FFFCDC;
 $color-success: #00CC56;
 $color-panel: #FCFCFC;
 $color-panel-darker: #EFEFEF;
@@ -215,13 +216,39 @@ $medication-height-collapsed: 78px;
 			.row-header {margin-bottom:0;}
 			.rx-det-item, .row {padding:0;}
 			.rx-det-main {padding-top:11px; padding-bottom:9px;
-				.row {padding-top:3px;}
+				.row {padding-top:5px;}
 				.row:first-child {padding-top:0;}
 			}
-			.queue-rx-print {text-align: center; font-size:36px; line-height:normal; color:$color-link-primary; background-color:$color-highlight; padding:8px 0; cursor:pointer;
-				icon {vertical-align:middle; padding-bottom:0.125em;}
+			.rx-action-button {width:50%; float:left; font-size:30px; cursor:pointer; text-align: center; line-height:normal;
+				icon {vertical-align:middle; padding-bottom:0.25em;}
+				.action-button-label {font-size:12px; line-height:1; display:block;}
+				.action-button-label:before {font-weight:$font-weight-medium;}
+				.action-button-label.erx:before {content:"eRx";}
+				.action-button-label.print:before {content:"Print";}
+				.action-button-label.meded:before {content:"MedEd";}
+				.action-button-label.meded.none:before {content:"None";}
+				.action-button-label.off:before {content:"Off";}
 			}
-			.queue-rx-print.marked {color:$color-border-darker; background-color:$color-border-lighter;}
+			.rx-action-button.slideover {overflow:hidden; position:relative; height:68px;
+				.slide-content {position:absolute; transition:all .2s ease; width:54px; height:inherit;}
+				.slide-action {top:0; left:0;}
+				.slide-menu {font-size:12px; top:0; left:100%; color:$color-border-darker; background-color:$color-border-lighter;
+					.button-inverted {padding:4px 8px; margin:0 auto;}
+					.icon-search {margin-top:8px; font-size:16px;}
+				}
+			}
+			.rx-action-button.slideover.slideview {
+				.slide-action {left:-100%;}
+				.slide-menu {left:0;}
+			}
+			.queue-rx-button {padding:8px 0;}
+			.queue-rx-print {color:white; background-color:$color-link-primary;}
+			.queue-rx-meded {color:white; background-color:$color-pharmacy; position:relative;
+				.button-hover {width:92%; padding:2px 0; position:absolute; bottom:4px; left:4%; font-weight:$font-weight-book; color:$color-font-primary; border-color:$color-border-darker; background:#fff; font-size:10px;}
+			}
+			.queue-rx-print.marked {background-color:$color-border-darker;}
+			.queue-rx-meded.marked {background-color:#C1C0C4;}
+			.queue-rx-meded.none {color:$color-border-darker; background-color:$color-border-lighter; opacity:0.5; cursor:auto;}
 		}
 		.confirm-info-flow.pharmacy {
 			.pharmacy-confirm-wrap {
@@ -335,6 +362,12 @@ $medication-height-collapsed: 78px;
 				.icon-favorite {color:$color-font-placeholder;}
 				.icon-favorite-selected {color:$color-favorite;}
 			}
+			.field-info + .popover {background-color:$color-form-error-bg; border-color:$color-form-error-border;}
+			.field-info + .popover.bottom>.arrow {border-bottom-color:$color-form-error-border;}
+			.field-info + .popover.bottom>.arrow:after {border-bottom-color:$color-form-error-bg;}
+			
+			
+
 		}
 		/*.medication:first-child {height:$medication-height-expanded;}*/
 		.medication:only-child .medication-edit-btn, .medication .medication-edit-btn {display:none;}
@@ -463,7 +496,7 @@ $medication-height-collapsed: 78px;
 					.pharmacy-main-info-wrap, .pharmacy-contact-wrap {float:left;}
 					.pharmacy-phone, .pharmacy-fax {display:block; padding-bottom:2px;}
 					.pharmacy-phone:before, .pharmacy-fax:before {font-family:$clara-icons-font-stack; padding-right:4px; vertical-align: text-top;}
-					.pharmacy-phone:before {content:"\7a";}
+					.pharmacy-phone:before {content:"\59";}
 					.pharmacy-fax:before {content:"\4d";}
 				}
 				.pharmacy-result:last-child {border-bottom:none;}
@@ -583,6 +616,46 @@ $medication-height-collapsed: 78px;
 		@keyframes collapse-notification-controls {
 			0% {height:37px;}
 			100% {height:0px; padding-top:0; padding-bottom:0; border-color:transparent;}
+		}
+	}
+	
+	/*-- alert modals --*/
+	.modal-interaction-alert {
+		.modal-dialog {width:680px;}
+		.highlight-error {color:$color-error;}
+		.header-alert {font-size:24px; text-align:left;
+			.caution-img {margin-right:12px; margin-top:-4px; width:38px;}
+		}
+		.modal-content {padding:28px 42px;}
+		.interaction-body {text-align:left; line-height:1.25; padding-bottom:0;
+			p {margin-bottom:4px;}
+			p:last-child {margin-bottom:0;}
+			.checklist {
+				li {margin-top:8px;}
+				li > label {padding-right:10px;}
+				.form-text {display:inline-block; width:80%; margin-bottom:0; font-size:13px; height:28px; padding:2px 8px;}
+			}
+			.row {margin-left:-10px; margin-right:-10px; padding:5px 0; /*border-bottom:$border-primary;*/}
+			.row:last-child {border-bottom:none;}
+			.column {padding:0 10px;}
+			.section-wrap {padding:5px 0; margin-left:-10px; margin-right:-10px; border-bottom:1px solid $color-border-darker;
+				.row {margin:0;}
+			}
+			.section-wrap:last-child {border:none;}
+			.section-wrap.section-details {font-size:13px;}
+			.severity-section {background:$color-panel;}
+			.row-label {color:$color-font-placeholder;}
+			
+			.severity-value:after {content:"\2022"; padding-left:6px; font-size:28px; height:3px; line-height:0; vertical-align:middle; display:inline-block;}
+			.severity-value.minor:after {color:#FFDA00;}
+			.severity-value.moderate:after {color:#FF8C10;}
+			.severity-value.major:after {color:#E00333;}
+		}
+		.flow-controls {float:right;
+			.secondary-action {border:1px solid $color-error; background:white; color:$color-error;
+				a {color:$color-error;}
+			}
+			.button-flat {margin-left:10px;}
 		}
 	}
 	

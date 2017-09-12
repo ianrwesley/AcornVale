@@ -40,6 +40,8 @@
 					$('.med-ordinal-' + index).text(value);
 				});
 			});
+			
+			$('.field-info').popover();
 		</script>
 		<div class="section-header">
 			<h2 class="section-title medication-title"><span class="med-ordinal"></span> Medication <span class="med-count"></span></h2>
@@ -79,7 +81,7 @@
 		</div>
 		<div class="fieldgroup">
 			<div class="error-msg-wrapper lg-8 <?php if ($fail == "true"){ echo "has-error"; } ?>">
-				<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text" placeholder="custom sig" name="custom sig" value="">
+				<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text field-info" placeholder="custom sig" name="custom sig" value="" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="Select dose, frequency, and duration before entering additional instructions.">
 				<div class="error-msg <?php if ($fail == "true"){ echo "show"; } ?>">Error.</div>
 			</div>
 			<div class="error-msg-wrapper lg-4 <?php if ($fail == "true"){ echo "has-error"; } ?>">

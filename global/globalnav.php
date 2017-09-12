@@ -40,6 +40,7 @@ include "../variables/user-variables/variable-test-facility-profile.php";
 			<div class="gn-accountview-content">
 				<div class="gn-accountmenu-wrapper">
 					<ul class="gn-list sub-menu">
+						<li class="gn-item sub-item"> <a href="#" class="gn-link <?php if ($pageTitle == "Audit Trail"){ echo "active"; } ?>"> <span class="gn-text">Audit Trail</span> </a> </li>
 						<li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/account-view.php" class="gn-link <?php if ($pageTitle == "Profile"){ echo "active"; } ?>"> <span class="gn-text">Account</span> </a> </li>
 						<!--li class="gn-item sub-item"> <a href="<?php echo $rootDir;?>/account/admin-view.php?admin=true" class="gn-link <?php if ($pageTitle == "Admin"){ echo "active"; } ?>"> <span class="gn-text">Administration</span> </a> </li-->
 						<!--li class="gn-item sub-item"> <a class="gn-link expiresession-link"> <span class="gn-text">Expire Session</span> </a> </li-->

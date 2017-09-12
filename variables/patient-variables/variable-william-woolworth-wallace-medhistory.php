@@ -17,8 +17,8 @@ $allergiesDiscontinued = "Aspirin, Amoxicillin";
 $reactions = "Hairy Tongue, Nausea, Hives";
 $reactionsDiscontinued = "Itchy Skin, Abdominal Pain";
 // Home Meds
-$homemeds = "Tylenol 500mg Capsule, Benadryl 50mg Tablet";
-$homemedsDiscontinued = "Nexium 20mg Capsule, Lyrica 50mg Capsule";
+$homemeds = "Tylenol 500MG Capsule, Benadryl 50MG Tablet";
+$homemedsDiscontinued = "Nexium 20MG Capsule, Lyrica 50MG Capsule";
 // Home Meds - Dosage
 $homemedsDose = "1, 2";
 $homemedsDoseUnit = "capsule, tablets";

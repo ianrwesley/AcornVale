@@ -16,6 +16,8 @@ $RXdispenseAmt = "9 tablets, 30 ml, 10 capsules";
 $RXrefills = "1, 0, 2";
 $RXsubstitutions = "subs OK, no subs, no subs";
 
+$RXmedEdIncluded = "has-meded, has-meded, none";
+
 // FUNCTIONS
 $RXdrugNamesArray = explode(', ', $RXdrugNames);
 $RXdosageArray = explode(', ', $RXdosage);
@@ -26,6 +28,7 @@ $RXcustomSigArray = explode('--', $RXcustomSig);
 $RXdispenseAmtArray = explode(', ', $RXdispenseAmt);
 $RXrefillsArray = explode(', ', $RXrefills);
 $RXsubstitutionsArray = explode(', ', $RXsubstitutions);
+$RXmedEdArray = explode(', ', $RXmedEdIncluded);
 
 $RXlastDrug = end($RXdrugNamesArray);
 ?>

@@ -501,8 +501,14 @@ ul.disc {
 .icon-printing-prescriptions:before {
   content: "\56"; }
 
+.icon-med-ed:before {
+  content: "\57"; }
+
+.icon-help-inverted:before {
+  content: "\58"; }
+
 .icon-phone:before {
-  content: ""; }
+  content: "\59"; }
 
 icon.xl {
   font-size: 98px; }
@@ -641,7 +647,7 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
   outline: 0; }
 
 .form-text.field-disabled {
-  background: #F8F8F8;
+  background: #FCFCFC;
   cursor: default;
   pointer-events: none; }
   .form-text.field-disabled + icon {
@@ -730,7 +736,7 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
   margin-bottom: 1px;
   padding: 7px 12px;
   height: 38px;
-  background: #F8F8F8;
+  background: #FCFCFC;
   border-left: 1px solid #D0CFD4;
   border-right: 1px solid transparent;
   text-align: center;
@@ -869,7 +875,7 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
 
 /*-- FORM helpers --*/
 .field-info-wrapper .popover {
-  background-color: #F8F8F8;
+  background-color: #EFEFEF;
   border: none;
   -webkit-border-radius: 4px;
   /* Safari and Chrome */
@@ -890,7 +896,7 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
 .field-info-wrapper .popover-content {
   padding: 0; }
 .field-info-wrapper .popover.top > .arrow:after {
-  border-top-color: #F8F8F8; }
+  border-top-color: #EFEFEF; }
 .field-info-wrapper .popover.top > .arrow {
   border-top-color: transparent; }
 
@@ -1113,7 +1119,7 @@ button a {
   margin-right: 0; }
 
 .button-menu-item:hover, .button-menu-item:active, .button-menu-item:focus {
-  background: #F8F8F8;
+  background: #FCFCFC;
   border-color: #AE00D8; }
 
 /*-- slider --*/

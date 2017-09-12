@@ -61,11 +61,11 @@ $confirmInfoTitle = "Patient Details";
 						<?php
 							if ($RXdrugNames !== "" and $RXdrugNames !== "None") {
 								foreach ($RXdrugNamesArray as $RXdrugNamesKey => $RXdrugNamesValue) {
-									echo "<li class='rx-det-item'><div class='row'><div class='column lg-10 rx-det-main'><div class='row'><div class='column lg-8'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'>$RXrefillsArray[$RXdrugNamesKey] refill";
+									echo "<li class='rx-det-item'><div class='row'><div class='column lg-9 rx-det-main'><div class='row'><div class='column lg-10'><span class='rx-drug-name'>$RXdrugNamesValue</span></div><div class='column lg-2'><span class='sub-detail small'>$RXrefillsArray[$RXdrugNamesKey] refill";
 									if ($RXrefillsArray[$RXdrugNamesKey] !== "1") {
 										echo 's';
 									}
-									echo "</span></div><div class='column lg-2'><span class='sub-detail small'>$RXsubstitutionsArray[$RXdrugNamesKey]</span></div></div><div class='row'><div class='column lg-3'><span class='sub-detail'>#<b>$RXdispenseAmtArray[$RXdrugNamesKey]</b></span></div><div class='column lg-9'><span class='sub-detail'>$RXcustomSigArray[$RXdrugNamesKey]</span></div></div></div><div class='column lg-2'><div class='queue-rx-print'><icon class='icon-electronic-prescribing'></icon></div></div></div></li>";
+									echo "</span></div><!--div class='column lg-2'><span class='sub-detail small'>$RXsubstitutionsArray[$RXdrugNamesKey]</span></div--></div><div class='row'><div class='column lg-3'><span class='sub-detail'>#<b>$RXdispenseAmtArray[$RXdrugNamesKey]</b></span></div><div class='column lg-9'><span class='sub-detail'>$RXcustomSigArray[$RXdrugNamesKey]</span></div></div></div><div class='column lg-3'><div class='rx-action-button queue-rx-button queue-rx-print'><icon class='icon-electronic-prescribing'></icon><label class='action-button-label erx'></label></div><!--div class='rx-action-button slideover'--><div class='rx-action-button queue-rx-button queue-rx-meded $RXmedEdArray[$RXdrugNamesKey]'><icon class='icon-med-ed'></icon><label class='action-button-label meded $RXmedEdArray[$RXdrugNamesKey]'></label></div><!--div class='queue-rx-button slide-content slide-menu'><div><button class='button button-inverted med-ed-toggle'>On</button></div><icon class='icon-search'></icon></div--></div><!--/div--></div></li>";
 								}
 							} elseif ($RXdrugNames == "" or $RXdrugNames == "None") {
 								echo "<li>None</li>";
@@ -107,5 +107,28 @@ $confirmInfoTitle = "Patient Details";
 		$('.queue-rx-print').on('click',function(){
 			$(this).toggleClass('marked');
 			$(this).find('icon').toggleClass('icon-electronic-prescribing').toggleClass('icon-printing-prescriptions');
+			$(this).find('label').toggleClass('erx').toggleClass('print');
 		});
+		
+		$('.queue-rx-meded.has-meded').on('click',function(){
+			$(this).toggleClass('marked');
+			$(this).find('label').toggleClass('meded').toggleClass('off');
+		});
+		
+		//$('.slideover').on('click',function(){
+		//	$(this).toggleClass('slideview');
+		//});
+		
+		$('.queue-rx-meded.has-meded').hover(
+		  function() {
+			$(this).append('<button class="button button-flat button-tiny button-hover">Preview</button>');
+		  }, function() {
+			$(this).find('button:last').remove();
+		  }
+		);
+		
+		//$('.queue-rx-meded').hover(function() {
+		//	$(this).append('<button>Preview</button>');
+		//	$(this).find('button:last').remove();
+		//});
 	</script>

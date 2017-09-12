@@ -11,6 +11,7 @@
   /*-- authorize prescriptions --*/
   /*-- edit patient --*/
   /*-- medical history modals --*/
+  /*-- alert modals --*/
   /*-- selectize overrides (DON'T USE IN FINAL MARKUP) --*/ }
   .rx-app .button-link {
     transition: all .2s ease; }
@@ -293,23 +294,92 @@
       padding-top: 11px;
       padding-bottom: 9px; }
       .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-main .row {
-        padding-top: 3px; }
+        padding-top: 5px; }
       .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-det-main .row:first-child {
         padding-top: 0; }
-    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print {
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button {
+      width: 50%;
+      float: left;
+      font-size: 30px;
+      cursor: pointer;
       text-align: center;
-      font-size: 36px;
-      line-height: normal;
-      color: #007FFF;
-      background-color: #DEF9FF;
-      padding: 8px 0;
-      cursor: pointer; }
-      .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print icon {
+      line-height: normal; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button icon {
         vertical-align: middle;
-        padding-bottom: 0.125em; }
+        padding-bottom: 0.25em; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label {
+        font-size: 12px;
+        line-height: 1;
+        display: block; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label:before {
+        font-weight: 500; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label.erx:before {
+        content: "eRx"; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label.print:before {
+        content: "Print"; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label.meded:before {
+        content: "MedEd"; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label.meded.none:before {
+        content: "None"; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button .action-button-label.off:before {
+        content: "Off"; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover {
+      overflow: hidden;
+      position: relative;
+      height: 68px; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover .slide-content {
+        position: absolute;
+        transition: all .2s ease;
+        width: 54px;
+        height: inherit; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover .slide-action {
+        top: 0;
+        left: 0; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover .slide-menu {
+        font-size: 12px;
+        top: 0;
+        left: 100%;
+        color: #9C9B9F;
+        background-color: #EBEAEF; }
+        .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover .slide-menu .button-inverted {
+          padding: 4px 8px;
+          margin: 0 auto; }
+        .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover .slide-menu .icon-search {
+          margin-top: 8px;
+          font-size: 16px; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover.slideview .slide-action {
+      left: -100%; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .rx-action-button.slideover.slideview .slide-menu {
+      left: 0; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-button {
+      padding: 8px 0; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print {
+      color: white;
+      background-color: #007FFF; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-meded {
+      color: white;
+      background-color: #FF7122;
+      position: relative; }
+      .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-meded .button-hover {
+        width: 92%;
+        padding: 2px 0;
+        position: absolute;
+        bottom: 4px;
+        left: 4%;
+        font-weight: 400;
+        color: #140A29;
+        border-color: #9C9B9F;
+        background: #fff;
+        font-size: 10px; }
     .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-print.marked {
+      background-color: #9C9B9F; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-meded.marked {
+      background-color: #C1C0C4; }
+    .rx-app .confirm-info .confirm-info-flow.prescriptions .queue-rx-meded.none {
       color: #9C9B9F;
-      background-color: #EBEAEF; }
+      background-color: #EBEAEF;
+      opacity: 0.5;
+      cursor: auto; }
     .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-name, .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-filters {
       font-weight: 500; }
     .rx-app .confirm-info .confirm-info-flow.pharmacy .pharmacy-confirm-wrap .pharmacy-address-wrap span {
@@ -523,6 +593,13 @@
         color: #9C96B1; }
       .rx-app .medications-wrapper .medication .medication-favorite-btn .icon-favorite-selected {
         color: #FFB806; }
+      .rx-app .medications-wrapper .medication .field-info + .popover {
+        background-color: #FAEEB6;
+        border-color: rgba(183, 148, 0, 0.55); }
+      .rx-app .medications-wrapper .medication .field-info + .popover.bottom > .arrow {
+        border-bottom-color: rgba(183, 148, 0, 0.55); }
+      .rx-app .medications-wrapper .medication .field-info + .popover.bottom > .arrow:after {
+        border-bottom-color: #FAEEB6; }
     .rx-app .medications-wrapper .medication:only-child .medication-edit-btn, .rx-app .medications-wrapper .medication .medication-edit-btn {
       display: none; }
     .rx-app .medications-wrapper .medication:only-child .medication-delete-btn {
@@ -783,7 +860,7 @@
           padding-right: 4px;
           vertical-align: text-top; }
         .rx-app .select-pharmacy .pharmacy-results-wrap .pharmacy-results-list .pharmacy-result .pharmacy-phone:before {
-          content: "\7a"; }
+          content: "\59"; }
         .rx-app .select-pharmacy .pharmacy-results-wrap .pharmacy-results-list .pharmacy-result .pharmacy-fax:before {
           content: "\4d"; }
       .rx-app .select-pharmacy .pharmacy-results-wrap .pharmacy-results-list .pharmacy-result:last-child {
@@ -1034,6 +1111,86 @@
     padding-top: 0;
     padding-bottom: 0;
     border-color: transparent; } }
+  .rx-app .modal-interaction-alert .modal-dialog {
+    width: 680px; }
+  .rx-app .modal-interaction-alert .highlight-error {
+    color: #FF0058; }
+  .rx-app .modal-interaction-alert .header-alert {
+    font-size: 24px;
+    text-align: left; }
+    .rx-app .modal-interaction-alert .header-alert .caution-img {
+      margin-right: 12px;
+      margin-top: -4px;
+      width: 38px; }
+  .rx-app .modal-interaction-alert .modal-content {
+    padding: 28px 42px; }
+  .rx-app .modal-interaction-alert .interaction-body {
+    text-align: left;
+    line-height: 1.25;
+    padding-bottom: 0; }
+    .rx-app .modal-interaction-alert .interaction-body p {
+      margin-bottom: 4px; }
+    .rx-app .modal-interaction-alert .interaction-body p:last-child {
+      margin-bottom: 0; }
+    .rx-app .modal-interaction-alert .interaction-body .checklist li {
+      margin-top: 8px; }
+    .rx-app .modal-interaction-alert .interaction-body .checklist li > label {
+      padding-right: 10px; }
+    .rx-app .modal-interaction-alert .interaction-body .checklist .form-text {
+      display: inline-block;
+      width: 80%;
+      margin-bottom: 0;
+      font-size: 13px;
+      height: 28px;
+      padding: 2px 8px; }
+    .rx-app .modal-interaction-alert .interaction-body .row {
+      margin-left: -10px;
+      margin-right: -10px;
+      padding: 5px 0;
+      /*border-bottom:$border-primary;*/ }
+    .rx-app .modal-interaction-alert .interaction-body .row:last-child {
+      border-bottom: none; }
+    .rx-app .modal-interaction-alert .interaction-body .column {
+      padding: 0 10px; }
+    .rx-app .modal-interaction-alert .interaction-body .section-wrap {
+      padding: 5px 0;
+      margin-left: -10px;
+      margin-right: -10px;
+      border-bottom: 1px solid #9C9B9F; }
+      .rx-app .modal-interaction-alert .interaction-body .section-wrap .row {
+        margin: 0; }
+    .rx-app .modal-interaction-alert .interaction-body .section-wrap:last-child {
+      border: none; }
+    .rx-app .modal-interaction-alert .interaction-body .section-wrap.section-details {
+      font-size: 13px; }
+    .rx-app .modal-interaction-alert .interaction-body .severity-section {
+      background: #FCFCFC; }
+    .rx-app .modal-interaction-alert .interaction-body .row-label {
+      color: #9C96B1; }
+    .rx-app .modal-interaction-alert .interaction-body .severity-value:after {
+      content: "\2022";
+      padding-left: 6px;
+      font-size: 28px;
+      height: 3px;
+      line-height: 0;
+      vertical-align: middle;
+      display: inline-block; }
+    .rx-app .modal-interaction-alert .interaction-body .severity-value.minor:after {
+      color: #FFDA00; }
+    .rx-app .modal-interaction-alert .interaction-body .severity-value.moderate:after {
+      color: #FF8C10; }
+    .rx-app .modal-interaction-alert .interaction-body .severity-value.major:after {
+      color: #E00333; }
+  .rx-app .modal-interaction-alert .flow-controls {
+    float: right; }
+    .rx-app .modal-interaction-alert .flow-controls .secondary-action {
+      border: 1px solid #FF0058;
+      background: white;
+      color: #FF0058; }
+      .rx-app .modal-interaction-alert .flow-controls .secondary-action a {
+        color: #FF0058; }
+    .rx-app .modal-interaction-alert .flow-controls .button-flat {
+      margin-left: 10px; }
   .rx-app .selectize-input {
     min-height: 40px;
     padding: 10px 12px;

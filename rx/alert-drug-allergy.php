@@ -1,7 +1,6 @@
 <?php
 	$rxFlowProgress = 6;
 	$existingPatient = $_GET[ "existing" ];
-	$alertInteraction = $_GET[ "alert" ];
 	include "../variables/patient-variables/variable-empty.php";
 
 	if ($existingPatient !== null) {
@@ -31,7 +30,7 @@
 								</div>
 								<div class="column lg-4">
 									<div class="select-pharmacy-control">
-										<p class="control-header"><b><icon class="icon-pharmacy pharmacy-label"></icon><?php echo "$selectedPharmacyName"; ?></b> <a class="inline-edit-link" href="select-pharmacy-filled.php<?php if ($existingPatient !== null) { echo "?existing=$existingPatient"; } ?>">Change</a></p>
+										<p class="control-header"><b><icon class="icon-pharmacy pharmacy-label"></icon><?php echo "$selectedPharmacyName"; ?></b> <a class="inline-edit-link" href="select-pharmacy-filled.php<?php if ($existingPatient !== null) { echo "?existing=$existingPatient"; } ?>">Edit</a></p>
 										<span class="pharmacy-street"><?php echo "$selectedPharmacyStreet"; ?></span><br>
 										<span class="pharmacy-location"><?php echo "$selectedPharmacyLocation"; ?></span>
 									</div>
@@ -58,10 +57,6 @@
 	<?php include "../global/globalfooter.php"; ?>
 	<?php include "modal-cancel-writing-prescriptions.php"; ?>
 	<?php include "modal-edit-patient.php"; ?>
-	<?php if ($alertInteraction == "drug-allergy") { include "modal-alert-drug-allergy.php"; } elseif ($alertInteraction == "duplicate-therapy") { include "modal-alert-duplicate-therapy.php"; } elseif ($alertInteraction == "drug-drug-minor") { include "modal-alert-drug-drug-minor.php"; } elseif ($alertInteraction == "drug-drug-moderate") { include "modal-alert-drug-drug-moderate.php"; } elseif ($alertInteraction == "drug-drug-major") { include "modal-alert-drug-drug-major.php"; }?>
-	<script type="text/javascript">
-		$("#alertInteraction").modal();
-	</script>
 </body>
 
 </html>

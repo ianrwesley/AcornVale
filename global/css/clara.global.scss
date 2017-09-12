@@ -50,8 +50,11 @@ $color-focus: #AE00D8;
 $color-error: #FF0058;
 $color-error-highlight: #FFFCDC;
 $color-success: #00CC56;
-$color-panel: #F8F8F8;
+$color-panel: #FCFCFC;
+$color-panel-darker: #EFEFEF;
 $color-popover-error: #382B00;
+$color-favorite: #FFB806;
+$color-discontinue: #FF6010;
 
 $border-primary: 1px solid #D0CFD4;
 $border-darker: 1px solid #9C9B9F;
@@ -253,8 +256,9 @@ ul.disc { list-style:disc outside; }
 .icon-arrow-small-up:before {content: "\54";}
 .icon-electronic-prescribing:before {content: "\55";}
 .icon-printing-prescriptions:before {content: "\56";}
-
-.icon-phone:before {content:"";}
+.icon-med-ed:before {content: "\57";}
+.icon-help-inverted:before {content: "\58";}
+.icon-phone:before {content: "\59";}
 
 icon.xl {font-size:98px;}
 
@@ -361,9 +365,9 @@ input.optional::-webkit-input-placeholder, input.optional::placeholder, select.o
 
 /*-- FORM helpers --*/
 .field-info-wrapper {
-	.popover {background-color:$color-panel; border:none; @include border-radius($border-radius); @include box-shadow(none); padding:18px 20px; font-size:$base-font-size;}
+	.popover {background-color:$color-panel-darker; border:none; @include border-radius($border-radius); @include box-shadow(none); padding:18px 20px; font-size:$base-font-size;}
 	.popover-content {padding:0;}
-	.popover.top>.arrow:after {border-top-color:$color-panel;}
+	.popover.top>.arrow:after {border-top-color:$color-panel-darker;}
 	.popover.top>.arrow {border-top-color:transparent;}
 }
 .field-info-wrapper.attach-right, .field-info-wrapper.attach-left {width:20px; height:$input-height; position:absolute; top:0;}

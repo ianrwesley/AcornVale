@@ -221,4 +221,5 @@ $(document).ready(function () {
 		$('.auth-body-scroll').height($(window).height() - 335);
 	}).trigger('resize');
 	
+	$('.field-info').popover();
 });
