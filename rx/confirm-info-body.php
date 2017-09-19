@@ -8,7 +8,7 @@ $confirmInfoTitle = "Patient Details";
 		<h2 class="section-title"><?php echo $confirmInfoTitle ?></h2>
 	</div>
 	<div class="column lg-3 edit-patient-button <?php if ($rxFlowProgress < 2) { echo "hidden"; } ?>">
-		<button role="button" class="button button-link button-tiny" data-toggle="modal" data-target="#edit<?php if ($rxFlowProgress < 4) { echo "Demographics"; } else { echo "Patient"; } ?>">Edit <?php if ($rxFlowProgress < 4) { echo "profile"; } else { echo "patient"; } ?></button>
+		<button role="button" class="button button-link button-tiny" data-toggle="modal" data-target="#edit<?php if ($rxFlowProgress < 4) { echo "Demographics"; } else { echo "Patient"; } ?>">Edit <?php if ($rxFlowProgress < 4) { echo "patient"; } else { echo "patient"; } ?></button>
 	</div>
 </div>
 <div class="confirm-info <?php if ($rxFlowProgress == 0) { echo "empty"; } ?>">
@@ -28,7 +28,7 @@ $confirmInfoTitle = "Patient Details";
 					<span class="detail-overflow address-street"><?php echo $address ?></span><br>
 					<span class="detail-overflow address-city-state"><?php echo "$city, $state $zipCode"; ?></span>
 				</div>
-				<div class="column lg-6">
+				<div class="contact column lg-6">
 					<h3 class="row-header">Contact</h3>
 					<span class="detail phone"><icon class="icon-smartphone"></icon><?php echo $phone ?></span><br>
 					<span class="detail email"><icon class="icon-mail"></icon><?php echo $email ?></span>
@@ -75,7 +75,7 @@ $confirmInfoTitle = "Patient Details";
 				</div>
 			</div>
 		</div>
-		<div class="confirm-info-flow pharmacy <?php if ($rxFlowProgress == 6 || $rxFlowProgress == 7 || $rxFlowProgress < 5) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5) { echo "current-flow-step"; } ?>">
+		<!--div class="confirm-info-flow pharmacy <?php if ($rxFlowProgress == 6 || $rxFlowProgress == 7 || $rxFlowProgress < 5) { echo "hidden"; } ?> <?php if ($rxFlowProgress == 4 || $rxFlowProgress == 5) { echo "current-flow-step"; } ?>">
 			<div class="row clearfix">
 				<div class="column lg-12">
 					<h3 class="row-header pharmacy-label"><icon class="icon-pharmacy"></icon>Pharmacy</h3>
@@ -101,7 +101,7 @@ $confirmInfoTitle = "Patient Details";
 					</div>
 				</div>
 			</div>
-		</div>
+		</div-->
 	</div>
 	<script type="text/javascript">		
 		$('.queue-rx-print').on('click',function(){

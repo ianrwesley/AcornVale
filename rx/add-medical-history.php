@@ -21,7 +21,7 @@
 								<div class="column lg-4">
 									<div class="select-pharmacy-control">
 										<p class="control-header"><icon class="icon-pharmacy pharmacy-label"></icon>No pharmacy selected.</p>
-										<a class="" href="select-pharmacy.php">Find a pharmacy…</a>
+										<a href="" role="link" data-toggle="modal" data-target="#pharmacySearch">Find a pharmacy…</a>
 									</div>
 								</div>
 								<div class="column lg-3">
@@ -47,6 +47,7 @@
 	<?php include "modal-edit-patient.php"; ?>
 	<?php include "modal-edit-demographics.php"; ?>
 	<?php include "modal-edit-medical-history.php"; ?>
+	<?php include "modal-select-pharmacy.php"; ?>
 </body>
 
 </html>

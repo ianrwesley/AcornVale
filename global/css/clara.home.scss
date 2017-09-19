@@ -124,7 +124,23 @@ $medication-height-collapsed: 78px;
 		.flow-controls {padding-top:16px;}
 		.select-pharmacy-control {text-align:left; font-size:12px; line-height:1.25; padding-top:12px;
 			.control-header icon {padding-right:4px;}
-			.inline-edit-link {margin-left:10px;}
+			.pharmacy-name-restrict {display:inline-block; max-width:180px; white-space: nowrap; text-overflow: ellipsis; overflow:hidden; vertical-align:bottom;}
+			.popover {
+				.pharmacy-phone, .pharmacy-fax {display:block; font-size:13px;}
+				.pharmacy-phone:before, .pharmacy-fax:before {font-family:"clara-icons"; padding-right:6px; vertical-align: text-top;}
+				.pharmacy-phone:before {content:"\59";}
+				.pharmacy-fax:before {content:"\4d";}
+			}
+			.inline-edit-link {margin-left:12px;}
+		}
+	}
+	
+	/*-- app modals --*/
+	.modal-dialog.full-height {position:fixed; top:0; bottom:0; left:50%; margin:0; margin-left:-300px; width:600px;
+		.modal-content {@include border-radius(0); border:none; position:absolute; top:0; bottom:0; left:0; right:0; padding:0;
+			.modal-body {padding:28px 28px 0;}
+			.controls-footer.fixed {position:fixed; width:100%; border-top: 1px solid #D0CFD4; padding: 16px 18px; margin:0; background:#fff; z-index:99;}
+			.controls-footer.bottom {bottom:0;}
 		}
 	}
 	
@@ -209,12 +225,14 @@ $medication-height-collapsed: 78px;
 		.header {font-size:$md-header-font-size; font-weight:$font-weight-medium; margin:0; line-height:1;}
 		/*.header.filled {color:$color-link-primary;}*/
 		.confirm-info-flow {font-size:$base-font-size; line-height:1.25; padding:10px 0; border-top:$border-primary; opacity:.5;
-			.row-header {margin-bottom:6px;}
+			.row-header {margin-bottom:4px;}
 			.row {padding:6px 0;}
+			.contact.column {margin-bottom:-8px;}
 		}
 		.confirm-info-flow.prescriptions {
 			.row-header {margin-bottom:0;}
 			.rx-det-item, .row {padding:0;}
+			> .row {padding:6px 0;}
 			.rx-det-main {padding-top:11px; padding-bottom:9px;
 				.row {padding-top:5px;}
 				.row:first-child {padding-top:0;}
@@ -269,7 +287,8 @@ $medication-height-collapsed: 78px;
 			.confirm-info-item.first {padding-left:0; border-left:none;}
 		}
 		.button-group.pull-left .button-link:first-child {padding-left:0;}
-		.detail, .detail-overflow {margin-top:-4px;}
+		//.detail, .detail-overflow {margin-top:-4px;}
+		.detail.email {margin-top:-4px;}
 	}
 	.confirm-info.empty {
 		.header {font-weight:$font-weight-light;}
@@ -447,7 +466,11 @@ $medication-height-collapsed: 78px;
 	
 	/*-- select a pharmacy --*/
 	.select-pharmacy {
+		//.modal-content {@include border-radius(0); border:none; position:absolute; top:0; bottom:0; left:0; right:0; padding:0;}
+		//.modal-body {padding:28px 28px 0;}
+		//.controls-footer {position:fixed; bottom:0; width:100%; border-top: 1px solid #D0CFD4; padding: 16px 18px; margin: 0; background:#fff; z-index:99;}
 		.pharmacy-search-form {
+			.section-title {margin-bottom:12px;}
 			.pharmacy-name-wrapper {padding-right:30px;
 				.pharmacy-name {border-right:$border-primary; @include border-radius($border-radius);}
 			}
@@ -456,16 +479,19 @@ $medication-height-collapsed: 78px;
 			.button-menu-item {padding:6px 14px;}
 		}
 		.proximity-selection-wrap {
+			.fieldgroup.inline {width:50%; float:left;}
+			.fieldgroup + .fieldgroup {padding-left:18px;}
 			.option-wrap {display:inline-block; margin-left:28px;}
-			.button, .section-title, .field-label {margin-right:10px; float:left;}
+			.button, .section-title {margin-right:10px; float:left;}
+			.field-label {display:block; margin-bottom:6px;}
 			.input-wrapper:first-child {margin-right:-1px;}
-			.button {height:40px; z-index:1;}
+			.button {height:40px; z-index:1; /*padding:6px 8px;*/}
 			.button.active, .button:hover, .button:focus {border:1px solid;}
 			.button:hover, .button:focus, .button.active {z-index:2;}
-			.button:focus {border:1px solid #AE00D8 !important; @include box-shadow(0 0 0 3px rgba(206, 0, 255, 0.2));}
+			.button:focus {border:1px solid $color-link-primary !important; /*@include box-shadow(0 0 0 3px rgba(206, 0, 255, 0.2));*/}
 		}
-		.filtergroup {font-size:$sm-font-size; margin-top:8px;
-			.button {margin-bottom:10px;}
+		.filtergroup {font-size:$sm-font-size;
+			.button {margin-bottom:12px;}
 			.input-wrapper .button-menu-item {margin-right:8px;}
 			.button:hover, .button:focus {z-index: 2; background-color:$color-highlight;}
 			.button:hover {border-color:$color-link-primary;}
@@ -478,18 +504,19 @@ $medication-height-collapsed: 78px;
 				.icon-checkmark:before {content:"\64";}
 			}
 		}
-		.pharmacy-results-wrap {margin-top:4px; min-height:210px; border:$border-primary; @include border-radius($border-radius); @include box-sizing(content-box); z-index:2;
+		.pharmacy-results-wrap {margin-top:4px; min-height:150px; border:$border-primary; @include border-radius($border-radius); @include box-sizing(content-box); z-index:2;
 			.row {margin:0; height:inherit; min-height:inherit;}
 			.column {padding:0; height:inherit; min-height:inherit;}
 			.no-results-wrap {display:flex; align-items:center; height:inherit;
 				.no-results {margin-left:auto; margin-right:auto; font-size:21px; opacity:0.2;}
 			}
 			.pharmacy-results-list {overflow:auto; /*border-right:$border-primary;*/ height:inherit; min-height:inherit;
-				.pharmacy-result {border-bottom:$border-primary; padding:6px 8px; font-size:$sm-font-size; line-height:1.25;
+				.pharmacy-result {border-bottom:$border-primary; padding:8px; font-size:$sm-font-size; line-height:1.25;
 					.pharmacy-name {font-weight:$font-weight-medium; display:inline-block; width:100%; margin-bottom:-4px; overflow:hidden; white-space: nowrap; text-overflow:ellipsis;}
-					.pharmacy-filters-wrap {margin-bottom:2px;
-						.pharmacy-filters {color:$color-font-placeholder;}
-					}
+					//.pharmacy-filters-wrap {margin-bottom:2px;
+					//	.pharmacy-filters {color:$color-font-placeholder;}
+					//}
+					.pharmacy-distance {font-weight:$font-weight-medium;}
 					.pharmacy-address-wrap {
 						span {display:block;}
 					}
@@ -506,6 +533,7 @@ $medication-height-collapsed: 78px;
 			}
 			.pharmacy-results-map {margin-bottom:-7px; height:inherit; min-height:inherit; z-index:1;}
 		}
+		.resultsnav {padding:7px 0; font-size:12px; color:$color-font-placeholder;}
 	}
 	
 	/*-- authorize prescriptions --*/
@@ -555,8 +583,11 @@ $medication-height-collapsed: 78px;
 			.fieldcontrols {padding:18px 28px 12px; margin-left:-28px; margin-right:-28px;}
 			.fieldcontrols.first {padding-top:0;}
 			> .section-title {margin-bottom:0; padding-top:16px;}
-			> .flow-section {display:none; border:none; padding:8px 0 0;}
-			> .flow-section.show {display:block;}
+			.flow-section-scroll {overflow-y:scroll; overflow-x:hidden; margin:0 -28px; padding:0 28px;
+				> .flow-section {display:none; border:none; padding:8px 0 0;}
+				> .flow-section.show {display:block;}
+				.active-items-content .flow-section:first-child {padding-top:0;}
+			}
 		}
 		.med-history-item-header {
 			.button-group {margin:0 -10px;
@@ -745,7 +776,7 @@ $medication-height-collapsed: 78px;
 /*-- RESPONSIVE --*/
 @media only screen and (min-width: 1280px) {
 	#editPatient {
-		.modal-dialog {width:1200px;}
+		.modal-dialog {width:1200px; margin-left:-600px;}
 	}
 	.rx-app {
 		.edit-patient-content {

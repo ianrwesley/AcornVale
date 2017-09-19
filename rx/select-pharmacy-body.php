@@ -2,7 +2,7 @@
 $pageTitle = "Prescriptions";
 $subnavTitle = "Select a pharmacy";
 $subnavProgress = 1;
-$primaryButtonLabel = "Save pharmacy…";
+$primaryButtonLabel = "Save pharmacy";
 $confirmInfoTitle = "New Patient";
 ?>
 
@@ -70,8 +70,8 @@ $confirmInfoTitle = "New Patient";
 							</div>
 							<div class="fieldgroup filtergroup">
 								<div class="input-wrapper lg-12">
-									<button type="button" class="button-menu-item button button-inverted">24/7<icon class="icon-checkmark"></icon></button>
-									<button type="button" class="button-menu-item button button-inverted">EPCS<icon class="icon-checkmark"></icon></button>
+									<button type="button" class="button-menu-item button button-inverted" <?php if ($rxFlowProgress == "5"){ echo "autofocus"; } ?>>24/7<icon class="icon-checkmark"></icon></button>
+									<button type="button" class="button-menu-item button button-inverted" <?php if ($rxFlowProgress == "5"){ echo "autofocus"; } ?>>EPCS<icon class="icon-checkmark"></icon></button>
 									<button type="button" class="button-menu-item button button-inverted">Specialty<icon class="icon-checkmark"></icon></button>
 									<button type="button" class="button-menu-item button button-inverted">Long-term care<icon class="icon-checkmark"></icon></button>
 									
@@ -100,7 +100,6 @@ $confirmInfoTitle = "New Patient";
 								</div-->
 								<div class="error-msg-wrapper lg-12">
 									<div class="button-group">
-										<button type="button" class="button-menu-item button button-inverted">N/A<icon class="icon-checkmark"></icon></button>
 										<button type="button" class="button-menu-item button button-inverted">Retail<icon class="icon-checkmark"></icon></button>
 										<button type="button" class="button-menu-item button button-inverted" <?php if ($rxFlowProgress == "5"){ echo "autofocus"; } ?>>Mail order<icon class="icon-checkmark"></icon></button>
 									</div>
@@ -192,7 +191,7 @@ $confirmInfoTitle = "New Patient";
 												<span class="pharmacy-fax">(727) 733-3177</span>
 											</div>
 										</li>'; } else { 
-										echo '<div class="no-results-wrap"><p class="no-results">Search results display here</p></div>'; }
+										echo '<div class="no-results-wrap"><p class="no-results">No pharmacies found.</p></div>'; }
 										?>
 									</ul>
 								</div>
@@ -202,10 +201,17 @@ $confirmInfoTitle = "New Patient";
 									</div>
 								</div-->
 							</div>
-						</div>	
+						</div>
+						<nav class="resultsnav clearfix">
+							<div class="pagination pull-right">
+								<div class="pagination-button-wrap">
+									<span>Showing <b><?php if ($rxFlowProgress == "5"){ echo "24"; } else { echo "0"; } ?></b> results</span>
+								</div>
+							</div>
+						</nav>	
 					</div>
 					<script type="text/javascript">
 						$(window).on('resize',function() {
-							$('.pharmacy-results-wrap').css("height", $(window).height() - 496);
+							$('.pharmacy-results-wrap').css("height", $(window).height() - 528);
 						}).trigger('resize');
 					</script>

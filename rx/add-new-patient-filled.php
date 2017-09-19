@@ -18,10 +18,10 @@
 									<?php include "rx-sn-flogress.php"; ?>
 								</div>
 								<div class="column lg-4">
-									<div class="select-pharmacy-control">
+									<!--div class="select-pharmacy-control">
 										<p class="control-header"><icon class="icon-pharmacy pharmacy-label"></icon>No pharmacy selected.</p>
 										<a class="" href="select-pharmacy.php">Find a pharmacy…</a>
-									</div>
+									</div-->&nbsp;
 								</div>
 								<div class="column lg-3">
 									<div class="button-group flow-controls pull-right">

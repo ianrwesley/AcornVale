@@ -188,7 +188,7 @@ $(document).ready(function () {
 	$('.edit-med-history-toggle').on('click',function(){
 		var sectionTarget = $(this).attr('data-target');
 		$(this).closest('.btn-group').children('.btn').removeClass('focus');
-		$(this).closest('.patient-medical-history').children('.flow-section').removeClass('show');
+		$(this).closest('.patient-medical-history').children('.flow-section-scroll').children('.flow-section').removeClass('show');
 		$(this).closest('.patient-medical-history').find(sectionTarget).addClass('show');
 	});
 	

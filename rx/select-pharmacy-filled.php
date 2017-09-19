@@ -32,7 +32,7 @@
 								</div>
 								<div class="column lg-4">
 									<div class="select-pharmacy-control">
-										<p class="control-header"><b><icon class="icon-pharmacy pharmacy-label"></icon><?php echo "$selectedPharmacyName"; ?></b> <a class="inline-edit-link" href="select-pharmacy-filled.php<?php if ($existingPatient !== null) { echo "?existing=$existingPatient"; } ?>">Edit</a></p>
+										<p class="control-header"><b><icon class="icon-pharmacy pharmacy-label"></icon><a class="pharmacy-name-restrict"><?php echo "$selectedPharmacyName"; ?></a></b> <a class="inline-edit-link" href="select-pharmacy-filled.php<?php if ($existingPatient !== null) { echo "?existing=$existingPatient"; } ?>">Change</a></p>
 										<span class="pharmacy-street"><?php echo "$selectedPharmacyStreet"; ?></span><br>
 										<span class="pharmacy-location"><?php echo "$selectedPharmacyLocation"; ?></span>
 									</div>

@@ -997,6 +997,9 @@ button a {
 .button-flat.primary-action {
   background: #00D6BA; }
 
+.button-flat.primary-action.disabled {
+  background: #9C96B1; }
+
 .button-flat.primary-action.caution, .button-flat.primary-action.warning {
   background: #FF0058; }
 

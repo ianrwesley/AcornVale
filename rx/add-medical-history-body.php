@@ -2,7 +2,7 @@
 $pageTitle = "Prescriptions";
 $subnavTitle = "Add new patient";
 $subnavProgress = 0;
-$primaryButtonLabel = "Write prescriptions…";
+$primaryButtonLabel = "Write prescriptions";
 $confirmInfoTitle = "New Patient";
 ?>
 

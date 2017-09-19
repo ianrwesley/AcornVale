@@ -13,13 +13,20 @@
 				</button>
 			</div>
 		</div>
-	<div class="flow-section allergies-section show" id="edit-section-allergies">
-		<?php include "edit-allergies-content.php"; ?>
-	</div>
-	<div class="flow-section homemeds-section" id="edit-section-homemeds">
-		<?php include "edit-homemeds-content.php"; ?>
-	</div>
-	<div class="flow-section diagnoses-section" id="edit-section-diagnoses">
-		<?php include "edit-diagnoses-content.php"; ?>
+	<div class="flow-section-scroll">
+		<div class="flow-section allergies-section show" id="edit-section-allergies">
+			<?php include "edit-allergies-content.php"; ?>
+		</div>
+		<div class="flow-section homemeds-section" id="edit-section-homemeds">
+			<?php include "edit-homemeds-content.php"; ?>
+		</div>
+		<div class="flow-section diagnoses-section" id="edit-section-diagnoses">
+			<?php include "edit-diagnoses-content.php"; ?>
+		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(window).on('resize',function() {
+		$('.flow-section-scroll').css("height", $(window).height() - 256);
+	}).trigger('resize');
+</script>
