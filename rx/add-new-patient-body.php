@@ -2,7 +2,7 @@
 $pageTitle = "Prescriptions";
 $subnavTitle = "Add new patient";
 $subnavProgress = 0;
-$primaryButtonLabel = "Add medical history";
+$primaryButtonLabel = "Next";
 $confirmInfoTitle = "Patient Details";
 ?>
 

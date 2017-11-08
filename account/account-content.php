@@ -1,6 +1,6 @@
 <div class="container main-wrapper">
 	<account>
-		<section id="profile" class="flow-section">
+		<section id="account" class="flow-section">
 			<div class="profile-wrapper">
 				<div class="row">
 					<div class="column lg-3 md-12">

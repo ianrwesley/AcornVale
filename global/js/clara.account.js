@@ -114,6 +114,15 @@ $(document).ready(function () {
     	$(this).closest(".editable").removeClass("edit-mode");
   	});
 	
+	$(".medication-edit-btn").on("click",function(){
+		$(".medication").removeClass("expanded").addClass("collapsed");
+		$(this).closest(".medication-item-wrap").find(".medication").removeClass("collapsed").addClass("in").addClass("expanded");
+	});
+
+	$(".medication-save-btn").on("click",function(){
+		$(".medication").removeClass("expanded").addClass("collapsed");
+	});
+	
 	var ids = $('.flow-section').map(function(index) {
 		// this callback function will be called once for each matching element
 		return this.id;

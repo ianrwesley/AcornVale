@@ -1,23 +1,23 @@
 <!-- Modal Sign Prescriptions -->
-<div class="modal fade cl-auth-overlay-popup" id="cl-auth-sign-prescriptions" tabindex="-1" role="dialog" aria-labelledby="2FA Flow">
-	<div class="modal-dialog two-factor" role="document">
-		<div class="modal-content">
+<div class="modal fade cl-auth-overlay-popup" id="cl-auth-sign-prescriptions-service-down" tabindex="-1" role="dialog" aria-labelledby="2FA Down">
+	<div class="modal-dialog two-factor service-down" role="document">
+		<div class="modal-content text-centered">
 			<div class="modal-body">
 				<div class="title-wrap clearfix">
-					<div class="pull-left two-factor-intro">
-						<h1 class="title">2-Factor Authentication</h1>
-						<a class="description"><button type="button" tabindex="-1" class="button button-link button-compact field-info claraid-field-info" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="The DEA requires two-factor authentication when prescribing Schedule II-V controlled substances.">Why is this step required? <icon class="icon icon-help"></icon></button></a>
+					<div class="two-factor-intro">
+						<h1 class="title">2FA Service Down</h1>
+						<p class="description">Clara's two-factor authorization service is currently unavailable.</p>
+						<p class="instruction">Add these prescriptions to the print queue below.</p>
 					</div>
-					<div class="pull-left print-intro">
-						<p class="description warning">Are you sure you want to print these controlled substances prescriptions? <span>They will not be sent electronically.</span></p>
-					</div>
-					<div class="pull-right">
-						<button type="button" role="link" class="button button-flat print-button" id="2FA-print-button">Print</button>
-						<button type="button" role="link" class="button button-link secondary-action" id="2FA-print-cancel">Cancel</button>
+					<div class="controls-footer clearfix">
+						<div class="button-group flow-controls">
+							<button type="button" role="link" class="button button-link secondary-action" data-dismiss="modal">Cancel</button>
+							<button type="button" role="link" class="button button-flat print-button" data-dismiss="modal">Print Prescriptions</button>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="modal-body step-one focus">
+			<!--div class="modal-body step-one focus">
 				<h2 class="header">1. Enter your password</h1>
 				<input type="password" autocomplete="off" class="form-text form-pwd" placeholder="password" name="pwd" id="pwd">
 				<div class="controls-footer clearfix">
@@ -43,10 +43,10 @@
 						<input type="text" autocomplete="off" class="form-text form-pwd" placeholder="passcode" name="pcode" id="pcode">
 					</div>
 					<div class="button-group flow-controls pull-right">
-						<a href="../home/result-view.php?sendresult=Success"><button type="button" role="link" class="button button-flat primary-action">Submit</button></a>
+						<button type="button" role="link" class="button button-flat primary-action" data-dismiss="modal">Submit</button>
 					</div>
 				</div>
-			</div>
+			</div-->
 		<!--button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button-->
 		</div>
 	</div>

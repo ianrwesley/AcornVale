@@ -46,6 +46,7 @@ $color-border-darker: #9C9B9F;
 $color-border-lighter: #EBEAEF;
 
 $color-button-primary: #00D6BA;
+$color-button-secondary: #D2D2D2;
 $color-focus: #AE00D8;
 $color-error: #FF0058;
 $color-error-highlight: #FFFCDC;
@@ -66,7 +67,6 @@ $border-primary: 1px solid #D0CFD4;
 $border-darker: 1px solid #9C9B9F;
 $border-lighter: 1px solid #EBEAEF;
 
-//$medication-height-expanded: 322px;
 $medication-height-expanded: 242px;
 $medication-height-collapsed: 78px;
 
@@ -142,6 +142,83 @@ $medication-height-collapsed: 78px;
 			.controls-footer.fixed {position:fixed; width:100%; border-top: 1px solid #D0CFD4; padding: 16px 18px; margin:0; background:#fff; z-index:99;}
 			.controls-footer.bottom {bottom:0;}
 		}
+	}
+	
+	.modal-dialog.two-factor { width:400px; margin-top:60px;
+		.modal-content {padding:0;}
+		.modal-body {padding:28px;
+			.title-wrap {position:relative;
+				.pull-left {position:relative; left:0;}
+				.pull-right {position:relative; right:0; padding-left:24px; border-left:$border-primary; background:white;}
+				.secondary-action {display:none; padding-top:10px; margin:0 auto;}
+				.print-intro {display:none; opacity:0; max-width:230px; font-size:14px; line-height:1.4;
+					.warning {color:$color-error; font-weight:$font-weight-medium;
+						span {color:$color-font-primary; font-weight:$font-weight-book;}
+					}
+				}
+			}
+			.title {margin-bottom:2px; font-size:21px;}
+			.header {margin-bottom:6px; font-size:28px; font-weight:$font-weight-medium;}
+			a.description {
+				icon {padding-left:4px;}
+				.popover {color:$color-font-primary; background:$color-panel-darker; max-width:250px; border:none;}
+				.popover.bottom>.arrow {border-bottom-color:transparent;}
+				.popover>.arrow:after {border-bottom-color:$color-panel-darker;}
+				.popover-content {padding:18px 20px;}
+			}
+			a.description:hover {text-decoration:none; cursor:pointer;}
+			
+			.print-button {background:$color-button-secondary;}
+			
+			.title-wrap * {transition:all 0.333s ease;}
+			.title-wrap.print-mode {overflow:hidden;
+				.two-factor-intro {left:-100%;}
+				.pull-right {position:absolute; top:0;}
+				.print-button {background-color: #007FFF; background: linear-gradient(#007FFF, #1856E0); border: 1px solid #1856E0;}
+				.secondary-action {display:block;}
+				.print-intro {display:block; opacity:1; position:relative; top:-50px; margin-bottom:-36px;}
+			}
+		}
+		.modal-body.inactive {background-color:$color-panel;
+			* {opacity:0.4;}
+		}
+		.step-one {border-top:$border-lighter;
+			.form-text {margin-top:8px;}
+		}
+		.step-one.inactive {/*@include border-radius($border-radius $border-radius 0 0);*/
+			.form-text, .controls-footer {display:none;}
+		}
+		.step-two {border-top:$border-lighter; /*margin-top:28px;*/ @include border-radius(0 0 $border-radius $border-radius);
+			.description-inactive {display:none;}
+			.description-focus {display:block;}
+			.passcode-wrap {width:70%;}
+			.call-or-text {margin:12px 0 20px; width:100%;
+				.button {width:calc((100% * 0.33333) - (6px * (1 - 0.33333))); @include box-sizing(border-box); float:left; margin-right:6px; padding:16px 4px 10px; background:none; border-color:$color-link-primary; color:$color-link-primary; transition:all 0.25s ease; min-height:84px;
+					icon {display:block; font-size:28px; padding-right:0; padding-bottom:4px;}
+				}
+				.button:last-of-type {margin-right:0;}
+				.button:hover {text-decoration:none; background-color:$color-link-primary; color:white;}
+				.button:focus {background-color:$color-panel-darker; border-color:$color-panel-darker; color:#686868; cursor:not-allowed;}
+			}
+		}
+		.step-two.inactive {
+			.description-inactive {display:block;}
+			.description-focus, .controls-footer, .call-or-text {display:none;}
+		}
+		.controls-footer {width: 100%; margin: 0;
+			.pull-left .link-tiny {float:left;}
+		}
+	}
+	
+	.modal-dialog.two-factor.service-down {
+		.modal-body {
+			.title {font-size: 28px; display: inline-block; padding-left: 50px; background: url(../images/caution.png) no-repeat left; background-size: contain; margin-bottom:24px;}
+			p {margin-bottom:18px;}
+			.description {font-size:$base-font-size; line-height:1.4;}
+			.instruction {font-size:$sm-font-size; font-weight: $font-weight-medium;}
+			.print-button {background-color: #007FFF; background: linear-gradient(#007FFF, #1856E0); border: 1px solid #1856E0;}
+			.secondary-action {display:inline-block;}
+		}    
 	}
 	
 	/*-- form controls --*/
@@ -556,8 +633,9 @@ $medication-height-collapsed: 78px;
 				.sub-detail {display:block; font-size:16px; line-height:1.35;}
 			}
 			.rx-drug-name {font-size:21px;}
-			.confirm-auth-ready {text-align: center; font-size:64px; color:white; line-height:normal; background-color:$color-border-lighter; padding:8px 0;
-				icon {vertical-align:middle; padding-bottom:0.125em;}
+			.confirm-auth-ready {text-align: center; color:white; line-height:normal; background-color:#DBDBDD; padding:8px 0;
+				icon {font-size:58px; vertical-align:middle; padding-bottom:0.125em;}
+				span {font-weight:$font-weight-bold; display:block;}
 			}
 			.confirm-auth-ready.marked {background-color:$color-success;}
 		}
@@ -565,6 +643,7 @@ $medication-height-collapsed: 78px;
 		.cl-authtray {background:$color-panel; font-size:13px; line-height:1.42; width:100%; position:fixed; left:0; right:0; z-index:999; @include box-sizing(border-box); padding-top:22px;
 			.auth-button-wrap {text-align:right;}
 			.auth-button-lg {font-size:$sm-header-font-size;}
+			.legal-statement {max-width:690px;}
 		}
 		
 		.sticky-authtray {min-height:$stickyauthtray-height; bottom:$globalfooter-height; top:auto; border-top:$border-primary; border-bottom:0;}
@@ -716,6 +795,31 @@ $medication-height-collapsed: 78px;
 	}
 }
 
+.results-body {
+	.page-content {text-align:center;
+		.content-main {display:inline-block; position: relative; padding-bottom:26px; margin:0 auto;}
+		.content-heading {margin-top:36px;
+			.subtitle {margin-bottom:8px; font-size:$md-header-font-size; font-weight:$font-weight-medium; line-height:1.25;}
+			.description {margin-top:16px; font-size:$sm-header-font-size; font-weight:$font-weight-book;}
+			.description.callout {font-size:$sm-font-size;
+				.caution.mini {width:28px; padding-bottom:2px; padding-right:8px;}
+			}
+		}
+		.controls-footer {margin:auto;
+			.flow-controls {padding-bottom:50px;
+				.button-link {font-size:21px; font-weight:$font-weight-book;}
+				.button-link:focus, .button-link:active {outline:none;}
+			}
+			.print-rx-button-group {display:block; width:100%;
+				.button-link {font-weight:$font-weight-medium;}
+				.button-link:hover {text-decoration:none;}
+			}
+		}
+		icon.success {color:$color-success;}
+		icon.error {color:$color-error;}
+	}
+}
+
 /*-- HOME - PATIENT SEARCH --*/
 #patient-search {
 	.page-content {padding-top:$globalnav-height;}
@@ -847,5 +951,11 @@ $medication-height-collapsed: 78px;
 		.patient-medical-history {
 			.fieldcontrols {margin-left:-$md-app-inner-padding; margin-right:-$md-app-inner-padding; padding-left:$md-app-inner-padding; padding-right:$md-app-inner-padding;}
 		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.results-body {min-height:600px;
+		.content-main {width:484px;}
 	}
 }

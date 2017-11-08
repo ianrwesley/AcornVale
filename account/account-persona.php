@@ -6,7 +6,7 @@
 				<div class="flex-container">
 					<h1 class="clara-user">
 						<?php
-							if($pageTitle == "Account") {
+							if($pageTitle == "Account" || $pageTitle == "Preferences") {
 								echo "<span class='first_name'>$userFirstName</span> <span class='last_name'>$userLastName</span>, <span class='designation_title'>$designation</span>";
 							} else {
 								echo "<span class'facility_name'>$facilityName</span>";

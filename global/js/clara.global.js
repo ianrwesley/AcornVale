@@ -72,4 +72,11 @@ $(document).ready(function () {
 	$(".select-all-checkbox").click(function() {
 		$("input[type='checkbox']").prop('checked', this.checked);
 	});
+	
+	$(".supervisor-select-btn").click(function() {
+		var supName = $(this).find(".supervisor-name").text();
+		$(this).closest(".supervisor-list").find(".status").removeClass("selected");
+		$(this).find(".status").addClass("selected");
+		$("#selected-supervisor-name").text(supName);
+	});
 });

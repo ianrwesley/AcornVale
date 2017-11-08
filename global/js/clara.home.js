@@ -200,6 +200,19 @@ $(document).ready(function () {
 		$(this).closest('.modal-body').find(contentTarget).addClass('show');
 	});
 	
+	$('#two-factor-next-step-1').on('click',function(){
+		$(this).closest('.modal-content').find('.step-one').removeClass('focus').addClass('inactive');
+		$(this).closest('.modal-content').find('.step-two').removeClass('inactive').addClass('focus');
+	});
+	
+	$('#2FA-print-button').on('click',function(){
+		$(this).closest('.title-wrap').addClass('print-mode');
+	});
+	
+	$('#2FA-print-cancel').on('click',function(){
+		$(this).closest('.title-wrap').removeClass('print-mode');
+	});
+	
 	$('.peds-update-weight').on('click',function(){
 		$(this).closest('.inapp-notification-container').find('.notification-msg').html('<div class="row"><div class="column lg-8">What does <span class="strong">William Hamish Wallace</span> weigh?</div><div class="fieldgroup column lg-4"><div class="input-wrapper has-controls weight lg-12"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="254" class="form-text no-margin" placeholder="weight" name="weight" value=""><div class="control"><span>lbs</span></div></div></div></div>');
 		$(this).closest('.button-group').html('<button class="button button-link button-compact secondary-action">Go back</button><button class="button button-link button-compact">Save weight</button>');

@@ -1,6 +1,7 @@
 <?php
 	$rxFlowProgress = 8;
 	$existingPatient = $_GET[ "existing" ];
+	$twoFactorStatus = $_GET[ "2FA" ];
 	include "../variables/patient-variables/variable-empty.php";
 
 	if ($existingPatient !== null) {
@@ -48,7 +49,7 @@
 									<div class="row">
 										<div class="column lg-8 auth-break-wrap">
 											<span class="patient-name"><?php echo "$fullName"; ?></span>
-											<label>Date:&nbsp;</label><span class="date-issued"></span>
+											<div class="date-issued-wrap"><label>Date:&nbsp;</label><span class="date-issued"></span></div>
 										</div>
 										<div class="column lg-4 auth-break-wrap text-right">
 											<span class="prescriber-name"><?php echo "$userNameDesignation"; ?></span>
@@ -84,6 +85,7 @@
 													<div class='column lg-2'>
 														<div class='confirm-auth-ready'>
 															<icon class='icon-circle'></icon>
+															<span>Authorize</span>
 														</div>
 													</div>
 												</div>
@@ -95,12 +97,13 @@
 							<div class="cl-authtray sticky-authtray">
 								<div class="container">
 									<div class="row">
-										<div class="column lg-9">
+										<div class="column legal-statement pull-left">
 										By completing the two-factor authentication protocol at this time, you are legally signing the prescription(s) and authorizing the transmission of the above information to the pharmacy for dispensing. The two-factor authentication protocol may only be completed by the practitioner whose name and DEA registration number appear above.
 										</div>
-										<div class="column lg-3 auth-button-wrap">
+										<div class="column auth-button-wrap button-group pull-right">
+											<button type="button" role="link" class="button button-link secondary-action">Cancel</button>
 											<button type="submit" class="button button-flat primary-action auth-button-lg" name="sign-prescriptions">
-												<a data-toggle="modal" data-target="#cl-auth-sign-prescriptions"><?php echo $primaryButtonLabel; ?></a>
+												<a data-toggle="modal" data-target="#cl-auth-sign-prescriptions<?php if ($twoFactorStatus == "down") echo "-service-down"; ?>"><?php echo $primaryButtonLabel; ?></a>
 											</button>
 										</div>
 									</div>
@@ -116,6 +119,7 @@
 	<?php include "modal-cancel-writing-prescriptions.php"; ?>
 	<?php include "modal-edit-patient.php"; ?>
 	<?php include "modal-sign-prescriptions.php"; ?>
+	<?php include "modal-sign-prescriptions-service-down.php"; ?>
 	<script type="text/javascript">		
 		var d = new Date();
 
@@ -128,6 +132,9 @@
 		$('.rx-auth-ready').on('click',function(){
 			$(this).find('.confirm-auth-ready').toggleClass('marked');
 			$(this).find('icon').toggleClass('icon-circle').toggleClass('icon-checkmark');
+			$(this).find('.confirm-auth-ready').find('span').text(function(i, text){
+				return text === "Authorize" ? "Ready" : "Authorize";
+      		});
 		});
 	</script>
 </body>

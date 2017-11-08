@@ -5,6 +5,8 @@
   /*-- TYPOGRAPHY --*/
   /*-- PERSONA --*/
   /*-- ACCOUNT SUBNAV --*/
+  /*-- write prescriptions --*/
+  /*-- MODALS --*/
   /*-- POPOVERS --*/
   /*-- POPOVER ERRORS --*/
   /*-- ACCORDIAN --*/
@@ -195,6 +197,12 @@
   .account-body .description {
     font-size: 13.5px;
     color: #817A92; }
+  .account-body .no-results {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 21px;
+    opacity: 0.2; }
   .account-body .persona-splash {
     width: 100%;
     height: 230px;
@@ -335,6 +343,277 @@
         .account-body #account-subnav .menu-wrapper.pull-right .button-flat icon {
           padding-left: 6px;
           padding-top: 2px; }
+      .account-body #account-subnav .menu-wrapper.pull-right .input-wrapper {
+        display: inline-block;
+        float: none;
+        margin-left: 12px; }
+        .account-body #account-subnav .menu-wrapper.pull-right .input-wrapper .form-text {
+          margin: 0;
+          height: 28px; }
+        .account-body #account-subnav .menu-wrapper.pull-right .input-wrapper .field-icon ~ icon {
+          top: 9px; }
+        .account-body #account-subnav .menu-wrapper.pull-right .input-wrapper .search-field {
+          width: 250px;
+          padding-left: 12px;
+          padding-right: 36px; }
+        .account-body #account-subnav .menu-wrapper.pull-right .input-wrapper .search-field:focus {
+          padding-left: 36px;
+          padding-right: 12px; }
+  .account-body .medications-wrapper {
+    /*.medication:first-child {height:$medication-height-expanded;}*/ }
+    .account-body .medications-wrapper .has-controls.dosage .form-text {
+      padding-right: calc(60% + 12px);
+      text-align: right;
+      border-right: 1px solid transparent; }
+    .account-body .medications-wrapper .control.dosage-unit {
+      width: 60%;
+      text-align: left;
+      padding: 0; }
+    .account-body .medications-wrapper .dispense-amount {
+      color: #9C96B1; }
+    .account-body .medications-wrapper .dosage-unit-select {
+      border: none;
+      outline: none;
+      padding: 8px 12px 6px; }
+    .account-body .medications-wrapper .flow-section {
+      box-sizing: content-box; }
+    .account-body .medications-wrapper .flow-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px 0 30px;
+      border-bottom: 1px solid #D0CFD4; }
+      .account-body .medications-wrapper .flow-section > .fieldgroup:last-child .form-text {
+        margin-bottom: 0; }
+    .account-body .medications-wrapper .flow-section:last-child {
+      border-bottom: none; }
+    .account-body .medications-wrapper .flow-section.medication:last-child {
+      border-bottom: 1px solid #D0CFD4; }
+    .account-body .medications-wrapper .medication-item-wrap {
+      position: relative; }
+      .account-body .medications-wrapper .medication-item-wrap .medication {
+        padding-top: 16px; }
+        .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap {
+          opacity: 0.5; }
+      .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap {
+        display: inline-flex;
+        float: left;
+        position: absolute;
+        width: 24px;
+        height: 62px;
+        left: -36px;
+        top: 0; }
+        .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap .expand-medication-button, .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap .collapse-medication-button {
+          margin: auto;
+          font-family: "clara-icons";
+          background: none;
+          outline: none;
+          border: none;
+          font-size: 24px; }
+        .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap .expand-medication-button:before {
+          content: "\65"; }
+        .account-body .medications-wrapper .medication-item-wrap .medication + .expand-button-wrap .collapse-medication-button:before {
+          content: "\68"; }
+      .account-body .medications-wrapper .medication-item-wrap .medication.collapsed + .expand-button-wrap .collapse-medication-button {
+        display: none; }
+      .account-body .medications-wrapper .medication-item-wrap .medication.expanded + .expand-button-wrap .expand-medication-button {
+        display: none; }
+    .account-body .medications-wrapper .medication-item-wrap:first-child .medication {
+      padding-top: 0; }
+    .account-body .medications-wrapper .medication-item-wrap:first-child .medication.expanded .table-view-controls {
+      margin-top: -10px; }
+    .account-body .medications-wrapper .medication-item-wrap:first-child .expand-button-wrap {
+      height: 52px; }
+    .account-body .medications-wrapper .medication {
+      height: 208px;
+      transition: height .35s ease;
+      position: relative; }
+      .account-body .medications-wrapper .medication .fieldgroup-constrain-width {
+        width: calc(100% - 60px);
+        padding-right: 30px;
+        float: left; }
+      .account-body .medications-wrapper .medication .fieldgroup {
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s ease .4s; }
+      .account-body .medications-wrapper .medication .drug-name .form-text {
+        transition: all .2s ease; }
+      .account-body .medications-wrapper .medication .medication-save-changes-btn {
+        display: none; }
+      .account-body .medications-wrapper .medication .medication-favorite-btn .icon-favorite {
+        color: #9C96B1; }
+      .account-body .medications-wrapper .medication .medication-favorite-btn .icon-favorite-selected {
+        color: #FFB806; }
+      .account-body .medications-wrapper .medication .field-info + .popover {
+        background-color: #FAEEB6;
+        border-color: rgba(183, 148, 0, 0.55); }
+      .account-body .medications-wrapper .medication .field-info + .popover.bottom > .arrow {
+        border-bottom-color: rgba(183, 148, 0, 0.55); }
+      .account-body .medications-wrapper .medication .field-info + .popover.bottom > .arrow:after {
+        border-bottom-color: #FAEEB6; }
+      .account-body .medications-wrapper .medication .table-view-controls {
+        float: left;
+        margin-top: -10px; }
+        .account-body .medications-wrapper .medication .table-view-controls .table-view-control {
+          width: 60px;
+          height: 75px;
+          display: block;
+          background: #9C96B1;
+          border: none;
+          outline: none;
+          color: white;
+          font-size: 30px;
+          padding: 6px 0 10px;
+          opacity: 1;
+          transition: all .25s ease .3s; }
+          .account-body .medications-wrapper .medication .table-view-controls .table-view-control icon {
+            vertical-align: middle;
+            padding-bottom: 0.25em; }
+        .account-body .medications-wrapper .medication .table-view-controls .table-view-control.favorite {
+          background-color: transparent;
+          color: #FFB806;
+          height: 60px;
+          font-size: 24px; }
+        .account-body .medications-wrapper .medication .table-view-controls .table-view-control.save {
+          background-color: #007FFF;
+          opacity: 1; }
+        .account-body .medications-wrapper .medication .table-view-controls .table-view-control.delete {
+          background-color: #FF0058;
+          opacity: 1; }
+        .account-body .medications-wrapper .medication .table-view-controls .control-label {
+          font-size: 12px;
+          line-height: 1;
+          display: block;
+          font-weight: 500; }
+    .account-body .medications-wrapper .medication:only-child .medication-edit-btn, .account-body .medications-wrapper .medication .medication-edit-btn {
+      display: none; }
+    .account-body .medications-wrapper .medication:only-child .medication-delete-btn {
+      display: none; }
+    .account-body .medications-wrapper .medication.has-note {
+      height: 286px; }
+      .account-body .medications-wrapper .medication.has-note .medication-pharmacynote-btn {
+        color: #FF066C !important; }
+    .account-body .medications-wrapper .medication.collapsed {
+      height: 40px !important;
+      display: block;
+      overflow: hidden;
+      /*background:$color-panel; margin-left:-20px; margin-right:-20px; padding:16px 20px 18px;*/
+      padding-top: 10px;
+      padding-bottom: 10px;
+      animation: collapse-medication-slide 450ms both;
+      opacity: 1; }
+      .account-body .medications-wrapper .medication.collapsed .medication-edit-btn {
+        display: inline-block; }
+      .account-body .medications-wrapper .medication.collapsed .fieldgroup {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .2s ease .1s; }
+      .account-body .medications-wrapper .medication.collapsed .drug-name {
+        display: block;
+        visibility: visible; }
+        .account-body .medications-wrapper .medication.collapsed .drug-name .form-text {
+          background: none;
+          border: none;
+          pointer-events: none;
+          /*font-size:21px;*/ }
+      .account-body .medications-wrapper .medication.collapsed .section-title, .account-body .medications-wrapper .medication.collapsed .drug-name {
+        opacity: 0.4; }
+      .account-body .medications-wrapper .medication.collapsed .table-view-control.save, .account-body .medications-wrapper .medication.collapsed .table-view-control.delete {
+        opacity: 0;
+        transition: all .2s ease; }
+    .account-body .medications-wrapper .medication.expanded {
+      animation: expand-medication-slide 450ms both;
+      opacity: 1; }
+      .account-body .medications-wrapper .medication.expanded .medication-edit-btn {
+        display: none; }
+      .account-body .medications-wrapper .medication.expanded .medication-save-changes-btn {
+        display: inline-block; }
+      .account-body .medications-wrapper .medication.expanded .table-view-controls {
+        margin-top: -16px; }
+        .account-body .medications-wrapper .medication.expanded .table-view-controls .table-view-control.favorite {
+          background-color: #FFB806;
+          color: white; }
+    .account-body .medications-wrapper .medication.has-note.expanded {
+      animation: expand-medication-note-slide 450ms both; }
+    .account-body .medications-wrapper .refill-quantity, .account-body .medications-wrapper .substitutes {
+      display: flex;
+      align-content: center; }
+      .account-body .medications-wrapper .refill-quantity .refills, .account-body .medications-wrapper .substitutes .refills {
+        /*width:48px;*/
+        width: 75%;
+        border: 1px solid #D0CFD4;
+        border-radius: 0px 4px 4px 0px; }
+      .account-body .medications-wrapper .refill-quantity label, .account-body .medications-wrapper .substitutes label {
+        padding-left: 10px;
+        margin: auto 0;
+        font-weight: 400;
+        color: #9C96B1;
+        cursor: pointer; }
+    .account-body .medications-wrapper .label-vertical-center {
+      display: flex;
+      align-content: center;
+      height: 40px; }
+@keyframes collapse-medication-slide {
+  0% {
+    height: 208px;
+    /*background:white;*/ }
+  100% {
+    height: 40px;
+    /*background:$color-panel;*/ } }
+@keyframes expand-medication-slide {
+  0% {
+    height: 40px;
+    /*background:$color-panel;*/ }
+  100% {
+    height: 208px;
+    /*background:white;*/ } }
+@keyframes expand-medication-note-slide {
+  0% {
+    height: 40px;
+    /*background:$color-panel;*/ }
+  100% {
+    height: 286px;
+    /*background:white;*/ } }
+  .account-body #profile .column.gutter-right {
+    padding-right: 34px; }
+  .account-body #profile .search-field:focus {
+    padding-left: 36px;
+    padding-right: 6px; }
+  .account-body #profile .vertical-menu-options {
+    padding-right: 30px; }
+    .account-body #profile .vertical-menu-options .button-link {
+      border-bottom: 1px solid #D0CFD4;
+      -webkit-border-radius: 0;
+      /* Safari and Chrome */
+      -moz-border-radius: 0;
+      /* Firefox */
+      -ms-border-radius: 0;
+      /* Internet Explorer */
+      border-radius: 0;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 14px;
+      color: #140A29; }
+      .account-body #profile .vertical-menu-options .button-link icon {
+        margin-right: 6px; }
+    .account-body #profile .vertical-menu-options .button-link:first-child {
+      padding-top: 0; }
+    .account-body #profile .vertical-menu-options .button-link:hover {
+      text-decoration: none;
+      color: #007FFF; }
+  .account-body .modal .controls-footer {
+    margin-top: 20px;
+    text-align: center; }
+    .account-body .modal .controls-footer .button-group {
+      display: block;
+      margin: auto; }
+      .account-body .modal .controls-footer .button-group .secondary-action {
+        border: none; }
+      .account-body .modal .controls-footer .button-group .checkbox-left {
+        padding-left: 5px; }
+  .account-body #ca-create-med-favorite .section-header, .account-body #ca-create-med-favorite .expand-button-wrap, .account-body #ca-create-med-favorite .medication .pharmacy-note, .account-body #ca-create-med-favorite .medication .remove-note {
+    display: none; }
+  .account-body #ca-create-med-favorite .medication {
+    border: none; }
   .account-body .popover {
     width: auto;
     max-width: 360px; }
@@ -372,43 +651,6 @@
     border-top-color: rgba(183, 148, 0, 0.8); }
   .account-body .error-msg-wrapper .popover.top > .arrow:after {
     border-top-color: #FAEEB6; }
-  .account-body .collapsed .row.header-row {
-    margin-bottom: 6px;
-    cursor: pointer; }
-  .account-body .collapsed:before {
-    font-family: "clara-icons";
-    content: "\64";
-    display: block;
-    position: absolute;
-    top: 16px;
-    right: 26px;
-    font-size: 28px;
-    color: #817A92;
-    cursor: pointer;
-    opacity: 1;
-    transition: all 0.2 ease-in-out; }
-  .account-body .collapsed.expanded:before {
-    content: "\6a"; }
-  .account-body .collapsed .row.header-row .description {
-    opacity: 0;
-    transition: all 0.15s linear; }
-  .account-body .expanded .row.header-row .description {
-    opacity: 1; }
-  .account-body .row.header-row .description.hide {
-    width: 0px;
-    visibility: hidden;
-    margin-left: 0;
-    transition-delay: 0s; }
-  .account-body .row.header-row .table-tools.show {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0.1s; }
-  .account-body accordian.short {
-    transition: 0.3s ease-out; }
-  .account-body #admin-pending-users accordian.closed {
-    height: 0px; }
-  .account-body #admin-pending-users accordian.open {
-    height: 190px; }
   .account-body .button-group {
     display: flex;
     align-items: center; }
@@ -445,7 +687,7 @@
     .account-body #user-mgmt .mg-team-table th {
       padding: 8px 12px;
       border-right: 1px solid #D0CFD4;
-      background-color: #F8F8F8; }
+      background-color: #FCFCFC; }
     .account-body #user-mgmt .mg-team-table th:last-child, .account-body #user-mgmt .mg-team-table td:last-child {
       border-right: none; }
     .account-body #user-mgmt .mg-team-table th:first-child {
@@ -543,7 +785,7 @@
     .account-body .new-price-wrap .new-total {
       font-weight: 500; }
   .account-body .assign-license-type-wrap {
-    background-color: #F8F8F8;
+    background-color: #FCFCFC;
     padding: 12px 20px;
     margin-bottom: 24px;
     border: 1px solid #D0CFD4;

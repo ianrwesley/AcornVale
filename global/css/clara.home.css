@@ -140,6 +140,180 @@
         z-index: 99; }
       .rx-app .modal-dialog.full-height .modal-content .controls-footer.bottom {
         bottom: 0; }
+  .rx-app .modal-dialog.two-factor {
+    width: 400px;
+    margin-top: 60px; }
+    .rx-app .modal-dialog.two-factor .modal-content {
+      padding: 0; }
+    .rx-app .modal-dialog.two-factor .modal-body {
+      padding: 28px; }
+      .rx-app .modal-dialog.two-factor .modal-body .title-wrap {
+        position: relative; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap .pull-left {
+          position: relative;
+          left: 0; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap .pull-right {
+          position: relative;
+          right: 0;
+          padding-left: 24px;
+          border-left: 1px solid #D0CFD4;
+          background: white; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap .secondary-action {
+          display: none;
+          padding-top: 10px;
+          margin: 0 auto; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap .print-intro {
+          display: none;
+          opacity: 0;
+          max-width: 230px;
+          font-size: 14px;
+          line-height: 1.4; }
+          .rx-app .modal-dialog.two-factor .modal-body .title-wrap .print-intro .warning {
+            color: #FF0058;
+            font-weight: 500; }
+            .rx-app .modal-dialog.two-factor .modal-body .title-wrap .print-intro .warning span {
+              color: #140A29;
+              font-weight: 400; }
+      .rx-app .modal-dialog.two-factor .modal-body .title {
+        margin-bottom: 2px;
+        font-size: 21px; }
+      .rx-app .modal-dialog.two-factor .modal-body .header {
+        margin-bottom: 6px;
+        font-size: 28px;
+        font-weight: 500; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description icon {
+        padding-left: 4px; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description .popover {
+        color: #140A29;
+        background: #EFEFEF;
+        max-width: 250px;
+        border: none; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description .popover.bottom > .arrow {
+        border-bottom-color: transparent; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description .popover > .arrow:after {
+        border-bottom-color: #EFEFEF; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description .popover-content {
+        padding: 18px 20px; }
+      .rx-app .modal-dialog.two-factor .modal-body a.description:hover {
+        text-decoration: none;
+        cursor: pointer; }
+      .rx-app .modal-dialog.two-factor .modal-body .print-button {
+        background: #D2D2D2; }
+      .rx-app .modal-dialog.two-factor .modal-body .title-wrap * {
+        transition: all 0.333s ease; }
+      .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode {
+        overflow: hidden; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode .two-factor-intro {
+          left: -100%; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode .pull-right {
+          position: absolute;
+          top: 0; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode .print-button {
+          background-color: #007FFF;
+          background: linear-gradient(#007FFF, #1856E0);
+          border: 1px solid #1856E0; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode .secondary-action {
+          display: block; }
+        .rx-app .modal-dialog.two-factor .modal-body .title-wrap.print-mode .print-intro {
+          display: block;
+          opacity: 1;
+          position: relative;
+          top: -50px;
+          margin-bottom: -36px; }
+    .rx-app .modal-dialog.two-factor .modal-body.inactive {
+      background-color: #FCFCFC; }
+      .rx-app .modal-dialog.two-factor .modal-body.inactive * {
+        opacity: 0.4; }
+    .rx-app .modal-dialog.two-factor .step-one {
+      border-top: 1px solid #EBEAEF; }
+      .rx-app .modal-dialog.two-factor .step-one .form-text {
+        margin-top: 8px; }
+    .rx-app .modal-dialog.two-factor .step-one.inactive {
+      /*@include border-radius($border-radius $border-radius 0 0);*/ }
+      .rx-app .modal-dialog.two-factor .step-one.inactive .form-text, .rx-app .modal-dialog.two-factor .step-one.inactive .controls-footer {
+        display: none; }
+    .rx-app .modal-dialog.two-factor .step-two {
+      border-top: 1px solid #EBEAEF;
+      /*margin-top:28px;*/
+      -webkit-border-radius: 0 0 4px 4px;
+      /* Safari and Chrome */
+      -moz-border-radius: 0 0 4px 4px;
+      /* Firefox */
+      -ms-border-radius: 0 0 4px 4px;
+      /* Internet Explorer */
+      border-radius: 0 0 4px 4px; }
+      .rx-app .modal-dialog.two-factor .step-two .description-inactive {
+        display: none; }
+      .rx-app .modal-dialog.two-factor .step-two .description-focus {
+        display: block; }
+      .rx-app .modal-dialog.two-factor .step-two .passcode-wrap {
+        width: 70%; }
+      .rx-app .modal-dialog.two-factor .step-two .call-or-text {
+        margin: 12px 0 20px;
+        width: 100%; }
+        .rx-app .modal-dialog.two-factor .step-two .call-or-text .button {
+          width: calc((100% * 0.33333) - (6px * (1 - 0.33333)));
+          -webkit-box-sizing: border-box;
+          /* Safari and Chrome */
+          -moz-box-sizing: border-box;
+          /* Firefox */
+          -ms-box-sizing: border-box;
+          /* Internet Explorer */
+          box-sizing: border-box;
+          float: left;
+          margin-right: 6px;
+          padding: 16px 4px 10px;
+          background: none;
+          border-color: #007FFF;
+          color: #007FFF;
+          transition: all 0.25s ease;
+          min-height: 84px; }
+          .rx-app .modal-dialog.two-factor .step-two .call-or-text .button icon {
+            display: block;
+            font-size: 28px;
+            padding-right: 0;
+            padding-bottom: 4px; }
+        .rx-app .modal-dialog.two-factor .step-two .call-or-text .button:last-of-type {
+          margin-right: 0; }
+        .rx-app .modal-dialog.two-factor .step-two .call-or-text .button:hover {
+          text-decoration: none;
+          background-color: #007FFF;
+          color: white; }
+        .rx-app .modal-dialog.two-factor .step-two .call-or-text .button:focus {
+          background-color: #EFEFEF;
+          border-color: #EFEFEF;
+          color: #686868;
+          cursor: not-allowed; }
+    .rx-app .modal-dialog.two-factor .step-two.inactive .description-inactive {
+      display: block; }
+    .rx-app .modal-dialog.two-factor .step-two.inactive .description-focus, .rx-app .modal-dialog.two-factor .step-two.inactive .controls-footer, .rx-app .modal-dialog.two-factor .step-two.inactive .call-or-text {
+      display: none; }
+    .rx-app .modal-dialog.two-factor .controls-footer {
+      width: 100%;
+      margin: 0; }
+      .rx-app .modal-dialog.two-factor .controls-footer .pull-left .link-tiny {
+        float: left; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body .title {
+    font-size: 28px;
+    display: inline-block;
+    padding-left: 50px;
+    background: url(../images/caution.png) no-repeat left;
+    background-size: contain;
+    margin-bottom: 24px; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body p {
+    margin-bottom: 18px; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body .description {
+    font-size: 16px;
+    line-height: 1.4; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body .instruction {
+    font-size: 14px;
+    font-weight: 500; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body .print-button {
+    background-color: #007FFF;
+    background: linear-gradient(#007FFF, #1856E0);
+    border: 1px solid #1856E0; }
+  .rx-app .modal-dialog.two-factor.service-down .modal-body .secondary-action {
+    display: inline-block; }
   .rx-app .has-controls.weight .form-text {
     padding-right: 56px; }
   .rx-app .has-controls.dosage .form-text {
@@ -999,14 +1173,17 @@
         font-size: 21px; }
       .rx-app .authorize-prescriptions-wrap .rx-auth-ready .confirm-auth-ready {
         text-align: center;
-        font-size: 64px;
         color: white;
         line-height: normal;
-        background-color: #EBEAEF;
+        background-color: #DBDBDD;
         padding: 8px 0; }
         .rx-app .authorize-prescriptions-wrap .rx-auth-ready .confirm-auth-ready icon {
+          font-size: 58px;
           vertical-align: middle;
           padding-bottom: 0.125em; }
+        .rx-app .authorize-prescriptions-wrap .rx-auth-ready .confirm-auth-ready span {
+          font-weight: 700;
+          display: block; }
       .rx-app .authorize-prescriptions-wrap .rx-auth-ready .confirm-auth-ready.marked {
         background-color: #00CC56; }
     .rx-app .authorize-prescriptions-wrap .cl-authtray {
@@ -1030,6 +1207,8 @@
         text-align: right; }
       .rx-app .authorize-prescriptions-wrap .cl-authtray .auth-button-lg {
         font-size: 18px; }
+      .rx-app .authorize-prescriptions-wrap .cl-authtray .legal-statement {
+        max-width: 690px; }
     .rx-app .authorize-prescriptions-wrap .sticky-authtray {
       min-height: 104px;
       bottom: 54px;
@@ -1352,6 +1531,51 @@
   font-weight: 300;
   padding: 24px 24px; }
 
+.results-body .page-content {
+  text-align: center; }
+  .results-body .page-content .content-main {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 26px;
+    margin: 0 auto; }
+  .results-body .page-content .content-heading {
+    margin-top: 36px; }
+    .results-body .page-content .content-heading .subtitle {
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.25; }
+    .results-body .page-content .content-heading .description {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 400; }
+    .results-body .page-content .content-heading .description.callout {
+      font-size: 14px; }
+      .results-body .page-content .content-heading .description.callout .caution.mini {
+        width: 28px;
+        padding-bottom: 2px;
+        padding-right: 8px; }
+  .results-body .page-content .controls-footer {
+    margin: auto; }
+    .results-body .page-content .controls-footer .flow-controls {
+      padding-bottom: 50px; }
+      .results-body .page-content .controls-footer .flow-controls .button-link {
+        font-size: 21px;
+        font-weight: 400; }
+      .results-body .page-content .controls-footer .flow-controls .button-link:focus, .results-body .page-content .controls-footer .flow-controls .button-link:active {
+        outline: none; }
+    .results-body .page-content .controls-footer .print-rx-button-group {
+      display: block;
+      width: 100%; }
+      .results-body .page-content .controls-footer .print-rx-button-group .button-link {
+        font-weight: 500; }
+      .results-body .page-content .controls-footer .print-rx-button-group .button-link:hover {
+        text-decoration: none; }
+  .results-body .page-content icon.success {
+    color: #00CC56; }
+  .results-body .page-content icon.error {
+    color: #FF0058; }
+
 /*-- HOME - PATIENT SEARCH --*/
 #patient-search {
   /*-- home notifications --*/
@@ -1644,3 +1868,8 @@
     margin-right: -28px;
     padding-left: 28px;
     padding-right: 28px; } }
+@media only screen and (min-width: 768px) {
+  .results-body {
+    min-height: 600px; }
+    .results-body .content-main {
+      width: 484px; } }

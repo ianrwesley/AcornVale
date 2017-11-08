@@ -259,6 +259,7 @@ ul.disc { list-style:disc outside; }
 .icon-med-ed:before {content: "\57";}
 .icon-help-inverted:before {content: "\58";}
 .icon-phone:before {content: "\59";}
+.icon-save:before {content: "\5a";}
 
 icon.xl {font-size:98px;}
 
@@ -271,7 +272,7 @@ icon.xl {font-size:98px;}
 	.modal-dialog {margin-top:100px;}
 	.modal-dialog.long {margin-top:24px;}
 	.modal-dialog.caution {margin-top:160px;}
-	.modal-content {padding:28px;}
+	.modal-content {padding:28px; @include border-radius($border-radius);}
 	.modal-header, .modal-body {padding:0; border:none;}
 	.modal-header {margin-bottom:18px;}
 	.modal-body {margin:auto; padding-bottom:8px;}
@@ -285,6 +286,22 @@ icon.xl {font-size:98px;}
 	.close {font-weight:$font-weight-book; color:$color-font-placeholder; opacity:.5;}
 	.close:hover {opacity:1;}
 	.button-close {float:right; position:absolute; top:18px; right:18px; color:$color-font-placeholder;}
+}
+
+.modal-dialog.select-supervisor {width:400px; margin-top:60px;
+	.modal-content {padding:0;}
+	.modal-body {padding:28px 28px 0;
+		.supervisor-list-wrap {width:100%; overflow-y:auto; height:300px; border:$border-primary; @include border-radius($border-radius); margin-top:14px; margin-bottom:28px;}
+		.supervisor-list {margin-bottom:0;}
+		.supervisor-list-item {border-bottom:$border-primary;}
+		.supervisor-list-item:last-of-type {border-bottom:none;}
+		.supervisor-select {padding:8px 12px; width:100%; text-align:left; background-color:transparent; border:none; transition:all 0.25s ease; color:$color-link-primary;}
+		.supervisor-select:hover {background-color:$color-link-primary; color:white;}
+		.supervisor-select:focus {background-color:$color-panel-darker; color:#686868; cursor:not-allowed;}
+		.status {text-transform:uppercase; display:none; font-size:$sm-font-size; font-weight:$font-weight-medium;}
+		.status.selected {display:inline;}
+	}
+	.controls-footer {padding: 16px 18px; border-top:$border-primary; margin-top:0;}
 }
 
 /*-- FORMS --*/
@@ -410,8 +427,8 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 .button-cancel {padding:5px;}
 .button-done a {text-decoration:none;}
 
-.button-compact {font-size:$sm-font-size; line-height:1.45;}
-.button-tiny {font-size:$xs-font-size; line-height:1.25;}
+.button-compact, .link-compact {font-size:$sm-font-size; line-height:1.45;}
+.button-tiny, .link-tiny {font-size:$xs-font-size; line-height:1.25;}
 
 .button-group {position:relative; display:inline-block; vertical-align:middle;
 	.button-link {padding:0 20px; @include border-radius(0);}
@@ -521,7 +538,8 @@ button a {text-decoration:none; display:block; width:100%; height:100%;}
 	.gn-link-clara {background-repeat:no-repeat; background-size:60px 20px; background-image: url(../images/logo/clara_logo-inverted.svg); background-position: center; width:60px; height:$globalnav-height; padding-top:0; padding-bottom:0;}
 	.gn-link-search {background-repeat:no-repeat; background-size:20px $globalnav-height; background-image: url(../images/search.svg); background-position: center; width: 20px;}
 	.gn-link-account {background-repeat:no-repeat; background-size:20px $globalnav-height; background-image: url(../images/account.svg); background-position: center; width: 20px;}
-	.gn-list .gn-link-account {background-position: 160px center; padding-right:45px; width:auto;}
+	.gn-link-supervisor {background-repeat:no-repeat; background-size:20px $globalnav-height; background-image: url(../images/supervisor.svg); background-position: center; width: 20px;}
+	.gn-list .gn-link-account, .gn-list .gn-link-supervisor {background-position: right 18px center; padding-right:45px; width:auto;}
 	.gn-content {margin:0 auto; min-width:600px; max-width:$xl-screen-width; padding:0 20px; position:relative; z-index:2;}
 	.gn-placeholder {display:none;}
 	.gn-item-rx .gn-link, .gn-item-patients .gn-link {padding-left:25px; padding-right:25px;}
